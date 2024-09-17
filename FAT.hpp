@@ -4,10 +4,16 @@
 #ifndef FAT_HPP
 #define FAT_HPP
 
+const int MAX_NAME_SIZE = 31;
+const int MAX_DATE_SIZE = 11;
+const int FRAME_SIZE = 60; // TODO
+const int UNIT_SIZE = 6000;
+const int FRAMES_TOTAL = UNIT_SIZE/FRAME_SIZE;
+
 struct directoryEntry {
-    char fileName[30];
-    short int firstClusterAddress;
-    char date[10]; // puede ser un INT, NOTA DEL PROFE: TODO ESTATICO
+    char fileName[MAX_NAME_SIZE];
+    short int firstClusterAddress = -1;
+    char date[MAX_DATE_SIZE]; // puede ser un INT, NOTA DEL PROFE: TODO ESTATICO
     bool opened =  false;
     int processId;   
     //short int permissions;
@@ -17,16 +23,16 @@ struct directoryEntry {
 class FAT {
 private:
     // Attributes 
-    // char unit[4096];// = {0};
+    char unit[UNIT_SIZE];// = {0};
     // NOTE: the cluster size is 8 chars, so the frame count is 4096/8 = 512.
     // We use `-1` to indicate an empty cluster and `-2` to indicate `end of file`.
     
     
-    // short int fatTable[512] = {-1}; // short int: from -32,768 to 32,767.
+    short int fatTable[FRAMES_TOTAL] = {-1}; // short int: from -32,768 to 32,767.
     
     // Directory
     
-    directoryEntry directory[512];
+    directoryEntry directory[FRAMES_TOTAL];
 
 public:
     FAT(/* args */);
@@ -36,13 +42,14 @@ public:
     bool close(char *filename, int processId);
     bool create(char* filename, char* date);
     void read();
-    void write();
+    bool write(char* filename, int processID, char* data);
     int search(char* filename);
     void deleteFrame();
     void append();
     void rename();
     void list();
     void print();
+    int findEmptyFrame();
    // Hacer RENAMEFILE?
 };
 

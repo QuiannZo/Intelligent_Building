@@ -42,20 +42,24 @@ bool FAT::close(char *filename, int processId) {
 // agregar ene le directorio el nombre
 // asignar el espacio en la primera unidad
 bool FAT::create(char *filename, char *date) {
+  if (search(filename) != -1) {
+    return false; 
+  }
+
   int i = 0;
-  while (directory[i].fileName[0] != '\0' && i < 512) {
+  while (directory[i].fileName[0] != '\0' && i < FRAMES_TOTAL) {
     i++;
   }
-  if (i >= 512) {
+  if (i >= FRAMES_TOTAL) {
     return false;
   }
   // Copy name
   size_t strLength = std::strlen(filename);
-  size_t copyLength = (strLength <= 30) ? strLength : 30; // TODO
+  size_t copyLength = (strLength <= MAX_NAME_SIZE) ? strLength : MAX_NAME_SIZE; // TODO
   std::strncpy(directory[i].fileName, filename, copyLength);
   // Copy date
   strLength = std::strlen(date);
-  copyLength = (strLength <= 10) ? strLength : 10; // TODO
+  copyLength = (strLength <= MAX_DATE_SIZE) ? strLength : MAX_DATE_SIZE; // TODO
   std::strncpy(directory[i].date, date, copyLength);
   return true;
 }
@@ -83,12 +87,35 @@ reemplazar
 
 Por conveniencia puedo escribir y que también tenga un cursor
 */
-void FAT::write() {}
+bool FAT::write(char* filename, int processID, char* data) {
+  if(this->open(filename, processID)) {
+    int frame = this->findEmptyFrame();
+    if(frame == -1) {
+      return false;
+    }
+
+
+    this->close(filename, processID);
+    return true;
+  }
+  return false;
+}
 
 // Cambiarlo a while
 int FAT::search(char *filename) {
-  for (int i = 0; i < 512; i += 8) {
+  for (int i = 0; i < UNIT_SIZE; i += FRAME_SIZE) {
     if (strcmp(this->directory[i].fileName, filename) == 0) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+// -1 vacio
+// -2 eofleName,
+int FAT::findEmptyFrame() {
+  for (int i = 0; i < FRAMES_TOTAL; i += FRAME_SIZE) {
+    if (this->fatTable[i] == -1) {
       return i;
     }
   }
