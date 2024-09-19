@@ -99,12 +99,16 @@ Por conveniencia puedo escribir y que también tenga un cursor
 */
 bool FAT::write(char* filename, int processID, char* data) {
   int position = this->search(filename);
-  std::cout << "*" << position << std::endl;
+  std::cout << "Posicion en el directorio: " << position << std::endl;
   if (position != -1) {
-    if(this->open(filename, processID)) {
+    std::cout << "Entré" << std::endl;
+    if(directory[position].opened == true && directory[position].processId == processID) {
+      std::cout << "Archivo está abierto" << std::endl;
       if (this->directory[position].firstClusterAddress == -1) {
+
         int rChar = strlen(data);
         int frame = this->findEmptyFrame();
+        std::cout << "Posición del frame: " << position << std::endl;
         this->directory[position].firstClusterAddress = frame;
         if(frame == -1) {
           return false;
@@ -162,7 +166,6 @@ int FAT::findEmptyFrame() {
 }
 
 void FAT::deleteFrame() {}
-std::cout << "Directory" << std::endl;
 /*
 LO que hace es ir al final, cursor pasa hasta el final, y escribe al final*/
 void FAT::append() {}
@@ -183,16 +186,24 @@ void FAT::print(bool verbose) {
     }
 
     std::cout << "Unit" << std::endl;
-    std::cout << "Frame:";
-    for (int i = 0; i < UNIT_SIZE; i++) {
-        if (verbose) {
-          std::cout << unit[i];
-        }
-        if(i%60 == 0){
-          std::cout << std::endl;
-          std::cout << "Frame: ";
-        }
+
+    for (int i = 0; i < UNIT_SIZE; i+=FRAME_SIZE) {
+      std::cout << "Frame:";
+      for (int j = i; j < FRAME_SIZE; j++) {
+        std::cout << unit[j];
+      }
+      std::cout << std::endl;
+
+        ///if (verbose) {
+          ///std::cout << unit[i];
+        //}
+        //if(i%60 == 0){
+          //std::cout << std::endl;
+          //std::cout << "Frame: ";
+        //}
     }
+
+    
     std::cout << std::endl;
     std::cout << "FAT" << std::endl;
     for (int i = 0; i < FRAMES_TOTAL; i++) {
