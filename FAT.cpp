@@ -14,10 +14,6 @@ FAT::FAT(/* args */) {
     this->directory[i].processId = 0;
     strcpy(this->directory[i].date, "");
   }
-
-  strcpy(this->directory[24].fileName, "test.txt");
-  this->directory[24].processId = 7;
-  strcpy(this->directory[24].date, "24/03/2005");
 }
 
 // Destructor
@@ -56,7 +52,7 @@ bool FAT::close(char *filename, int processId) {
 // agregar ene le directorio el nombre
 // asignar el espacio en la primera unidad
 bool FAT::create(char *filename, char *date) {
-  if (search(filename) == -1) {
+  if (search(filename) > -1) {
     return false; 
   }
   int i = 0;
@@ -192,7 +188,7 @@ void FAT::print(bool verbose) {
         if (verbose) {
             std::cout << "File " << i << ": ";
         }
-        std::cout << this->directory[i].fileName << " " << this->directory[i].date << " " << this->directory[i].processId << std::endl;
+        std::cout << this->directory[i].fileName << " " << this->directory[i].date << " FT->" << this->directory[i].firstClusterAddress << std::endl;
     }
     std::cout << std::endl;
     std::cout << "Unit" << std::endl;
@@ -209,7 +205,7 @@ void FAT::print(bool verbose) {
     std::cout << "FAT Table" << std::endl;
     for (int i = 0; i < FRAMES_TOTAL; i++) {
       if (verbose) {
-        std::cout << "FAT position: " << i << ": ";
+        std::cout << "FAT position " << i << ": ";
       }
         std::cout << fatTable[i] << std::endl;
     }
