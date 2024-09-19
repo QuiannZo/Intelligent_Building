@@ -5,6 +5,10 @@
 
 // Constructor
 FAT::FAT(/* args */) {
+  for (size_t i = 0; i < FRAMES_TOTAL; i++) {
+    fatTable[i] = -1;
+  }
+
   for(int i = 0; i < FRAMES_TOTAL; ++i){
     strcpy(this->directory[i].fileName, "");
     this->directory[i].processId = 0;
@@ -55,7 +59,6 @@ bool FAT::create(char *filename, char *date) {
   if (search(filename) == -1) {
     return false; 
   }
-
   int i = 0;
   while (directory[i].fileName[0] != '\0' && i < FRAMES_TOTAL) {
     i++;
@@ -65,12 +68,22 @@ bool FAT::create(char *filename, char *date) {
   }
   // Copy name
   size_t strLength = std::strlen(filename);
-  size_t copyLength = (strLength <= MAX_NAME_SIZE) ? strLength : MAX_NAME_SIZE; // TODO
-  std::strncpy(directory[i].fileName, filename, copyLength);
+  if (strLength < MAX_NAME_SIZE) {
+     std::strncpy(directory[i].fileName, filename, strLength);
+     directory[i].fileName[strLength] = '\0';
+  } else {
+    std::strncpy(directory[i].fileName, filename, MAX_NAME_SIZE);
+    directory[i].fileName[MAX_NAME_SIZE] = '\0';
+  }
   // Copy date
   strLength = std::strlen(date);
-  copyLength = (strLength <= MAX_DATE_SIZE) ? strLength : MAX_DATE_SIZE; // TODO
-  std::strncpy(directory[i].date, date, copyLength);
+  if (strLength < MAX_DATE_SIZE) {
+     std::strncpy(directory[i].date, date, strLength);
+     directory[i].date[strLength] = '\0';
+  } else {
+    std::strncpy(directory[i].date, date, MAX_DATE_SIZE);
+    directory[i].date[MAX_DATE_SIZE] = '\0';
+  }
   return true;
 }
 
@@ -99,36 +112,35 @@ Por conveniencia puedo escribir y que también tenga un cursor
 */
 bool FAT::write(char* filename, int processID, char* data) {
   int position = this->search(filename);
-  std::cout << "Posicion en el directorio: " << position << std::endl;
   if (position != -1) {
-    std::cout << "Entré" << std::endl;
     if(directory[position].opened == true && directory[position].processId == processID) {
-      std::cout << "Archivo está abierto" << std::endl;
       if (this->directory[position].firstClusterAddress == -1) {
-
-        int rChar = strlen(data);
+        int remainingChars = std::strlen(data);
         int frame = this->findEmptyFrame();
-        std::cout << "Posición del frame: " << position << std::endl;
+        fatTable[frame] = -2; // indicates the EoF in the FT   
         this->directory[position].firstClusterAddress = frame;
         if(frame == -1) {
           return false;
         }
         int chrIndex = 0;
         bool continueWriting = true;
-        while (continueWriting) {           
-          if (rChar < FRAMES_TOTAL) {
-            strcpy(&unit[frame * FRAME_SIZE], data);
+        while (continueWriting) {  
+          if (remainingChars < FRAME_SIZE) {
+            //strcpy(&unit[frame * FRAME_SIZE], data + chrIndex);
+            strncpy(&unit[frame * FRAME_SIZE], data + chrIndex, remainingChars);
           } else {
             strncpy(&unit[frame * FRAME_SIZE], data + chrIndex, FRAME_SIZE);
-            chrIndex = chrIndex + FRAME_SIZE;
+            chrIndex += FRAME_SIZE;
           }
-          rChar = rChar - FRAMES_TOTAL;
+          remainingChars -= FRAME_SIZE;
 
-          if(rChar > 0) {
+          if(remainingChars > 0) {
             int newFrame = this->findEmptyFrame();
             fatTable[frame] = newFrame;
             frame = newFrame;
+            fatTable[frame] = -2; // indicates the EoF in the FT
           } else { 
+            fatTable[frame] = -2; // indicates the EoF in the FT
             continueWriting = false; 
           }
         }
@@ -136,11 +148,9 @@ bool FAT::write(char* filename, int processID, char* data) {
       else {
         //TODO, decidir que hacer cuando el archivo tiene datos
       }
-      //this->close(filename, processID);
       return true;
     }
   }
-
   return false;
 }
 
@@ -157,7 +167,7 @@ int FAT::search(char *filename) {
 // -1 vacio
 // -2 eofleName,
 int FAT::findEmptyFrame() {
-  for (int i = 0; i < FRAMES_TOTAL; i += FRAME_SIZE) {
+  for (int i = 0; i < FRAMES_TOTAL; i += 1) {
     if (this->fatTable[i] == -1) {
       return i;
     }
@@ -184,32 +194,24 @@ void FAT::print(bool verbose) {
         }
         std::cout << this->directory[i].fileName << " " << this->directory[i].date << " " << this->directory[i].processId << std::endl;
     }
-
+    std::cout << std::endl;
     std::cout << "Unit" << std::endl;
-
-    for (int i = 0; i < UNIT_SIZE; i+=FRAME_SIZE) {
-      std::cout << "Frame:";
-      for (int j = i; j < FRAME_SIZE; j++) {
-        std::cout << unit[j];
+    for (int i = 0; i < FRAMES_TOTAL; i++) {
+      if (verbose) {
+        std::cout << "Frame " << i << ": ";
+      }
+      for (int j = 0; j < FRAME_SIZE; j++) {
+        std::cout << unit[i*FRAME_SIZE + j];
       }
       std::cout << std::endl;
-
-        ///if (verbose) {
-          ///std::cout << unit[i];
-        //}
-        //if(i%60 == 0){
-          //std::cout << std::endl;
-          //std::cout << "Frame: ";
-        //}
     }
-
-    
     std::cout << std::endl;
-    std::cout << "FAT" << std::endl;
+    std::cout << "FAT Table" << std::endl;
     for (int i = 0; i < FRAMES_TOTAL; i++) {
-        if (verbose) {
-          std::cout << "pos: " << fatTable[i] << std::endl;
-        }
+      if (verbose) {
+        std::cout << "FAT position: " << i << ": ";
+      }
+        std::cout << fatTable[i] << std::endl;
     }
 }
 // Imprimir, directorio, indice y unidad

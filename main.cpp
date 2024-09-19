@@ -7,8 +7,8 @@ using namespace std;
 int main() {
   FAT objectF;
   char *filename = (char *)"test.txt";
-  char *date = (char *)"12/12/12";
-   char *proof = (char *)"12/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa12/12";
+  char *date = (char *)"12/12/2012";
+  char *proof = (char *)"12/aaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaccccccccccc12/12";
   bool result4 = objectF.create(filename, date);
   int result = objectF.search(filename);
   bool result2 = objectF.open(filename, 7);

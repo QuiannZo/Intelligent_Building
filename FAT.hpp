@@ -4,16 +4,16 @@
 #ifndef FAT_HPP
 #define FAT_HPP
 
-const int MAX_NAME_SIZE = 31;
-const int MAX_DATE_SIZE = 11;
+const int MAX_NAME_SIZE = 30;
+const int MAX_DATE_SIZE = 10;
 const int FRAME_SIZE = 60; // TODO
 const int UNIT_SIZE = 6000;
 const int FRAMES_TOTAL = UNIT_SIZE/FRAME_SIZE;
 
 struct directoryEntry {
-    char fileName[MAX_NAME_SIZE];
+    char fileName[MAX_NAME_SIZE + 1];
     short int firstClusterAddress = -1;
-    char date[MAX_DATE_SIZE]; // puede ser un INT, NOTA DEL PROFE: TODO ESTATICO
+    char date[MAX_DATE_SIZE + 1]; // puede ser un INT, NOTA DEL PROFE: TODO ESTATICO
     bool opened =  false;
     int processId;   
     //short int permissions;
@@ -28,7 +28,7 @@ private:
     // We use `-1` to indicate an empty cluster and `-2` to indicate `end of file`.
     
     
-    short int fatTable[FRAMES_TOTAL] = {-1}; // short int: from -32,768 to 32,767.
+    short int fatTable[FRAMES_TOTAL]; // short int: from -32,768 to 32,767.
     
     // Directory
     
