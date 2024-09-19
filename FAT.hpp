@@ -23,7 +23,7 @@ struct directoryEntry {
 class FAT {
 private:
     // Attributes 
-    char unit[UNIT_SIZE];// = {0};
+    char unit[UNIT_SIZE] = "";// = {0};
     // NOTE: the cluster size is 8 chars, so the frame count is 4096/8 = 512.
     // We use `-1` to indicate an empty cluster and `-2` to indicate `end of file`.
     
@@ -48,7 +48,7 @@ public:
     void append();
     void rename();
     void list();
-    void print();
+    void print(bool verbose = false);
     int findEmptyFrame();
    // Hacer RENAMEFILE?
 };

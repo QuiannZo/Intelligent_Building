@@ -8,11 +8,12 @@ int main() {
   FAT objectF;
   char *filename = (char *)"test.txt";
   char *date = (char *)"12/12/12";
+  bool result4 = objectF.create(filename, date);
   int result = objectF.search(filename);
   bool result2 = objectF.open(filename, 7);
+  bool result5 = objectF.write(filename, 7, filename);
+  //objectF.print(true);
   bool result3 = objectF.close(filename, 7);
-  bool result4 = objectF.create(filename, date);
-
   if (result > -1) {
     std::cout << "funciona search" << std::endl;
     ;

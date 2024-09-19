@@ -1,9 +1,19 @@
 #include "FAT.hpp"
 
+#include <cstring>
+#include <iostream>
+
 // Constructor
 FAT::FAT(/* args */) {
+  for(int i = 0; i < FRAMES_TOTAL; ++i){
+    strcpy(this->directory[i].fileName, "");
+    this->directory[i].processId = 0;
+    strcpy(this->directory[i].date, "");
+  }
+
   strcpy(this->directory[24].fileName, "test.txt");
   this->directory[24].processId = 7;
+  strcpy(this->directory[24].date, "24/03/2005");
 }
 
 // Destructor
@@ -42,7 +52,7 @@ bool FAT::close(char *filename, int processId) {
 // agregar ene le directorio el nombre
 // asignar el espacio en la primera unidad
 bool FAT::create(char *filename, char *date) {
-  if (search(filename) != -1) {
+  if (search(filename) == -1) {
     return false; 
   }
 
@@ -88,22 +98,51 @@ reemplazar
 Por conveniencia puedo escribir y que también tenga un cursor
 */
 bool FAT::write(char* filename, int processID, char* data) {
-  if(this->open(filename, processID)) {
-    int frame = this->findEmptyFrame();
-    if(frame == -1) {
-      return false;
+  int position = this->search(filename);
+  std::cout << "*" << position << std::endl;
+  if (position != -1) {
+    if(this->open(filename, processID)) {
+      if (this->directory[position].firstClusterAddress == -1) {
+        int rChar = strlen(data);
+        int frame = this->findEmptyFrame();
+        this->directory[position].firstClusterAddress = frame;
+        if(frame == -1) {
+          return false;
+        }
+        int chrIndex = 0;
+        bool continueWriting = true;
+        while (continueWriting) {           
+          if (rChar < FRAMES_TOTAL) {
+            strcpy(&unit[frame * FRAME_SIZE], data);
+          } else {
+            strncpy(&unit[frame * FRAME_SIZE], data + chrIndex, FRAME_SIZE);
+            chrIndex = chrIndex + FRAME_SIZE;
+          }
+          rChar = rChar - FRAMES_TOTAL;
+
+          if(rChar > 0) {
+            int newFrame = this->findEmptyFrame();
+            fatTable[frame] = newFrame;
+            frame = newFrame;
+          } else { 
+            continueWriting = false; 
+          }
+        }
+      }
+      else {
+        //TODO, decidir que hacer cuando el archivo tiene datos
+      }
+      //this->close(filename, processID);
+      return true;
     }
-
-
-    this->close(filename, processID);
-    return true;
   }
+
   return false;
 }
 
 // Cambiarlo a while
 int FAT::search(char *filename) {
-  for (int i = 0; i < UNIT_SIZE; i += FRAME_SIZE) {
+  for (int i = 0; i < FRAMES_TOTAL; i++) {
     if (strcmp(this->directory[i].fileName, filename) == 0) {
       return i;
     }
@@ -123,7 +162,7 @@ int FAT::findEmptyFrame() {
 }
 
 void FAT::deleteFrame() {}
-
+std::cout << "Directory" << std::endl;
 /*
 LO que hace es ir al final, cursor pasa hasta el final, y escribe al final*/
 void FAT::append() {}
@@ -133,8 +172,34 @@ void FAT::list() {
   // buscar en todo el directorio
 }
 
-void FAT::print() {
-  // imprimir el directorio
+void FAT::print(bool verbose) {
+    // Imprimir el directorio
+    std::cout << "Directory" << std::endl;
+    for (int i = 0; i < FRAMES_TOTAL; i++) {
+        if (verbose) {
+            std::cout << "File " << i << ": ";
+        }
+        std::cout << this->directory[i].fileName << " " << this->directory[i].date << " " << this->directory[i].processId << std::endl;
+    }
+
+    std::cout << "Unit" << std::endl;
+    std::cout << "Frame:";
+    for (int i = 0; i < UNIT_SIZE; i++) {
+        if (verbose) {
+          std::cout << unit[i];
+        }
+        if(i%60 == 0){
+          std::cout << std::endl;
+          std::cout << "Frame: ";
+        }
+    }
+    std::cout << std::endl;
+    std::cout << "FAT" << std::endl;
+    for (int i = 0; i < FRAMES_TOTAL; i++) {
+        if (verbose) {
+          std::cout << "pos: " << fatTable[i] << std::endl;
+        }
+    }
 }
 // Imprimir, directorio, indice y unidad
 
