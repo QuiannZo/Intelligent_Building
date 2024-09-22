@@ -15,7 +15,7 @@ struct directoryEntry {
     short int firstClusterAddress = -1;
     char date[MAX_DATE_SIZE + 1]; // puede ser un INT, NOTA DEL PROFE: TODO ESTATICO
     bool opened =  false;
-    int processId;   
+    int processId = -1;   
     //short int permissions;
 };
 
@@ -47,7 +47,7 @@ public:
     void deleteFrame();
     void append();
     bool rename(char* filename, char* newFilename);
-    void list();
+    void list(); // list files in directory
     void print(bool verbose = false);
     int findEmptyFrame();
    // Hacer RENAMEFILE?

@@ -5,14 +5,14 @@
 
 // Constructor
 FAT::FAT(/* args */) {
+  // Init fat table 
   for (size_t i = 0; i < FRAMES_TOTAL; i++) {
     fatTable[i] = -1;
   }
-
+  // Init directory
   for(int i = 0; i < FRAMES_TOTAL; ++i){
-    strcpy(this->directory[i].fileName, "");
-    this->directory[i].processId = 0;
-    strcpy(this->directory[i].date, "");
+    this->directory[i].fileName[0] = '\0';
+    this->directory[i].date[0] = '\0';
   }
 }
 
@@ -194,7 +194,12 @@ bool FAT::rename(char* filename, char* newFilename) {
 }
 
 void FAT::list() {
-  // buscar en todo el directorio
+  std::cout << "Directory files:" << std::endl;
+  for (int i = 0; i < FRAMES_TOTAL; i++) {
+    if (directory[i].fileName[0] != '\0') {
+      std::cout << "\t\t" << directory[i].fileName << std::endl;
+    }
+  }
 }
 
 void FAT::print(bool verbose) {
