@@ -160,6 +160,16 @@ int FAT::search(char *filename) {
   return -1;
 }
 
+bool FAT::deleteFrame(int position) {
+  if (position < FRAMES_TOTAL) {
+    for (int i = 0; i < FRAME_SIZE; i++) {
+      this->unit[position * FRAME_SIZE + i] = '\0';
+    }
+    return true;
+  }
+  return false;
+}
+
 // -1 vacio
 // -2 eofleName,
 int FAT::findEmptyFrame() {
@@ -171,7 +181,6 @@ int FAT::findEmptyFrame() {
   return -1;
 }
 
-void FAT::deleteFrame() {}
 /*
 LO que hace es ir al final, cursor pasa hasta el final, y escribe al final*/
 void FAT::append() {}

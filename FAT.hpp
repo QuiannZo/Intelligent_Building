@@ -24,15 +24,13 @@ class FAT {
 private:
     // Attributes 
     char unit[UNIT_SIZE] = "";// = {0};
-    // NOTE: the cluster size is 8 chars, so the frame count is 4096/8 = 512.
+    // Fat table:
     // We use `-1` to indicate an empty cluster and `-2` to indicate `end of file`.
-    
-    
     short int fatTable[FRAMES_TOTAL]; // short int: from -32,768 to 32,767.
-    
     // Directory
-    
     directoryEntry directory[FRAMES_TOTAL];
+    // Private methods
+    bool deleteFrame(int position); // position from 0 to UNIT_SIZE - 1 
 
 public:
     FAT(/* args */);
@@ -44,13 +42,11 @@ public:
     void read();
     bool write(char* filename, int processID, char* data);
     int search(char* filename);
-    void deleteFrame();
     void append();
     bool rename(char* filename, char* newFilename);
     void list(); // list files in directory
     void print(bool verbose = false);
     int findEmptyFrame();
-   // Hacer RENAMEFILE?
 };
 
 #endif
