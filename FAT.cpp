@@ -176,7 +176,23 @@ void FAT::deleteFrame() {}
 LO que hace es ir al final, cursor pasa hasta el final, y escribe al final*/
 void FAT::append() {}
 
-void FAT::rename() {}
+bool FAT::rename(char* filename, char* newFilename) {
+  int position = this->search(filename);
+  if (position == -1) {
+    return false;
+  }
+  // Copy name
+  size_t strLength = std::strlen(newFilename);
+  if (strLength < MAX_NAME_SIZE) {
+     std::strncpy(directory[position].fileName, newFilename, strLength);
+     directory[position].fileName[strLength] = '\0';
+  } else {
+    std::strncpy(directory[position].fileName, newFilename, MAX_NAME_SIZE);
+    directory[position].fileName[MAX_NAME_SIZE] = '\0';
+  }
+  return true;
+}
+
 void FAT::list() {
   // buscar en todo el directorio
 }

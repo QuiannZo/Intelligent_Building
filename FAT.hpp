@@ -46,7 +46,7 @@ public:
     int search(char* filename);
     void deleteFrame();
     void append();
-    void rename();
+    bool rename(char* filename, char* newFilename);
     void list();
     void print(bool verbose = false);
     int findEmptyFrame();
