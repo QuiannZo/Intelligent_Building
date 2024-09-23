@@ -1,16 +1,15 @@
 #include "Usuario.hpp"
-#include "FAT.hpp"
+
 
 #include <string>
 #include <fstream>
 #include <iostream>
 
-void Usuario::addUser(std::string pUserName, std::string pPassword, char* filename) {
+void Usuario::addUser(std::string pUserName, std::string pPassword, char* filename, FAT& myFat) {
   userName = pUserName;
   userPassword = pPassword;
   userPasswordHash = hash(pPassword);
   char data[100];
-  FAT myFat;
   char *date = (char *)"12/12/2012";
   size_t strLength = std::strlen(date);
   int index = myFat.search(filename);

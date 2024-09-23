@@ -1,25 +1,34 @@
 #include "FAT.hpp"
 #include "Usuario.hpp"
+#include "Autenticador.hpp"
 #include <cstring>
 #include <iostream>
 
 using namespace std;
 
 int main() {
-  FAT objectF;
+  Autenticador objectA;
+  FAT objectFAT = objectA.getData();
   char *filename = (char *)"test.txt";
   char *date = (char *)"12/12/2012";
   char *proof = (char *)"12/aaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaccccccccccc12/12";
-  bool result4 = objectF.create(filename, date);
-  int result = objectF.search(filename);
-  bool result2 = objectF.open(filename, 7);
-  bool result5 = objectF.write(filename, 7, proof);
-  objectF.print(true);
-  Usuario myUser;
-  myUser.addUser("admin", "root", filename);
-  myUser.print(true);
+  bool result4 = objectFAT.create(filename, date);
+  int result = objectFAT.search(filename);
+  bool result2 = objectFAT.open(filename, 7);
+  bool result5 = objectFAT.write(filename, 7, proof);
+ 
 
-  bool result3 = objectF.close(filename, 7);
+  Usuario myUser;
+  myUser.addUser("admin", "root", filename, objectFAT);
+  myUser.print(true);
+  
+  char *username = (char *)"admin";
+  char *hash = (char *)"urrw";
+  
+  objectA.autenticar(username, hash);
+   
+  objectFAT.print(true);
+  bool result3 = objectFAT.close(filename, 7);
 
   if (result > -1) {
     std::cout << "funciona search" << std::endl;
@@ -45,5 +54,6 @@ int main() {
     std::cout << "funciona write" << std::endl;
     ;
   }
+
   return 0;
 }
