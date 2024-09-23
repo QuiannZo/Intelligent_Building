@@ -51,6 +51,7 @@ public:
     void print(bool verbose = false);
     bool deleteFile(char* filename, int processID);
     int findEmptyFrame();
+    bool searchCredentials(char *username, char *hash);
 };
 
 #endif

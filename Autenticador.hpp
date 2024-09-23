@@ -8,13 +8,13 @@
 
 class Autenticador {
 private:
-   FAT data;
+   FAT* data;
 
 public:
     Autenticador(/* args */);
     ~Autenticador();
     // Methods
     bool autenticar(char *username, char * hash);
-    FAT getData() const { return data; }
+    FAT* getData() { return data; }
 };
 #endif

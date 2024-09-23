@@ -8,14 +8,14 @@ using namespace std;
 
 int main() {
   Autenticador objectA;
-  FAT objectFAT = objectA.getData();
+  FAT* objectFAT = objectA.getData();
   char *filename = (char *)"test.txt";
   char *date = (char *)"12/12/2012";
   char *proof = (char *)"12/aaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaccccccccccc12/12";
-  bool result4 = objectFAT.create(filename, date);
-  int result = objectFAT.search(filename);
-  bool result2 = objectFAT.open(filename, 7);
-  bool result5 = objectFAT.write(filename, 7, proof);
+  bool result4 = objectFAT->create(filename, date);
+  int result = objectFAT->search(filename);
+  bool result2 = objectFAT->open(filename, 7);
+  bool result5 = objectFAT->write(filename, 7, proof);
  
 
   Usuario myUser;
@@ -25,10 +25,16 @@ int main() {
   char *username = (char *)"admin";
   char *hash = (char *)"urrw";
   
-  objectA.autenticar(username, hash);
+  bool autenticado = objectA.autenticar(username, hash);
+ if (autenticado) {
+    std::cout << "usuario verificado!" << std::endl;
+} else { 
+    std::cout << "usuario no verificado!" << std::endl;
+}
+
    
-  objectFAT.print(true);
-  bool result3 = objectFAT.close(filename, 7);
+  objectFAT->print(true);
+  bool result3 = objectFAT->close(filename, 7);
 
   if (result > -1) {
     std::cout << "funciona search" << std::endl;

@@ -5,21 +5,21 @@
 #include <fstream>
 #include <iostream>
 
-void Usuario::addUser(std::string pUserName, std::string pPassword, char* filename, FAT& myFat) {
+void Usuario::addUser(std::string pUserName, std::string pPassword, char* filename, FAT* myFat) {
   userName = pUserName;
   userPassword = pPassword;
   userPasswordHash = hash(pPassword);
   char data[100];
   char *date = (char *)"12/12/2012";
   size_t strLength = std::strlen(date);
-  int index = myFat.search(filename);
+  int index = myFat->search(filename);
   if (index == -1) {
-    myFat.create(filename, date);
-    myFat.open(filename, 7);
+    myFat->create(filename, date);
+    myFat->open(filename, 7);
   }
   std::string content = pUserName + " " + userPasswordHash + " " + "\n";
   strcpy(data, content.c_str());
-  myFat.append(filename, 7, data);
+  myFat->append(filename, 7, data);
 }
 
 void Usuario::print(bool verbose) {

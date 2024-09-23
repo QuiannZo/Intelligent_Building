@@ -142,6 +142,16 @@ int FAT::search(char *filename) {
   return -1;
 }
 
+bool FAT::searchCredentials(char *username, char *hash) {
+  char *foundUsername = strstr(this->unit + 0, username);
+  char *foundHash = strstr(this->unit + 0, hash);
+
+  if(foundHash != NULL && foundUsername != NULL){
+    return true;
+  } 
+  return false;
+}
+
 bool FAT::deleteFrame(int position) {
   if (position < FRAMES_TOTAL) {
     for (int i = 0; i < FRAME_SIZE; i++) {
