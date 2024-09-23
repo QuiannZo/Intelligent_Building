@@ -1,4 +1,5 @@
 #include "FAT.hpp"
+#include "Usuario.hpp"
 #include <cstring>
 #include <iostream>
 
@@ -14,7 +15,12 @@ int main() {
   bool result2 = objectF.open(filename, 7);
   bool result5 = objectF.write(filename, 7, proof);
   objectF.print(true);
+  Usuario myUser;
+  myUser.addUser("admin", "root", filename);
+  myUser.print(true);
+
   bool result3 = objectF.close(filename, 7);
+
   if (result > -1) {
     std::cout << "funciona search" << std::endl;
     ;
@@ -39,6 +45,5 @@ int main() {
     std::cout << "funciona write" << std::endl;
     ;
   }
-
   return 0;
 }
