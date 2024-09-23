@@ -95,7 +95,49 @@ DE hecho con el cursor ya no tendriamos que guardar si está abierto o no.
 El cursor es un int
 
 */
-void FAT::read() {}
+bool FAT::read(char* filename, char* buffer, int processID, int nChar) {
+  //char* buffer[nChar + 1];
+  int directoryPos = this->search(filename);
+  if (directoryPos != -1) {
+    if(directory[directoryPos].opened == true && directory[directoryPos].processId == processID) {
+      int count = 0;
+      int chrToCopy;
+      // when copy an incomplete initial frame
+      if (this->directory[directoryPos].charCursor != 0){
+        chrToCopy = FRAME_SIZE - this->directory[directoryPos].charCursor - 1;
+        std::strncpy(buffer, &this->unit[this->directory[directoryPos].firstFrameAddress], chrToCopy);
+        count = chrToCopy;
+        if (chrToCopy < nChar) {
+          // Update cursors
+          this->directory[directoryPos].charCursor = 0;
+          this->directory[directoryPos].frameCursor = 
+            this->fatTable[this->directory[directoryPos].frameCursor];
+        } else {
+          // all chrs were copied
+          this->directory[directoryPos].charCursor +=  chrToCopy;
+        }
+      }
+      while(count < nChar) {
+        chrToCopy = std::min(FRAME_SIZE, nChar - count);
+        std::strncpy(buffer + count, &this->unit[this->directory[directoryPos].frameCursor * FRAME_SIZE], chrToCopy);
+        count += chrToCopy;
+        if (chrToCopy == FRAME_SIZE) {
+          // update the frame cursor
+          this->directory[directoryPos].frameCursor = 
+            this->fatTable[this->directory[directoryPos].frameCursor];
+        } else {
+          // update the chr cursor 
+          this->directory[directoryPos].charCursor +=  chrToCopy;
+        }
+      }
+      buffer[count] = '\0';
+      return true;
+    }
+    strcpy(buffer,(char*)"Error: File is not opened");
+  }
+  strcpy(buffer,(char*)"Error: Could not find file");
+  return false;
+}
 
 /*
 Tiene que recibir el nombre del archivo y el dato.
@@ -118,6 +160,8 @@ bool FAT::write(char* filename, int processID, char* data) {
         }
         this->directory[position].firstFrameAddress = firstFrame;
         this->fatTable[position] = -2; // indicates the EoF
+        // Update the cursor
+        this->directory[position].frameCursor = this->directory[position].firstFrameAddress;
         return writeUnit(data, firstFrame, true);
       } else {
         // over-write the file
@@ -200,7 +244,7 @@ bool FAT::writeUnit(char *data, int startFrame, bool fromFirstPos) {
     // Find last position
     bool cont = true; 
     while(cont && firstPos < FRAME_SIZE) {
-      if (this->unit[firstPos * FRAME_SIZE + firstPos] == '\0') {
+      if (this->unit[startFrame * FRAME_SIZE + firstPos] == '\0') {
         cont = false;
       } else {
         firstPos++;
@@ -248,6 +292,7 @@ bool FAT::writeUnit(char *data, int startFrame, bool fromFirstPos) {
   return false;
 }
 
+//
 int FAT::findFinalFrame(int firstFrame) {
   int currentFrame = firstFrame;
   int nextFrame = this->fatTable[currentFrame];
@@ -263,8 +308,15 @@ int FAT::findFinalFrame(int firstFrame) {
   return currentFrame;
 }
 
-// -1 vacio
-// -2 eofleName,
+// 
+bool FAT::resetCursors(int directoryPosition) {
+  this->directory[directoryPosition].frameCursor = this->directory[directoryPosition].firstFrameAddress;
+  this->directory[directoryPosition].charCursor = 0;
+  return false;
+}
+
+// -1 empty
+// -2 EoF
 int FAT::findEmptyFrame() {
   for (int i = 0; i < FRAMES_TOTAL; i += 1) {
     if (this->fatTable[i] == -1) {
@@ -274,8 +326,6 @@ int FAT::findEmptyFrame() {
   return -1;
 }
 
-/*
-LO que hace es ir al final, cursor pasa hasta el final, y escribe al final*/
 bool FAT::append(char* filename, int processID, char* data) {
   int position = this->search(filename);
   if (position != -1) {
@@ -287,6 +337,8 @@ bool FAT::append(char* filename, int processID, char* data) {
           return false;
         }
         this->directory[position].firstFrameAddress = firstFrame;
+        // Update de cursor
+        this->directory[position].frameCursor = this->directory[position].firstFrameAddress;
         this->fatTable[position] = -2; // indicates the EoF
         return writeUnit(data, firstFrame, true);
       } else {

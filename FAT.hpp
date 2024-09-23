@@ -7,15 +7,17 @@
 const int MAX_NAME_SIZE = 30;
 const int MAX_DATE_SIZE = 10;
 const int FRAME_SIZE = 60; // TODO
-const int UNIT_SIZE = 6000;
+const int UNIT_SIZE = 600;
 const int FRAMES_TOTAL = UNIT_SIZE/FRAME_SIZE;
 
 struct directoryEntry {
     char fileName[MAX_NAME_SIZE + 1];
     int firstFrameAddress = -1;
-    char date[MAX_DATE_SIZE + 1]; // puede ser un INT, NOTA DEL PROFE: TODO ESTATICO
+    char date[MAX_DATE_SIZE + 1];
     bool opened =  false;
-    short int processId = -1;   
+    int frameCursor = -1; // cursor pointing to a frame in the unit
+    int charCursor = 0; // cursor pointing to a char in the frame
+    short int processId = -1;
     //short int permissions;
 };
 
@@ -34,6 +36,7 @@ private:
     bool deleteFromPosition(int firstFrame);
     bool writeUnit(char* data, int startFrame, bool fromFirstPos);
     int findFinalFrame(int firstFrame);
+    bool resetCursors(int directoryPosition);
 
 public:
     FAT(/* args */);
@@ -42,7 +45,7 @@ public:
     bool open(char *fileName, int processId);
     bool close(char *filename, int processId);
     bool create(char* filename, char* date);
-    void read();
+    bool read(char* filename, char* buffer, int processID, int nChar);
     bool write(char* filename, int processID, char* data);
     int search(char* filename);
     bool append(char* filename, int processID, char* data);
