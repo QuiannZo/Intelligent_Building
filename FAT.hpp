@@ -12,10 +12,10 @@ const int FRAMES_TOTAL = UNIT_SIZE/FRAME_SIZE;
 
 struct directoryEntry {
     char fileName[MAX_NAME_SIZE + 1];
-    short int firstClusterAddress = -1;
+    int firstFrameAddress = -1;
     char date[MAX_DATE_SIZE + 1]; // puede ser un INT, NOTA DEL PROFE: TODO ESTATICO
     bool opened =  false;
-    int processId = -1;   
+    short int processId = -1;   
     //short int permissions;
 };
 
@@ -30,7 +30,10 @@ private:
     // Directory
     directoryEntry directory[FRAMES_TOTAL];
     // Private methods
-    bool deleteFrame(int position); // position from 0 to UNIT_SIZE - 1 
+    bool deleteFrame(int position); // position from 0 to UNIT_SIZE - 1
+    bool deleteFromPosition(int firstFrame);
+    bool writeUnit(char* data, int startFrame, bool fromFirstPos);
+    int findFinalFrame(int firstFrame);
 
 public:
     FAT(/* args */);
@@ -42,10 +45,11 @@ public:
     void read();
     bool write(char* filename, int processID, char* data);
     int search(char* filename);
-    void append();
+    bool append(char* filename, int processID, char* data);
     bool rename(char* filename, char* newFilename);
     void list(); // list files in directory
     void print(bool verbose = false);
+    bool deleteFile(char* filename, int processID);
     int findEmptyFrame();
 };
 

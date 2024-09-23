@@ -109,40 +109,22 @@ Por conveniencia puedo escribir y que también tenga un cursor
 bool FAT::write(char* filename, int processID, char* data) {
   int position = this->search(filename);
   if (position != -1) {
+    // the file is empty
     if(directory[position].opened == true && directory[position].processId == processID) {
-      if (this->directory[position].firstClusterAddress == -1) {
-        int remainingChars = std::strlen(data);
-        int frame = this->findEmptyFrame();
-        fatTable[frame] = -2; // indicates the EoF in the FT   
-        this->directory[position].firstClusterAddress = frame;
-        if(frame == -1) {
+      if (this->directory[position].firstFrameAddress == -1) {
+        int firstFrame = findEmptyFrame();
+        if (firstFrame == -1) {
           return false;
         }
-        int chrIndex = 0;
-        bool continueWriting = true;
-        while (continueWriting) {  
-          if (remainingChars < FRAME_SIZE) {
-            //strcpy(&unit[frame * FRAME_SIZE], data + chrIndex);
-            strncpy(&unit[frame * FRAME_SIZE], data + chrIndex, remainingChars);
-          } else {
-            strncpy(&unit[frame * FRAME_SIZE], data + chrIndex, FRAME_SIZE);
-            chrIndex += FRAME_SIZE;
-          }
-          remainingChars -= FRAME_SIZE;
-
-          if(remainingChars > 0) {
-            int newFrame = this->findEmptyFrame();
-            fatTable[frame] = newFrame;
-            frame = newFrame;
-            fatTable[frame] = -2; // indicates the EoF in the FT
-          } else { 
-            fatTable[frame] = -2; // indicates the EoF in the FT
-            continueWriting = false; 
-          }
-        }
-      }
-      else {
-        //TODO, decidir que hacer cuando el archivo tiene datos
+        this->directory[position].firstFrameAddress = firstFrame;
+        this->fatTable[position] = -2; // indicates the EoF
+        return writeUnit(data, firstFrame, true);
+      } else {
+        // over-write the file
+        deleteFromPosition(position);
+        int firstFrame = this->directory[position].firstFrameAddress;
+        this->fatTable[firstFrame] = -2; // indicates the EoF
+        return writeUnit(data, firstFrame, true);
       }
       return true;
     }
@@ -170,6 +152,107 @@ bool FAT::deleteFrame(int position) {
   return false;
 }
 
+bool FAT::deleteFromPosition(int firstFrame) {
+  int currentFrame = firstFrame;
+  int nextFrame = this->fatTable[currentFrame];
+  bool repeat = true;
+  // while EoF is not found
+  while (repeat) {
+    if (nextFrame == -1) {
+      // the FAT table has an error
+      return false;
+    }
+    // hard delete
+    if (!deleteFrame(currentFrame)) {
+      return false;
+    }
+    this->fatTable[currentFrame] = -1;
+    if (nextFrame == -2) {
+      repeat = false;
+    } else {
+      currentFrame = nextFrame;
+      nextFrame = this->fatTable[currentFrame];
+    }
+  }
+  return true;
+}
+
+bool FAT::writeUnit(char *data, int startFrame, bool fromFirstPos) {
+  // NOTE: in the next line, 1 is added to consider `\0`, for this reason all *char 
+  // received as argument must have the final '\0'
+   int remainingChars = std::strlen(data) + 1;
+   int dataIndex = 0;
+   bool continueWriting = true;
+   int newFrame = -1;
+  // when the frame has some data, we do not start writing from the beginning. 
+  if (!fromFirstPos) {
+    int firstPos = 0;
+    // Find last position
+    bool cont = true; 
+    while(cont && firstPos < FRAME_SIZE) {
+      if (this->unit[firstPos * FRAME_SIZE + firstPos] == '\0') {
+        cont = false;
+      } else {
+        firstPos++;
+      }
+    }
+    // copy to the remaining space in the frame 
+    int charsToCopy = FRAME_SIZE - firstPos;
+    // Note that 0 chars can be copied if the frame is full 
+    std::strncpy(&unit[startFrame * FRAME_SIZE + firstPos], data + dataIndex, charsToCopy);
+    remainingChars -= charsToCopy;
+    dataIndex += charsToCopy;
+    if (remainingChars > 0) {
+      newFrame = this->findEmptyFrame();
+      if(newFrame == -1) {
+        return false;
+      }
+      fatTable[startFrame] = newFrame;
+      startFrame = newFrame;
+    } else {
+      fatTable[startFrame] = -2;
+      continueWriting = false;
+    }
+  }
+  // write the remaining data starting from a new frame
+  while (continueWriting) {  
+    if (remainingChars < FRAME_SIZE) {
+      strncpy(&unit[startFrame * FRAME_SIZE], data + dataIndex, remainingChars);
+    } else {
+      strncpy(&unit[startFrame * FRAME_SIZE], data + dataIndex, FRAME_SIZE);
+      dataIndex += FRAME_SIZE;
+    }
+    remainingChars -= FRAME_SIZE;
+    if(remainingChars > 0) {
+      newFrame = this->findEmptyFrame();
+      if(newFrame == -1) {
+        return false;
+      }
+      fatTable[startFrame] = newFrame;
+      startFrame = newFrame;
+    } else { 
+      continueWriting = false; 
+    }
+    fatTable[startFrame] = -2; // indicates the EoF in the FT
+  }
+  return false;
+}
+
+int FAT::findFinalFrame(int firstFrame) {
+  int currentFrame = firstFrame;
+  int nextFrame = this->fatTable[currentFrame];
+  // while EoF is not found
+  while (nextFrame != -2) {
+    if (nextFrame == -1) {
+      // the Fat table has an error
+      return -1;
+    }
+    currentFrame = nextFrame;
+    nextFrame = this->fatTable[currentFrame];
+  }
+  return currentFrame;
+}
+
 // -1 vacio
 // -2 eofleName,
 int FAT::findEmptyFrame() {
@@ -183,7 +266,31 @@ int FAT::findEmptyFrame() {
 
 /*
 LO que hace es ir al final, cursor pasa hasta el final, y escribe al final*/
-void FAT::append() {}
+bool FAT::append(char* filename, int processID, char* data) {
+  int position = this->search(filename);
+  if (position != -1) {
+    if(directory[position].opened == true && directory[position].processId == processID) {
+      // when the file is empty
+      if(this->directory[position].firstFrameAddress == -1) {
+        int firstFrame = findEmptyFrame();
+        if (firstFrame == -1) {
+          return false;
+        }
+        this->directory[position].firstFrameAddress = firstFrame;
+        this->fatTable[position] = -2; // indicates the EoF
+        return writeUnit(data, firstFrame, true);
+      } else {
+         // when the file has data, the last frame must be found
+        int lastFrame = findFinalFrame(position);
+        if (lastFrame == -1) {
+          return false;
+        }
+        return writeUnit(data, lastFrame, false);
+      }
+    }
+  }
+  return false;
+}
 
 bool FAT::rename(char* filename, char* newFilename) {
   int position = this->search(filename);
@@ -218,7 +325,7 @@ void FAT::print(bool verbose) {
         if (verbose) {
             std::cout << "File " << i << ": ";
         }
-        std::cout << this->directory[i].fileName << " " << this->directory[i].date << " FT->" << this->directory[i].firstClusterAddress << std::endl;
+        std::cout << this->directory[i].fileName << " " << this->directory[i].date << " FT->" << this->directory[i].firstFrameAddress << std::endl;
     }
     std::cout << std::endl;
     std::cout << "Unit" << std::endl;
@@ -239,6 +346,24 @@ void FAT::print(bool verbose) {
       }
         std::cout << fatTable[i] << std::endl;
     }
+}
+
+bool FAT::deleteFile(char *filename, int processID) {
+  int position = this->search(filename);
+  if (position == -1) {
+    return false;
+  }
+  if(directory[position].opened == true && directory[position].processId == processID) {
+    if (!deleteFromPosition(position)) {
+      return false;
+    }
+    this->directory[position].fileName[0] = '\0';
+    this->directory[position].date[0] = '\0';
+    this->directory[position].processId = -1;
+    this->directory[position].firstFrameAddress = -1;
+    this->directory[position].opened = false;
+  }
+  return true;
 }
 // Imprimir, directorio, indice y unidad
 
