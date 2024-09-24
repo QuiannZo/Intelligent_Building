@@ -33,6 +33,7 @@ bool FAT::open(char *filename, int processId) {
     }
     directory[fileIndex].opened = true;
     directory[fileIndex].processId = processId; // TODO_
+    resetCursors(fileIndex);
     return true;
   }
   return false;
@@ -161,7 +162,7 @@ bool FAT::write(char* filename, int processID, char* data) {
         this->directory[position].firstFrameAddress = firstFrame;
         this->fatTable[position] = -2; // indicates the EoF
         // Update the cursor
-        this->directory[position].frameCursor = this->directory[position].firstFrameAddress;
+        this->resetCursors(firstFrame);
         return writeUnit(data, firstFrame, true);
       } else {
         // over-write the file
@@ -289,7 +290,7 @@ bool FAT::writeUnit(char *data, int startFrame, bool fromFirstPos) {
     }
     fatTable[startFrame] = -2; // indicates the EoF in the FT
   }
-  return false;
+  return true;
 }
 
 //
@@ -337,9 +338,8 @@ bool FAT::append(char* filename, int processID, char* data) {
           return false;
         }
         this->directory[position].firstFrameAddress = firstFrame;
-        // Update de cursor
-        this->directory[position].frameCursor = this->directory[position].firstFrameAddress;
         this->fatTable[position] = -2; // indicates the EoF
+        this->resetCursors(firstFrame);
         return writeUnit(data, firstFrame, true);
       } else {
          // when the file has data, the last frame must be found
