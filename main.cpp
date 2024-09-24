@@ -50,7 +50,6 @@ int main() {
     */
 
     // Sistemas operativos:
-    // Las pruebas en la que se realiza el agregado de 10 usuarios se encuentra en UserTest.cpp
     Usuario myUser;
 
     std::cout << "* Imprimir después de agregar 10 usuarios *" << std::endl << std::endl;
@@ -76,9 +75,6 @@ int main() {
     // Imprimir el contenido del FAT después de agregar los usuarios
     objectFAT->print(true);
     std::cout << std::endl;
-
-    // Close.
-    //objectFAT->close(filename, 7);
 
     cout << endl
         << "********** (3) Prueba de búsqueda (3) **********" << endl
