@@ -48,7 +48,38 @@ int main() {
         std::cout << "Papita" << ": usuario no verificado!" << std::endl;
     }
     */
-    // Sistemas operativos: 
+
+    // Sistemas operativos:
+    // Las pruebas en la que se realiza el agregado de 10 usuarios se encuentra en UserTest.cpp
+    Usuario myUser;
+
+    std::cout << "* Imprimir después de agregar 10 usuarios *" << std::endl << std::endl;
+
+    // Datos base para crear algunos usuarios.
+    std::string user = "user";
+    std::string passwordDefined = "pass";
+    std::string permission = "1";
+    std::string name = "Nombre";
+    std::string lastname = "Apellido";
+    std::string Id = "000000000";
+
+    // Meter 10....
+    for (int i = 1; i <= 10; i++) {
+        std::string username = user + std::to_string(i);  // user1, user2, ...
+        std::string password = passwordDefined + std::to_string(i);
+        std::string id = Id + std::to_string(i);
+
+        // Agregar:
+        myUser.addUser(username, password, permission, name, lastname, id, filename, objectFAT);
+    }
+
+    // Imprimir el contenido del FAT después de agregar los usuarios
+    objectFAT->print(true);
+    std::cout << std::endl;
+
+    // Close.
+    //objectFAT->close(filename, 7);
+
     cout << endl
         << "********** (3) Prueba de búsqueda (3) **********" << endl
         << endl;
@@ -125,7 +156,7 @@ int main() {
     cout << endl
         << "********** (6) Prueba de escritura (6) **********" << endl
         << endl;
-    bool writeResult = objectFAT->write((char *)"usuarios_renombrado.txt", 7, (char *)"Nuevo contenido de prueba.\n");
+    bool writeResult = objectFAT->write((char *)"usuarios_renombrado.txt", 7, (char *)" Nuevo contenido de prueba.\n");
     if (writeResult)
     {
     cout << "Escritura exitosa." << endl; 
