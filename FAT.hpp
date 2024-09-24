@@ -6,8 +6,8 @@
 
 const int MAX_NAME_SIZE = 30;
 const int MAX_DATE_SIZE = 10;
-const int FRAME_SIZE = 60; // TODO
-const int UNIT_SIZE = 600;
+const int FRAME_SIZE = 91; // TODO
+const int UNIT_SIZE = 910;
 const int FRAMES_TOTAL = UNIT_SIZE/FRAME_SIZE;
 
 struct directoryEntry {

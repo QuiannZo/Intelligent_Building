@@ -4,21 +4,32 @@
 #include <string>
 #include <fstream>
 #include <iostream>
+#include <iomanip>
 
-void Usuario::addUser(std::string pUserName, std::string pPassword, char* filename, FAT* myFat) {
-  userName = pUserName;
-  userPassword = pPassword;
-  userPasswordHash = hash(pPassword);
-  char data[100];
-  char *date = (char *)"12/12/2012";
-  size_t strLength = std::strlen(date);
+// **Username, password, permission, name, lastname, id. De momento date lo deje default, es agregarlo despues.
+void Usuario::addUser(std::string pUserName, std::string pPassword, std::string pPermission, std::string pName, 
+std::string pLastname, std::string pId, char* filename, FAT* myFat) {
+  // std::setw y std::setfill para llenar con espacios lo que no se use.
+  std::ostringstream oss;
+  oss << std::left << std::setw(20) << pUserName
+      << std::setw(20) << pPassword
+      << std::setw(1)  << pPermission // 0 = read, 1 = read and write.
+      << std::setw(20) << pName
+      << std::setw(20) << pLastname
+      << std::setw(10) << pId;
+
+  std::string content = oss.str();
+
+  char data[91];
+  strcpy(data, content.c_str());  // Convertir la cadena final a char array
+
   int index = myFat->search(filename);
   if (index == -1) {
-    myFat->create(filename, date);
-    myFat->open(filename, 7);
+      myFat->create(filename, (char *)"12/12/2012");
+      myFat->open(filename, 7);
   }
-  std::string content = pUserName + " " + userPasswordHash + " " + "\n";
-  strcpy(data, content.c_str());
+  
+  // Guardar los datos en el archivo del FAT
   myFat->append(filename, 7, data);
 }
 

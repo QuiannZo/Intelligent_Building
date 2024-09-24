@@ -25,7 +25,7 @@ int main() {
   std::cout << "********** (3) Imprimir después de agregar usuarios (3) **********" << std::endl << std::endl;
   objectFAT->write(filename, 7, (char*)"Chanchito hx9242\n");
   objectFAT->append(filename, 7, (char*)"Papita z22342\n");
-  myUser.addUser("admin", "root", filename, objectFAT);
+  myUser.addUser("admin", "root1234", "1", "Quiann", "ZOlfaghari", "118700209", filename, objectFAT);
   objectFAT->print(true);
   std::cout << std::endl;
   //myUser.print(true);
