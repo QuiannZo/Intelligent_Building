@@ -14,7 +14,7 @@ int main() {
     objectFAT->create(filename, date);
     objectFAT->open(filename, 7);
     // Presentación PI
-    /*
+
     std::cout << "********** (1) Imprimir antes de crear archivos y agregar usuarios (1) **********" << std::endl << std::endl;
     objectFAT->print(true);
     std::cout << std::endl;
@@ -47,9 +47,10 @@ int main() {
     } else { 
         std::cout << "Papita" << ": usuario no verificado!" << std::endl;
     }
-    */
+    
 
     // Sistemas operativos:
+    /*
     Usuario myUser;
 
     std::cout << "* Imprimir después de agregar 10 usuarios *" << std::endl << std::endl;
@@ -182,6 +183,7 @@ int main() {
     if (objectFAT->close((char*)"usuarios_renombrado.txt", 7)) {
     std::cout << "Se cerró exitosamente el archivo." << std::endl;
     }
+    */
 
     return 0;
 }
