@@ -1,0 +1,19 @@
+# ninja log v6
+193	1101	1728322682881570603	CMakeFiles/PI-Edificio.dir/menuwindow.cpp.o	93a621ba9c48d761
+1240	1421	1728322683928584959	PI-Edificio	b5bd076a9667a588
+193	1240	1728322682881570603	CMakeFiles/PI-Edificio.dir/mainwindow.cpp.o	8ac0039faaa45156
+193	1109	1728322682881570603	CMakeFiles/PI-Edificio.dir/main.cpp.o	8ef2d24efc3f5b26
+3	193	1728322682875570521	/home/lab-3-5/PI-Edificio/build/Desktop-Debug/PI-Edificio_autogen/mocs_compilation.cpp	735bc6976e7b9bac
+193	1092	1728322682881570603	CMakeFiles/PI-Edificio.dir/PI-Edificio_autogen/mocs_compilation.cpp.o	6afb9cc429053b05
+3	193	1728322682875570521	/home/lab-3-5/PI-Edificio/build/Desktop-Debug/PI-Edificio_autogen/timestamp	735bc6976e7b9bac
+3	193	1728322682875570521	PI-Edificio_autogen/mocs_compilation.cpp	735bc6976e7b9bac
+3	193	1728322682875570521	PI-Edificio_autogen/timestamp	735bc6976e7b9bac
+2	258	1728323017855163416	PI-Edificio_autogen/timestamp	735bc6976e7b9bac
+2	258	1728323017855163416	PI-Edificio_autogen/mocs_compilation.cpp	735bc6976e7b9bac
+2	258	1728323017855163416	/home/lab-3-5/PI-Edificio/build/Desktop-Debug/PI-Edificio_autogen/timestamp	735bc6976e7b9bac
+2	258	1728323017855163416	/home/lab-3-5/PI-Edificio/build/Desktop-Debug/PI-Edificio_autogen/mocs_compilation.cpp	735bc6976e7b9bac
+258	1161	1728323017861163498	CMakeFiles/PI-Edificio.dir/PI-Edificio_autogen/mocs_compilation.cpp.o	6afb9cc429053b05
+258	1177	1728323017861163498	CMakeFiles/PI-Edificio.dir/main.cpp.o	8ef2d24efc3f5b26
+258	1192	1728323017861163498	CMakeFiles/PI-Edificio.dir/menuwindow.cpp.o	93a621ba9c48d761
+258	1296	1728323017861163498	CMakeFiles/PI-Edificio.dir/mainwindow.cpp.o	8ac0039faaa45156
+1296	1473	1728323018899177730	PI-Edificio	b5bd076a9667a588

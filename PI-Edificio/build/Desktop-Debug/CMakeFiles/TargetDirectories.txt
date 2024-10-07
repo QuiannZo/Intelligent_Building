@@ -1,0 +1,9 @@
+/home/lab-3-5/PI-Edificio/build/Desktop-Debug/CMakeFiles/PI-Edificio.dir
+/home/lab-3-5/PI-Edificio/build/Desktop-Debug/CMakeFiles/edit_cache.dir
+/home/lab-3-5/PI-Edificio/build/Desktop-Debug/CMakeFiles/rebuild_cache.dir
+/home/lab-3-5/PI-Edificio/build/Desktop-Debug/CMakeFiles/list_install_components.dir
+/home/lab-3-5/PI-Edificio/build/Desktop-Debug/CMakeFiles/install.dir
+/home/lab-3-5/PI-Edificio/build/Desktop-Debug/CMakeFiles/install/local.dir
+/home/lab-3-5/PI-Edificio/build/Desktop-Debug/CMakeFiles/install/strip.dir
+/home/lab-3-5/PI-Edificio/build/Desktop-Debug/CMakeFiles/PI-Edificio_autogen_timestamp_deps.dir
+/home/lab-3-5/PI-Edificio/build/Desktop-Debug/CMakeFiles/PI-Edificio_autogen.dir
