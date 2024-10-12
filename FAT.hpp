@@ -26,9 +26,6 @@ struct directoryEntry {
 
 class FAT {
 private:
-    // Constant attributes
-    
-
     // Attributes 
     char unit[UNIT_SIZE] = "";// = {0};
     // Fat table:
@@ -60,6 +57,8 @@ public:
     bool deleteFile(char* filename, int processID);
     int findEmptyFrame();
     bool searchCredentials(char *username, char *hash);
+    bool loadFile(char* filename, int processID);
+    bool saveFile(char* filename, int processID, char* writingName);
 };
 
 #endif

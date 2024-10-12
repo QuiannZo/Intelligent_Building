@@ -30,7 +30,7 @@ int main() {
     objectFAT->write(filename, 7, (char*)"Chanchito hx9242\n");
     objectFAT->append(filename, 7, (char*)"Papita z22342\n");
     myUser.addUser("admin", "root1234", "1", "Quiann", "ZOlfaghari", "118700209", filename, objectFAT);
-    objectFAT->print(true);
+    //objectFAT->print(true);
     std::cout << std::endl;
     //myUser.print(true);
 
@@ -47,5 +47,15 @@ int main() {
     } else { 
         std::cout << "Papita" << ": usuario no verificado!" << std::endl;
     }
+
+    objectFAT->loadFile((char *)"FormatoBitacora.txt", 7);
+    objectFAT->print(true);
+
+    objectFAT->open((char *)"FormatoBitacora.txt", 8);
+    if(objectFAT->saveFile((char *)"FormatoBitacora.txt", 8, (char *)"proof.txt")) {
+        std::cout << "Guardado exitosamente" << std::endl;
+    }
+    objectFAT->close((char *)"FormatoBitacora.txt", 8);
+
     return 0;
 }

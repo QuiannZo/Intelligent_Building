@@ -1,7 +1,10 @@
 #include "FAT.hpp"
 
 #include <cstring>
+#include <fstream>
+#include <sstream>
 #include <iostream>
+#include <ctime>
 
 // Constructor
 FAT::FAT(/* args */) {
@@ -194,6 +197,75 @@ bool FAT::searchCredentials(char *username, char *hash) {
   if(foundHash != NULL && foundUsername != NULL){
     return true;
   } 
+  return false;
+}
+
+bool FAT::loadFile(char *filename, int processID) {
+    // open the file
+    std::ifstream file(filename);
+
+    if (!file.is_open()) {
+        std::cerr << "Error: Failed to open the file " << filename << std::endl;
+        return false;
+    }
+
+    // Get the current time
+    time_t current_time = time(0);
+    struct tm tmStruct;
+    char* date = new char[11]; // "dd/mm/yyyy\0"
+    // Convert time_t to tm struct
+    localtime_r(&current_time, &tmStruct);
+    // Format the date as dd/mm/yyyy
+    strftime(date, 11, "%d/%m/%Y", &tmStruct);
+
+    // create the file in our file system
+    if (!this->create(filename, date) || !this->open(filename, processID)) {
+      return false;
+    }
+    // read all file using a <stringstream>
+    std::stringstream buffer;
+    buffer << file.rdbuf();
+
+    // store the file in the file system
+    this->append(filename, processID, const_cast<char*>(buffer.str().c_str()));
+
+    // close the files
+    file.close();
+    this->close(filename, processID);
+    return false;
+}
+
+bool FAT::saveFile(char *filename, int processID, char* writingName) {
+  int directoryPos = this->search(filename);
+  if (directoryPos != -1) {
+    if(directory[directoryPos].opened == true && directory[directoryPos].processId == processID) {
+      // Open the file
+    std::ofstream outFile(writingName); // create or overwrite
+
+    // verify if it was opened successfully
+    if (!outFile) {
+        std::cerr << "Error: Failed to open the file " << writingName << std::endl;
+        return false;
+    }
+      
+    char buffer[FRAME_SIZE + 1];
+    bool stop = false;
+    int frameCursor = directoryPos;
+
+    while (!stop) {
+      //TODO: Probar que el archivo funcione bien con archivos formados por más de un frame. 
+      std::strncpy(buffer, &this->unit[frameCursor*FRAME_SIZE], FRAME_SIZE);
+      outFile << buffer; 
+      frameCursor = this->fatTable[frameCursor];
+      if (frameCursor == -2) {
+        stop = true;
+      }
+    } 
+    // Close the file
+    outFile.close();
+    return true;
+    }   
+  }
   return false;
 }
 
