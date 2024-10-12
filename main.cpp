@@ -1,8 +1,9 @@
+#include <cstring>
+#include <iostream>
 #include "Authenticator.hpp"
 #include "FAT.hpp"
 #include "Usuario.hpp"
-#include <cstring>
-#include <iostream>
+#include "HashHandler.hpp"
 
 using namespace std;
 
@@ -66,5 +67,19 @@ int main() {
     objectFAT->close((char *)"FormatoBitacora.txt", 8);
     std::cout << "Tamaño del archivo en chrs " <<  objectFAT->getFileSize((char *)"FormatoBitacora.txt") << std::endl;
 
+    HashHandler hashHandler = HashHandler();
+    string hash = hashHandler.generateHASH_SHA256((string)"password1234+");
+    std::cout << "HASH: " << hash << std::endl;
+    if (hashHandler.validatePassword_SHA256((string)"password1234+", hash)) {
+        std::cout << "Se validó la contraseña." << std::endl;
+    } else {
+        std::cout << "No se validó la contraseña." << std::endl;
+    }
+    // 
+    if (hashHandler.validatePassword_SHA256((string)"password4567+", hash)) {
+        std::cout << "Se validó la contraseña." << std::endl;
+    } else {
+        std::cout << "No se validó la contraseña." << std::endl;
+    }
     return 0;
 }
