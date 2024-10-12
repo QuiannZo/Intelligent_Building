@@ -1,14 +1,17 @@
 #include <iostream>
+#include <cstdint>
 #include <cstring>
 
 #ifndef FAT_HPP
 #define FAT_HPP
 
-const int MAX_NAME_SIZE = 30;
+
+const int MAX_NAME_SIZE = 100;
 const int MAX_DATE_SIZE = 10;
-const int FRAME_SIZE = 91; // TODO
-const int UNIT_SIZE = 910;
-const int FRAMES_TOTAL = UNIT_SIZE/FRAME_SIZE;
+const int FRAME_SIZE = 4096; // 4KiB
+const int UNIT_SIZE = 1048576; // 1MiB
+const int FRAMES_TOTAL = UNIT_SIZE/FRAME_SIZE; // 256 frames
+
 
 struct directoryEntry {
     char fileName[MAX_NAME_SIZE + 1];
@@ -17,13 +20,15 @@ struct directoryEntry {
     bool opened =  false;
     int frameCursor = -1; // cursor pointing to a frame in the unit
     int charCursor = 0; // cursor pointing to a char in the frame
-    short int processId = -1;
-    //short int permissions;
+    std::int8_t processId = -1; // Range: -128 to 127. We only use positive number to "process id"
 };
 
 
 class FAT {
 private:
+    // Constant attributes
+    
+
     // Attributes 
     char unit[UNIT_SIZE] = "";// = {0};
     // Fat table:
