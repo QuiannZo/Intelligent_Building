@@ -56,6 +56,14 @@ int main() {
         std::cout << "Guardado exitosamente" << std::endl;
     }
     objectFAT->close((char *)"FormatoBitacora.txt", 8);
+    // get line
+    objectFAT->open((char *)"FormatoBitacora.txt", 8);
+    char buffer[200];
+    objectFAT->getLine((char *)"FormatoBitacora.txt", buffer, 200, 8);
+    std::cout << buffer;
+    objectFAT->getLine((char *)"FormatoBitacora.txt", buffer, 200, 8);
+    std::cout << buffer;
+    objectFAT->close((char *)"FormatoBitacora.txt", 8);
 
     return 0;
 }

@@ -48,6 +48,8 @@ public:
     bool close(char *filename, int processId);
     bool create(char* filename, char* date);
     bool read(char* filename, char* buffer, int processID, int nChar);
+    // The buffer must be at least one character longer than the line.
+    bool getLine(char* filename, char* buffer, int bufferSize, int processID); // this will fail if the buffer length is less than the line length
     bool write(char* filename, int processID, char* data);
     int search(char* filename);
     bool append(char* filename, int processID, char* data);

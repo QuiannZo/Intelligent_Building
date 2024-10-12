@@ -104,6 +104,10 @@ bool FAT::read(char* filename, char* buffer, int processID, int nChar) {
   int directoryPos = this->search(filename);
   if (directoryPos != -1) {
     if(directory[directoryPos].opened == true && directory[directoryPos].processId == processID) {
+      if (directory[directoryPos].frameCursor == -2) {
+        // the file reached the end on a previous read
+        return false;
+      }
       int count = 0;
       int chrToCopy;
       // when copy an incomplete initial frame
@@ -121,7 +125,7 @@ bool FAT::read(char* filename, char* buffer, int processID, int nChar) {
           this->directory[directoryPos].charCursor +=  chrToCopy;
         }
       }
-      while(count < nChar) {
+      while(count < nChar && this->directory[directoryPos].frameCursor != -2) {
         chrToCopy = std::min(FRAME_SIZE, nChar - count);
         std::strncpy(buffer + count, &this->unit[this->directory[directoryPos].frameCursor * FRAME_SIZE], chrToCopy);
         count += chrToCopy;
@@ -132,6 +136,46 @@ bool FAT::read(char* filename, char* buffer, int processID, int nChar) {
         } else {
           // update the chr cursor 
           this->directory[directoryPos].charCursor +=  chrToCopy;
+        }
+      }
+      buffer[count] = '\0';
+      return true;
+    }
+    strcpy(buffer,(char*)"Error: File is not opened");
+  }
+  strcpy(buffer,(char*)"Error: Could not find file");
+  return false;
+}
+
+bool FAT::getLine(char *filename, char *buffer, int bufferSize, int processID) {
+  //char* buffer[nChar + 1];
+  int directoryPos = this->search(filename);
+  if (directoryPos != -1) {
+    if(directory[directoryPos].opened == true && directory[directoryPos].processId == processID) {
+      if (directory[directoryPos].frameCursor == -2) {
+        // the file reached the end on a previous read
+        return false;
+      }
+      int count = 0;
+      bool stop = false;
+      char currentChr;
+      while(!stop && this->directory[directoryPos].frameCursor != -2) {
+        currentChr = this->unit[this->directory[directoryPos].charCursor  + this->directory[directoryPos].frameCursor * FRAME_SIZE];
+        buffer[count] = currentChr;
+        count ++;
+        this->directory[directoryPos].charCursor ++;
+        if(currentChr == '\n' || currentChr == '\0') {
+          stop = true;
+        } 
+        if (count >= bufferSize) {
+          buffer[count - 1] = '\0';
+          std::cerr << "Error: the buffer filled before reaching the end of line" << std::endl;
+          return false;
+        }
+        // reach end of the frame
+        if (this->directory[directoryPos].charCursor == FRAME_SIZE) {
+          this->directory[directoryPos].charCursor = 0;
+          this->directory[directoryPos].frameCursor = this->fatTable[this->directory[directoryPos].frameCursor];
         }
       }
       buffer[count] = '\0';
