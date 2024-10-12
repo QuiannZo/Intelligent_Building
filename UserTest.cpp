@@ -5,7 +5,7 @@
 #include <iostream>
 
 int main(){
-    Autenticador objectA;
+    Authenticator objectA;
     FAT* objectFAT = objectA.getData();
     char *filename = (char *)"users.txt";
 

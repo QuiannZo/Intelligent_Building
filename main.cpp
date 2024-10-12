@@ -1,13 +1,13 @@
+#include "Authenticator.hpp"
 #include "FAT.hpp"
 #include "Usuario.hpp"
-#include "Autenticador.hpp"
 #include <cstring>
 #include <iostream>
 
 using namespace std;
 
 int main() {
-    Autenticador objectA;
+    Authenticator objectA;
     FAT* objectFAT = objectA.getData();
     char *filename = (char *)"users.txt";
     char *date = (char *)"12/12/2012";
