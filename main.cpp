@@ -64,6 +64,7 @@ int main() {
     objectFAT->getLine((char *)"FormatoBitacora.txt", buffer, 200, 8);
     std::cout << buffer;
     objectFAT->close((char *)"FormatoBitacora.txt", 8);
+    std::cout << "Tamaño del archivo en chrs " <<  objectFAT->getFileSize((char *)"FormatoBitacora.txt") << std::endl;
 
     return 0;
 }

@@ -313,6 +313,39 @@ bool FAT::saveFile(char *filename, int processID, char* writingName) {
   return false;
 }
 
+int FAT::getFileSize(char *filename) {
+  int directoryPos = this->search(filename);
+  if (directoryPos != -1) {
+    int currentFrame = this->directory[directoryPos].firstFrameAddress;
+    if (currentFrame == -1) {
+      // the file is empty
+      return 0;
+    }
+    int size = 0;
+    bool stop = false;
+    int nextFrame;
+    while (!stop) {
+      nextFrame = this->fatTable[currentFrame];
+      if (nextFrame == -2) {
+        // count the characters of the last frame
+        int chrCount = 0; 
+        char currentChr = this->unit[currentFrame*FRAME_SIZE + chrCount];
+        while (chrCount < FRAME_SIZE && currentChr != '\0') {
+          chrCount ++;
+          size ++;
+          currentChr = this->unit[currentFrame*FRAME_SIZE + chrCount];
+        }
+        stop = true;
+      } else {
+        size += FRAME_SIZE;
+        currentFrame = nextFrame;
+      }
+    }
+    return size;
+  }
+  return -1;
+}
+
 bool FAT::deleteFrame(int position) {
   if (position < FRAMES_TOTAL) {
     for (int i = 0; i < FRAME_SIZE; i++) {

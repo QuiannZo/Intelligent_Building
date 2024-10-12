@@ -61,6 +61,7 @@ public:
     bool searchCredentials(char *username, char *hash);
     bool loadFile(char* filename, int processID);
     bool saveFile(char* filename, int processID, char* writingName);
+    int getFileSize(char* filename);
 };
 
 #endif
