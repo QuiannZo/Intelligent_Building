@@ -2,6 +2,7 @@
 #define VIEWDATABASEWINDOW_H
 
 #include <QMainWindow>
+#include <QFile>
 
 namespace Ui {
 class viewdatabasewindow;

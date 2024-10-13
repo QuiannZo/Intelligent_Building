@@ -28,6 +28,9 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         menuwindow.h menuwindow.cpp
         menuwindow.h menuwindow.cpp menuwindow.ui
         viewdatabasewindow.h viewdatabasewindow.cpp viewdatabasewindow.ui
+        resource.qrc
+        viewuser.h viewuser.cpp viewuser.ui
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET PI-Edificio APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

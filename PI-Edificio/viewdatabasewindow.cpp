@@ -6,9 +6,12 @@ viewdatabasewindow::viewdatabasewindow(QWidget *parent) :
     ui(new Ui::viewdatabasewindow)
 {
     ui->setupUi(this);
-}
 
+
+
+}
 viewdatabasewindow::~viewdatabasewindow()
 {
     delete ui;
 }
+

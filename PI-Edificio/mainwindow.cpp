@@ -8,15 +8,13 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    //Fondos para los widgets y mainw.
     // Load background.
-    QString path = QCoreApplication::applicationDirPath() + "/../PI-Edificio/img/mainw.jpg";
-    QPixmap bkgnd(path);
-    if (bkgnd.isNull()) {
-        qDebug() << "Failed to load image from path:" << path;}
-
-    bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette palette;
+    QPixmap bkgnd(":/resource/img/mainw.jpg");
+    bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     palette.setBrush(QPalette::Window, bkgnd);
+    this->setAutoFillBackground(true);
     this->setPalette(palette);
 }
 

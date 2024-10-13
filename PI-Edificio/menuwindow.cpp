@@ -1,6 +1,7 @@
 #include "menuwindow.h"
 #include "ui_menuwindow.h"
 #include "viewdatabasewindow.h"
+#include "viewuser.h"
 
 menuwindow::menuwindow(QWidget *parent)
     : QMainWindow(parent)
@@ -10,18 +11,26 @@ menuwindow::menuwindow(QWidget *parent)
 
     //Fondos para los widgets y mainw.
     // Load background.
-    QString path = QCoreApplication::applicationDirPath() + "/../PI-Edificio/img/a1.jpeg";
-    QPixmap bkgnd(path);
-
-    bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette palette;
+    QPixmap bkgnd(":/resource/img/a1.jpeg");
+    bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     palette.setBrush(QPalette::Window, bkgnd);
+    this->setAutoFillBackground(true);
     this->setPalette(palette);
 
     // menuwidget.
-    QString path2 = QCoreApplication::applicationDirPath() + "/../PI-Edificio/img/primary.jpeg";
+    QString path2 = ":/resource/img/primary.jpeg";
     QPixmap bkgnd2(path2);
-    bkgnd2 = bkgnd2.scaled(ui->menuwidget->size(), Qt::IgnoreAspectRatio);
+
+    if (!bkgnd2.isNull()) {
+        bkgnd2 = bkgnd2.scaled(ui->menuwidget->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+        QPalette palette;
+        palette.setBrush(QPalette::Window, bkgnd2);
+        ui->menuwidget->setAutoFillBackground(true);
+        ui->menuwidget->setPalette(palette);
+    } else {
+        qDebug() << "Error: no se pudo cargar la imagen";
+    }
 
     QPalette palette2;
     palette2.setBrush(QPalette::Window, bkgnd2);
@@ -30,47 +39,47 @@ menuwindow::menuwindow(QWidget *parent)
 
     // Botones.
     // icono y el texto
-    QString path3 = QCoreApplication::applicationDirPath() + "/../PI-Edificio/img/database.png";
-    ui->pushButton->setIcon(QIcon(path3));  // Ruta del icono
-        ui->pushButton->setIconSize(QSize(48, 48));  // Ajusta el tamaño del icono
+    QString path3 = ":/resource/img/database.png";
+    ui->pushButton->setIcon(QIcon(path3));
+    ui->pushButton->setIconSize(QSize(48, 48));
 
-    path3 = QCoreApplication::applicationDirPath() + "/../PI-Edificio/img/database.png";
+    path3 = ":/resource/img/database.png";
     ui->pushButton2->setIcon(QIcon(path3));  // Ruta del icono
     ui->pushButton2->setIconSize(QSize(48, 48));  // Ajusta el tamaño del icono
 
-    path3 = QCoreApplication::applicationDirPath() + "/../PI-Edificio/img/sensor.png";
+    path3 = ":/resource/img/sensor.png";
     ui->pushButton3->setIcon(QIcon(path3));  // Ruta del icono
     ui->pushButton3->setIconSize(QSize(48, 48));  // Ajusta el tamaño del icono
 
-    path3 = QCoreApplication::applicationDirPath() + "/../PI-Edificio/img/user.png";
+    path3 = ":/resource/img/user.png";
     ui->pushButton4->setIcon(QIcon(path3));  // Ruta del icono
     ui->pushButton4->setIconSize(QSize(48, 48));  // Ajusta el tamaño del icono
 
-    path3 = QCoreApplication::applicationDirPath() + "/../PI-Edificio/img/group.png";
+    path3 = ":/resource/img/group.png";
     ui->pushButton5->setIcon(QIcon(path3));  // Ruta del icono
     ui->pushButton5->setIconSize(QSize(48, 48));  // Ajusta el tamaño del icono
 
-    path3 = QCoreApplication::applicationDirPath() + "/../PI-Edificio/img/add-user.png";
+    path3 = ":/resource/img/add-user.png";
     ui->pushButton6->setIcon(QIcon(path3));  // Ruta del icono
     ui->pushButton6->setIconSize(QSize(48, 48));  // Ajusta el tamaño del icono
 
-    path3 = QCoreApplication::applicationDirPath() + "/../PI-Edificio/img/remove-user.png";
+    path3 = ":/resource/img/remove-user.png";
     ui->pushButton7->setIcon(QIcon(path3));  // Ruta del icono
     ui->pushButton7->setIconSize(QSize(48, 48));  // Ajusta el tamaño del icono
 
-    path3 = QCoreApplication::applicationDirPath() + "/../PI-Edificio/img/sensor.png";
+    path3 = ":/resource/img/sensor.png";
     ui->pushButton8->setIcon(QIcon(path3));  // Ruta del icono
     ui->pushButton8->setIconSize(QSize(48, 48));  // Ajusta el tamaño del icono
 
-    path3 = QCoreApplication::applicationDirPath() + "/../PI-Edificio/img/document.png";
+    path3 = ":/resource/img/document.png";
     ui->pushButton9->setIcon(QIcon(path3));  // Ruta del icono
     ui->pushButton9->setIconSize(QSize(48, 48));  // Ajusta el tamaño del icono
 
-    path3 = QCoreApplication::applicationDirPath() + "/../PI-Edificio/img/database (1).png";
+    path3 = ":/resource/img/database (1).png";
     ui->pushButton10->setIcon(QIcon(path3));  // Ruta del icono
     ui->pushButton10->setIconSize(QSize(48, 48));  // Ajusta el tamaño del icono
 
-    path3 = QCoreApplication::applicationDirPath() + "/../PI-Edificio/img/document.png";
+    path3 = ":/resource/img/document.png";
     ui->pushButton11->setIcon(QIcon(path3));  // Ruta del icono
     ui->pushButton11->setIconSize(QSize(48, 48));  // Ajusta el tamaño del icono
 }
@@ -84,6 +93,14 @@ void menuwindow::on_pushButton_clicked()
 {
     viewdatabasewindow *databaseWindow = new viewdatabasewindow(this);  // Crear la nueva ventana
     databaseWindow->show();  // Mostrar la nueva ventana
+    hide();
+}
+
+
+void menuwindow::on_pushButton4_clicked()
+{
+    ViewUser *viewUser = new ViewUser(this);  // Crear la nueva ventana
+    viewUser->show();  // Mostrar la nueva ventana
     hide();
 }
 

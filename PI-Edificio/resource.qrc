@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/resource">
+        <file>img/mainw.jpg</file>
+        <file>img/a1.jpeg</file>
+        <file>img/add-user.png</file>
+        <file>img/database (1).png</file>
+        <file>img/database.png</file>
+        <file>img/document.png</file>
+        <file>img/group.png</file>
+        <file>img/img1.jpg</file>
+        <file>img/primary.jpeg</file>
+        <file>img/remove-user.png</file>
+        <file>img/secundary.jpeg</file>
+        <file>img/sensor.png</file>
+        <file>img/user.png</file>
+    </qresource>
+</RCC>
