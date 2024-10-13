@@ -1,8 +1,3 @@
-#include <fstream>
-#include <iostream>
-#include <iomanip>
-#include <ctime>
-
 #include "Log.hpp"
 
 Log::Log(std::string logFilename, int defaultProcessId) 
@@ -32,9 +27,9 @@ Log::Log(std::string logFilename, int defaultProcessId)
         std::ostringstream output;
         if (this->fileSystem->loadFile((char*)logFilename.c_str(), defaultProcessId)) {
             if (fileCreated) {
-                output << "File '" << logFilename << "' created and loaded into filesystem.";
+                output << "File '" << logFilename << "' <Type:Log> created and loaded into filesystem.";
             } else {
-                output << "File '" << logFilename << "' loaded into filesystem.";
+                output << "File '" << logFilename << "' <Type:Log> loaded into filesystem.";
             }   
             this->fileSystem->open((char*)logFilename.c_str(), defaultProcessId);
             if (!this->appendToLogTimeHour(output.str())) {
@@ -47,12 +42,12 @@ Log::Log(std::string logFilename, int defaultProcessId)
 }
 
 Log::~Log() {
-    std::ostringstream output;
-    output << "Filesystem <FAT> closed and saved to file '" << logFilename << "'.";
-    this->appendToLogTimeHour(output.str());
     // save log before destroy object 
     this->fileSystem->saveFile((char*)logFilename.c_str(), defaultProcessId, (char*)logFilename.c_str());
     this->fileSystem->close((char*)logFilename.c_str(), defaultProcessId);
+    std::ostringstream output;
+    output << "Filesystem <FAT> closed and saved to file '" << logFilename << "'.";
+    this->appendToLogTimeHour(output.str());
     delete this->fileSystem;
 }
 
@@ -74,7 +69,7 @@ std::string Log::returnLog(std::string username) {
         logEntry << "User '" << username << "' gets access to entire LOG ('" << this->logFilename << "')."; 
         this->appendToLogTimeHour(logEntry.str());
     } else {
-        logEntry << "Error <possibly append() error>: user '" << username << "' cannot get access to LOG ('" << this->logFilename << "')."; 
+        logEntry << "Error: user '" << username << "' cannot get access to LOG ('" << this->logFilename << "')."; 
         this->appendToLogTimeHour(logEntry.str());
     }
     return completeFile;

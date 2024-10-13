@@ -1,11 +1,16 @@
 #ifndef LOG_HPP
 #define LOG_HPP
 
-#include "string"
+#include <string>
+#include <fstream>
+#include <iostream>
+#include <iomanip>
+#include <ctime>
+
 #include "FAT.hpp"
 
 class Log {
-private:
+protected:
     FAT* fileSystem;
     // Name of the file that contains the log
     std::string logFilename;
@@ -14,7 +19,6 @@ private:
     int saveCounter = 0;
     int defaultProcessId;
     std::string getCurrentDateTime();
-
 
 public:
     Log(std::string logFilename, int defaultProcessId);
