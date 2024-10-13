@@ -6,18 +6,33 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>962</width>
+    <width>1000</width>
     <height>600</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>1000</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1000</width>
+    <height>600</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>350</x>
+      <x>370</x>
       <y>150</y>
       <width>241</width>
       <height>31</height>
@@ -64,7 +79,7 @@
    <widget class="QPushButton" name="pushButton1">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>450</x>
       <y>330</y>
       <width>87</width>
       <height>26</height>
@@ -99,7 +114,7 @@
    <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">
      <rect>
-      <x>360</x>
+      <x>380</x>
       <y>280</y>
       <width>221</width>
       <height>26</height>
@@ -109,7 +124,7 @@
    <widget class="QLineEdit" name="lineEdit_2">
     <property name="geometry">
      <rect>
-      <x>360</x>
+      <x>380</x>
       <y>220</y>
       <width>221</width>
       <height>26</height>
@@ -119,7 +134,7 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>360</x>
+      <x>380</x>
       <y>200</y>
       <width>81</width>
       <height>18</height>
@@ -159,7 +174,7 @@
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>360</x>
+      <x>380</x>
       <y>260</y>
       <width>81</width>
       <height>18</height>
@@ -202,8 +217,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>962</width>
-     <height>23</height>
+     <width>1000</width>
+     <height>22</height>
     </rect>
    </property>
   </widget>
