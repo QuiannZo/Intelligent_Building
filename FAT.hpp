@@ -20,7 +20,7 @@ struct directoryEntry {
     bool opened =  false;
     int frameCursor = -1; // cursor pointing to a frame in the unit
     int charCursor = 0; // cursor pointing to a char in the frame
-    std::int8_t processId = -1; // Range: -128 to 127. We only use positive number to "process id"
+    int processId = -1; //  We only use positive number to "process id"
 };
 
 
@@ -61,6 +61,7 @@ public:
     bool searchCredentials(char *username, char *hash);
     bool loadFile(char* filename, int processID);
     bool saveFile(char* filename, int processID, char* writingName);
+    bool getCompleteFile(char* filename, int processID, std::string& file);
     int getFileSize(char* filename);
 };
 

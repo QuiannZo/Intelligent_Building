@@ -276,7 +276,7 @@ bool FAT::loadFile(char *filename, int processID) {
     // close the files
     file.close();
     this->close(filename, processID);
-    return false;
+    return true;
 }
 
 bool FAT::saveFile(char *filename, int processID, char* writingName) {
@@ -309,6 +309,26 @@ bool FAT::saveFile(char *filename, int processID, char* writingName) {
     outFile.close();
     return true;
     }   
+  }
+  return false;
+}
+
+bool FAT::getCompleteFile(char *filename, int processID, std::string &file) {
+  int directoryPos = this->search(filename);
+  if (directoryPos != -1) {
+    if(directory[directoryPos].opened == true && directory[directoryPos].processId == processID) {
+      this->resetCursors(directoryPos);
+      file.clear(); // reset str
+      char buffer[FRAME_SIZE + 1];
+      buffer[FRAME_SIZE] = '\0';
+      while(this->directory[directoryPos].frameCursor != -2) {
+        std::strncpy(buffer, &this->unit[this->directory[directoryPos].frameCursor * FRAME_SIZE], FRAME_SIZE);
+        file += buffer;
+        this->directory[directoryPos].frameCursor = 
+            this->fatTable[this->directory[directoryPos].frameCursor];
+      }
+      return true;
+    }
   }
   return false;
 }
