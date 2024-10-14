@@ -6,3 +6,7 @@
 14/10/2024-04:13:12 : File 'sensorsData.txt' <Type:File-sensor-data> loaded into filesystem.
 14/10/2024-04:13:12 : Sensor data file closed and saved to file 'sensorsData.txt'.
 14/10/2024-04:13:12 : Filesystem <FAT> closed and saved to file 'sensors_log_file.txt'.
+14/10/2024-11:34:33 : File 'sensors_log_file.txt' <Type:Log> loaded into filesystem.
+14/10/2024-11:34:34 : File 'sensorsData.txt' <Type:File-sensor-data> loaded into filesystem.
+14/10/2024-11:34:34 : Sensor data file closed and saved to file 'sensorsData.txt'.
+14/10/2024-11:34:34 : Filesystem <FAT> closed and saved to file 'sensors_log_file.txt'.

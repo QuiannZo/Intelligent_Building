@@ -51,10 +51,6 @@ UserHandler::UserHandler(std::string logFilename, int processId, std::string use
     }
 }
 
-bool UserHandler::saveUsersFile() {
-    return this->fileSystem->saveFile((char*)usersFilename.c_str(), defaultProcessId, (char*)usersFilename.c_str());
-}
-
 UserHandler::~UserHandler() {
     // save log before destroy object 
     this->fileSystem->saveFile((char*)usersFilename.c_str(), defaultProcessId, (char*)usersFilename.c_str());
@@ -88,6 +84,37 @@ std::string UserHandler::vectorToString(const std::vector<std::string> &vec) {
         //}
     }
     return result.str();
+}
+
+std::vector<std::string> UserHandler::getUserList() {
+    std::vector<std::string> userVector;
+    std::vector<std::string> userEntry;
+    if (this->fileSystem->resetFileCursors((char *)this->usersFilename.c_str())) {
+        this->appendToLogTimeHour("[User information]: attempting get user list.");
+        char buffer[1024] = {};
+        // ignore first line
+        this->fileSystem->getLine((char*)this->usersFilename.c_str()
+                                                , buffer, 1000, this->defaultProcessId);
+        bool result = this->fileSystem->getLine((char*)this->usersFilename.c_str()
+                                                , buffer, 1000, this->defaultProcessId);
+        bool stop = false;
+        while (!stop) {
+            if(result) {
+                userEntry = this->splitString(buffer);
+                if (userEntry.size() != 10) {
+                    stop = true;
+                } else {
+                    userVector.push_back(userEntry[0]);
+                    result = this->fileSystem->getLine((char*)this->usersFilename.c_str()
+                                                , buffer, 1000, this->defaultProcessId);
+                } 
+            } else {
+                stop == true;
+            }
+        }
+        this->appendToLogTimeHour("[User information]: user list returned.");
+    }
+    return userVector;
 }
 
 bool UserHandler::addUser(const std::string &addedByUser, const std::string &username, const std::string &hash, const uint8_t permissions
