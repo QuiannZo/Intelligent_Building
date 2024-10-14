@@ -29,7 +29,6 @@ private:
     std::string usersFilename;
     HashHandler* hashHandler;
     std::vector<std::string> splitString(const char* input);
-
 public:
     UserHandler(std::string logFilename, int processId, std::string usersFilename);
     ~UserHandler();
@@ -41,8 +40,8 @@ public:
      bool hasPermissions(const std::string& username, permissions role);
     std::string generateHash(const std::string& password);
     std::vector<std::string> getUserInformation(const std::string& username);
-
-
+    bool modifyUserEntry(std::string currentUserEntry, std::string newUserEntry);
+    std::string vectorToString(const std::vector<std::string>& vec);
 };
 
 #endif

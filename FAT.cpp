@@ -211,21 +211,13 @@ bool FAT::write(char* filename, int processID, char* data) {
     // the file is empty
     if(directory[position].opened == true && directory[position].processId == processID) {
       if (this->directory[position].firstFrameAddress == -1) {
-        int firstFrame = findEmptyFrame();
-        if (firstFrame == -1) {
-          return false;
-        }
-        this->directory[position].firstFrameAddress = firstFrame;
-        this->fatTable[position] = -2; // indicates the EoF
-        // Update the cursor
-        this->resetCursors(firstFrame);
-        return writeUnit(data, firstFrame, true);
+        return append(filename, processID, data);
       } else {
         // over-write the file
         deleteFromPosition(position);
-        int firstFrame = this->directory[position].firstFrameAddress;
-        this->fatTable[firstFrame] = -2; // indicates the EoF
-        return writeUnit(data, firstFrame, true);
+        this->directory[position].firstFrameAddress = -1;
+        return append(filename, processID, data);
+        //return writeUnit(data, firstFrame, true);
       }
       return true;
     }
@@ -303,7 +295,7 @@ bool FAT::saveFile(char *filename, int processID, char* writingName) {
       
     char buffer[FRAME_SIZE + 1];
     bool stop = false;
-    int frameCursor = directoryPos;
+    int frameCursor = this->directory[directoryPos].firstFrameAddress;
 
     while (!stop) {
       //TODO: Probar que el archivo funcione bien con archivos formados por más de un frame. 
@@ -516,12 +508,12 @@ bool FAT::append(char* filename, int processID, char* data) {
           return false;
         }
         this->directory[position].firstFrameAddress = firstFrame;
-        this->fatTable[position] = -2; // indicates the EoF
+        this->fatTable[firstFrame] = -2; // indicates the EoF
         this->resetCursors(firstFrame);
         return writeUnit(data, firstFrame, true);
       } else {
          // when the file has data, the last frame must be found
-        int lastFrame = findFinalFrame(position);
+        int lastFrame = findFinalFrame(this->directory[position].firstFrameAddress);
         if (lastFrame == -1) {
           return false;
         }

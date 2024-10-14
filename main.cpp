@@ -97,7 +97,7 @@ int main() {
         std::cout << "Usuario no validado." << std::endl;
     }
 
-    if (userHandler.authenticateUser("username02", userHandler.generateHash("password03"), error)) {
+    if (userHandler.authenticateUser("username", userHandler.generateHash("password03"), error)) {
         std::cout << "Usuario validado." << std::endl;
     } else {
         std::cout << "Usuario no validado." << std::endl;
@@ -120,15 +120,25 @@ int main() {
     } else {
         std::cout << "No tiene permisos." << std::endl;
     }
-
     
     if (userHandler.hasPermissions("username10", DATABASE_ADMINISTRATOR)) {
         std::cout << "Tiene permisos" << std::endl;
     } else {
         std::cout << "No tiene permisos." << std::endl;
     }
-
-
+    //userHandler.addUser("superUser", "userToModify", userHandler.generateHash("password0x")
+      //                  , AUDITOR, "", "name0x", "lastName0x", "0000000x");
+    
+    /*
+    std::vector<std::string> user11 = userHandler.getUserInformation("userToModify");
+    string user11Entry = userHandler.vectorToString(user11);
+    std::cout << "User Entry: " << user11Entry << std::endl;
+    user11[0] = "username11";
+    string user11EntryMod = userHandler.vectorToString(user11);
+    std::cout << "User Entry Mod: " << user11EntryMod << std::endl;
+    std::cout << "Vamos a modificar" << std::endl;
+    userHandler.modifyUserEntry(user11Entry, user11EntryMod);*/
+    
     /*
     sensor.returnSensorFile("jose");
     

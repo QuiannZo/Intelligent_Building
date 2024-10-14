@@ -73,6 +73,19 @@ std::vector<std::string> UserHandler::splitString(const char* input) {
     return result;
 }
 
+std::string UserHandler::vectorToString(const std::vector<std::string> &vec) {
+        std::stringstream result;
+    for (size_t i = 0; i < vec.size(); ++i) {
+        result << vec[i];
+        if (i != vec.size() - 1) {
+            result << ",";  // separate by comma
+        } //else {
+            //result << "\n";  // add \n at the end
+        //}
+    }
+    return result.str();
+}
+
 bool UserHandler::addUser(const std::string &addedByUser, const std::string &username, const std::string &hash, const uint8_t permissions
 , const std::string& floors, const std::string &name, const std::string &lastName, const std::string &userId) {
     // TODO: EVITAR que se puedan agregar dos usuarios con el mismo nombre.
@@ -119,8 +132,7 @@ bool UserHandler::authenticateUser(const std::string &username, const std::strin
             if(result) {
                 std::vector<std::string> stringVector = this->splitString(buffer);
                 if (stringVector.size() != 10) {
-                    this->appendToLogTimeHour("Error: found a formatting error in file '" 
-                    + this->usersFilename + "'. Line: " + buffer + ".");
+                    stop = true;
                 } else {
                     if (stringVector[0] == username) {
                         userFound = true;
@@ -169,24 +181,23 @@ bool UserHandler::hasPermissions(const std::string &username, permissions role) 
 }
 
 std::vector<std::string> UserHandler::getUserInformation(const std::string &username) {
+    std::vector<std::string> stringVector;
     if (this->fileSystem->resetFileCursors((char *)this->usersFilename.c_str()))
     {
-        this->appendToLogTimeHour("[Log-in]: attempting to authenticate '" + username + "'.");
+        this->appendToLogTimeHour("[Log-in]: attempting get information of user '" + username + "'.");
         char buffer[1024] = {};
         // ignore first line
         this->fileSystem->getLine((char*)this->usersFilename.c_str()
                                                 , buffer, 1000, this->defaultProcessId);
         bool result = this->fileSystem->getLine((char*)this->usersFilename.c_str()
                                                 , buffer, 1000, this->defaultProcessId);
-        bool stop = !result;
+        bool stop = false;
         bool userFound = false;
-        std::vector<std::string> stringVector;
         while (!stop) {
             if(result) {
                 stringVector = this->splitString(buffer);
                 if (stringVector.size() != 10) {
-                    this->appendToLogTimeHour("Error: found a formatting error in file '" 
-                    + this->usersFilename + "'. Line: " + buffer + ".");
+                    stop = true;
                 } else {
                     if (stringVector[0] == username) {
                         userFound = true;
@@ -197,15 +208,28 @@ std::vector<std::string> UserHandler::getUserInformation(const std::string &user
                     }
                 } 
             } else {
-                stop = true;
-            }  
+                stop == true;
+            }
         }
         if (userFound) {
             this->appendToLogTimeHour("[User information]: information of user '" + username + "' returned.");
-            return stringVector;
         } else {
             this->appendToLogTimeHour("[User information]: user '" + username + "' not found.");
         }
     }
-    return std::vector<std::string>();
+    return stringVector;
+}
+
+bool UserHandler::modifyUserEntry(std::string currentUserEntry, std::string newUserEntry) {
+    std::string usersData;
+    if (this->fileSystem->getCompleteFile((char*)this->usersFilename.c_str(), this->defaultProcessId, usersData)) {
+        size_t pos = usersData.find(currentUserEntry);
+        if (pos != std::string::npos) {
+        // replace 
+            usersData.replace(pos, currentUserEntry.length(), newUserEntry);
+        }
+        // rewrite the file system
+        return this->fileSystem->write((char*)this->usersFilename.c_str(), this->defaultProcessId, (char*)usersData.c_str());
+    }
+    return false;
 }
