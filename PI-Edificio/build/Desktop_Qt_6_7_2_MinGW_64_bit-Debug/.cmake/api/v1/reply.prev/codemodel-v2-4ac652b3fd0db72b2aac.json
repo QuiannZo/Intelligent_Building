@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-12f1604bb1f5654eebe5.json",
+					"jsonFile" : "directory-.-Debug-6d479d7358c6271d41d9.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "PI-Edificio::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-PI-Edificio-Debug-b78034db90c46b699b11.json",
+					"jsonFile" : "target-PI-Edificio-Debug-6f3e9425ac9ba82ee25f.json",
 					"name" : "PI-Edificio",
 					"projectIndex" : 0
 				},

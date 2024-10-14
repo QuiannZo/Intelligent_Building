@@ -97,6 +97,78 @@ build CMakeFiles/PI-Edificio.dir/viewuser.cpp.obj: CXX_COMPILER__PI-Edificio_uns
   OBJECT_DIR = CMakeFiles\PI-Edificio.dir
   OBJECT_FILE_DIR = CMakeFiles\PI-Edificio.dir
 
+build CMakeFiles/PI-Edificio.dir/createuser.cpp.obj: CXX_COMPILER__PI-Edificio_unscanned_Debug C$:/Users/Personal/filesystem_oper/PI-Edificio/createuser.cpp || cmake_object_order_depends_target_PI-Edificio
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\PI-Edificio.dir\createuser.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Personal/filesystem_oper/PI-Edificio/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PI-Edificio_autogen/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\PI-Edificio.dir
+  OBJECT_FILE_DIR = CMakeFiles\PI-Edificio.dir
+
+build CMakeFiles/PI-Edificio.dir/viewlog.cpp.obj: CXX_COMPILER__PI-Edificio_unscanned_Debug C$:/Users/Personal/filesystem_oper/PI-Edificio/viewlog.cpp || cmake_object_order_depends_target_PI-Edificio
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\PI-Edificio.dir\viewlog.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Personal/filesystem_oper/PI-Edificio/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PI-Edificio_autogen/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\PI-Edificio.dir
+  OBJECT_FILE_DIR = CMakeFiles\PI-Edificio.dir
+
+build CMakeFiles/PI-Edificio.dir/removeuser.cpp.obj: CXX_COMPILER__PI-Edificio_unscanned_Debug C$:/Users/Personal/filesystem_oper/PI-Edificio/removeuser.cpp || cmake_object_order_depends_target_PI-Edificio
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\PI-Edificio.dir\removeuser.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Personal/filesystem_oper/PI-Edificio/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PI-Edificio_autogen/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\PI-Edificio.dir
+  OBJECT_FILE_DIR = CMakeFiles\PI-Edificio.dir
+
+build CMakeFiles/PI-Edificio.dir/modifyuser.cpp.obj: CXX_COMPILER__PI-Edificio_unscanned_Debug C$:/Users/Personal/filesystem_oper/PI-Edificio/modifyuser.cpp || cmake_object_order_depends_target_PI-Edificio
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\PI-Edificio.dir\modifyuser.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Personal/filesystem_oper/PI-Edificio/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PI-Edificio_autogen/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\PI-Edificio.dir
+  OBJECT_FILE_DIR = CMakeFiles\PI-Edificio.dir
+
+build CMakeFiles/PI-Edificio.dir/modifydatabase.cpp.obj: CXX_COMPILER__PI-Edificio_unscanned_Debug C$:/Users/Personal/filesystem_oper/PI-Edificio/modifydatabase.cpp || cmake_object_order_depends_target_PI-Edificio
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\PI-Edificio.dir\modifydatabase.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Personal/filesystem_oper/PI-Edificio/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PI-Edificio_autogen/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\PI-Edificio.dir
+  OBJECT_FILE_DIR = CMakeFiles\PI-Edificio.dir
+
+build CMakeFiles/PI-Edificio.dir/sensorbuilding.cpp.obj: CXX_COMPILER__PI-Edificio_unscanned_Debug C$:/Users/Personal/filesystem_oper/PI-Edificio/sensorbuilding.cpp || cmake_object_order_depends_target_PI-Edificio
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\PI-Edificio.dir\sensorbuilding.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Personal/filesystem_oper/PI-Edificio/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PI-Edificio_autogen/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\PI-Edificio.dir
+  OBJECT_FILE_DIR = CMakeFiles\PI-Edificio.dir
+
+build CMakeFiles/PI-Edificio.dir/sensorfloor.cpp.obj: CXX_COMPILER__PI-Edificio_unscanned_Debug C$:/Users/Personal/filesystem_oper/PI-Edificio/sensorfloor.cpp || cmake_object_order_depends_target_PI-Edificio
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\PI-Edificio.dir\sensorfloor.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Personal/filesystem_oper/PI-Edificio/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PI-Edificio_autogen/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\PI-Edificio.dir
+  OBJECT_FILE_DIR = CMakeFiles\PI-Edificio.dir
+
+build CMakeFiles/PI-Edificio.dir/viewbackup.cpp.obj: CXX_COMPILER__PI-Edificio_unscanned_Debug C$:/Users/Personal/filesystem_oper/PI-Edificio/viewbackup.cpp || cmake_object_order_depends_target_PI-Edificio
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\PI-Edificio.dir\viewbackup.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Personal/filesystem_oper/PI-Edificio/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PI-Edificio_autogen/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\PI-Edificio.dir
+  OBJECT_FILE_DIR = CMakeFiles\PI-Edificio.dir
+
+build CMakeFiles/PI-Edificio.dir/viewnode.cpp.obj: CXX_COMPILER__PI-Edificio_unscanned_Debug C$:/Users/Personal/filesystem_oper/PI-Edificio/viewnode.cpp || cmake_object_order_depends_target_PI-Edificio
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\PI-Edificio.dir\viewnode.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Personal/filesystem_oper/PI-Edificio/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PI-Edificio_autogen/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\PI-Edificio.dir
+  OBJECT_FILE_DIR = CMakeFiles\PI-Edificio.dir
+
 build CMakeFiles/PI-Edificio.dir/PI-Edificio_autogen/EWIEGA46WW/qrc_resource.cpp.obj: CXX_COMPILER__PI-Edificio_unscanned_Debug C$:/Users/Personal/filesystem_oper/PI-Edificio/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PI-Edificio_autogen/EWIEGA46WW/qrc_resource.cpp || cmake_object_order_depends_target_PI-Edificio
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
   DEP_FILE = CMakeFiles\PI-Edificio.dir\PI-Edificio_autogen\EWIEGA46WW\qrc_resource.cpp.obj.d
@@ -113,7 +185,7 @@ build CMakeFiles/PI-Edificio.dir/PI-Edificio_autogen/EWIEGA46WW/qrc_resource.cpp
 #############################################
 # Link the executable PI-Edificio.exe
 
-build PI-Edificio.exe: CXX_EXECUTABLE_LINKER__PI-Edificio_Debug CMakeFiles/PI-Edificio.dir/PI-Edificio_autogen/mocs_compilation.cpp.obj CMakeFiles/PI-Edificio.dir/main.cpp.obj CMakeFiles/PI-Edificio.dir/mainwindow.cpp.obj CMakeFiles/PI-Edificio.dir/menuwindow.cpp.obj CMakeFiles/PI-Edificio.dir/viewdatabasewindow.cpp.obj CMakeFiles/PI-Edificio.dir/viewuser.cpp.obj CMakeFiles/PI-Edificio.dir/PI-Edificio_autogen/EWIEGA46WW/qrc_resource.cpp.obj | C$:/Qt/6.7.2/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.7.2/mingw_64/lib/libQt6Gui.a C$:/Qt/6.7.2/mingw_64/lib/libQt6Core.a C$:/Qt/6.7.2/mingw_64/lib/libQt6EntryPoint.a || PI-Edificio_autogen PI-Edificio_autogen_timestamp_deps
+build PI-Edificio.exe: CXX_EXECUTABLE_LINKER__PI-Edificio_Debug CMakeFiles/PI-Edificio.dir/PI-Edificio_autogen/mocs_compilation.cpp.obj CMakeFiles/PI-Edificio.dir/main.cpp.obj CMakeFiles/PI-Edificio.dir/mainwindow.cpp.obj CMakeFiles/PI-Edificio.dir/menuwindow.cpp.obj CMakeFiles/PI-Edificio.dir/viewdatabasewindow.cpp.obj CMakeFiles/PI-Edificio.dir/viewuser.cpp.obj CMakeFiles/PI-Edificio.dir/createuser.cpp.obj CMakeFiles/PI-Edificio.dir/viewlog.cpp.obj CMakeFiles/PI-Edificio.dir/removeuser.cpp.obj CMakeFiles/PI-Edificio.dir/modifyuser.cpp.obj CMakeFiles/PI-Edificio.dir/modifydatabase.cpp.obj CMakeFiles/PI-Edificio.dir/sensorbuilding.cpp.obj CMakeFiles/PI-Edificio.dir/sensorfloor.cpp.obj CMakeFiles/PI-Edificio.dir/viewbackup.cpp.obj CMakeFiles/PI-Edificio.dir/viewnode.cpp.obj CMakeFiles/PI-Edificio.dir/PI-Edificio_autogen/EWIEGA46WW/qrc_resource.cpp.obj | C$:/Qt/6.7.2/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.7.2/mingw_64/lib/libQt6Gui.a C$:/Qt/6.7.2/mingw_64/lib/libQt6Core.a C$:/Qt/6.7.2/mingw_64/lib/libQt6EntryPoint.a || PI-Edificio_autogen PI-Edificio_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = C:/Qt/6.7.2/mingw_64/lib/libQt6Widgets.a  C:/Qt/6.7.2/mingw_64/lib/libQt6Gui.a  C:/Qt/6.7.2/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lmingw32  C:/Qt/6.7.2/mingw_64/lib/libQt6EntryPoint.a  -lshell32  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
@@ -200,7 +272,7 @@ build PI-Edificio_autogen_timestamp_deps: phony
 #############################################
 # Utility command for PI-Edificio_autogen
 
-build PI-Edificio_autogen: phony CMakeFiles/PI-Edificio_autogen PI-Edificio_autogen/include/ui_mainwindow.h PI-Edificio_autogen/include/ui_menuwindow.h PI-Edificio_autogen/include/ui_viewdatabasewindow.h PI-Edificio_autogen/include/ui_viewuser.h PI-Edificio_autogen/timestamp PI-Edificio_autogen/mocs_compilation.cpp PI-Edificio_autogen_timestamp_deps
+build PI-Edificio_autogen: phony CMakeFiles/PI-Edificio_autogen PI-Edificio_autogen/include/ui_mainwindow.h PI-Edificio_autogen/include/ui_menuwindow.h PI-Edificio_autogen/include/ui_viewdatabasewindow.h PI-Edificio_autogen/include/ui_viewuser.h PI-Edificio_autogen/include/ui_createuser.h PI-Edificio_autogen/include/ui_viewlog.h PI-Edificio_autogen/include/ui_removeuser.h PI-Edificio_autogen/include/ui_modifyuser.h PI-Edificio_autogen/include/ui_modifydatabase.h PI-Edificio_autogen/include/ui_sensorbuilding.h PI-Edificio_autogen/include/ui_sensorfloor.h PI-Edificio_autogen/include/ui_viewbackup.h PI-Edificio_autogen/include/ui_viewnode.h PI-Edificio_autogen/timestamp PI-Edificio_autogen/mocs_compilation.cpp PI-Edificio_autogen_timestamp_deps
 
 
 #############################################
@@ -217,7 +289,7 @@ build PI-Edificio_autogen/timestamp PI-Edificio_autogen/mocs_compilation.cpp | $
 #############################################
 # Custom command for PI-Edificio_autogen\EWIEGA46WW\qrc_resource.cpp
 
-build PI-Edificio_autogen/EWIEGA46WW/qrc_resource.cpp | ${cmake_ninja_workdir}PI-Edificio_autogen/EWIEGA46WW/qrc_resource.cpp: CUSTOM_COMMAND C$:/Users/Personal/filesystem_oper/PI-Edificio/resource.qrc CMakeFiles/PI-Edificio_autogen.dir/AutoRcc_resource_EWIEGA46WW_Info.json C$:/Users/Personal/filesystem_oper/PI-Edificio/img/sensor.png C$:/Users/Personal/filesystem_oper/PI-Edificio/img/primary.jpeg C$:/Users/Personal/filesystem_oper/PI-Edificio/img/a1.jpeg C$:/Users/Personal/filesystem_oper/PI-Edificio/img/database.png C$:/Users/Personal/filesystem_oper/PI-Edificio/img/add-user.png C$:/Users/Personal/filesystem_oper/PI-Edificio/img/secundary.jpeg C$:/Users/Personal/filesystem_oper/PI-Edificio/img/mainw.jpg C$:/Users/Personal/filesystem_oper/PI-Edificio/img/user.png C$:/Users/Personal/filesystem_oper/PI-Edificio/img/document.png C$:/Users/Personal/filesystem_oper/PI-Edificio/img/database$ (1).png C$:/Users/Personal/filesystem_oper/PI-Edificio/img/img1.jpg C$:/Users/Personal/filesystem_oper/PI-Edificio/img/remove-user.png C$:/Users/Personal/filesystem_oper/PI-Edificio/img/group.png C$:/Qt/6.7.2/mingw_64/./bin/rcc.exe C$:/Qt/6.7.2/mingw_64/./bin/rcc.exe || PI-Edificio_autogen PI-Edificio_autogen_timestamp_deps
+build PI-Edificio_autogen/EWIEGA46WW/qrc_resource.cpp | ${cmake_ninja_workdir}PI-Edificio_autogen/EWIEGA46WW/qrc_resource.cpp: CUSTOM_COMMAND C$:/Users/Personal/filesystem_oper/PI-Edificio/resource.qrc CMakeFiles/PI-Edificio_autogen.dir/AutoRcc_resource_EWIEGA46WW_Info.json C$:/Users/Personal/filesystem_oper/PI-Edificio/img/sensor.png C$:/Users/Personal/filesystem_oper/PI-Edificio/img/primary.jpeg C$:/Users/Personal/filesystem_oper/PI-Edificio/img/a1.jpeg C$:/Users/Personal/filesystem_oper/PI-Edificio/img/database.png C$:/Users/Personal/filesystem_oper/PI-Edificio/img/add-user.png C$:/Users/Personal/filesystem_oper/PI-Edificio/img/secundary.jpeg C$:/Users/Personal/filesystem_oper/PI-Edificio/img/mainw.jpg C$:/Users/Personal/filesystem_oper/PI-Edificio/img/user.png C$:/Users/Personal/filesystem_oper/PI-Edificio/img/build.png C$:/Users/Personal/filesystem_oper/PI-Edificio/img/document.png C$:/Users/Personal/filesystem_oper/PI-Edificio/img/database$ (1).png C$:/Users/Personal/filesystem_oper/PI-Edificio/img/img1.jpg C$:/Users/Personal/filesystem_oper/PI-Edificio/img/remove-user.png C$:/Users/Personal/filesystem_oper/PI-Edificio/img/group.png C$:/Qt/6.7.2/mingw_64/./bin/rcc.exe C$:/Qt/6.7.2/mingw_64/./bin/rcc.exe || PI-Edificio_autogen PI-Edificio_autogen_timestamp_deps
   COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Personal\filesystem_oper\PI-Edificio\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug && C:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autorcc C:/Users/Personal/filesystem_oper/PI-Edificio/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/PI-Edificio_autogen.dir/AutoRcc_resource_EWIEGA46WW_Info.json Debug"
   DESC = Automatic RCC for resource.qrc
   restat = 1
@@ -226,7 +298,7 @@ build PI-Edificio_autogen/EWIEGA46WW/qrc_resource.cpp | ${cmake_ninja_workdir}PI
 #############################################
 # Phony custom command for CMakeFiles\PI-Edificio_autogen
 
-build CMakeFiles/PI-Edificio_autogen PI-Edificio_autogen/include/ui_mainwindow.h PI-Edificio_autogen/include/ui_menuwindow.h PI-Edificio_autogen/include/ui_viewdatabasewindow.h PI-Edificio_autogen/include/ui_viewuser.h | ${cmake_ninja_workdir}CMakeFiles/PI-Edificio_autogen ${cmake_ninja_workdir}PI-Edificio_autogen/include/ui_mainwindow.h ${cmake_ninja_workdir}PI-Edificio_autogen/include/ui_menuwindow.h ${cmake_ninja_workdir}PI-Edificio_autogen/include/ui_viewdatabasewindow.h ${cmake_ninja_workdir}PI-Edificio_autogen/include/ui_viewuser.h: phony PI-Edificio_autogen/timestamp || PI-Edificio_autogen_timestamp_deps
+build CMakeFiles/PI-Edificio_autogen PI-Edificio_autogen/include/ui_mainwindow.h PI-Edificio_autogen/include/ui_menuwindow.h PI-Edificio_autogen/include/ui_viewdatabasewindow.h PI-Edificio_autogen/include/ui_viewuser.h PI-Edificio_autogen/include/ui_createuser.h PI-Edificio_autogen/include/ui_viewlog.h PI-Edificio_autogen/include/ui_removeuser.h PI-Edificio_autogen/include/ui_modifyuser.h PI-Edificio_autogen/include/ui_modifydatabase.h PI-Edificio_autogen/include/ui_sensorbuilding.h PI-Edificio_autogen/include/ui_sensorfloor.h PI-Edificio_autogen/include/ui_viewbackup.h PI-Edificio_autogen/include/ui_viewnode.h | ${cmake_ninja_workdir}CMakeFiles/PI-Edificio_autogen ${cmake_ninja_workdir}PI-Edificio_autogen/include/ui_mainwindow.h ${cmake_ninja_workdir}PI-Edificio_autogen/include/ui_menuwindow.h ${cmake_ninja_workdir}PI-Edificio_autogen/include/ui_viewdatabasewindow.h ${cmake_ninja_workdir}PI-Edificio_autogen/include/ui_viewuser.h ${cmake_ninja_workdir}PI-Edificio_autogen/include/ui_createuser.h ${cmake_ninja_workdir}PI-Edificio_autogen/include/ui_viewlog.h ${cmake_ninja_workdir}PI-Edificio_autogen/include/ui_removeuser.h ${cmake_ninja_workdir}PI-Edificio_autogen/include/ui_modifyuser.h ${cmake_ninja_workdir}PI-Edificio_autogen/include/ui_modifydatabase.h ${cmake_ninja_workdir}PI-Edificio_autogen/include/ui_sensorbuilding.h ${cmake_ninja_workdir}PI-Edificio_autogen/include/ui_sensorfloor.h ${cmake_ninja_workdir}PI-Edificio_autogen/include/ui_viewbackup.h ${cmake_ninja_workdir}PI-Edificio_autogen/include/ui_viewnode.h: phony PI-Edificio_autogen/timestamp || PI-Edificio_autogen_timestamp_deps
 
 # =============================================================================
 # Target aliases.

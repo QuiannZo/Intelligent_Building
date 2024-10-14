@@ -555,18 +555,45 @@ PI-Edificio_autogen/timestamp: \
 	C:/Users/Personal/filesystem_oper/PI-Edificio/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeRCCompiler.cmake \
 	C:/Users/Personal/filesystem_oper/PI-Edificio/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeSystem.cmake \
 	C:/Users/Personal/filesystem_oper/PI-Edificio/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PI-Edificio_autogen/moc_predefs.h \
+	C:/Users/Personal/filesystem_oper/PI-Edificio/createuser.cpp \
+	C:/Users/Personal/filesystem_oper/PI-Edificio/createuser.h \
 	C:/Users/Personal/filesystem_oper/PI-Edificio/main.cpp \
 	C:/Users/Personal/filesystem_oper/PI-Edificio/mainwindow.cpp \
 	C:/Users/Personal/filesystem_oper/PI-Edificio/mainwindow.h \
 	C:/Users/Personal/filesystem_oper/PI-Edificio/menuwindow.cpp \
 	C:/Users/Personal/filesystem_oper/PI-Edificio/menuwindow.h \
+	C:/Users/Personal/filesystem_oper/PI-Edificio/modifydatabase.cpp \
+	C:/Users/Personal/filesystem_oper/PI-Edificio/modifydatabase.h \
+	C:/Users/Personal/filesystem_oper/PI-Edificio/modifyuser.cpp \
+	C:/Users/Personal/filesystem_oper/PI-Edificio/modifyuser.h \
+	C:/Users/Personal/filesystem_oper/PI-Edificio/removeuser.cpp \
+	C:/Users/Personal/filesystem_oper/PI-Edificio/removeuser.h \
 	C:/Users/Personal/filesystem_oper/PI-Edificio/resource.qrc \
+	C:/Users/Personal/filesystem_oper/PI-Edificio/sensorbuilding.cpp \
+	C:/Users/Personal/filesystem_oper/PI-Edificio/sensorbuilding.h \
+	C:/Users/Personal/filesystem_oper/PI-Edificio/sensorfloor.cpp \
+	C:/Users/Personal/filesystem_oper/PI-Edificio/sensorfloor.h \
+	C:/Users/Personal/filesystem_oper/PI-Edificio/viewbackup.cpp \
+	C:/Users/Personal/filesystem_oper/PI-Edificio/viewbackup.h \
 	C:/Users/Personal/filesystem_oper/PI-Edificio/viewdatabasewindow.cpp \
 	C:/Users/Personal/filesystem_oper/PI-Edificio/viewdatabasewindow.h \
+	C:/Users/Personal/filesystem_oper/PI-Edificio/viewlog.cpp \
+	C:/Users/Personal/filesystem_oper/PI-Edificio/viewlog.h \
+	C:/Users/Personal/filesystem_oper/PI-Edificio/viewnode.cpp \
+	C:/Users/Personal/filesystem_oper/PI-Edificio/viewnode.h \
 	C:/Users/Personal/filesystem_oper/PI-Edificio/viewuser.cpp \
 	C:/Users/Personal/filesystem_oper/PI-Edificio/viewuser.h \
+	C:/Users/Personal/filesystem_oper/PI-Edificio/createuser.ui \
 	C:/Users/Personal/filesystem_oper/PI-Edificio/mainwindow.ui \
 	C:/Users/Personal/filesystem_oper/PI-Edificio/menuwindow.ui \
+	C:/Users/Personal/filesystem_oper/PI-Edificio/modifydatabase.ui \
+	C:/Users/Personal/filesystem_oper/PI-Edificio/modifyuser.ui \
+	C:/Users/Personal/filesystem_oper/PI-Edificio/removeuser.ui \
+	C:/Users/Personal/filesystem_oper/PI-Edificio/sensorbuilding.ui \
+	C:/Users/Personal/filesystem_oper/PI-Edificio/sensorfloor.ui \
+	C:/Users/Personal/filesystem_oper/PI-Edificio/viewbackup.ui \
 	C:/Users/Personal/filesystem_oper/PI-Edificio/viewdatabasewindow.ui \
+	C:/Users/Personal/filesystem_oper/PI-Edificio/viewlog.ui \
+	C:/Users/Personal/filesystem_oper/PI-Edificio/viewnode.ui \
 	C:/Users/Personal/filesystem_oper/PI-Edificio/viewuser.ui \
 	C:/Qt/Tools/CMake_64/bin/cmake.exe

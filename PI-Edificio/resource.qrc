@@ -13,5 +13,6 @@
         <file>img/secundary.jpeg</file>
         <file>img/sensor.png</file>
         <file>img/user.png</file>
+        <file>img/build.png</file>
     </qresource>
 </RCC>

@@ -258,6 +258,12 @@
 	"HEADERS" : 
 	[
 		[
+			"C:/Users/Personal/filesystem_oper/PI-Edificio/createuser.h",
+			"MU",
+			"EWIEGA46WW/moc_createuser.cpp",
+			null
+		],
+		[
 			"C:/Users/Personal/filesystem_oper/PI-Edificio/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
@@ -270,9 +276,57 @@
 			null
 		],
 		[
+			"C:/Users/Personal/filesystem_oper/PI-Edificio/modifydatabase.h",
+			"MU",
+			"EWIEGA46WW/moc_modifydatabase.cpp",
+			null
+		],
+		[
+			"C:/Users/Personal/filesystem_oper/PI-Edificio/modifyuser.h",
+			"MU",
+			"EWIEGA46WW/moc_modifyuser.cpp",
+			null
+		],
+		[
+			"C:/Users/Personal/filesystem_oper/PI-Edificio/removeuser.h",
+			"MU",
+			"EWIEGA46WW/moc_removeuser.cpp",
+			null
+		],
+		[
+			"C:/Users/Personal/filesystem_oper/PI-Edificio/sensorbuilding.h",
+			"MU",
+			"EWIEGA46WW/moc_sensorbuilding.cpp",
+			null
+		],
+		[
+			"C:/Users/Personal/filesystem_oper/PI-Edificio/sensorfloor.h",
+			"MU",
+			"EWIEGA46WW/moc_sensorfloor.cpp",
+			null
+		],
+		[
+			"C:/Users/Personal/filesystem_oper/PI-Edificio/viewbackup.h",
+			"MU",
+			"EWIEGA46WW/moc_viewbackup.cpp",
+			null
+		],
+		[
 			"C:/Users/Personal/filesystem_oper/PI-Edificio/viewdatabasewindow.h",
 			"MU",
 			"EWIEGA46WW/moc_viewdatabasewindow.cpp",
+			null
+		],
+		[
+			"C:/Users/Personal/filesystem_oper/PI-Edificio/viewlog.h",
+			"MU",
+			"EWIEGA46WW/moc_viewlog.cpp",
+			null
+		],
+		[
+			"C:/Users/Personal/filesystem_oper/PI-Edificio/viewnode.h",
+			"MU",
+			"EWIEGA46WW/moc_viewnode.cpp",
 			null
 		],
 		[
@@ -353,6 +407,11 @@
 	"SETTINGS_FILE" : "C:/Users/Personal/filesystem_oper/PI-Edificio/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/PI-Edificio_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"C:/Users/Personal/filesystem_oper/PI-Edificio/createuser.cpp",
+			"MU",
+			null
+		],
 		[ "C:/Users/Personal/filesystem_oper/PI-Edificio/main.cpp", "MU", null ],
 		[
 			"C:/Users/Personal/filesystem_oper/PI-Edificio/mainwindow.cpp",
@@ -365,7 +424,47 @@
 			null
 		],
 		[
+			"C:/Users/Personal/filesystem_oper/PI-Edificio/modifydatabase.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Personal/filesystem_oper/PI-Edificio/modifyuser.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Personal/filesystem_oper/PI-Edificio/removeuser.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Personal/filesystem_oper/PI-Edificio/sensorbuilding.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Personal/filesystem_oper/PI-Edificio/sensorfloor.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Personal/filesystem_oper/PI-Edificio/viewbackup.cpp",
+			"MU",
+			null
+		],
+		[
 			"C:/Users/Personal/filesystem_oper/PI-Edificio/viewdatabasewindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Personal/filesystem_oper/PI-Edificio/viewlog.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Personal/filesystem_oper/PI-Edificio/viewnode.cpp",
 			"MU",
 			null
 		],
