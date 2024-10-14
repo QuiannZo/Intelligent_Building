@@ -1,9 +1,9 @@
 #include "createuser.h"
 #include "ui_createuser.h"
 
-createuser::createuser(QWidget *parent)
+createuser::createuser(QWidget *parent, UserHandler* userHandler)
     : QMainWindow(parent)
-    , ui(new Ui::createuser)
+    , ui(new Ui::createuser), userHandler(userHandler)
 {
     ui->setupUi(this);
 
@@ -117,6 +117,11 @@ void createuser::onSubmitClicked()
         role = "Building Manager";
     } else {
         role = "Invalid";
+    }
+    std::string hash = this->userHandler->generateHash(password.toStdString());
+    if(this->userHandler->addUser("superuser", username.toStdString(), hash, 1, "[]", name.toStdString(), lastName.toStdString(), "ID00000")) {
+        this->userHandler->saveUsersFile();
+        qDebug() << "User added";
     }
 
     // por el momento vamos a imprimir aquí

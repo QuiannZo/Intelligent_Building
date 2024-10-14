@@ -23,6 +23,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    UserHandler *userHandler;
+    UserHandler *userHandler = nullptr;
 };
 #endif // MAINWINDOW_H

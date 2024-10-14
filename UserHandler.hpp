@@ -42,6 +42,7 @@ public:
     std::vector<std::string> getUserInformation(const std::string& username);
     bool modifyUserEntry(std::string currentUserEntry, std::string newUserEntry);
     std::string vectorToString(const std::vector<std::string>& vec);
+    bool saveUsersFile();
 };
 
 #endif

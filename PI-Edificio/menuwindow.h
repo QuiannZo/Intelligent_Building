@@ -2,6 +2,7 @@
 #define MENUWINDOW_H
 
 #include <QMainWindow>
+#include "../UserHandler.hpp"
 
 namespace Ui {
 class menuwindow;
@@ -12,7 +13,7 @@ class menuwindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit menuwindow(QWidget *parent = nullptr);
+    explicit menuwindow(QWidget *parent = nullptr, UserHandler *userHandler = nullptr);
     ~menuwindow();
 
 private slots:
@@ -39,6 +40,7 @@ private slots:
 
 private:
     Ui::menuwindow *ui;
+    UserHandler *userHandler;
 };
 
 #endif // MENUWINDOW_H

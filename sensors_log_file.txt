@@ -1,0 +1,8 @@
+14/10/2024-02:58:45 : File 'sensors_log_file.txt' <Type:Log> created and loaded into filesystem.
+14/10/2024-02:58:45 : File 'sensorsData.txt' <Type:File-sensor-data> loaded into filesystem.
+14/10/2024-02:58:45 : Sensor data file closed and saved to file 'sensorsData.txt'.
+14/10/2024-02:58:45 : Filesystem <FAT> closed and saved to file 'sensors_log_file.txt'.
+14/10/2024-04:13:12 : File 'sensors_log_file.txt' <Type:Log> loaded into filesystem.
+14/10/2024-04:13:12 : File 'sensorsData.txt' <Type:File-sensor-data> loaded into filesystem.
+14/10/2024-04:13:12 : Sensor data file closed and saved to file 'sensorsData.txt'.
+14/10/2024-04:13:12 : Filesystem <FAT> closed and saved to file 'sensors_log_file.txt'.

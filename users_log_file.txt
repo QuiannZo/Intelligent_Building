@@ -1,0 +1,32 @@
+14/10/2024-02:58:45 : File 'users_log_file.txt' <Type:Log> created and loaded into filesystem.
+14/10/2024-02:58:45 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+14/10/2024-02:58:45 : [Log-in]: attempting to authenticate 'username01'.
+14/10/2024-02:58:45 : [Log-in]: user 'username01' validated.
+14/10/2024-02:58:45 : [Log-in]: attempting to authenticate 'username'.
+14/10/2024-02:58:45 : [Log-in]: user 'username' not found.
+14/10/2024-02:58:45 : [Log-in]: attempting to authenticate 'username03'.
+14/10/2024-02:58:45 : [Log-in]: user 'username03' validated.
+14/10/2024-02:58:45 : [Log-in]: attempting get information of user 'username01'.
+14/10/2024-02:58:45 : [User information]: information of user 'username01' returned.
+14/10/2024-02:58:45 : [Log-in]: attempting get information of user 'username02'.
+14/10/2024-02:58:45 : [User information]: information of user 'username02' returned.
+14/10/2024-02:58:45 : [Log-in]: attempting get information of user 'username10'.
+14/10/2024-02:58:45 : [User information]: information of user 'username10' returned.
+14/10/2024-02:58:45 : Users data file closed and saved to file 'usersData.txt'.
+14/10/2024-02:58:45 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
+14/10/2024-04:13:12 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+14/10/2024-04:13:12 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+14/10/2024-04:13:12 : [Log-in]: attempting to authenticate 'username01'.
+14/10/2024-04:13:12 : [Log-in]: user 'username01' validated.
+14/10/2024-04:13:12 : [Log-in]: attempting to authenticate 'username'.
+14/10/2024-04:13:12 : [Log-in]: user 'username' not found.
+14/10/2024-04:13:12 : [Log-in]: attempting to authenticate 'username03'.
+14/10/2024-04:13:12 : [Log-in]: user 'username03' validated.
+14/10/2024-04:13:12 : [Log-in]: attempting get information of user 'username01'.
+14/10/2024-04:13:12 : [User information]: information of user 'username01' returned.
+14/10/2024-04:13:12 : [Log-in]: attempting get information of user 'username02'.
+14/10/2024-04:13:12 : [User information]: information of user 'username02' returned.
+14/10/2024-04:13:12 : [Log-in]: attempting get information of user 'username10'.
+14/10/2024-04:13:12 : [User information]: information of user 'username10' returned.
+14/10/2024-04:13:12 : Users data file closed and saved to file 'usersData.txt'.
+14/10/2024-04:13:12 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.

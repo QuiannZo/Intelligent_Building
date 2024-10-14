@@ -51,6 +51,10 @@ UserHandler::UserHandler(std::string logFilename, int processId, std::string use
     }
 }
 
+bool UserHandler::saveUsersFile() {
+    return this->fileSystem->saveFile((char*)usersFilename.c_str(), defaultProcessId, (char*)usersFilename.c_str());
+}
+
 UserHandler::~UserHandler() {
     // save log before destroy object 
     this->fileSystem->saveFile((char*)usersFilename.c_str(), defaultProcessId, (char*)usersFilename.c_str());

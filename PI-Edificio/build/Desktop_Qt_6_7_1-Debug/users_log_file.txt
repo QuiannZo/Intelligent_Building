@@ -1,0 +1,23 @@
+14/10/2024-03:40:57 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+14/10/2024-03:40:57 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+14/10/2024-03:41:04 : [Log-in]: attempting to authenticate ''.
+14/10/2024-03:41:04 : [Log-in]: user '' not found.
+14/10/2024-03:41:18 : [Log-in]: attempting to authenticate 'username01'.
+14/10/2024-03:41:18 : [Log-in]: user 'username01' not found.
+14/10/2024-03:41:31 : [Log-in]: attempting to authenticate 'username01'.
+14/10/2024-03:41:31 : [Log-in]: user 'username01' not found.
+14/10/2024-03:41:42 : [Log-in]: attempting to authenticate 'username01'.
+14/10/2024-03:41:42 : [Log-in]: user 'username01' not found.
+14/10/2024-03:41:49 : Users data file closed and saved to file 'usersData.txt'.
+14/10/2024-03:41:49 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
+14/10/2024-03:42:34 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+14/10/2024-03:42:34 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+14/10/2024-03:42:49 : New user: 'superUser' added [Username: username01 | Name: name01 lastName01 | Permissions: 1].
+14/10/2024-03:42:51 : [Log-in]: attempting to authenticate 'username01'.
+14/10/2024-03:42:51 : [Log-in]: user 'username01' not found.
+14/10/2024-03:42:55 : Users data file closed and saved to file 'usersData.txt'.
+14/10/2024-03:42:55 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
+14/10/2024-04:05:17 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+14/10/2024-04:05:17 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+14/10/2024-04:05:23 : Users data file closed and saved to file 'usersData.txt'.
+14/10/2024-04:05:23 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.

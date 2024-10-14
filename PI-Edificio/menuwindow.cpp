@@ -13,8 +13,8 @@
 #include "sensorbuilding.h"
 #include "viewbackup.h"
 
-menuwindow::menuwindow(QWidget *parent)
-    : QMainWindow(parent)
+menuwindow::menuwindow(QWidget *parent, UserHandler *userHandler)
+    : QMainWindow(parent), userHandler(userHandler)
     , ui(new Ui::menuwindow)
 {
     ui->setupUi(this);
@@ -117,7 +117,7 @@ void menuwindow::on_pushButton_clicked()
 
 void menuwindow::on_pushButton6_clicked()
 {
-    createuser *createUser = new createuser(this);  // Crear la nueva ventana
+    createuser *createUser = new createuser(this, this->userHandler);  // Crear la nueva ventana
     createUser->show();  // Mostrar la nueva ventana
     hide();
 }

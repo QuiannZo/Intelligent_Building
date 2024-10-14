@@ -51,7 +51,7 @@ void MainWindow::on_pushButton1_clicked()
 
     // Autenticación
     if (userHandler->authenticateUser(usernameStr, passwordHash, error)) {
-        menuwindow *menuWindow = new menuwindow(this);
+        menuwindow *menuWindow = new menuwindow(this, this->userHandler);
         menuWindow->show();
         hide();
     } else {
