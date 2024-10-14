@@ -142,10 +142,10 @@ bool UserHandler::authenticateUser(const std::string &username, const std::strin
         } else {
             if (userFound) {
                 this->appendToLogTimeHour("[Log-in]: invalid hash for user '" + username + "'.");
-                result = "invalid_password";
+                error = "invalid_password";
             } else {
                 this->appendToLogTimeHour("[Log-in]: user '" + username + "' not found.");
-                result = "invalid_username";
+                error = "invalid_username";
             }
         }
         return hashValidated;
@@ -155,4 +155,57 @@ bool UserHandler::authenticateUser(const std::string &username, const std::strin
 
 std::string UserHandler::generateHash(const std::string &password) {
     return this->hashHandler->generateHASH_SHA256(password);
+}
+
+bool UserHandler::hasPermissions(const std::string &username, permissions role) {
+    std::vector<std::string> user = getUserInformation(username);
+    if (user.size() == 10) {
+        uint8_t userPermission = static_cast<uint8_t>(std::stoi(user[2]));
+        if ((userPermission & role) == role) {
+            return true;
+        }
+    }
+    return false;
+}
+
+std::vector<std::string> UserHandler::getUserInformation(const std::string &username) {
+    if (this->fileSystem->resetFileCursors((char *)this->usersFilename.c_str()))
+    {
+        this->appendToLogTimeHour("[Log-in]: attempting to authenticate '" + username + "'.");
+        char buffer[1024] = {};
+        // ignore first line
+        this->fileSystem->getLine((char*)this->usersFilename.c_str()
+                                                , buffer, 1000, this->defaultProcessId);
+        bool result = this->fileSystem->getLine((char*)this->usersFilename.c_str()
+                                                , buffer, 1000, this->defaultProcessId);
+        bool stop = !result;
+        bool userFound = false;
+        std::vector<std::string> stringVector;
+        while (!stop) {
+            if(result) {
+                stringVector = this->splitString(buffer);
+                if (stringVector.size() != 10) {
+                    this->appendToLogTimeHour("Error: found a formatting error in file '" 
+                    + this->usersFilename + "'. Line: " + buffer + ".");
+                } else {
+                    if (stringVector[0] == username) {
+                        userFound = true;
+                        stop = true;
+                    } else {
+                        result = this->fileSystem->getLine((char*)this->usersFilename.c_str()
+                                                , buffer, 1000, this->defaultProcessId);
+                    }
+                } 
+            } else {
+                stop = true;
+            }  
+        }
+        if (userFound) {
+            this->appendToLogTimeHour("[User information]: information of user '" + username + "' returned.");
+            return stringVector;
+        } else {
+            this->appendToLogTimeHour("[User information]: user '" + username + "' not found.");
+        }
+    }
+    return std::vector<std::string>();
 }

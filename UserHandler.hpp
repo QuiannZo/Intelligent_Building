@@ -38,14 +38,9 @@ public:
                 ,const std::string& userId);
     bool authenticateUser(const std::string& username, const std::string& hash, std::string &error);
     //TODO: hay que diseñar algún sistema que únicamente devuelva información cuando el usuario tiene "sesión iniciada"
-    
-    bool isUserAdministrator(const std::string& username);
-    bool isDatabaseAdministrator(const std::string& username);
-    bool isFloorManager(const std::string& username);
-    bool isBuildingManager(const std::string& username);
-    bool isSystemAdministrator(const std::string& username);
-    bool isAuditor(const std::string& username);
+     bool hasPermissions(const std::string& username, permissions role);
     std::string generateHash(const std::string& password);
+    std::vector<std::string> getUserInformation(const std::string& username);
 
 
 };

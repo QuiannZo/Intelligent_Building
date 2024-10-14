@@ -108,6 +108,27 @@ int main() {
     } else {
         std::cout << "Usuario no validado." << std::endl;
     }
+
+    if (userHandler.hasPermissions("username01", USER_ADMINISTRATOR)) {
+        std::cout << "Tiene permisos" << std::endl;
+    } else {
+        std::cout << "No tiene permisos." << std::endl;
+    }
+
+    if (userHandler.hasPermissions("username02", AUDITOR)) {
+        std::cout << "Tiene permisos" << std::endl;
+    } else {
+        std::cout << "No tiene permisos." << std::endl;
+    }
+
+    
+    if (userHandler.hasPermissions("username10", DATABASE_ADMINISTRATOR)) {
+        std::cout << "Tiene permisos" << std::endl;
+    } else {
+        std::cout << "No tiene permisos." << std::endl;
+    }
+
+
     /*
     sensor.returnSensorFile("jose");
     
