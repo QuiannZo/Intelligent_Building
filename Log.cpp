@@ -8,7 +8,7 @@ Log::Log(std::string logFilename, int defaultProcessId)
     // Try opening the file in read mode to check if it exists
     std::ifstream fileCheck(logFilename.c_str());
     if (fileCheck) {
-        std::cout << "File already exists, it will be loaded into the file system." << std::endl;
+        std::cout << "File '" << logFilename << "' already exists, it will be loaded into the file system." << std::endl;
         fileCheck.close();
     } else {
         // Create the file if it doesn't exist
@@ -42,12 +42,12 @@ Log::Log(std::string logFilename, int defaultProcessId)
 }
 
 Log::~Log() {
-    // save log before destroy object 
-    this->fileSystem->saveFile((char*)logFilename.c_str(), defaultProcessId, (char*)logFilename.c_str());
-    this->fileSystem->close((char*)logFilename.c_str(), defaultProcessId);
     std::ostringstream output;
     output << "Filesystem <FAT> closed and saved to file '" << logFilename << "'.";
     this->appendToLogTimeHour(output.str());
+    // save log before destroy object 
+    this->fileSystem->saveFile((char*)logFilename.c_str(), defaultProcessId, (char*)logFilename.c_str());
+    this->fileSystem->close((char*)logFilename.c_str(), defaultProcessId);
     delete this->fileSystem;
 }
 
@@ -86,7 +86,7 @@ std::string Log::getCurrentDateTime() {
 
     // Create a stringstream to format the output
     std::ostringstream time;
-    time << std::put_time(localTime, "%d/%m/%Y - %H:%M:%S");
+    time << std::put_time(localTime, "%d/%m/%Y-%H:%M:%S");
 
     return time.str();
 }

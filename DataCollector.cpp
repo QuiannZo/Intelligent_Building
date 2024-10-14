@@ -7,17 +7,17 @@ DataCollector::DataCollector(std::string logFilename, int processId, std::string
     // Try opening the file in read mode to check if it exists
     std::ifstream fileCheck(sensorFilename.c_str());
     if (fileCheck) {
-        std::cout << "File already exists, it will be loaded into the file system." << std::endl;
         fileCheck.close();
+        std::cout << "File '" << sensorFilename << "' already exists, it will be loaded into the file system." << std::endl;
     } else {
         // Create the file if it doesn't exist
         std::ofstream file(sensorFilename);
         if (file) {
-            std::cout << "File created: " << sensorFilename << std::endl;
             file.close();
+            std::cout << "File created: " << sensorFilename << std::endl;
             fileCreated = true;
         } else {
-            std::cerr << "Error creating file!" << std::endl;
+            std::cerr << "Error creating file: " << sensorFilename << std::endl;
             error = true;
         }
     }
@@ -29,10 +29,19 @@ DataCollector::DataCollector(std::string logFilename, int processId, std::string
                 output << "File '" << sensorFilename << "' <Type:File-sensor-data> created and loaded into filesystem.";
             } else {
                 output << "File '" << sensorFilename << "' <Type:File-sensor-data> loaded into filesystem.";
-            }   
-            this->fileSystem->open((char*)sensorFilename.c_str(), defaultProcessId);
+            }
+            if(!this->fileSystem->open((char*)sensorFilename.c_str(), defaultProcessId)) {
+                std::cerr << "Error <filesystem>: could not open file '" <<  sensorFilename << "'.\n";
+            } else {
+                if (fileCreated) {
+                    if (!this->fileSystem->append((char*)sensorFilename.c_str(), this->getProcessId() 
+                        ,(char*)"idSensor,date,time,value\n")) {
+                            std::cerr << "Error: could not append to '" << sensorFilename << "'."  << std::endl;
+                        }
+                }
+            }
             if (!this->appendToLogTimeHour(output.str())) {
-                std::cerr << "Error: could not append to '" << sensorFilename << "'."  << std::endl;
+                std::cerr << "Error: could not append to '" << logFilename << "'."  << std::endl;
             }
         } else {
             std::cerr << "Error: could not open file " << sensorFilename << std::endl;

@@ -46,6 +46,7 @@ public:
     // Methods
     bool open(char *fileName, int processId);
     bool close(char *filename, int processId);
+    bool resetFileCursors(char* filename);
     bool create(char* filename, char* date);
     bool read(char* filename, char* buffer, int processID, int nChar);
     // The buffer must be at least one character longer than the line.

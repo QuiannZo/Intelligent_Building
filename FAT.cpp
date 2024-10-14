@@ -53,6 +53,15 @@ bool FAT::close(char *filename, int processId) {
   return false;
 }
 
+bool FAT::resetFileCursors(char *filename) {
+  int directoryPos = this->search(filename);
+  if (directoryPos != -1) {
+    this->resetCursors(directoryPos);
+    return true;
+  }
+  return false;
+}
+
 // agregar ene le directorio el nombre
 // asignar el espacio en la primera unidad
 bool FAT::create(char *filename, char *date) {
