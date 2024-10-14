@@ -31,21 +31,99 @@ createuser::createuser(QWidget *parent)
     }
 
     // nombre label
-    ui->nombre->setStyleSheet("QLabel { "
+    ui->username->setStyleSheet("QLabel { "
                               "color: #FFFFFF; }");
 
     // contraseña label
-    ui->contrasena->setStyleSheet("QLabel { "
+    ui->password->setStyleSheet("QLabel { "
                               "color: #FFFFFF; }");
 
-    // rol label
-    ui->rol->setStyleSheet("QLabel { "
+    // name label
+    ui->name->setStyleSheet("QLabel { "
                               "color: #FFFFFF; }");
-
-
+    // name label
+    ui->lastName->setStyleSheet("QLabel { "
+                            "color: #FFFFFF; }");
+    // Roles
+    ui->role->setStyleSheet("QLabel { "
+                            "color: #FFFFFF; }");
+    ui->dbAdm->setStyleSheet("QRadioButton {"
+                             "   color: white;"
+                             "}"
+                             "QRadioButton::indicator:checked {"
+                             "   background-color: black;"
+                             "}");
+    ui->floorMng->setStyleSheet("QRadioButton {"
+                                "   color: white;"
+                                "}"
+                                "QRadioButton::indicator:checked {"
+                                "   background-color: black;"
+                                "}");
+    ui->Auditor->setStyleSheet("QRadioButton {"
+                                "   color: white;"
+                                "}"
+                                "QRadioButton::indicator:checked {"
+                                "   background-color: black;"
+                                "}"
+                                );
+    ui->systemAd->setStyleSheet("QRadioButton {"
+                               "   color: white;"
+                               "}"
+                               "QRadioButton::indicator:checked {"
+                               "   background-color: black;"
+                               "}"
+                               );
+    ui->userAd->setStyleSheet("QRadioButton {"
+                                "   color: white;"
+                                "}"
+                                "QRadioButton::indicator:checked {"
+                                "   background-color: black;"
+                                "}"
+                                );
+    ui->buildingMng->setStyleSheet("QRadioButton {"
+                              "   color: white;"
+                              "}"
+                              "QRadioButton::indicator:checked {"
+                              "   background-color: black;"
+                              "}"
+                              );
+    connect(ui->createUser, &QPushButton::clicked, this, &createuser::onSubmitClicked);
 }
 
 createuser::~createuser()
 {
     delete ui;
 }
+
+void createuser::onSubmitClicked()
+{
+    // Obtener datos de los campos
+    QString username = ui->usernamelineEdit->text();
+    QString password = ui->passwordlineEdit->text();
+    QString name = ui->namelineEdit->text();
+    QString lastName = ui->lastNamelineEdit->text();
+    QString role;  // Variable para almacenar el rol seleccionado
+    if (ui->dbAdm->isChecked()) {
+        role = "Database Administrator";
+    } else if (ui->floorMng->isChecked()) {
+        role = "Floor Manager";
+    } else if (ui->Auditor->isChecked()) {
+        role = "Auditor";
+    } else if (ui->systemAd->isChecked()) {
+        role = "System Administrator";
+    } else if (ui->userAd->isChecked()) {
+        role = "User Administrator";
+    } else if (ui->buildingMng->isChecked()) {
+        role = "Building Manager";
+    } else {
+        role = "Invalid";
+    }
+
+    // por el momento vamos a imprimir aquí
+    qDebug() << "Username:" << username;
+    qDebug() << "Password:" << password;
+    qDebug() << "Name:" << name;
+    qDebug() << "Last Name:" << lastName;
+    qDebug() << "Role:" << role;
+}
+
