@@ -15,6 +15,9 @@ public:
     explicit ModifyUser(QWidget *parent = nullptr);
     ~ModifyUser();
 
+private slots:
+    void on_pushButton1_clicked();
+
 private:
     Ui::ModifyUser *ui;
 };

@@ -12,11 +12,37 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
+# Añadir al principio del archivo CMakeLists.txt
+find_package(OpenSSL REQUIRED)
+
+# Agrega el directorio superior para que CMake encuentre UserHandler.hpp
+#include_directories(${CMAKE_CURRENT_SOURCE_DIR}/..)
+
+message(STATUS "PROJECT_SOURCES: ${PROJECT_SOURCES}")
+
 set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
+        ../UserHandler.cpp  # Agrega este archivo
+        ../UserHandler.hpp
+        ../Log.cpp
+        ../Log.hpp
+        ../HashHandler.cpp
+        ../HashHandler.hpp
+        ../Usuario.cpp
+        ../Usuario.hpp
+        #../UserTest.cpp
+        #../main.cpp
+        ../Intento.ino
+        ../FAT.cpp
+        ../FAT.hpp
+        ../DataCollector.cpp
+        ../DataCollector.hpp
+        ../Authenticator.cpp
+        ../Authenticator.hpp
+        ../usersData.txt
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -59,7 +85,10 @@ else()
     endif()
 endif()
 
-target_link_libraries(PI-Edificio PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+# Agregar OpenSSL a tu objetivo
+target_link_libraries(PI-Edificio PRIVATE Qt${QT_VERSION_MAJOR}::Widgets OpenSSL::Crypto OpenSSL::SSL)
+
+#target_link_libraries(PI-Edificio PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

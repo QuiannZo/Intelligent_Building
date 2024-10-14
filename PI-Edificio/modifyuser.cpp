@@ -35,3 +35,9 @@ ModifyUser::~ModifyUser()
 {
     delete ui;
 }
+
+void ModifyUser::on_pushButton1_clicked()
+{
+
+}
+

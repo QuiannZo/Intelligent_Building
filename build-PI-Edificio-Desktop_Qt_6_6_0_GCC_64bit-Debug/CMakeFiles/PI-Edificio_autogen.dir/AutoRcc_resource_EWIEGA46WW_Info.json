@@ -1,0 +1,35 @@
+{
+	"BUILD_DIR" : "/home/quiannzc/Desktop/filesystem_oper/build-PI-Edificio-Desktop_Qt_6_6_0_GCC_64bit-Debug/PI-Edificio_autogen",
+	"CMAKE_BINARY_DIR" : "/home/quiannzc/Desktop/filesystem_oper/build-PI-Edificio-Desktop_Qt_6_6_0_GCC_64bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/quiannzc/Desktop/filesystem_oper/build-PI-Edificio-Desktop_Qt_6_6_0_GCC_64bit-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/quiannzc/Desktop/filesystem_oper/PI-Edificio",
+	"CMAKE_SOURCE_DIR" : "/home/quiannzc/Desktop/filesystem_oper/PI-Edificio",
+	"INCLUDE_DIR" : "/home/quiannzc/Desktop/filesystem_oper/build-PI-Edificio-Desktop_Qt_6_6_0_GCC_64bit-Debug/PI-Edificio_autogen/include",
+	"INPUTS" : 
+	[
+		"/home/quiannzc/Desktop/filesystem_oper/PI-Edificio/img/sensor.png",
+		"/home/quiannzc/Desktop/filesystem_oper/PI-Edificio/img/primary.jpeg",
+		"/home/quiannzc/Desktop/filesystem_oper/PI-Edificio/img/a1.jpeg",
+		"/home/quiannzc/Desktop/filesystem_oper/PI-Edificio/img/database.png",
+		"/home/quiannzc/Desktop/filesystem_oper/PI-Edificio/img/add-user.png",
+		"/home/quiannzc/Desktop/filesystem_oper/PI-Edificio/img/secundary.jpeg",
+		"/home/quiannzc/Desktop/filesystem_oper/PI-Edificio/img/mainw.jpg",
+		"/home/quiannzc/Desktop/filesystem_oper/PI-Edificio/img/user.png",
+		"/home/quiannzc/Desktop/filesystem_oper/PI-Edificio/img/build.png",
+		"/home/quiannzc/Desktop/filesystem_oper/PI-Edificio/img/document.png",
+		"/home/quiannzc/Desktop/filesystem_oper/PI-Edificio/img/database (1).png",
+		"/home/quiannzc/Desktop/filesystem_oper/PI-Edificio/img/img1.jpg",
+		"/home/quiannzc/Desktop/filesystem_oper/PI-Edificio/img/remove-user.png",
+		"/home/quiannzc/Desktop/filesystem_oper/PI-Edificio/img/group.png"
+	],
+	"LOCK_FILE" : "/home/quiannzc/Desktop/filesystem_oper/build-PI-Edificio-Desktop_Qt_6_6_0_GCC_64bit-Debug/CMakeFiles/PI-Edificio_autogen.dir/AutoRcc_resource_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "resource" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_resource.cpp",
+	"RCC_EXECUTABLE" : "/home/quiannzc/Qt/6.6.0/gcc_64/./libexec/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/quiannzc/Desktop/filesystem_oper/build-PI-Edificio-Desktop_Qt_6_6_0_GCC_64bit-Debug/CMakeFiles/PI-Edificio_autogen.dir/AutoRcc_resource_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/home/quiannzc/Desktop/filesystem_oper/PI-Edificio/resource.qrc",
+	"VERBOSITY" : 0
+}

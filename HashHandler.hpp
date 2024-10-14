@@ -1,6 +1,7 @@
 #ifndef HASH_HANDLER_HPP
 #define HASH_HANDLER_HPP
 
+#include <openssl/sha.h>
 #include <string>
 
 class HashHandler {
