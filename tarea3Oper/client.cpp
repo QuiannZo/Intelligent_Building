@@ -1,5 +1,6 @@
 
 #include <iostream>
+#include <fstream>
 #include <netdb.h>
 #include <string.h>
 #include <unistd.h>
@@ -7,15 +8,33 @@
 
 using namespace std ;
 
+// Abrir un archivo
+string leerArchivo(string& pNombreArchivo) {
+  ifstream archivo(pNombreArchivo);
+  if (!archivo.is_open()) {
+    cout << "Error abriendo el archivo" << endl;
+  }
+  // para almacenar lo leído
+  string linea;
+  string contenidoTotal;
+  while(getline(archivo,linea)) {
+    contenidoTotal += linea + "\n";
+  }
+  archivo.close();
+  return contenidoTotal;
+}
+
 int main(){
     int resultado=0 ;
     int s = 0,n = 0;
     char datos[256];
     char mensajeAutenticar[256];
+    char guardar[256];
     struct sockaddr_in ipServidor;
 
     memset(datos, '0' ,sizeof(datos));
     memset(mensajeAutenticar, '0', sizeof(mensajeAutenticar));
+    memset(guardar, '0' ,sizeof(guardar));
 
     if((s = socket(AF_INET, SOCK_STREAM, 0))< 0){
       cout << "Error de creación de socket" << endl;
