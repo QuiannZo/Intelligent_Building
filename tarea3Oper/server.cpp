@@ -9,21 +9,9 @@
 #include <fstream>
 #include <iomanip>
 #include <openssl/sha.h>
+#include "utilities.hpp"
 
 using namespace std ;
-
-// dividir tokens de la línea de comandos
-vector<string> dividir(const char* str) {
-    vector<string> tokens;
-    stringstream ss(str);
-    string token;
-    while (getline(ss, token, ' ')) {
-      if (!token.empty()) {  
-          tokens.push_back(token);
-      }
-    }
-    return tokens;
-}
 
 string generateHASH_SHA256(const string& password) {
     // See: https://stackoverflow.com/questions/918676/generate-sha-hash-in-c-using-openssl-library
@@ -81,8 +69,25 @@ bool crearArchivo(const vector<string>& parametros){
   return true;
 }
 
-bool guardarArchivo(const vector<string>& parametros){
-  cout << "Comando identificado como: guardarArchivo";
+bool guardarArchivo(char* mensajeRecibido, int conexion){
+  string archivo(mensajeRecibido);
+  while(true) {
+    memset(mensajeRecibido, '\0', 256);
+    int bytesLeidos = read(conexion, mensajeRecibido, 255);
+
+    if (bytesLeidos <= 0) {
+        break; // sucedió un error en la lectura
+    }
+    // si es diferente al fin del archivo
+    if (strncmp(mensajeRecibido, (char*)"EoF", 3) != 0) {
+        archivo.append(mensajeRecibido);
+    } else {
+        break; // final del
+    } 
+  }
+  // Imprimir el archivo
+  cout << "El archivo guardado es: \n";
+  cout << archivo;
   return true;
 }
 
@@ -142,8 +147,7 @@ int main(){
       
       bool verificarAutenticacion;
       bool mode;
-      const char* respuesta;
-      cout << "c1" << endl;
+      string respuesta;
       if(comandoSeparado[0] == "autenticar") {
         verificarAutenticacion = autenticar(comandoSeparado);
         // se envía la respuesta al cliente
@@ -156,15 +160,15 @@ int main(){
         mode = crearArchivo(comandoSeparado);
         respuesta = "Comando identificado como: crearArchivo";
       } else if (comandoSeparado[0] == "guardarArchivo") {
-        mode = guardarArchivo(comandoSeparado);
-        respuesta = "Comando identificado como: guardarArchivo";
+        mode = guardarArchivo(mensajeRecibido, conexion);
+        respuesta = "Archivo guardado exitosamente";
       } else if (comandoSeparado[0] == "eliminarArchivo") {
         mode = eliminarArchivo(comandoSeparado);
         respuesta = "Comando identificado como: eliminarArchivo";
       } else {
-        const char* respuesta = "debe ingresar comando válido";
+        respuesta = "debe ingresar comando válido";
       }
-      send(conexion, respuesta, strlen(respuesta), 0);
+      send(conexion, (char*)respuesta.c_str(), respuesta.size(), 0);
       close(conexion);
     }
     sleep(1);

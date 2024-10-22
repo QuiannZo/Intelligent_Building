@@ -11,3 +11,9 @@ Se ejecuta en una terminal el ./server, y en otra terminal el ./client. En esa t
 ```
 autenticar username02 password02
 ```
+
+## Para guardar un Archivo
+Se ejecuta en una terminal el ./server, y en otra terminal el ./client. En esa terminal de client, se debe poner la palabra guardarArchivo seguido del nombre del mismo.
+```
+guardarArchivo ./usersData.txt
+```
