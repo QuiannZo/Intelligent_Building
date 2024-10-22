@@ -52,7 +52,7 @@ int main(){
         cout << "Ingrese comando\n1.autenticar usuario contrasena\n2.crearArchivo nombreDeArchivo\n3. guardarArchivo nombreDeArchivo\n4. eliminarArchivo nombreDeArchivo\n5. abrirArchivo nombreDeArchivo" << std::endl;
         cin.getline(comando, sizeof(comando));
         vector<string> comandoSeparado = dividir(comando);
-        // verficiar si el comando es `guardar archivo` para abrir el archivo
+        // verificar si el comando es `guardar archivo` para abrir el archivo
         if (comandoSeparado[0] == "guardarArchivo"){
           //TODO: refactorizar
           if (comandoSeparado.size() == 2) {  
