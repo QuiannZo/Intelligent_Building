@@ -50,7 +50,7 @@ int main(){
       } else {
 
         char comando[256];
-        cout << "Ingrese comando autenticar(autenticar usuario contraseña): ";
+        cout << "Ingrese comando\n1.autenticar usuario contrasena\n2.crearArchivo nombreDeArchivo\n3. guardarArchivo nombreDeArchivo\n4. eliminarArchivo nombreDeArchivo\n5. abrirArchivo nombreDeArchivo" << std::endl;
         cin.getline(comando, sizeof(comando));
         
         // se copia el comando

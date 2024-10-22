@@ -76,6 +76,21 @@ bool autenticar(const vector<string>& parametros) {
     return false;  
 }
 
+bool crearArchivo(const vector<string>& parametros){
+  cout << "Comando identificado como: crearArchivo";
+  return true;
+}
+
+bool guardarArchivo(const vector<string>& parametros){
+  cout << "Comando identificado como: guardarArchivo";
+  return true;
+}
+
+bool eliminarArchivo(const vector<string>& parametros){
+  cout << "Comando identificado como: eliminarArchivo";
+  return true;
+}
+
 
 
 int main(){
@@ -126,20 +141,30 @@ int main(){
       cout << "Se ingresó comando: " << comandoSeparado[0] << endl;
       
       bool verificarAutenticacion;
+      bool mode;
+      const char* respuesta;
+      cout << "c1" << endl;
       if(comandoSeparado[0] == "autenticar") {
         verificarAutenticacion = autenticar(comandoSeparado);
         // se envía la respuesta al cliente
-        const char* respuesta;
         if(verificarAutenticacion) {
           respuesta = "verdadero";
         } else {
           respuesta = "falso";
         }
-        send(conexion, respuesta, strlen(respuesta), 0);
+      } else if (comandoSeparado[0] == "crearArchivo") {
+        mode = crearArchivo(comandoSeparado);
+        respuesta = "Comando identificado como: crearArchivo";
+      } else if (comandoSeparado[0] == "guardarArchivo") {
+        mode = guardarArchivo(comandoSeparado);
+        respuesta = "Comando identificado como: guardarArchivo";
+      } else if (comandoSeparado[0] == "eliminarArchivo") {
+        mode = eliminarArchivo(comandoSeparado);
+        respuesta = "Comando identificado como: eliminarArchivo";
       } else {
         const char* respuesta = "debe ingresar comando válido";
-        send(conexion, respuesta, strlen(respuesta), 0);
       }
+      send(conexion, respuesta, strlen(respuesta), 0);
       close(conexion);
     }
     sleep(1);
