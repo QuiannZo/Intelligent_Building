@@ -13,7 +13,7 @@
 #include "sensorbuilding.h"
 #include "viewbackup.h"
 
-menuwindow::menuwindow(QWidget *parent, UserHandler *userHandler)
+menuwindow::menuwindow(QWidget *parent, UserHandler& userHandler)
     : QMainWindow(parent), userHandler(userHandler)
     , ui(new Ui::menuwindow)
 {

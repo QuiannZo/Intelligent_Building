@@ -13,7 +13,7 @@ class menuwindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit menuwindow(QWidget *parent = nullptr, UserHandler *userHandler = nullptr);
+    explicit menuwindow(QWidget *parent, UserHandler& userHandler);
     ~menuwindow();
 
 private slots:
@@ -40,7 +40,7 @@ private slots:
 
 private:
     Ui::menuwindow *ui;
-    UserHandler *userHandler;
+    UserHandler& userHandler;
 };
 
 #endif // MENUWINDOW_H

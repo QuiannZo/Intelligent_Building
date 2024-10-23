@@ -15,7 +15,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    MainWindow(QWidget *parent, UserHandler& userHandler);
     ~MainWindow();
 
 private slots:
@@ -23,6 +23,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    UserHandler *userHandler = nullptr;
+    // El `userHandler` se va a guardar como referencia
+    UserHandler& userHandler;
 };
 #endif // MAINWINDOW_H

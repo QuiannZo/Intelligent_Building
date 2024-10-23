@@ -13,11 +13,11 @@ class createuser : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit createuser(QWidget *parent = nullptr, UserHandler* userHandler = nullptr);
+    explicit createuser(QWidget *parent, UserHandler& userHandler);
     ~createuser();
 private:
     Ui::createuser *ui;
-    UserHandler* userHandler;
+    UserHandler& userHandler;
 private slots:
     void onSubmitClicked();
 };
