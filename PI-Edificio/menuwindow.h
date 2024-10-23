@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "../UserHandler.hpp"
+#include <QCloseEvent>
 
 namespace Ui {
 class menuwindow;
@@ -41,6 +42,9 @@ private slots:
 private:
     Ui::menuwindow *ui;
     UserHandler& userHandler;
+
+protected:
+    void closeEvent(QCloseEvent *event) override;  // Sobrescribir closeEvent
 };
 
 #endif // MENUWINDOW_H

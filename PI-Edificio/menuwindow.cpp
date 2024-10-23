@@ -195,3 +195,14 @@ void menuwindow::on_pushButton11_clicked()
     log->show();                      // Mostrar la nueva ventana
     hide();
 }
+
+// Eitir una señal al cerrar la ventana
+void menuwindow::closeEvent(QCloseEvent *event)
+{
+    // llamar a la implementación base del manejo del evento
+    QMainWindow::closeEvent(event);
+    
+    // Cerrar la aplicación
+    // TODO: verificar que esto permita que se liberen correctamente los recursos. 
+    QApplication::quit();
+}

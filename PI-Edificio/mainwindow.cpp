@@ -1,5 +1,4 @@
 #include "mainwindow.h"
-#include "menuwindow.h"
 #include "./ui_mainwindow.h"
 #include <QMessageBox>
 
@@ -23,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent, UserHandler &userHandler)
 MainWindow::~MainWindow()
 {
     delete ui;
-    // delete userHandler;
+    std::cout << "Se ejecutó destructor de MainWindow.\n";
 }
 
 void MainWindow::on_pushButton1_clicked()
@@ -49,9 +48,10 @@ void MainWindow::on_pushButton1_clicked()
 
     // Autenticación
     if (userHandler.authenticateUser(usernameStr, passwordHash, error)) {
-        menuwindow *menuWindow = new menuwindow(this, this->userHandler);
+        // crear la ventana de menu
+        this->menuWindow = new menuwindow(this, this->userHandler);
         menuWindow->show();
-        hide();
+        this->hide();
     } else {
         // mensaje de error
         QMessageBox::warning(this, "Incorrect user.", QString::fromStdString(error));
