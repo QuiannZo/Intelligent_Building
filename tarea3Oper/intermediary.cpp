@@ -137,7 +137,6 @@ int main(){
       
       // se divide en tokens
       const char* comando(mensajeRecibido);
-      cout << "comando: " << comando << endl;
       vector<string> comandoSeparado = dividir(comando);
 
       struct sockaddr_in *s = (struct sockaddr_in *)&ipRemoto;

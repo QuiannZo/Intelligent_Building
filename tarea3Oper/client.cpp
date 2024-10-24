@@ -6,10 +6,28 @@
 #include <unistd.h>
 #include <arpa/inet.h>
 #include <cmath>
+#include <iomanip>
 
 #include "utilities.hpp"
+#include "socketList.hpp"
 
 using namespace std ;
+
+string generateHASH_SHA256(const string& password) {
+    // See: https://stackoverflow.com/questions/918676/generate-sha-hash-in-c-using-openssl-library
+    // https://docs.openssl.org/master/man3/SHA256_Init/
+
+    unsigned char hash[SHA256_DIGEST_LENGTH]; // sha256 has a length of 32 bits
+    // Cast the string to a unsigned char*
+    const unsigned char* data = (const unsigned char*)password.c_str(); // cast
+    SHA256(data, password.size(), hash); // get the sha256 hash
+    stringstream ss;
+    // convert to hexadecimal
+    for (int i = 0; i < SHA256_DIGEST_LENGTH; i++) {
+        ss << hex << setw(2) << setfill('0') << (int)hash[i];
+    }
+    return ss.str();
+}
 
 // Abrir un archivo
 bool leerArchivo(string& pNombreArchivo, string& buffer) {
@@ -29,8 +47,8 @@ bool leerArchivo(string& pNombreArchivo, string& buffer) {
 int main(){
     int resultado=0 ;
     int s = 0,n = 0;
-    char datos[256];
-    char mensaje[256];
+    char datos[2111];
+    char mensaje[2111];
     struct sockaddr_in ipServidor;
 
     memset(datos, '0' ,sizeof(datos));
@@ -48,12 +66,31 @@ int main(){
         cout << endl << "Error de conexión por IP o puerto" << endl ;
         resultado= 2;
       } else {
+        char username[32];
+        char password[64];
+        cout << "Ingrese usuario" << endl;
+        cin.getline(username, sizeof(username));
+
+        cout << "Ingrese contraseña" << endl;
+        cin.getline(password, sizeof(password));
+
+        string hash = generateHASH_SHA256(password);
+        AuthenticationCheckCI userInfo;
+        userInfo.userName = username;
+        userInfo.hash = hash;
+        userInfo.emissor = CLIENT;
+        userInfo.type = AUTHENTICATION_CHECK_CI;
+
+        write(s, (char*)&userInfo, sizeof(userInfo));
+
+
+        /*
         char comando[256];
         cout << "Ingrese comando\n1. autenticar usuario contrasena\n2. crearArchivo nombreDeArchivo\n3. guardarArchivo nombreDeArchivo\n4. eliminarArchivo nombreDeArchivo\n5. abrirArchivo nombreDeArchivo" << std::endl;
         cin.getline(comando, sizeof(comando));
         vector<string> comandoSeparado = dividir(comando);
         // verificar si el comando es `guardar archivo` para abrir el archivo
-        if (comandoSeparado[0] == "guardarArchivo"){
+        if (comandoSeparado[0] 256]== "guardarArchivo"){
           //TODO: refactorizar
           if (comandoSeparado.size() == 2) {  
             string buffer;
@@ -68,7 +105,7 @@ int main(){
               string paquete;
               for (int i = 0; i < contador; i++) {
                   memset(mensaje, '0', sizeof(mensaje));
-                  // enviar el archivo en paquetes de 255 bytes
+                  // enviar el ausernamerchivo en paquetes de 255 bytes
                   paquete = buffer.substr(i * 255, 255);
                   strncpy(mensaje, (char*)paquete.c_str(), sizeof(mensaje) - 1);
                   mensaje[sizeof(mensaje) - 1] = '\0';
@@ -94,7 +131,7 @@ int main(){
             resultado = 4;
             strncpy(mensaje, "null", 5);
           } 
-        } else {
+       password } else {
           // se copia el comando
           strncpy(mensaje, comando, sizeof(mensaje)-1);
         }
@@ -110,8 +147,8 @@ int main(){
 
           if(n < 0){
             cout << endl << "Error de lectura" << endl ;
-          }
-      
+          }password
+      */
       }
     }
 
