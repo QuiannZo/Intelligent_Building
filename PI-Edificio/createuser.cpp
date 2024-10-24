@@ -1,3 +1,4 @@
+#include <qstring.h>
 #include "createuser.h"
 #include "ui_createuser.h"
 
@@ -29,64 +30,28 @@ createuser::createuser(QWidget *parent, UserHandler& userHandler)
     } else {
         qDebug() << "Error: no se pudo cargar la imagen";
     }
-
+    // Labels
     // nombre label
-    ui->username->setStyleSheet("QLabel { "
-                              "color: #FFFFFF; }");
-
+    QString labelStyle = "QLabel { ""color: #FFFFFF; }";
+    ui->username->setStyleSheet(labelStyle);
     // contraseña label
-    ui->password->setStyleSheet("QLabel { "
-                              "color: #FFFFFF; }");
-
+    ui->password->setStyleSheet(labelStyle);
     // name label
-    ui->name->setStyleSheet("QLabel { "
-                              "color: #FFFFFF; }");
+    ui->name->setStyleSheet(labelStyle);
     // name label
-    ui->lastName->setStyleSheet("QLabel { "
-                            "color: #FFFFFF; }");
+    ui->lastName->setStyleSheet(labelStyle);
     // Roles
-    ui->role->setStyleSheet("QLabel { "
-                            "color: #FFFFFF; }");
-    ui->dbAdm->setStyleSheet("QRadioButton {"
-                             "   color: white;"
-                             "}"
-                             "QRadioButton::indicator:checked {"
-                             "   background-color: black;"
-                             "}");
-    ui->floorMng->setStyleSheet("QRadioButton {"
-                                "   color: white;"
-                                "}"
-                                "QRadioButton::indicator:checked {"
-                                "   background-color: black;"
-                                "}");
-    ui->Auditor->setStyleSheet("QRadioButton {"
-                                "   color: white;"
-                                "}"
-                                "QRadioButton::indicator:checked {"
-                                "   background-color: black;"
-                                "}"
-                                );
-    ui->systemAd->setStyleSheet("QRadioButton {"
-                               "   color: white;"
-                               "}"
+    ui->role->setStyleSheet(labelStyle);
+    // Radio Buttons:
+    QString radioButtonStyle = "QRadioButton {""   color: white;""}"
                                "QRadioButton::indicator:checked {"
-                               "   background-color: black;"
-                               "}"
-                               );
-    ui->userAd->setStyleSheet("QRadioButton {"
-                                "   color: white;"
-                                "}"
-                                "QRadioButton::indicator:checked {"
-                                "   background-color: black;"
-                                "}"
-                                );
-    ui->buildingMng->setStyleSheet("QRadioButton {"
-                              "   color: white;"
-                              "}"
-                              "QRadioButton::indicator:checked {"
-                              "   background-color: black;"
-                              "}"
-                              );
+                               "   background-color: black;""}";
+    ui->dbAdm->setStyleSheet(radioButtonStyle);
+    ui->floorMng->setStyleSheet(radioButtonStyle);
+    ui->Auditor->setStyleSheet(radioButtonStyle);
+    ui->systemAd->setStyleSheet(radioButtonStyle);
+    ui->userAd->setStyleSheet(radioButtonStyle);
+    ui->buildingMng->setStyleSheet(radioButtonStyle);
     connect(ui->createUser, &QPushButton::clicked, this, &createuser::onSubmitClicked);
 }
 
