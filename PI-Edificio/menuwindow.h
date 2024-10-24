@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "../UserHandler.hpp"
 #include <QCloseEvent>
+#include "mainwindow.h"
 
 namespace Ui {
 class menuwindow;
@@ -14,7 +15,7 @@ class menuwindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit menuwindow(QWidget *parent, UserHandler& userHandler);
+    explicit menuwindow(QWidget *parent, UserHandler& userHandler, MainWindow& mainwindow);
     ~menuwindow();
 
 private slots:
@@ -39,9 +40,12 @@ private slots:
     void on_pushButton10_clicked();
     void on_pushButton11_clicked();
 
+    void on_pushButton_2_clicked();
+
 private:
     Ui::menuwindow *ui;
     UserHandler& userHandler;
+    MainWindow& mainwindow;
 
 protected:
     void closeEvent(QCloseEvent *event) override;  // Sobrescribir closeEvent

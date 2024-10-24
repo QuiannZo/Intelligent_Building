@@ -1,10 +1,11 @@
 #include <qstring.h>
 #include "createuser.h"
 #include "ui_createuser.h"
+#include "menuwindow.h"
 
-createuser::createuser(QWidget *parent, UserHandler& userHandler)
+createuser::createuser(QWidget *parent, UserHandler& userHandler, menuwindow& menu)
     : QMainWindow(parent)
-    , ui(new Ui::createuser), userHandler(userHandler)
+    , ui(new Ui::createuser), userHandler(userHandler), menu(menu)
 {
     ui->setupUi(this);
 
@@ -103,5 +104,13 @@ void createuser::onSubmitClicked()
     qDebug() << "Name:" << name;
     qDebug() << "Last Name:" << lastName;
     qDebug() << "Role:" << role;
+}
+
+
+void createuser::on_pushButton1_2_clicked()
+{
+    this->menu.show();
+    this->hide();
+    this->deleteLater();
 }
 

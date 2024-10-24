@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+#include "menuwindow.h"
 #include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent, UserHandler &userHandler)
@@ -36,26 +37,18 @@ void MainWindow::on_pushButton1_clicked()
     std::string passwordStr = password.toStdString();
 
     // Genera el hash de la contraseña
+    // crear la ventana de menu
     std::string passwordHash = userHandler.generateHash(passwordStr);
     std::string error;
-
-    //userHandler.addUser("superUser", "username01", userHandler.generateHash("password01")
-      //                  , USER_ADMINISTRATOR, "", "name01", "lastName01", "00000001");
-
-    // Mostrar el hash de la contraseña en un cuadro de mensaje
-    QMessageBox::information(this, "user", QString::fromStdString(usernameStr));
-    QMessageBox::information(this, "Password Hash", QString::fromStdString(passwordHash));
 
     // Autenticación
     if (userHandler.authenticateUser(usernameStr, passwordHash, error)) {
         // crear la ventana de menu
-        this->menuWindow = new menuwindow(this, this->userHandler);
-        menuWindow->show();
+        menuwindow* menu = new menuwindow(this, this->userHandler, *this);
+        menu->show();
         this->hide();
     } else {
         // mensaje de error
         QMessageBox::warning(this, "Incorrect user.", QString::fromStdString(error));
     }
-
-    QMessageBox::information(this, "error", QString::fromStdString(error));
 }

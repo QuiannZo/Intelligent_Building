@@ -1,0 +1,96 @@
+24/10/2024-10:07:42 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+24/10/2024-10:07:42 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+24/10/2024-10:07:56 : [Log-in]: attempting to authenticate 'username01'.
+24/10/2024-10:07:56 : [Log-in]: user 'username01' validated.
+24/10/2024-10:08:01 : Users data file closed and saved to file 'usersData.txt'.
+24/10/2024-10:08:01 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
+24/10/2024-10:09:40 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+24/10/2024-10:09:40 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+24/10/2024-10:09:52 : [Log-in]: attempting to authenticate 'username01'.
+24/10/2024-10:09:52 : [Log-in]: user 'username01' validated.
+24/10/2024-10:10:03 : Users data file closed and saved to file 'usersData.txt'.
+24/10/2024-10:10:03 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
+24/10/2024-10:11:53 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+24/10/2024-10:11:53 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+24/10/2024-10:12:01 : Users data file closed and saved to file 'usersData.txt'.
+24/10/2024-10:12:01 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
+24/10/2024-10:13:04 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+24/10/2024-10:13:04 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+24/10/2024-10:13:15 : [Log-in]: attempting to authenticate 'username01'.
+24/10/2024-10:13:15 : [Log-in]: user 'username01' validated.
+24/10/2024-10:13:17 : Users data file closed and saved to file 'usersData.txt'.
+24/10/2024-10:13:17 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
+24/10/2024-10:13:59 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+24/10/2024-10:13:59 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+24/10/2024-10:14:08 : [Log-in]: attempting to authenticate 'as'.
+24/10/2024-10:14:08 : [Log-in]: user 'as' not found.
+24/10/2024-10:14:12 : [Log-in]: attempting to authenticate 'as'.
+24/10/2024-10:14:12 : [Log-in]: user 'as' not found.
+24/10/2024-10:14:26 : Users data file closed and saved to file 'usersData.txt'.
+24/10/2024-10:14:26 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
+24/10/2024-10:19:08 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+24/10/2024-10:19:08 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+24/10/2024-10:19:19 : [Log-in]: attempting to authenticate 'username01'.
+24/10/2024-10:19:19 : [Log-in]: user 'username01' validated.
+24/10/2024-10:20:14 : Users data file closed and saved to file 'usersData.txt'.
+24/10/2024-10:20:14 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
+24/10/2024-10:43:46 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+24/10/2024-10:43:46 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+24/10/2024-10:43:58 : [Log-in]: attempting to authenticate 'username01'.
+24/10/2024-10:43:58 : [Log-in]: user 'username01' validated.
+24/10/2024-10:44:14 : Users data file closed and saved to file 'usersData.txt'.
+24/10/2024-10:44:14 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
+24/10/2024-10:45:15 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+24/10/2024-10:45:15 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+24/10/2024-10:45:26 : [Log-in]: attempting to authenticate 'username01'.
+24/10/2024-10:45:26 : [Log-in]: user 'username01' validated.
+24/10/2024-10:46:01 : Users data file closed and saved to file 'usersData.txt'.
+24/10/2024-10:46:01 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
+24/10/2024-10:49:30 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+24/10/2024-10:49:30 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+24/10/2024-10:49:42 : [Log-in]: attempting to authenticate 'username01'.
+24/10/2024-10:49:42 : [Log-in]: user 'username01' validated.
+24/10/2024-10:49:53 : Users data file closed aê⁄·∑˛PF¡¸ Èlê˛PØ´˛†ôV˝`≤i1¸ ƒ˚˘ˇ–=F˝nd saved to file 'usersData.txt'.
+24/10/2024-10:49:53 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
+24/10/2024-10:50:32 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+24/10/2024-10:50:32 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+24/10/2024-10:50:35 : [Log-in]: attempting to authenticate ''.
+24/10/2024-10:50:35 : [Log-in]: user '' not found.
+24/10/2024-10:50:57 : [Log-in]: attempting to authenticate 'username01'.
+24/10/2024-10:50:57 : [Log-in]: user 'username01' validated.
+24/10/2024-10:51:08 : Users data file closed and saved to file 'usersData.txt'.
+24/10/2024-10:51:08 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
+24/10/2024-11:06:47 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+24/10/2024-11:06:47 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+24/10/2024-11:07:28 : [Log-in]: attempting to authenticate 'username01'.
+24/10/2024-11:07:28 : [Log-in]: user 'username01' validated.
+24/10/2024-11:07:44 : Users data file closed and saved to file 'usersData.txt'.
+24/10/2024-11:07:44 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
+24/10/2024-11:11:54 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+24/10/2024-11:11:54 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+24/10/2024-11:11:55 : Users data file closed and saved to file 'usersData.txt'.
+24/10/2024-11:11:55 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
+24/10/2024-11:19:18 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+24/10/2024-11:19:18 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+24/10/2024-11:19:20 : Users data file closed and saved to file 'usersData.txt'.
+24/10/2024-11:19:20 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
+24/10/2024-11:21:06 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+24/10/2024-11:21:06 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+24/10/2024-11:21:14 : [Log-in]: attempting to authenticate 'username01'.
+24/10/2024-11:21:14 : [Log-in]: user 'username01' validated.
+24/10/2024-11:21:28 : Users data file closed and saved to file 'usersData.txt'.
+24/10/2024-11:21:28 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
+24/10/2024-11:22:01 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+24/10/2024-11:22:01 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+24/10/2024-11:22:10 : [Log-in]: attempting to authenticate 'username01'.
+24/10/2024-11:22:10 : [Log-in]: invalid hash for user 'username01'.
+24/10/2024-11:22:12 : Users data file closed and saved to file 'usersData.txt'.
+24/10/2024-11:22:12 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
+24/10/2024-11:29:50 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+24/10/2024-11:29:50 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+24/10/2024-11:29:59 : [Log-in]: attempting to authenticate 'username01'.
+24/10/2024-11:29:59 : [Log-in]: user 'username01' validated.
+24/10/2024-11:30:08 : [Log-in]: attempting to authenticate 'username02'.
+24/10/2024-11:30:08 : [Log-in]: user 'username02' validated.
+24/10/2024-11:30:17 : Users data file closed and saved to file 'usersData.txt'.
+24/10/2024-11:30:17 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.

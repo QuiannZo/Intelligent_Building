@@ -1,4 +1,4 @@
-# Install script for directory: /home/lab-3-5/PI-Edificio
+# Install script for directory: /home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -49,7 +49,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/PI-Edificio"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/lab-3-5/PI-Edificio/build/Desktop-Debug/PI-Edificio")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/build/Desktop-Debug/PI-Edificio")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/PI-Edificio" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/PI-Edificio")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -66,5 +66,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/lab-3-5/PI-Edificio/build/Desktop-Debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/build/Desktop-Debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

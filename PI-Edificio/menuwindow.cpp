@@ -13,8 +13,8 @@
 #include "sensorbuilding.h"
 #include "viewbackup.h"
 
-menuwindow::menuwindow(QWidget *parent, UserHandler& userHandler)
-    : QMainWindow(parent), userHandler(userHandler)
+menuwindow::menuwindow(QWidget *parent, UserHandler& userHandler, MainWindow& mainwindow)
+    : QMainWindow(parent), userHandler(userHandler), mainwindow(mainwindow)
     , ui(new Ui::menuwindow)
 {
     ui->setupUi(this);
@@ -117,7 +117,7 @@ void menuwindow::on_pushButton_clicked()
 
 void menuwindow::on_pushButton6_clicked()
 {
-    createuser *createUser = new createuser(this, this->userHandler);  // Crear la nueva ventana
+    createuser *createUser = new createuser(this, this->userHandler, *this);  // Crear la nueva ventana
     createUser->show();  // Mostrar la nueva ventana
     hide();
 }
@@ -206,3 +206,10 @@ void menuwindow::closeEvent(QCloseEvent *event)
     // TODO: verificar que esto permita que se liberen correctamente los recursos. 
     QApplication::quit();
 }
+
+void menuwindow::on_pushButton_2_clicked()
+{
+    mainwindow.show();
+    this->hide();
+}
+

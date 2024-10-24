@@ -2,7 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "menuwindow.h"
 #include "../UserHandler.hpp"
 
 QT_BEGIN_NAMESPACE
@@ -24,8 +23,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    // puntero a la ventana de menu
-    menuwindow *menuWindow;
     // El `userHandler` se va a guardar como referencia
     UserHandler& userHandler;
 };

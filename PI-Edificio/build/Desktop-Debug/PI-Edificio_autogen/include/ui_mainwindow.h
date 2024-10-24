@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 6.7.2
+** Created by: Qt User Interface Compiler version 6.7.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -38,12 +38,15 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(962, 600);
+        MainWindow->resize(1000, 600);
+        MainWindow->setMinimumSize(QSize(1000, 600));
+        MainWindow->setMaximumSize(QSize(1000, 600));
+        MainWindow->setAutoFillBackground(false);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         label = new QLabel(centralwidget);
         label->setObjectName("label");
-        label->setGeometry(QRect(350, 150, 241, 31));
+        label->setGeometry(QRect(370, 150, 241, 31));
         QPalette palette;
         QBrush brush(QColor(255, 255, 255, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -57,7 +60,7 @@ public:
         label->setFont(font);
         pushButton1 = new QPushButton(centralwidget);
         pushButton1->setObjectName("pushButton1");
-        pushButton1->setGeometry(QRect(430, 330, 87, 26));
+        pushButton1->setGeometry(QRect(450, 330, 87, 26));
         QFont font1;
         font1.setBold(true);
         pushButton1->setFont(font1);
@@ -77,20 +80,20 @@ public:
 "    }"));
         lineEdit = new QLineEdit(centralwidget);
         lineEdit->setObjectName("lineEdit");
-        lineEdit->setGeometry(QRect(360, 280, 221, 26));
+        lineEdit->setGeometry(QRect(380, 280, 221, 26));
         lineEdit_2 = new QLineEdit(centralwidget);
         lineEdit_2->setObjectName("lineEdit_2");
-        lineEdit_2->setGeometry(QRect(360, 220, 221, 26));
+        lineEdit_2->setGeometry(QRect(380, 220, 221, 26));
         label_2 = new QLabel(centralwidget);
         label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(360, 200, 81, 18));
+        label_2->setGeometry(QRect(380, 200, 81, 18));
         QPalette palette1;
         palette1.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette1.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
         label_2->setPalette(palette1);
         label_3 = new QLabel(centralwidget);
         label_3->setObjectName("label_3");
-        label_3->setGeometry(QRect(360, 260, 81, 18));
+        label_3->setGeometry(QRect(380, 260, 81, 18));
         QPalette palette2;
         palette2.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette2.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
@@ -98,7 +101,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 962, 23));
+        menubar->setGeometry(QRect(0, 0, 1000, 22));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
