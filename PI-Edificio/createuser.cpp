@@ -95,6 +95,14 @@ createuser::~createuser()
     delete ui;
 }
 
+void createuser::closeEvent(QCloseEvent *event)
+{
+      // Llamar a la implementación base del manejo del evento
+    QMainWindow::closeEvent(event);
+    // Cerrar la aplicación
+    QApplication::quit();  
+}
+
 void createuser::onSubmitClicked()
 {
     // Obtener datos de los campos

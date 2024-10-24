@@ -15,6 +15,8 @@ class createuser : public QMainWindow
 public:
     explicit createuser(QWidget *parent, UserHandler& userHandler);
     ~createuser();
+protected:
+    void closeEvent(QCloseEvent *event) override;  // Sobrescribir closeEvent
 private:
     Ui::createuser *ui;
     UserHandler& userHandler;
