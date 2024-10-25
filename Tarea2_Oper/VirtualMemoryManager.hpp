@@ -21,6 +21,8 @@ private:
     int32_t pageTable[NUM_PAGES]; 
     char physicalMemory[FRAME_SIZE * NUM_FRAMES]; 
 
+    int freeFrames;
+
 public:
     VirtualMemoryManager(/* args */);
     ~VirtualMemoryManager();
@@ -33,6 +35,18 @@ public:
 
     // Obtener el valor de una página.
     int32_t getPageValue(int32_t num);
+    
+    // Se le pasa como argumento el número de página, para buscar si está en la memoria física.
+    void verifyPage(int32_t pageNum);
+
+    // Para leer el contenido de la memoria física.
+    void readPhysicalMemory(int32_t pageNum);
+    
+    // Calcular posición exacta en memoria física.
+    int32_t calcPhysicalAddress(int32_t pageNum, int32_t offset);
+    
+    // Obtener el valor en la dirección física.
+    char getPhysicalAddressValue(int32_t address);
     
 };
 #endif

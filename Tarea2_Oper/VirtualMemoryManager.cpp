@@ -8,6 +8,9 @@ VirtualMemoryManager::VirtualMemoryManager(/* args */){
 
     // Crear el archivo binario, que sería el almacenamiento secundario.
     this->createBinaryFile();
+
+    // Inicializa los marcos libres de la memoria física en cero.
+    this->freeFrames = 0;
 }
 
 VirtualMemoryManager::~VirtualMemoryManager(){ }
@@ -47,5 +50,37 @@ void VirtualMemoryManager::createBinaryFile() {
 
     binaryOut.close();
     
-    std::cout << "El archivo binario se creó con éxito" << std::endl;
+    std::cout << "El archivo binario se creo con exito" << std::endl;
+}
+
+void VirtualMemoryManager::verifyPage(int32_t pageNum) {
+    FILE *backingStore = fopen("BACKING_STORE.bin", "rb"); 
+    
+    // Si la página no está cargada en memoria física.
+    if (this->pageTable[pageNum] == -1) { 
+        // Se busca en el almacenamiento secundario y se pone en un frame libre de la memoria física.
+        fseek(backingStore, pageNum * 256, SEEK_SET); 
+        fread(reinterpret_cast<void*>(&this->physicalMemory[this->freeFrames * FRAME_SIZE]), sizeof(char), 256, backingStore);
+        
+        // Se le agrega un valor a la tabla de páginas, para indicar que ya está cargada.
+        this->pageTable[pageNum] = this->freeFrames;
+        this->freeFrames++;
+    }
+
+    fclose(backingStore);
+}
+
+void VirtualMemoryManager::readPhysicalMemory(int32_t pageNum) {
+    for (int i = (pageNum*FRAME_SIZE); i < (pageNum*FRAME_SIZE)+FRAME_SIZE; ++i) {
+        std::cout << static_cast<int>(static_cast<unsigned char>(this->physicalMemory[i])) << " ";
+    }
+    std::cout << std::endl;
+}
+
+int32_t VirtualMemoryManager::calcPhysicalAddress(int32_t pageNum, int32_t offset) {
+    return this->pageTable[pageNum]*FRAME_SIZE+offset;
+}
+
+char VirtualMemoryManager::getPhysicalAddressValue(int32_t address) {
+    return this->physicalMemory[address];
 }
