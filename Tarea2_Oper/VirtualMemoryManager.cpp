@@ -9,8 +9,13 @@ VirtualMemoryManager::VirtualMemoryManager(/* args */){
     // Crear el archivo binario, que sería el almacenamiento secundario.
     this->createBinaryFile();
 
-    // Inicializa los marcos libres de la memoria física en cero.
-    this->freeFrames = 0;
+    // Se inicializan los marcos libres, al principio están todos libres.
+    for (int i = NUM_FRAMES-1; i >= 0; --i) {
+        freeFrameList.push_back(i); 
+    }
+
+    this->faultPages = 0;
+    this->totalPages = 0;
 }
 
 VirtualMemoryManager::~VirtualMemoryManager(){ }
@@ -54,20 +59,35 @@ void VirtualMemoryManager::createBinaryFile() {
 }
 
 void VirtualMemoryManager::verifyPage(int32_t pageNum) {
+    // En caso de que no queden marcos.
+    if (freeFrameList.empty()) {
+        cerr << "Error: No hay marcos libres disponibles" << std::endl;
+        return; 
+    }
+
     FILE *backingStore = fopen("BACKING_STORE.bin", "rb"); 
     
     // Si la página no está cargada en memoria física.
     if (this->pageTable[pageNum] == -1) { 
+        // Se obtiene el marco libre.
+        int freeFrame = freeFrameList.back();
+        freeFrameList.pop_back();
+
         // Se busca en el almacenamiento secundario y se pone en un frame libre de la memoria física.
         fseek(backingStore, pageNum * 256, SEEK_SET); 
-        fread(reinterpret_cast<void*>(&this->physicalMemory[this->freeFrames * FRAME_SIZE]), sizeof(char), 256, backingStore);
+        fread(reinterpret_cast<void*>(&this->physicalMemory[freeFrame * FRAME_SIZE]), sizeof(char), 256, backingStore);
         
         // Se le agrega un valor a la tabla de páginas, para indicar que ya está cargada.
-        this->pageTable[pageNum] = this->freeFrames;
-        this->freeFrames++;
+        this->pageTable[pageNum] = freeFrame;
+
+        // Sumar los fallos de páginas.
+        ++this->faultPages;
     }
 
     fclose(backingStore);
+
+    // Llevar conteo de páginas
+    ++this->totalPages;
 }
 
 void VirtualMemoryManager::readPhysicalMemory(int32_t pageNum) {

@@ -18,10 +18,16 @@ private:
     static const int FRAME_SIZE = 256;
     static const int NUM_FRAMES = 256;
     
+    // Tabla de páginas y la memoria física.
     int32_t pageTable[NUM_PAGES]; 
     char physicalMemory[FRAME_SIZE * NUM_FRAMES]; 
+    
+    // Estos son los marcos libres
+    std::vector<int> freeFrameList;
 
-    int freeFrames;
+    // Variables para estadísticas de fallos de páginas
+    int totalPages;
+    int faultPages;
 
 public:
     VirtualMemoryManager(/* args */);
@@ -47,6 +53,12 @@ public:
     
     // Obtener el valor en la dirección física.
     char getPhysicalAddressValue(int32_t address);
+
+    // Obtener páginas consultadas.
+    int getTotalPages(){ return this->totalPages;}
+
+    // Obtener fallos de páginas.
+    int getFaultPages(){ return this->faultPages;}
     
 };
 #endif
