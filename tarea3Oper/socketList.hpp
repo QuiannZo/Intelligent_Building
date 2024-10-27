@@ -21,9 +21,9 @@ enum MessageType : uint8_t {
   INVALID,
   // Mensajes generales:
   // Mensajes entre cliente e `Intermediary`:
-  AuthenticationRequestCI,
-  kAuthenticationSuccessCI,
-  kAuthenticationFailureCI, 
+  kAuthenticationRequestCI,
+  kAuthenticationSuccessIC,
+  kAuthenticationFailureIC, 
   // Mensajes entre `Intermediary`y `UserHandler`:
   AuthenticationRequestIU,
   kAuthenticationSuccessIU,
@@ -51,7 +51,7 @@ struct AuthenticationRequestCI {
 };
 
 // >> De intermediario a cliente:
-struct AuthenticationSuccessCI {
+struct AuthenticationSuccessIC {
   // Mensaje de confirmación afirmativa de autenticación: mensaje que viaja del
   // `Intermediary` al cliente cuando el usuario fue autenticado correctamente.
   MessageType message_type;
@@ -68,7 +68,7 @@ struct AuthenticationSuccessCI {
   // Tamaño: 71 bytes
 };
 
-struct AuthenticationFailureCI {
+struct AuthenticationFailureIC {
   // Mensaje de confirmación negativa de autenticación: mensaje que viaja del
   // intermediario al cliente cuando el usuario o el hash son inválidos,
   // incluye el tipo de error. 

@@ -11,6 +11,8 @@ private:
     int server_socket;
     // Métodos
     bool handleConnection(int client_socket);
+    bool handleDatagram(int client_socket, const char* datagram
+    , size_t datagram_size);
     int connectToNode(const std::string& ip, int port);
     bool sendDatagram(const std::string& ip, int port
     , const char* datagram, size_t datagram_size);

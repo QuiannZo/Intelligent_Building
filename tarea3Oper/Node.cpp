@@ -74,43 +74,63 @@ void Node::run() {
     if (!handleConnection(client_socket)) {
         std::cerr << "Error handling the connection with the client" << std::endl;
     }
-    // cerrar el socket
+    // Cerrar el socket
+    std::cout << "Connection closed: " << str_ip_remote << std::endl;
     close(client_socket);
   }
 }
 
 // Método que se encarga de manejar la conexión con el cliente
 bool Node::handleConnection(int client_socket) {
-    char received_message[kMaxDatagramSize];
-    memset(received_message, 0, sizeof(received_message));
-    // Leer el mensaje del cliente
-    ssize_t bytes_read = read(client_socket, received_message
-    , sizeof(received_message) - 1);
-    // verificar lectura
-    if (bytes_read < 0) {
-      std::cerr << "Error reading from client socket." << std::endl;
-      return false;
-    } else if (bytes_read == 0) {
-      std::cerr << "Client disconnected." << std::endl;
-      return false;
-    }
-    received_message[bytes_read] = '\0';
-    std::cout << "Command received: " << received_message << std::endl;
-    // Dar respuesta
-    std::string response = "Processed response.";
-    // Verificar error en el envío
-    if (send(client_socket, response.c_str(), response.size(), 0) < 0) {
-      std::cerr << "Error sending response to client." << std::endl;
-      return false; // Return false to indicate failure
-    }
-    return true; // Successfully processed the connection
+  char received_message[kMaxDatagramSize];
+  memset(received_message, 0, sizeof(received_message));
+  // Leer el mensaje del cliente
+  ssize_t bytes_read = read(client_socket, received_message
+  , sizeof(received_message) - 1);
+  // verificar lectura
+  if (bytes_read < 0) {
+    std::cerr << "Error reading from client socket." << std::endl;
+    return false;
+  } else if (bytes_read == 0) {
+    std::cerr << "Client disconnected." << std::endl;
+    return false;
+  }
+  received_message[bytes_read] = '\0';
+  // Llamamos a la función que maneja el datagrama y da el mensaje
+  return this->handleDatagram(client_socket, received_message, bytes_read);
+}
+
+// Método que se utiliza para manejar e interpretar el datagrama. Puede ser
+// sobre escrito en las clases que heredan de `Nodo`.
+bool Node::handleDatagram(int client_socket, const char *datagram
+  , size_t datagram_size) {
+  // Imprimimos el mensaje completo
+  std::cout << "\tMessage received: ";
+  for (size_t i = 0; i < datagram_size; ++i) {
+    std::cout << datagram[i];
+  }
+  std::cout << std::endl;
+  std::cout << "\tMessage type: " << (int)datagram[0]
+    << " | Node type: " << (int)datagram[1];
+  std::cout << std::endl;
+  // Damos la respuesta que se va a enviar al cliente
+  std::string response = "Datagram received successfully.";
+  if (send(client_socket, response.c_str(), response.size(), 0) < 0) {
+    std::cerr << "Error sending response to client." << std::endl;
+    // Solo debe devolver `false` cuando hay un error con la conexión. Si el
+    // datagrama recibido es incorrecto, va a enviar un mensaje indicando el
+    // error. En ese caso, se considera que se manejo correctamente el
+    // datagrama recibido. 
+    return false;
+  }
+  return true;
 }
 
 // Método utilizado para comunicarse como cliente con otro nodo. Retorna
 // el valor correspondiente al socket, o -1 en caso de error.
 int Node::connectToNode(const std::string& ip, int port) {
   // En este caso, el cliente es el nodo actual.
-  // `AF_INET`: especifica que se un IPv4
+  // `AF_INET`: especifica que sea un IPv4
   // `SOCK_STREAM`: especifica que se usa un socket de tipo TCP
   int client_socket = socket(AF_INET, SOCK_STREAM, 0);
     if (client_socket < 0) {
