@@ -1,6 +1,9 @@
 #ifndef SOCKET_LIST
 #define SOCKET_LIST
 
+// Tamaño máximo del datagrama
+const int kMaxDatagramSize = 256;
+
 // Tipos de nodos que con capacidad de comunicación en la sistema distribuido
 enum NodeType : uint8_t {
   kTest,
@@ -77,6 +80,7 @@ struct AuthenticationFailureCI {
 //TODO: completar.
 
 // Datagramas entre `Intermediary`y `UserHandler`:
+// >> De intermediario a al `UserHandler`:
 struct AuthenticationRequestIU {
   // Mensaje de consulta de autenticación: mensaje que el intermediario
   // redirige al `UserHandler` con los datos del mensaje 
@@ -89,6 +93,7 @@ struct AuthenticationRequestIU {
   // Tamaño: 102 bytes
 };
 
+// >> Del `UserHandler` al intermediario 
 struct AuthenticationSuccessIU {
   // Mensaje de confirmación afirmativa de autenticación: mensaje que viaja
   // entre el `Intermediary` y `UserHandler` indicando que la autenticación
