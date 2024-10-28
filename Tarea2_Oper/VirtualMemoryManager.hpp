@@ -32,8 +32,8 @@ private:
     int faultPages;
 
     // Para realizar FIFO en el reemplazo de página
-    unordered_map<int, int> pageFrameMap; // Mapa de páginas a marcos
-    queue<int> frameQueue; // Cola FIFO de marcos
+    unordered_map<int, int> pageFrameMap;
+    queue<int> frameQueue;
 
 public:
     VirtualMemoryManager(/* args */);
