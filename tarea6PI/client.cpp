@@ -19,7 +19,7 @@
 int main(){
   // ESTABLECER CONEXIÓN
   int result = 0;
-  const std::string server_ip = kLocalhostIPv4;
+  const std::string server_ip = kIntermediaryIPv4;
   const int server_port = kIntermediaryPort;
   // `AF_INET`: especifica que sea un IPv4
   // `SOCK_STREAM`: especifica que se usa un socket de tipo TCP
