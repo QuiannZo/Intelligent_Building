@@ -1,8 +1,8 @@
-#include "Intermediary.hpp"
+#include "UserNode.cpp"
 #include "networkConfig.hpp"
 
 int main() {
-  Intermediary node = Intermediary(kIntermediaryPort);
+  UserNode node = UserNode(kUserHandlerPort);
   if(node.initServer()) {
     node.run();
     return 0;

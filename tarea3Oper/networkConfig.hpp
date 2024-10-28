@@ -2,6 +2,8 @@
 #define NETWORK_CONFIG
 // Dirección IP del localhost / computadora actual
 const std::string kLocalhostIPv4 = "127.0.0.1";
+const std::string kIntermediaryIPv4 = "127.0.0.1";
+const std::string kUserHandlerIPv4 = "127.0.0.1";
 
 // Puertos:
 // Puerto de nodo intermediario
