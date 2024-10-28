@@ -1,29 +1,19 @@
+# Tarea 6 de PI
+
 # Compilación
+**Notar que la compilación se debe realizar desde la carpeta `tarea6PI`, los archivos que se encuentran afuera de esta carpeta son necesarios para el funcionamiento el proceso de compilación.**
+
+## Nodo cliente 
 ```
-g++ server.cpp -o server -lssl -lcrypto
-```
-luego
-```
-g++ client.cpp -o client
-```
-## Para la parte de autenticar
-Se ejecuta en una terminal el ./server, y en otra terminal el ./client. En esa terminal de client, se debe poner la palabra autenticar, seguido de username y el password 
-```
-autenticar username02 password02
+ g++ client.cpp -o client -lssl -lcrypto
 ```
 
-## Para guardar un Archivo
-Se ejecuta en una terminal el ./server, y en otra terminal el ./client. En esa terminal de client, se debe poner la palabra guardarArchivo seguido del nombre del mismo.
+## Nodo intermediario
 ```
-guardarArchivo ./usersData.txt
+g++ main_intermediary.cpp Intermediary.cpp Node.cpp -o intermediary
 ```
 
-## Para crear y eliminar un Archivo
-Se ejecuta en una terminal el ./server, y en otra terminal el ./client. En esa terminal de client.
+## Nodo autenticación de usuarios
 ```
-[comando] [nombreArchivo]
-
-crearArchivo archivo.txt
-
-eliminarArchivo archivo.txt
+  g++ main_userNode.cpp Node.cpp ../UserHandler.cpp ../FAT.cpp ../Log.cpp ../HashHandler.cpp -o userHandler -lssl -lcrypto
 ```
