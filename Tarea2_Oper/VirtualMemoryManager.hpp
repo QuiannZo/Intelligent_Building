@@ -5,6 +5,8 @@
 #include <iostream>
 #include <cstdint>
 #include <fstream>
+#include <unordered_map>
+#include <queue>
 
 using namespace std;
 
@@ -16,7 +18,7 @@ private:
 
     // Para la memoria física.
     static const int FRAME_SIZE = 256;
-    static const int NUM_FRAMES = 256;
+    static const int NUM_FRAMES = 128;
     
     // Tabla de páginas y la memoria física.
     int32_t pageTable[NUM_PAGES]; 
@@ -28,6 +30,10 @@ private:
     // Variables para estadísticas de fallos de páginas
     int totalPages;
     int faultPages;
+
+    // Para realizar FIFO en el reemplazo de página
+    unordered_map<int, int> pageFrameMap;
+    queue<int> frameQueue;
 
 public:
     VirtualMemoryManager(/* args */);

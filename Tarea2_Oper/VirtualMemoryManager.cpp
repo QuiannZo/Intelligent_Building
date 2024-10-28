@@ -68,10 +68,26 @@ void VirtualMemoryManager::verifyPage(int32_t pageNum) {
     FILE *backingStore = fopen("BACKING_STORE.bin", "rb"); 
     
     // Si la página no está cargada en memoria física.
-    if (this->pageTable[pageNum] == -1) { 
-        // Se obtiene el marco libre.
-        int freeFrame = freeFrameList.back();
-        freeFrameList.pop_back();
+    if (this->pageTable[pageNum] == -1) {
+        int freeFrame;
+        bool encontro = false;
+        if (!freeFrameList.empty()) {
+            // Se obtiene el marco libre.
+            freeFrame = freeFrameList.back();
+            freeFrameList.pop_back();
+        }
+        // Reemplazo de página usando FIFO
+        else {
+            freeFrame = frameQueue.front();
+            frameQueue.pop();
+            // Página antigua no válida
+            for (int iterador = 0; iterador < NUM_PAGES && !encontro; ++iterador) {
+                if (pageTable[iterador] == freeFrame) {
+                    pageTable[iterador] = -1;
+                    encontro = true;
+                }
+            }
+        }
 
         // Se busca en el almacenamiento secundario y se pone en un frame libre de la memoria física.
         fseek(backingStore, pageNum * 256, SEEK_SET); 
@@ -79,6 +95,7 @@ void VirtualMemoryManager::verifyPage(int32_t pageNum) {
         
         // Se le agrega un valor a la tabla de páginas, para indicar que ya está cargada.
         this->pageTable[pageNum] = freeFrame;
+        frameQueue.push(freeFrame);
 
         // Sumar los fallos de páginas.
         ++this->faultPages;
