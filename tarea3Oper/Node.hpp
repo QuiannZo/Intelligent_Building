@@ -5,17 +5,23 @@
 #include <string>
 
 class Node {
-private:
+protected:
     // Atributos
     int port;
     int server_socket;
     // Métodos
     bool handleConnection(int client_socket);
-    bool handleDatagram(int client_socket, const char* datagram
+    virtual bool handleDatagram(int client_socket, char* datagram
     , size_t datagram_size);
+    // método que se usa para conectarse a otro nodo, devuelve el socket.
     int connectToNode(const std::string& ip, int port);
-    bool sendDatagram(const std::string& ip, int port
-    , const char* datagram, size_t datagram_size);
+    // método que se usa para enviar un datagrama después de establecer una
+    // conexión
+    bool sendDatagram(int client_socket, char* datagram
+    , size_t datagram_size);
+    // método que se utiliza para obtener una respuesta. Incluye un `timeout`.
+    bool receiveDatagramWithTimeout(int client_socket, char* response_buffer
+    , size_t buffer_size, int timeout_sec);
 public:
     // constructor y destructor
     Node(int port);

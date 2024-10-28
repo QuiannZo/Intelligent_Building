@@ -14,7 +14,8 @@
 #include "socketList.hpp"
 #include "networkConfig.hpp"
 
-
+// TODO: extraer de la clase Nodo todo el código relacionada a clientes, esto
+// para crear una clase Cliente.
 int main(){
   // ESTABLECER CONEXIÓN
   int result = 0;
@@ -60,9 +61,8 @@ int main(){
   // Obtenemos el hash
   const std::string password_str(password);
   std::string hash = generateHASH_SHA256(password_str);
-  std::cout << "Hash [borrar]: " << hash << std::endl;
   // Inicializar el datagrama
-  AuthenticationRequestCI login_data;
+  AuthenticationRequest login_data;
   login_data.message_type = kAuthenticationRequestCI;
   login_data.source_node = kApplication;
   strncpy(login_data.username, username, 32);
@@ -72,7 +72,6 @@ int main(){
 
   // ENVIAR MENSAJE:
   // No se envió correctamente el mensaje
-  std::cout << "Enviando " << reinterpret_cast<char*>(&login_data) << std::endl;
   if (send(client_socket, reinterpret_cast<char*>(&login_data)
   , sizeof(login_data), 0) < 0) {
     std::cerr << "Error sending datagram to node at " 
@@ -89,14 +88,43 @@ int main(){
   memset(response_buffer, 0, sizeof(response_buffer));
   // Leer la respuesta del servidor
   ssize_t bytes_received = recv(client_socket
-  , response_buffer, sizeof(response_buffer) - 1, 0);
+  , response_buffer, sizeof(response_buffer), 0);
   if (bytes_received < 0) {
     std::cerr << "Error reading response from node at " << server_ip << ":" << server_port << std::endl;
     close(client_socket);
     return 4;
   }
   // Mostrar la respuesta recibida
-  std::cout << "Response from node: " << response_buffer << std::endl;
+  int message_type = (int)response_buffer[0];
+  // Imprimimos según la respuesta recibida
+  switch (message_type) {
+    case kAuthenticationSuccessIC:
+      // Convertimos el char* al `struct` correspondiente
+      AuthenticationSuccessIC* confirmation;
+      confirmation = reinterpret_cast<AuthenticationSuccessIC*>(response_buffer);
+      std::cout << "User verified. \n" << "\t Name: " 
+      << confirmation->name << " | Last name: " << confirmation->last_name << std::endl;
+      // imprimir los permisos de los usuarios
+      checkPermissions(confirmation->permissions);
+      break; 
+    case kAuthenticationFailure:
+      AuthenticationFailure* failure;
+      failure = reinterpret_cast<AuthenticationFailure*>(response_buffer);
+      std::cout << "Invalid username and/or password. Error message: " <<
+        failure->error << std::endl;
+      break;
+    case kInvalidRequest:
+      std::cout << "Server node cannot handle the request." << std::endl;
+      break;
+    case kCommunicationError:
+      std::cout << "Server node cannot communicate successfully with a secondary node." << std::endl;
+      break;
+    default:
+      // se considera el mensaje como invalido.
+      std::cout << "Received an invalid message." << std::endl;
+      break;
+  }
+
 
   // Cerrar el socket
   close(client_socket);
