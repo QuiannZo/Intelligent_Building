@@ -60,8 +60,8 @@ void VirtualMemoryManager::createBinaryFile() {
 
 void VirtualMemoryManager::verifyPage(int32_t pageNum) {
     // En caso de que no queden marcos.
-    if (freeFrameList.empty()) {
-        cerr << "Error: No hay marcos libres disponibles" << std::endl;
+    if (freeFrameList.empty() && frameQueue.empty()) {
+        std::cerr << "Error: No hay marcos libres disponibles" << std::endl;
         return; 
     }
 
@@ -70,21 +70,20 @@ void VirtualMemoryManager::verifyPage(int32_t pageNum) {
     // Si la página no está cargada en memoria física.
     if (this->pageTable[pageNum] == -1) {
         int freeFrame;
-        bool encontro = false;
         if (!freeFrameList.empty()) {
             // Se obtiene el marco libre.
             freeFrame = freeFrameList.back();
             freeFrameList.pop_back();
-        }
-        // Reemplazo de página usando FIFO
-        else {
+        } else {
+            // Reemplazo de página usando FIFO
             freeFrame = frameQueue.front();
             frameQueue.pop();
-            // Página antigua no válida
-            for (int iterador = 0; iterador < NUM_PAGES && !encontro; ++iterador) {
+            
+            // Buscar y actualizar la tabla para la página reemplazada
+            for (int iterador = 0; iterador < NUM_PAGES; ++iterador) {
                 if (pageTable[iterador] == freeFrame) {
                     pageTable[iterador] = -1;
-                    encontro = true;
+                    break;
                 }
             }
         }
