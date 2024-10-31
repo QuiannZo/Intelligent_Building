@@ -1,9 +1,10 @@
 #include "modifyuser.h"
 #include "ui_modifyuser.h"
+#include "menuwindow.h"
 
-ModifyUser::ModifyUser(QWidget *parent)
+ModifyUser::ModifyUser(QWidget *parent, UserHandler& userHandler, menuwindow& menu)
     : QMainWindow(parent)
-    , ui(new Ui::ModifyUser)
+    , ui(new Ui::ModifyUser), userHandler(userHandler), menu(menu)
 {
     ui->setupUi(this);
 
@@ -39,5 +40,13 @@ ModifyUser::~ModifyUser()
 void ModifyUser::on_pushButton1_clicked()
 {
 
+}
+
+
+void ModifyUser::on_pushButton1_2_clicked()
+{
+    this->menu.show();
+    this->hide();
+    this->deleteLater();
 }
 

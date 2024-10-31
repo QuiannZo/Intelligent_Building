@@ -42,7 +42,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /usr/bin/cmake --regenerate-during-build -S/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio -B/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/build/Desktop-Debug
+  command = /usr/bin/cmake --regenerate-during-build -S/home/lab-3-5/filesystem_oper/PI-Edificio -B/home/lab-3-5/filesystem_oper/PI-Edificio/build/Desktop-Debug
   description = Re-running CMake...
   generator = 1
 

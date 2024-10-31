@@ -101,7 +101,7 @@ menuwindow::~menuwindow()
 
 void menuwindow::on_pushButton_clicked()
 {
-    viewdatabasewindow *databaseWindow = new viewdatabasewindow(this);  // Crear la nueva ventana
+    viewdatabasewindow *databaseWindow = new viewdatabasewindow(this, this->userHandler, *this);  // Crear la nueva ventana
     databaseWindow->show();  // Mostrar la nueva ventana
     hide();
 }
@@ -133,7 +133,7 @@ void menuwindow::on_pushButton6_clicked()
 
 void menuwindow::on_pushButton7_clicked()
 {
-    RemoveUser *removeuser = new RemoveUser(this);  // Crear la nueva ventana
+    RemoveUser *removeuser = new RemoveUser(this, this->userHandler, *this);  // Crear la nueva ventana
     removeuser->show();  // Mostrar la nueva ventana
     hide();
 }
@@ -141,7 +141,7 @@ void menuwindow::on_pushButton7_clicked()
 
 void menuwindow::on_pushButton5_clicked()
 {
-    ModifyUser *modifyUser = new ModifyUser(this);  // Crear la nueva ventana
+    ModifyUser *modifyUser = new ModifyUser(this, this->userHandler, *this);  // Crear la nueva ventana
     modifyUser->show();  // Mostrar la nueva ventana
     hide();
 }
@@ -149,49 +149,49 @@ void menuwindow::on_pushButton5_clicked()
 
 void menuwindow::on_pushButton2_clicked()
 {
-    ModifyDataBase *modifyData = new ModifyDataBase(this);  // Crear la nueva ventana
+    ModifyDataBase *modifyData = new ModifyDataBase(this, this->userHandler, *this);  // Crear la nueva ventana
     modifyData->show();  // Mostrar la nueva ventana
     hide();
 }
 
 void menuwindow::on_pushButton3_clicked()
 {
-    SensorFloor *sensorFloor = new SensorFloor(this); // Crear la nueva ventana
+    SensorFloor *sensorFloor = new SensorFloor(this, this->userHandler, *this); // Crear la nueva ventana
     sensorFloor->show();                              // Mostrar la nueva ventana
     hide();
 }
 
 void menuwindow::on_pushButton4_clicked()
 {
-    ViewUser *viewUser = new ViewUser(this); // Crear la nueva ventana
+    ViewUser *viewUser = new ViewUser(this, this->userHandler, *this); // Crear la nueva ventana
     viewUser->show();                        // Mostrar la nueva ventana
     hide();
 }
 
 void menuwindow::on_pushButton8_clicked()
 {
-    sensorBuilding *building = new sensorBuilding(this); // Crear la nueva ventana
+    sensorBuilding *building = new sensorBuilding(this, this->userHandler, *this); // Crear la nueva ventana
     building->show();                                    // Mostrar la nueva ventana
     hide();
 }
 
 void menuwindow::on_pushButton9_clicked()
 {
-    ViewNode *viewNode = new ViewNode(this); // Crear la nueva ventana
+    ViewNode *viewNode = new ViewNode(this, this->userHandler, *this); // Crear la nueva ventana
     viewNode->show();                        // Mostrar la nueva ventana
     hide();
 }
 
 void menuwindow::on_pushButton10_clicked()
 {
-    ViewBackup *viewBackup = new ViewBackup(this); // Crear la nueva ventana
+    ViewBackup *viewBackup = new ViewBackup(this, this->userHandler, *this); // Crear la nueva ventana
     viewBackup->show();                            // Mostrar la nueva ventana
     hide();
 }
 
 void menuwindow::on_pushButton11_clicked()
 {
-    viewLog *log = new viewLog(this); // Crear la nueva ventana
+    viewLog *log = new viewLog(this, this->userHandler, *this); // Crear la nueva ventana
     log->show();                      // Mostrar la nueva ventana
     hide();
 }

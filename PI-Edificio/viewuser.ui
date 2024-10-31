@@ -96,6 +96,41 @@
      <string>Última actividad:</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton1_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>141</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">    QPushButton {
+        background-color: white;
+        color: #007ACC; /* Text color */
+        border-radius: 25px; /* Rounded corners */
+        font-weight: bold;
+        font-size: 16px;
+    }
+    QPushButton:hover {
+        background-color: #E0E0E0; /* Hover effect */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    QPushButton:pressed {
+        background-color: #B0B0B0; /* Click effect */
+    }</string>
+    </property>
+    <property name="text">
+     <string>Return</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -103,7 +138,7 @@
      <x>0</x>
      <y>0</y>
      <width>1000</width>
-     <height>21</height>
+     <height>23</height>
     </rect>
    </property>
   </widget>

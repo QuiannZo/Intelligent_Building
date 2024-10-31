@@ -1,1 +1,0 @@
-username,hash,permissions,[floors],name,lastName,userId,createdDate,lastUpdateDate,isActive

@@ -1,9 +1,9 @@
 #include "viewdatabasewindow.h"
 #include "ui_viewdatabasewindow.h"
 
-viewdatabasewindow::viewdatabasewindow(QWidget *parent) :
+viewdatabasewindow::viewdatabasewindow(QWidget *parent, UserHandler& userHandler, menuwindow& menu) :
     QMainWindow(parent),
-    ui(new Ui::viewdatabasewindow)
+    ui(new Ui::viewdatabasewindow), userHandler(userHandler), menu(menu)
 {
     ui->setupUi(this);
 
@@ -34,5 +34,31 @@ viewdatabasewindow::viewdatabasewindow(QWidget *parent) :
 viewdatabasewindow::~viewdatabasewindow()
 {
     delete ui;
+}
+
+
+void viewdatabasewindow::on_pushButton1_2_clicked()
+{
+    this->menu.show();
+    this->hide();
+    this->deleteLater();
+}
+
+
+void viewdatabasewindow::on_pushButton8_clicked() // Sensor building
+{
+
+}
+
+
+void viewdatabasewindow::on_pushButton8_2_clicked() // Node information
+{
+
+}
+
+
+void viewdatabasewindow::on_pushButton8_3_clicked() // Sensor floor
+{
+
 }
 

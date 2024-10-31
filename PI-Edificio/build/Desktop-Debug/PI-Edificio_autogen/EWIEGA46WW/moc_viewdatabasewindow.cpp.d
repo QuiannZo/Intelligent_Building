@@ -1,6 +1,17 @@
-/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/build/Desktop-Debug/PI-Edificio_autogen/EWIEGA46WW/moc_viewdatabasewindow.cpp: /home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/viewdatabasewindow.h \
-  /home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/build/Desktop-Debug/PI-Edificio_autogen/moc_predefs.h \
+/home/lab-3-5/filesystem_oper/PI-Edificio/build/Desktop-Debug/PI-Edificio_autogen/EWIEGA46WW/moc_viewdatabasewindow.cpp: /home/lab-3-5/filesystem_oper/PI-Edificio/viewdatabasewindow.h \
+  /home/lab-3-5/filesystem_oper/PI-Edificio/build/Desktop-Debug/PI-Edificio_autogen/moc_predefs.h \
+  /home/lab-3-5/filesystem_oper/FAT.hpp \
+  /home/lab-3-5/filesystem_oper/HashHandler.hpp \
+  /home/lab-3-5/filesystem_oper/Log.hpp \
+  /home/lab-3-5/filesystem_oper/PI-Edificio/mainwindow.h \
+  /home/lab-3-5/filesystem_oper/PI-Edificio/menuwindow.h \
+  /home/lab-3-5/filesystem_oper/UserHandler.hpp \
   /usr/include/QtCore/QFile \
+  /usr/include/QtCore/QList \
+  /usr/include/QtCore/QObject \
+  /usr/include/QtCore/QRect \
+  /usr/include/QtCore/QSize \
+  /usr/include/QtCore/QSizeF \
   /usr/include/QtCore/q20functional.h \
   /usr/include/QtCore/q20memory.h \
   /usr/include/QtCore/q20type_traits.h \
@@ -30,10 +41,16 @@
   /usr/include/QtCore/qcontainerinfo.h \
   /usr/include/QtCore/qcontainertools_impl.h \
   /usr/include/QtCore/qcontiguouscache.h \
+  /usr/include/QtCore/qcoreapplication.h \
+  /usr/include/QtCore/qcoreapplication_platform.h \
+  /usr/include/QtCore/qcoreevent.h \
   /usr/include/QtCore/qdarwinhelpers.h \
   /usr/include/QtCore/qdatastream.h \
+  /usr/include/QtCore/qdeadlinetimer.h \
   /usr/include/QtCore/qdebug.h \
+  /usr/include/QtCore/qelapsedtimer.h \
   /usr/include/QtCore/qendian.h \
+  /usr/include/QtCore/qeventloop.h \
   /usr/include/QtCore/qexceptionhandling.h \
   /usr/include/QtCore/qfile.h \
   /usr/include/QtCore/qfiledevice.h \
@@ -54,6 +71,7 @@
   /usr/include/QtCore/qlatin1stringview.h \
   /usr/include/QtCore/qline.h \
   /usr/include/QtCore/qlist.h \
+  /usr/include/QtCore/qlocale.h \
   /usr/include/QtCore/qlogging.h \
   /usr/include/QtCore/qmalloc.h \
   /usr/include/QtCore/qmap.h \
@@ -63,6 +81,7 @@
   /usr/include/QtCore/qmetatype.h \
   /usr/include/QtCore/qminmax.h \
   /usr/include/QtCore/qnamespace.h \
+  /usr/include/QtCore/qnativeinterface.h \
   /usr/include/QtCore/qnumeric.h \
   /usr/include/QtCore/qobject.h \
   /usr/include/QtCore/qobject_impl.h \
@@ -115,35 +134,49 @@
   /usr/include/QtCore/qtversionchecks.h \
   /usr/include/QtCore/qtypeinfo.h \
   /usr/include/QtCore/qtypes.h \
+  /usr/include/QtCore/qurl.h \
   /usr/include/QtCore/qutf8stringview.h \
   /usr/include/QtCore/qvariant.h \
   /usr/include/QtCore/qvarlengtharray.h \
   /usr/include/QtCore/qversiontagging.h \
   /usr/include/QtCore/qxptype_traits.h \
   /usr/include/QtCore/qyieldcpu.h \
+  /usr/include/QtGui/QCloseEvent \
+  /usr/include/QtGui/QTransform \
   /usr/include/QtGui/qaction.h \
   /usr/include/QtGui/qbitmap.h \
   /usr/include/QtGui/qbrush.h \
   /usr/include/QtGui/qcolor.h \
   /usr/include/QtGui/qcursor.h \
+  /usr/include/QtGui/qevent.h \
+  /usr/include/QtGui/qeventpoint.h \
   /usr/include/QtGui/qfont.h \
   /usr/include/QtGui/qfontinfo.h \
   /usr/include/QtGui/qfontmetrics.h \
+  /usr/include/QtGui/qguiapplication.h \
+  /usr/include/QtGui/qguiapplication_platform.h \
   /usr/include/QtGui/qicon.h \
   /usr/include/QtGui/qimage.h \
+  /usr/include/QtGui/qinputdevice.h \
+  /usr/include/QtGui/qinputmethod.h \
   /usr/include/QtGui/qkeysequence.h \
   /usr/include/QtGui/qpaintdevice.h \
   /usr/include/QtGui/qpalette.h \
   /usr/include/QtGui/qpixelformat.h \
   /usr/include/QtGui/qpixmap.h \
+  /usr/include/QtGui/qpointingdevice.h \
   /usr/include/QtGui/qpolygon.h \
   /usr/include/QtGui/qregion.h \
   /usr/include/QtGui/qrgb.h \
   /usr/include/QtGui/qrgba64.h \
+  /usr/include/QtGui/qscreen.h \
+  /usr/include/QtGui/qscreen_platform.h \
   /usr/include/QtGui/qtgui-config.h \
   /usr/include/QtGui/qtguiexports.h \
   /usr/include/QtGui/qtguiglobal.h \
   /usr/include/QtGui/qtransform.h \
+  /usr/include/QtGui/qvector2d.h \
+  /usr/include/QtGui/qvectornd.h \
   /usr/include/QtGui/qwindowdefs.h \
   /usr/include/QtWidgets/QMainWindow \
   /usr/include/QtWidgets/qmainwindow.h \
@@ -191,6 +224,7 @@
   /usr/include/c++/13.2.0/bits/fs_fwd.h \
   /usr/include/c++/13.2.0/bits/fs_ops.h \
   /usr/include/c++/13.2.0/bits/fs_path.h \
+  /usr/include/c++/13.2.0/bits/fstream.tcc \
   /usr/include/c++/13.2.0/bits/functexcept.h \
   /usr/include/c++/13.2.0/bits/functional_hash.h \
   /usr/include/c++/13.2.0/bits/hash_bytes.h \
@@ -290,11 +324,13 @@
   /usr/include/c++/13.2.0/ext/string_conversions.h \
   /usr/include/c++/13.2.0/ext/type_traits.h \
   /usr/include/c++/13.2.0/filesystem \
+  /usr/include/c++/13.2.0/fstream \
   /usr/include/c++/13.2.0/functional \
   /usr/include/c++/13.2.0/initializer_list \
   /usr/include/c++/13.2.0/iomanip \
   /usr/include/c++/13.2.0/ios \
   /usr/include/c++/13.2.0/iosfwd \
+  /usr/include/c++/13.2.0/iostream \
   /usr/include/c++/13.2.0/istream \
   /usr/include/c++/13.2.0/iterator \
   /usr/include/c++/13.2.0/limits \
@@ -337,8 +373,10 @@
   /usr/include/c++/13.2.0/variant \
   /usr/include/c++/13.2.0/vector \
   /usr/include/c++/13.2.0/x86_64-unknown-linux-gnu/bits/atomic_word.h \
+  /usr/include/c++/13.2.0/x86_64-unknown-linux-gnu/bits/basic_file.h \
   /usr/include/c++/13.2.0/x86_64-unknown-linux-gnu/bits/c++allocator.h \
   /usr/include/c++/13.2.0/x86_64-unknown-linux-gnu/bits/c++config.h \
+  /usr/include/c++/13.2.0/x86_64-unknown-linux-gnu/bits/c++io.h \
   /usr/include/c++/13.2.0/x86_64-unknown-linux-gnu/bits/c++locale.h \
   /usr/include/c++/13.2.0/x86_64-unknown-linux-gnu/bits/cpu_defines.h \
   /usr/include/c++/13.2.0/x86_64-unknown-linux-gnu/bits/ctype_base.h \
@@ -359,6 +397,11 @@
   /usr/include/linux/errno.h \
   /usr/include/linux/limits.h \
   /usr/include/locale.h \
+  /usr/include/openssl/configuration.h \
+  /usr/include/openssl/e_os2.h \
+  /usr/include/openssl/macros.h \
+  /usr/include/openssl/opensslv.h \
+  /usr/include/openssl/sha.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
   /usr/include/stdc-predef.h \
@@ -441,6 +484,7 @@
   /usr/lib/x86_64-linux-gnu/include/bits/xopen_lim.h \
   /usr/lib/x86_64-linux-gnu/include/gnu/stubs-64.h \
   /usr/lib/x86_64-linux-gnu/include/gnu/stubs.h \
+  /usr/lib/x86_64-linux-gnu/include/openssl/opensslconf.h \
   /usr/lib/x86_64-linux-gnu/include/sys/cdefs.h \
   /usr/lib/x86_64-linux-gnu/include/sys/select.h \
   /usr/lib/x86_64-linux-gnu/include/sys/types.h

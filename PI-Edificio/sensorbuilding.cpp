@@ -1,8 +1,8 @@
 #include "sensorbuilding.h"
 #include "ui_sensorbuilding.h"
 
-sensorBuilding::sensorBuilding(QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::sensorBuilding)
+sensorBuilding::sensorBuilding(QWidget *parent, UserHandler& userHandler, menuwindow& menu)
+    : QMainWindow(parent), ui(new Ui::sensorBuilding), userHandler(userHandler), menu(menu)
 {
     ui->setupUi(this);
 
@@ -19,3 +19,11 @@ sensorBuilding::~sensorBuilding()
 {
     delete ui;
 }
+
+void sensorBuilding::on_pushButton1_2_clicked()
+{
+    this->menu.show();
+    this->hide();
+    this->deleteLater();
+}
+

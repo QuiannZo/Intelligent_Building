@@ -1,9 +1,9 @@
 #include "modifydatabase.h"
 #include "ui_modifydatabase.h"
 
-ModifyDataBase::ModifyDataBase(QWidget *parent)
+ModifyDataBase::ModifyDataBase(QWidget *parent, UserHandler& userHandler, menuwindow& menu)
     : QMainWindow(parent)
-    , ui(new Ui::ModifyDataBase)
+    , ui(new Ui::ModifyDataBase), userHandler(userHandler), menu(menu)
 {
     ui->setupUi(this);
 
@@ -35,3 +35,11 @@ ModifyDataBase::~ModifyDataBase()
 {
     delete ui;
 }
+
+void ModifyDataBase::on_pushButton1_2_clicked()
+{
+    this->menu.show();
+    this->hide();
+    this->deleteLater();
+}
+

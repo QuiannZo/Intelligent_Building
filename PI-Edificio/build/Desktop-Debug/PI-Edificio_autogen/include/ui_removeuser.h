@@ -29,6 +29,7 @@ public:
     QLabel *nombre;
     QLineEdit *lineEdit_2;
     QPushButton *pushButton1;
+    QPushButton *pushButton1_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -71,10 +72,28 @@ public:
 "    QPushButton:pressed {\n"
 "        background-color: #B0B0B0; /* Click effect */\n"
 "    }"));
+        pushButton1_2 = new QPushButton(centralwidget);
+        pushButton1_2->setObjectName("pushButton1_2");
+        pushButton1_2->setGeometry(QRect(10, 10, 141, 26));
+        pushButton1_2->setFont(font1);
+        pushButton1_2->setStyleSheet(QString::fromUtf8("    QPushButton {\n"
+"        background-color: white;\n"
+"        color: #007ACC; /* Text color */\n"
+"        border-radius: 25px; /* Rounded corners */\n"
+"        font-weight: bold;\n"
+"        font-size: 16px;\n"
+"    }\n"
+"    QPushButton:hover {\n"
+"        background-color: #E0E0E0; /* Hover effect */\n"
+"        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);\n"
+"    }\n"
+"    QPushButton:pressed {\n"
+"        background-color: #B0B0B0; /* Click effect */\n"
+"    }"));
         RemoveUser->setCentralWidget(centralwidget);
         menubar = new QMenuBar(RemoveUser);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1000, 21));
+        menubar->setGeometry(QRect(0, 0, 1000, 23));
         RemoveUser->setMenuBar(menubar);
         statusbar = new QStatusBar(RemoveUser);
         statusbar->setObjectName("statusbar");
@@ -90,6 +109,7 @@ public:
         RemoveUser->setWindowTitle(QCoreApplication::translate("RemoveUser", "MainWindow", nullptr));
         nombre->setText(QCoreApplication::translate("RemoveUser", "Usuario a eliminar: ", nullptr));
         pushButton1->setText(QCoreApplication::translate("RemoveUser", "Eliminar usuario", nullptr));
+        pushButton1_2->setText(QCoreApplication::translate("RemoveUser", "Return", nullptr));
     } // retranslateUi
 
 };

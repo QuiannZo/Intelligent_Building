@@ -1,8 +1,9 @@
 #include "viewbackup.h"
 #include "ui_viewbackup.h"
 
-ViewBackup::ViewBackup(QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::ViewBackup)
+ViewBackup::ViewBackup(QWidget *parent, UserHandler& userHandler, menuwindow& menu)
+    : QMainWindow(parent), ui(new Ui::ViewBackup),
+    userHandler(userHandler), menu(menu)
 {
     ui->setupUi(this);
 
@@ -19,3 +20,11 @@ ViewBackup::~ViewBackup()
 {
     delete ui;
 }
+
+void ViewBackup::on_pushButton1_2_clicked()
+{
+    this->menu.show();
+    this->hide();
+    this->deleteLater();
+}
+

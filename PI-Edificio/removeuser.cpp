@@ -1,9 +1,9 @@
 #include "removeuser.h"
 #include "ui_removeuser.h"
 
-RemoveUser::RemoveUser(QWidget *parent)
+RemoveUser::RemoveUser(QWidget *parent, UserHandler& userHandler, menuwindow& menu)
     : QMainWindow(parent)
-    , ui(new Ui::RemoveUser)
+    , ui(new Ui::RemoveUser), userHandler(userHandler), menu(menu)
 {
     ui->setupUi(this);
 
@@ -35,3 +35,11 @@ RemoveUser::~RemoveUser()
 {
     delete ui;
 }
+
+void RemoveUser::on_pushButton1_2_clicked()
+{
+    this->menu.show();
+    this->hide();
+    this->deleteLater();
+}
+

@@ -1,8 +1,8 @@
 #include "sensorfloor.h"
 #include "ui_sensorfloor.h"
 
-SensorFloor::SensorFloor(QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::SensorFloor)
+SensorFloor::SensorFloor(QWidget *parent, UserHandler& userHandler, menuwindow& menu)
+    : QMainWindow(parent), ui(new Ui::SensorFloor), userHandler(userHandler), menu(menu)
 {
     ui->setupUi(this);
 
@@ -19,3 +19,11 @@ SensorFloor::~SensorFloor()
 {
     delete ui;
 }
+
+void SensorFloor::on_pushButton1_2_clicked()
+{
+    this->menu.show();
+    this->hide();
+    this->deleteLater();
+}
+

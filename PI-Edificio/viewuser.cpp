@@ -1,9 +1,9 @@
 #include "viewuser.h"
 #include "ui_viewuser.h"
 
-ViewUser::ViewUser(QWidget *parent)
+ViewUser::ViewUser(QWidget *parent, UserHandler& userHandler, menuwindow& menu)
     : QMainWindow(parent)
-    , ui(new Ui::ViewUser)
+    , ui(new Ui::ViewUser), userHandler(userHandler), menu(menu)
 {
     ui->setupUi(this);
 
@@ -55,3 +55,11 @@ ViewUser::~ViewUser()
 {
     delete ui;
 }
+
+void ViewUser::on_pushButton1_2_clicked()
+{
+    this->menu.show();
+    this->hide();
+    this->deleteLater();
+}
+

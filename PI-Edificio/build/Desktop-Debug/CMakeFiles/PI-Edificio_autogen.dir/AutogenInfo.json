@@ -1,16 +1,16 @@
 {
-	"BUILD_DIR" : "/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/build/Desktop-Debug/PI-Edificio_autogen",
-	"CMAKE_BINARY_DIR" : "/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/build/Desktop-Debug",
-	"CMAKE_CURRENT_BINARY_DIR" : "/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/build/Desktop-Debug",
-	"CMAKE_CURRENT_SOURCE_DIR" : "/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio",
+	"BUILD_DIR" : "/home/lab-3-5/filesystem_oper/PI-Edificio/build/Desktop-Debug/PI-Edificio_autogen",
+	"CMAKE_BINARY_DIR" : "/home/lab-3-5/filesystem_oper/PI-Edificio/build/Desktop-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/lab-3-5/filesystem_oper/PI-Edificio/build/Desktop-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/lab-3-5/filesystem_oper/PI-Edificio",
 	"CMAKE_EXECUTABLE" : "/usr/bin/cmake",
 	"CMAKE_LIST_FILES" : 
 	[
-		"/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/CMakeLists.txt",
-		"/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/build/Desktop-Debug/.qtc/package-manager/auto-setup.cmake",
+		"/home/lab-3-5/filesystem_oper/PI-Edificio/CMakeLists.txt",
+		"/home/lab-3-5/filesystem_oper/PI-Edificio/build/Desktop-Debug/.qtc/package-manager/auto-setup.cmake",
 		"/usr/share/cmake-3.29/Modules/CMakeDetermineSystem.cmake",
 		"/usr/share/cmake-3.29/Modules/CMakeSystem.cmake.in",
-		"/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/build/Desktop-Debug/CMakeFiles/3.29.8/CMakeSystem.cmake",
+		"/home/lab-3-5/filesystem_oper/PI-Edificio/build/Desktop-Debug/CMakeFiles/3.29.8/CMakeSystem.cmake",
 		"/usr/share/cmake-3.29/Modules/CMakeNinjaFindMake.cmake",
 		"/usr/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake",
 		"/usr/share/cmake-3.29/Modules/Platform/Linux-Initialize.cmake",
@@ -64,7 +64,7 @@
 		"/usr/share/cmake-3.29/Modules/CMakeFindBinUtils.cmake",
 		"/usr/share/cmake-3.29/Modules/Compiler/GNU-FindBinUtils.cmake",
 		"/usr/share/cmake-3.29/Modules/CMakeCXXCompiler.cmake.in",
-		"/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/build/Desktop-Debug/CMakeFiles/3.29.8/CMakeCXXCompiler.cmake",
+		"/home/lab-3-5/filesystem_oper/PI-Edificio/build/Desktop-Debug/CMakeFiles/3.29.8/CMakeCXXCompiler.cmake",
 		"/usr/share/cmake-3.29/Modules/CMakeSystemSpecificInformation.cmake",
 		"/usr/share/cmake-3.29/Modules/CMakeGenericSystem.cmake",
 		"/usr/share/cmake-3.29/Modules/CMakeInitializeConfigs.cmake",
@@ -90,7 +90,7 @@
 		"/usr/share/cmake-3.29/Modules/CMakeDetermineCompileFeatures.cmake",
 		"/usr/share/cmake-3.29/Modules/Internal/FeatureTesting.cmake",
 		"/usr/share/cmake-3.29/Modules/CMakeCXXCompiler.cmake.in",
-		"/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/build/Desktop-Debug/CMakeFiles/3.29.8/CMakeCXXCompiler.cmake",
+		"/home/lab-3-5/filesystem_oper/PI-Edificio/build/Desktop-Debug/CMakeFiles/3.29.8/CMakeCXXCompiler.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt6/Qt6ConfigVersion.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt6/Qt6ConfigVersionImpl.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt6/Qt6Config.cmake",
@@ -453,138 +453,138 @@
 		"/usr/share/cmake-3.29/Modules/FindPackageHandleStandardArgs.cmake",
 		"/usr/share/cmake-3.29/Modules/FindPackageMessage.cmake",
 		"/usr/share/cmake-3.29/Modules/GNUInstallDirs.cmake",
-		"/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/resource.qrc"
+		"/home/lab-3-5/filesystem_oper/PI-Edificio/resource.qrc"
 	],
-	"CMAKE_SOURCE_DIR" : "/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio",
+	"CMAKE_SOURCE_DIR" : "/home/lab-3-5/filesystem_oper/PI-Edificio",
 	"CROSS_CONFIG" : false,
-	"DEP_FILE" : "/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/build/Desktop-Debug/PI-Edificio_autogen/deps",
+	"DEP_FILE" : "/home/lab-3-5/filesystem_oper/PI-Edificio/build/Desktop-Debug/PI-Edificio_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "PI-Edificio_autogen/timestamp",
 	"HEADERS" : 
 	[
 		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/Authenticator.hpp",
+			"/home/lab-3-5/filesystem_oper/Authenticator.hpp",
 			"MU",
-			"HHHLPFCZD6/moc_Authenticator.cpp",
+			"SS57N4ZVL5/moc_Authenticator.cpp",
 			null
 		],
 		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/DataCollector.hpp",
+			"/home/lab-3-5/filesystem_oper/DataCollector.hpp",
 			"MU",
-			"HHHLPFCZD6/moc_DataCollector.cpp",
+			"SS57N4ZVL5/moc_DataCollector.cpp",
 			null
 		],
 		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/FAT.hpp",
+			"/home/lab-3-5/filesystem_oper/FAT.hpp",
 			"MU",
-			"HHHLPFCZD6/moc_FAT.cpp",
+			"SS57N4ZVL5/moc_FAT.cpp",
 			null
 		],
 		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/HashHandler.hpp",
+			"/home/lab-3-5/filesystem_oper/HashHandler.hpp",
 			"MU",
-			"HHHLPFCZD6/moc_HashHandler.cpp",
+			"SS57N4ZVL5/moc_HashHandler.cpp",
 			null
 		],
 		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/Log.hpp",
+			"/home/lab-3-5/filesystem_oper/Log.hpp",
 			"MU",
-			"HHHLPFCZD6/moc_Log.cpp",
+			"SS57N4ZVL5/moc_Log.cpp",
 			null
 		],
 		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/createuser.h",
+			"/home/lab-3-5/filesystem_oper/PI-Edificio/createuser.h",
 			"MU",
 			"EWIEGA46WW/moc_createuser.cpp",
 			null
 		],
 		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/mainwindow.h",
+			"/home/lab-3-5/filesystem_oper/PI-Edificio/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
 			null
 		],
 		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/menuwindow.h",
+			"/home/lab-3-5/filesystem_oper/PI-Edificio/menuwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_menuwindow.cpp",
 			null
 		],
 		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/modifydatabase.h",
+			"/home/lab-3-5/filesystem_oper/PI-Edificio/modifydatabase.h",
 			"MU",
 			"EWIEGA46WW/moc_modifydatabase.cpp",
 			null
 		],
 		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/modifyuser.h",
+			"/home/lab-3-5/filesystem_oper/PI-Edificio/modifyuser.h",
 			"MU",
 			"EWIEGA46WW/moc_modifyuser.cpp",
 			null
 		],
 		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/removeuser.h",
+			"/home/lab-3-5/filesystem_oper/PI-Edificio/removeuser.h",
 			"MU",
 			"EWIEGA46WW/moc_removeuser.cpp",
 			null
 		],
 		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/sensorbuilding.h",
+			"/home/lab-3-5/filesystem_oper/PI-Edificio/sensorbuilding.h",
 			"MU",
 			"EWIEGA46WW/moc_sensorbuilding.cpp",
 			null
 		],
 		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/sensorfloor.h",
+			"/home/lab-3-5/filesystem_oper/PI-Edificio/sensorfloor.h",
 			"MU",
 			"EWIEGA46WW/moc_sensorfloor.cpp",
 			null
 		],
 		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/viewbackup.h",
+			"/home/lab-3-5/filesystem_oper/PI-Edificio/viewbackup.h",
 			"MU",
 			"EWIEGA46WW/moc_viewbackup.cpp",
 			null
 		],
 		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/viewdatabasewindow.h",
+			"/home/lab-3-5/filesystem_oper/PI-Edificio/viewdatabasewindow.h",
 			"MU",
 			"EWIEGA46WW/moc_viewdatabasewindow.cpp",
 			null
 		],
 		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/viewlog.h",
+			"/home/lab-3-5/filesystem_oper/PI-Edificio/viewlog.h",
 			"MU",
 			"EWIEGA46WW/moc_viewlog.cpp",
 			null
 		],
 		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/viewnode.h",
+			"/home/lab-3-5/filesystem_oper/PI-Edificio/viewnode.h",
 			"MU",
 			"EWIEGA46WW/moc_viewnode.cpp",
 			null
 		],
 		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/viewuser.h",
+			"/home/lab-3-5/filesystem_oper/PI-Edificio/viewuser.h",
 			"MU",
 			"EWIEGA46WW/moc_viewuser.cpp",
 			null
 		],
 		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/UserHandler.hpp",
+			"/home/lab-3-5/filesystem_oper/UserHandler.hpp",
 			"MU",
-			"HHHLPFCZD6/moc_UserHandler.cpp",
+			"SS57N4ZVL5/moc_UserHandler.cpp",
 			null
 		],
 		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/Usuario.hpp",
+			"/home/lab-3-5/filesystem_oper/Usuario.hpp",
 			"MU",
-			"HHHLPFCZD6/moc_Usuario.cpp",
+			"SS57N4ZVL5/moc_Usuario.cpp",
 			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
-	"INCLUDE_DIR" : "/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/build/Desktop-Debug/PI-Edificio_autogen/include",
-	"MOC_COMPILATION_FILE" : "/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/build/Desktop-Debug/PI-Edificio_autogen/mocs_compilation.cpp",
+	"INCLUDE_DIR" : "/home/lab-3-5/filesystem_oper/PI-Edificio/build/Desktop-Debug/PI-Edificio_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/lab-3-5/filesystem_oper/PI-Edificio/build/Desktop-Debug/PI-Edificio_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_WIDGETS_LIB" ],
 	"MOC_DEPEND_FILTERS" : 
 	[
@@ -627,112 +627,80 @@
 		"-c",
 		"/usr/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp"
 	],
-	"MOC_PREDEFS_FILE" : "/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/build/Desktop-Debug/PI-Edificio_autogen/moc_predefs.h",
+	"MOC_PREDEFS_FILE" : "/home/lab-3-5/filesystem_oper/PI-Edificio/build/Desktop-Debug/PI-Edificio_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : [],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 10,
-	"PARSE_CACHE_FILE" : "/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/build/Desktop-Debug/CMakeFiles/PI-Edificio_autogen.dir/ParseCache.txt",
+	"PARSE_CACHE_FILE" : "/home/lab-3-5/filesystem_oper/PI-Edificio/build/Desktop-Debug/CMakeFiles/PI-Edificio_autogen.dir/ParseCache.txt",
 	"QT_MOC_EXECUTABLE" : "/usr/libexec/moc",
 	"QT_UIC_EXECUTABLE" : "/usr/libexec/uic",
 	"QT_VERSION_MAJOR" : 6,
 	"QT_VERSION_MINOR" : 7,
-	"SETTINGS_FILE" : "/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/build/Desktop-Debug/CMakeFiles/PI-Edificio_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE" : "/home/lab-3-5/filesystem_oper/PI-Edificio/build/Desktop-Debug/CMakeFiles/PI-Edificio_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "/home/lab-3-5/filesystem_oper/Authenticator.cpp", "MU", null ],
+		[ "/home/lab-3-5/filesystem_oper/DataCollector.cpp", "MU", null ],
+		[ "/home/lab-3-5/filesystem_oper/FAT.cpp", "MU", null ],
+		[ "/home/lab-3-5/filesystem_oper/HashHandler.cpp", "MU", null ],
+		[ "/home/lab-3-5/filesystem_oper/Log.cpp", "MU", null ],
 		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/Authenticator.cpp",
+			"/home/lab-3-5/filesystem_oper/PI-Edificio/createuser.cpp",
+			"MU",
+			null
+		],
+		[ "/home/lab-3-5/filesystem_oper/PI-Edificio/main.cpp", "MU", null ],
+		[
+			"/home/lab-3-5/filesystem_oper/PI-Edificio/mainwindow.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/DataCollector.cpp",
-			"MU",
-			null
-		],
-		[ "/home/lab-3-5/Desktop/pi/filesystem_oper/FAT.cpp", "MU", null ],
-		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/HashHandler.cpp",
-			"MU",
-			null
-		],
-		[ "/home/lab-3-5/Desktop/pi/filesystem_oper/Log.cpp", "MU", null ],
-		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/createuser.cpp",
+			"/home/lab-3-5/filesystem_oper/PI-Edificio/menuwindow.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/main.cpp",
+			"/home/lab-3-5/filesystem_oper/PI-Edificio/modifydatabase.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/mainwindow.cpp",
+			"/home/lab-3-5/filesystem_oper/PI-Edificio/modifyuser.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/menuwindow.cpp",
+			"/home/lab-3-5/filesystem_oper/PI-Edificio/removeuser.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/modifydatabase.cpp",
+			"/home/lab-3-5/filesystem_oper/PI-Edificio/sensorbuilding.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/modifyuser.cpp",
+			"/home/lab-3-5/filesystem_oper/PI-Edificio/sensorfloor.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/removeuser.cpp",
+			"/home/lab-3-5/filesystem_oper/PI-Edificio/viewbackup.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/sensorbuilding.cpp",
+			"/home/lab-3-5/filesystem_oper/PI-Edificio/viewdatabasewindow.cpp",
 			"MU",
 			null
 		],
-		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/sensorfloor.cpp",
-			"MU",
-			null
-		],
-		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/viewbackup.cpp",
-			"MU",
-			null
-		],
-		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/viewdatabasewindow.cpp",
-			"MU",
-			null
-		],
-		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/viewlog.cpp",
-			"MU",
-			null
-		],
-		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/viewnode.cpp",
-			"MU",
-			null
-		],
-		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/viewuser.cpp",
-			"MU",
-			null
-		],
-		[
-			"/home/lab-3-5/Desktop/pi/filesystem_oper/UserHandler.cpp",
-			"MU",
-			null
-		],
-		[ "/home/lab-3-5/Desktop/pi/filesystem_oper/Usuario.cpp", "MU", null ]
+		[ "/home/lab-3-5/filesystem_oper/PI-Edificio/viewlog.cpp", "MU", null ],
+		[ "/home/lab-3-5/filesystem_oper/PI-Edificio/viewnode.cpp", "MU", null ],
+		[ "/home/lab-3-5/filesystem_oper/PI-Edificio/viewuser.cpp", "MU", null ],
+		[ "/home/lab-3-5/filesystem_oper/UserHandler.cpp", "MU", null ],
+		[ "/home/lab-3-5/filesystem_oper/Usuario.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

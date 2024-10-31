@@ -30,6 +30,7 @@ public:
     QLabel *label_13;
     QLabel *label_14;
     QLabel *label_15;
+    QPushButton *pushButton1_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -82,6 +83,26 @@ public:
         label_15->setGeometry(QRect(680, 300, 151, 20));
         label_15->setFont(font);
         label_15->setStyleSheet(QString::fromUtf8("color: white;"));
+        pushButton1_2 = new QPushButton(centralwidget);
+        pushButton1_2->setObjectName("pushButton1_2");
+        pushButton1_2->setGeometry(QRect(10, 10, 141, 26));
+        QFont font1;
+        font1.setBold(true);
+        pushButton1_2->setFont(font1);
+        pushButton1_2->setStyleSheet(QString::fromUtf8("    QPushButton {\n"
+"        background-color: white;\n"
+"        color: #007ACC; /* Text color */\n"
+"        border-radius: 25px; /* Rounded corners */\n"
+"        font-weight: bold;\n"
+"        font-size: 16px;\n"
+"    }\n"
+"    QPushButton:hover {\n"
+"        background-color: #E0E0E0; /* Hover effect */\n"
+"        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);\n"
+"    }\n"
+"    QPushButton:pressed {\n"
+"        background-color: #B0B0B0; /* Click effect */\n"
+"    }"));
         ModifyDataBase->setCentralWidget(centralwidget);
         menubar = new QMenuBar(ModifyDataBase);
         menubar->setObjectName("menubar");
@@ -105,6 +126,7 @@ public:
         label_13->setText(QCoreApplication::translate("ModifyDataBase", "Modify Sensor Building", nullptr));
         label_14->setText(QCoreApplication::translate("ModifyDataBase", "Modify Node Information", nullptr));
         label_15->setText(QCoreApplication::translate("ModifyDataBase", "Modify Sensor Floor", nullptr));
+        pushButton1_2->setText(QCoreApplication::translate("ModifyDataBase", "Return", nullptr));
     } // retranslateUi
 
 };

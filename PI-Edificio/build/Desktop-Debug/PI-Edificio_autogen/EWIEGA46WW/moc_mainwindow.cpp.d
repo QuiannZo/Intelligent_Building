@@ -1,9 +1,9 @@
-/home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/build/Desktop-Debug/PI-Edificio_autogen/EWIEGA46WW/moc_mainwindow.cpp: /home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/mainwindow.h \
-  /home/lab-3-5/Desktop/pi/filesystem_oper/PI-Edificio/build/Desktop-Debug/PI-Edificio_autogen/moc_predefs.h \
-  /home/lab-3-5/Desktop/pi/filesystem_oper/FAT.hpp \
-  /home/lab-3-5/Desktop/pi/filesystem_oper/HashHandler.hpp \
-  /home/lab-3-5/Desktop/pi/filesystem_oper/Log.hpp \
-  /home/lab-3-5/Desktop/pi/filesystem_oper/UserHandler.hpp \
+/home/lab-3-5/filesystem_oper/PI-Edificio/build/Desktop-Debug/PI-Edificio_autogen/EWIEGA46WW/moc_mainwindow.cpp: /home/lab-3-5/filesystem_oper/PI-Edificio/mainwindow.h \
+  /home/lab-3-5/filesystem_oper/PI-Edificio/build/Desktop-Debug/PI-Edificio_autogen/moc_predefs.h \
+  /home/lab-3-5/filesystem_oper/FAT.hpp \
+  /home/lab-3-5/filesystem_oper/HashHandler.hpp \
+  /home/lab-3-5/filesystem_oper/Log.hpp \
+  /home/lab-3-5/filesystem_oper/UserHandler.hpp \
   /usr/include/QtCore/q20functional.h \
   /usr/include/QtCore/q20memory.h \
   /usr/include/QtCore/q20type_traits.h \

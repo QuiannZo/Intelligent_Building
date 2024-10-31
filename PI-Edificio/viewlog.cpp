@@ -1,9 +1,9 @@
 #include "viewlog.h"
 #include "ui_viewlog.h"
 
-viewLog::viewLog(QWidget *parent)
+viewLog::viewLog(QWidget *parent, UserHandler& userHandler, menuwindow& menu)
     : QMainWindow(parent)
-    , ui(new Ui::viewLog)
+    , ui(new Ui::viewLog), userHandler(userHandler), menu(menu)
 {
     ui->setupUi(this);
 
@@ -22,3 +22,11 @@ viewLog::~viewLog()
 {
     delete ui;
 }
+
+void viewLog::on_pushButton1_2_clicked()
+{
+    this->menu.show();
+    this->hide();
+    this->deleteLater();
+}
+
