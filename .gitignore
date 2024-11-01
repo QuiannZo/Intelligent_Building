@@ -4,3 +4,5 @@
 *.bin
 client
 server
+userHandler
+intermediary
