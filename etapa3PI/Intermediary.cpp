@@ -90,3 +90,62 @@ bool Intermediary::handleDatagram(int client_socket, char *datagram
   }
   return true;
 }
+
+bool Intermediary::resendLongString(int source_socket, int dest_socket
+, size_t total_size, int timeout_sec) {
+  if (source_socket < 0 || dest_socket < 0) {
+    return false;
+  }
+
+  size_t bytes_received = 0;
+  const size_t chunk_size = 256;
+  char buffer[chunk_size];
+  size_t remaining;
+  size_t current_chunk_size;
+
+  while (bytes_received < total_size) {
+    // Configurar `fd_set` para monitorear el socket de origen
+    fd_set read_fds;
+    FD_ZERO(&read_fds);
+    FD_SET(source_socket, &read_fds);
+
+    // Configurar el timeout para `select`
+    struct timeval timeout;
+    timeout.tv_sec = timeout_sec;
+    timeout.tv_usec = 0;
+
+    // Esperar hasta que haya datos o se alcance el timeout
+    int activity = select(source_socket + 1, &read_fds, nullptr, nullptr, &timeout);
+    if (activity < 0) {
+        std::cerr << "Error with select()." << std::endl;
+        return false;
+    } else if (activity == 0) {
+        std::cerr << "Timeout reached, no data received from node." << std::endl;
+        return false;
+    }
+
+    // Leer el fragmento actual desde el socket de origen
+    remaining = total_size - bytes_received;
+    current_chunk_size = (remaining < chunk_size) ? remaining : chunk_size;
+    
+    ssize_t result = recv(source_socket, buffer, current_chunk_size, 0);
+    if (result < 0) {
+        std::cerr << "Error reading chunk from source node." << std::endl;
+        return false;
+    } else if (result == 0) {
+        std::cerr << "Connection closed by source node before full message was received." << std::endl;
+        return false;
+    }
+
+    // Enviar el fragmento recibido al socket de destino
+    ssize_t sent = send(dest_socket, buffer, result, 0);
+    if (sent < 0 || sent != result) {
+        std::cerr << "Error sending chunk to destination node." << std::endl;
+        return false;
+    }
+    bytes_received += result;
+  }
+
+  std::cout << "Data forwarded to destination node." << std::endl;
+  return true;
+}

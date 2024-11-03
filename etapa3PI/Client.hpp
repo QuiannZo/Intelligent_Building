@@ -4,6 +4,7 @@
 #include "Log.hpp"
 class Client : public Log {
 protected:
+  // Métodos esenciales:
   // Método que se usa para conectarse a otro nodo, devuelve el socket.
   int connectToNode(const std::string& ip, int port);
   // cerrar la conexión
@@ -18,6 +19,22 @@ protected:
   // con base en el mensaje recibido. Notar que se puede sobreescribir. 
   virtual bool handleDatagram(int client_socket, char* datagram
   , size_t datagram_size);
+
+  // Métodos para facilitar el intercambio de datagramas:
+  // Método que encapsula los métodos `connectToNode`, `sendDatagram`,
+  // `receiveDatagramWithTimeout` y `closeConnection`.
+  bool connectSendReceive(const std::string& ip, int port,  char* datagram
+  , size_t datagram_size, char* response_buffer
+  , size_t buffer_size, int timeout_sec);
+  // Método que se encarga de enviar un string sin importar el tamaño, 
+  // la conexión se debe establecer y cerrar por separado. 
+  bool sendLongString(int client_socket, const std::string& data);
+  // Método que se encarga de recibir un string largo, se debe conocer el tamaño del mismo. 
+  // La conexión se debe establecer y cerrar por separado. 
+  bool receiveLongString(int client_socket
+  , std::string& received_data, size_t total_size, int timeout_sec);
+
+
 public:
   Client(std::string logFilename, int processId);
   ~Client();

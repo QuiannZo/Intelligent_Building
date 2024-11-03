@@ -146,3 +146,109 @@ bool Client::sendDatagram(int client_socket, char* datagram, size_t datagram_siz
   return true;
 }
 
+// Método que realiza el proceso de conectarse, enviar datagrama, 
+// recibir respuesta y cerrar conexión. 
+bool Client::connectSendReceive(const std::string &ip, int port, char *datagram
+, size_t datagram_size, char *response_buffer, size_t buffer_size
+, int timeout_sec) {
+  // establecemos una conexión
+  int client_socket = this->connectToNode(ip, port);
+  if (client_socket > 0) {
+    // Enviamos el datagrama
+    if (this->sendDatagram(client_socket, datagram, datagram_size)) {
+      // Obtenemos la respuesta, como máximo esperamos `timeout` s. 
+      if (this->receiveDatagramWithTimeout(client_socket, response_buffer
+      , buffer_size, timeout_sec)) {
+        // Cerrar el socket
+        this->closeConnection(client_socket);
+        return true;
+      }
+    }
+  }  
+  return false;
+}
+
+bool Client::sendLongString(int client_socket, const std::string &data) {
+  if (client_socket < 0) {
+    return false;
+  }
+  // Obtener el tamaño total del string
+  size_t total_size = data.size();
+  size_t bytes_sent = 0;
+  const size_t chunk_size = 256;
+  size_t remaining;
+  size_t current_chunk_size;
+
+  while (bytes_sent < total_size) {
+    // caracteres restantes
+    remaining = total_size - bytes_sent;
+    // si es menor a 256, enviar solo esa porción
+    current_chunk_size = (remaining < chunk_size) ? remaining : chunk_size;
+    
+    // Enviar el fragmento actual
+    int result = send(client_socket, data.c_str() + bytes_sent, current_chunk_size, 0);
+    if (result < 0) {
+        std::cerr << "Error sending chunk to node." << std::endl;
+        return false;
+    }
+    bytes_sent += result;
+  }
+
+  std::cout << "\tComplete data sent to node." << std::endl;
+  return true;
+}
+
+bool Client::receiveLongString(int client_socket, std::string& received_data, size_t total_size, int timeout_sec) {
+  if (client_socket < 0) {
+    return false;
+  }
+  received_data.clear();
+  // Reservar espacio para el string completo
+  received_data.reserve(total_size);  
+
+  size_t bytes_received = 0;
+  const size_t chunk_size = 256;
+  char buffer[chunk_size];
+
+  while (bytes_received < total_size) {
+    // Configurar los `fd_set` para monitorear el socket
+    fd_set read_fds;
+    FD_ZERO(&read_fds);
+    FD_SET(client_socket, &read_fds);
+
+    // Configurar el tiempo de espera para `select`
+    struct timeval timeout;
+    timeout.tv_sec = timeout_sec;
+    timeout.tv_usec = 0;
+
+    // Esperar hasta que haya datos o se alcance el timeout
+    int activity = select(client_socket + 1, &read_fds, nullptr, nullptr, &timeout);
+    if (activity < 0) {
+      std::cerr << "Error with select()." << std::endl;
+      return false;
+    } else if (activity == 0) {
+      std::cerr << "Timeout reached, no data received from node." << std::endl;
+      return false;
+    }
+
+    // Leer el fragmento actual
+    size_t remaining = total_size - bytes_received;
+    size_t current_chunk_size = (remaining < chunk_size) ? remaining : chunk_size;
+    
+    ssize_t result = recv(client_socket, buffer, current_chunk_size, 0);
+    if (result < 0) {
+      std::cerr << "Error reading chunk from node." << std::endl;
+      return false;
+    } else if (result == 0) {
+      std::cerr << "Connection closed by node before full message was received." << std::endl;
+      return false;
+    }
+    // Agregar el fragmento recibido al string
+    received_data.append(buffer, result);
+    bytes_received += result;
+  }
+
+  std::cout << "Complete data received from node." << std::endl;
+  return true;
+}
+

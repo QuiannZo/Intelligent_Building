@@ -90,6 +90,14 @@ struct CommunicationError {
   NodeType error_node;
 };
 
+struct LongFileHeader {
+  // Mensaje que indicar el tamaño del archivo que vamos a enviar. Inmediatamente
+  // después se envía el mensaje por el socket. 
+  MessageType message_type;
+  NodeType source_node;
+  int char_length;
+};
+
 // TODO:completar.
 // TODO: modificar descripción actual de los datagramas de acuerdo a los 
 // cambios.

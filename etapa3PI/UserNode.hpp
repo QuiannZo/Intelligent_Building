@@ -31,10 +31,7 @@ private:
   bool handleDatagram(int client_socket, char* datagram
     , size_t datagram_size) override;
   std::vector<std::string> splitString(const char* input);
-
-public:
-  UserNode(std::string logFilename, int processId, std::string usersFilename, int port);
-  ~UserNode();
+  // Métodos que anteriormente pertenecían a la clase `UserHandler`
   bool addUser(const std::string &addedByUser, const std::string& username, const std::string& hash, const uint8_t permissions
               , const std::string& floors, const std::string& name, const std::string& lastName
               ,const std::string& userId);
@@ -45,6 +42,10 @@ public:
   bool modifyUserEntry(std::string currentUserEntry, std::string newUserEntry);
   std::string vectorToString(const std::vector<std::string>& vec);
   std::vector<std::string> getUserList();
+
+public:
+  UserNode(std::string logFilename, int processId, std::string usersFilename, int port);
+  ~UserNode();
 };
 
 
