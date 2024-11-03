@@ -1,0 +1,2 @@
+02/11/2024-19:39:13 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
+02/11/2024-19:39:13 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.

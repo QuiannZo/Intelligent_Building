@@ -1,0 +1,4 @@
+02/11/2024-19:39:20 : File 'log_UserNode.txt' <Type:Log> loaded into filesystem.
+02/11/2024-19:39:20 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+02/11/2024-19:39:20 : Users data file closed and saved to file 'usersData.txt'.
+02/11/2024-19:39:20 : Filesystem <FAT> closed and saved to file 'log_UserNode.txt'.

@@ -5,15 +5,15 @@
 
 ## Nodo cliente 
 ```
- g++ client.cpp -o client -lssl -lcrypto
+g++ client.cpp -o client -lssl -lcrypto
 ```
 
 ## Nodo intermediario
 ```
-g++ main_intermediary.cpp Intermediary.cpp Node.cpp -o intermediary
+g++ main_intermediary.cpp Intermediary.cpp Node.cpp Client.cpp Log.cpp FAT.cpp -o intermediary
 ```
 
 ## Nodo autenticación de usuarios
 ```
-  g++ main_userNode.cpp Node.cpp ../UserHandler.cpp ../FAT.cpp ../Log.cpp ../HashHandler.cpp -o userHandler -lssl -lcrypto
+g++ main_userNode.cpp Node.cpp UserHandler.cpp FAT.cpp Log.cpp HashHandler.cpp -o userHandler -lssl -lcrypto
 ```

@@ -2,7 +2,7 @@
 #include "networkConfig.hpp"
 
 int main() {
-  Intermediary node = Intermediary(kIntermediaryPort);
+  Intermediary node = Intermediary("log_intermediary.txt", 1, kIntermediaryPort);
   if(node.initServer()) {
     node.run();
     return 0;

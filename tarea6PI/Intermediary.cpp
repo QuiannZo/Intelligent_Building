@@ -9,7 +9,8 @@
 #include "networkConfig.hpp"
 
 // Constructor
-Intermediary::Intermediary(int port) : Node(port) {
+Intermediary::Intermediary(std::string logFilename, int processId, int port) 
+: Node(logFilename, processId, port) {
 }
 
 // Destructor
@@ -58,6 +59,8 @@ bool Intermediary::handleDatagram(int client_socket, char *datagram
                 sizeResponse = sizeof(CommunicationError);
                 memcpy(response, reinterpret_cast<char*>(&error), sizeResponse);
               }
+              // Cerrar el socket
+              this->closeConnection(client_socket);
             }
           }
         }

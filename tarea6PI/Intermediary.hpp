@@ -8,7 +8,7 @@ private:
     , size_t datagram_size) override;
 
 public:
-  Intermediary(int port);
+  Intermediary(std::string logFilename, int processId, int port);
   ~Intermediary();
 
 };
