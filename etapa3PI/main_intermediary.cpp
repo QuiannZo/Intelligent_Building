@@ -15,7 +15,7 @@ void signalControlCHandler(int signum) {
 }
 
 int main() {
-  Intermediary* node = new Intermediary("log_intermediary.txt", 1, kIntermediaryPort);
+  node = new Intermediary("log_intermediary.txt", 1, kIntermediaryPort);
   signal(SIGINT, signalControlCHandler); 
   if(node->initServer()) {
     node->run();

@@ -15,7 +15,7 @@ void signalControlCHandler(int signum) {
 }
 
 int main() {
-  DataNode* node = new DataNode("log_DataNode.txt", 1, "sensors_log_file", kDataNodePort);
+  node = new DataNode("log_DataNode.txt", 1, "sensors_log_file", kDataNodePort);
   signal(SIGINT, signalControlCHandler); 
   if(node->initServer()) {
     node->run();

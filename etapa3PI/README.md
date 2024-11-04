@@ -8,6 +8,11 @@
 g++ client.cpp -o client -lssl -lcrypto
 ```
 
+# Nodo cliente3
+```
+g++ client3.cpp ClientNode.cpp Client.cpp Log.cpp FAT.cpp -o client -lssl -lcrypto
+```
+
 ## Nodo intermediario
 ```
 g++ main_intermediary.cpp Intermediary.cpp Node.cpp Client.cpp Log.cpp FAT.cpp -o intermediary

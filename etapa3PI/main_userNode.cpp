@@ -15,7 +15,7 @@ void signalControlCHandler(int signum) {
 }
 
 int main() {
-  UserNode* node = new UserNode("log_UserNode.txt", 1, "usersData.txt", kUserHandlerPort);
+  node = new UserNode("log_UserNode.txt", 1, "usersData.txt", kUserHandlerPort);
   signal(SIGINT, signalControlCHandler); 
   if(node->initServer()) {
     node->run();
