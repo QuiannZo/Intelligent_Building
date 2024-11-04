@@ -15,5 +15,10 @@ g++ main_intermediary.cpp Intermediary.cpp Node.cpp Client.cpp Log.cpp FAT.cpp -
 
 ## Nodo autenticación de usuarios
 ```
-g++ main_userNode.cpp Node.cpp UserHandler.cpp FAT.cpp Log.cpp HashHandler.cpp -o userHandler -lssl -lcrypto
+g++ main_userNode.cpp Node.cpp Client.cpp FAT.cpp Log.cpp HashHandler.cpp -o userNode -lssl -lcrypto
 ```
+
+## Nodo de datos
+```
+g++ main_dataNode.cpp DataNode.cpp Node.cpp Client.cpp Log.cpp FAT.cpp -o datanode
+``` 

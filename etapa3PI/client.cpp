@@ -13,10 +13,11 @@
 #include "utilities.hpp"
 #include "socketList.hpp"
 #include "networkConfig.hpp"
+#include "Node.hpp"
 
 // TODO: extraer de la clase Nodo todo el código relacionada a clientes, esto
 // para crear una clase Cliente.
-int main(){
+int main() {
   // ESTABLECER CONEXIÓN
   int result = 0;
   const std::string server_ip = kIntermediaryIPv4;
@@ -50,7 +51,7 @@ int main(){
   // Se estableció la conexión 
   std::cout << "Connected to node at " << server_ip << ":" << server_port << std::endl;
 
-  // CREAR MENSAJE:
+  /*// CREAR MENSAJE:
   // Pedir usuario y contraseña:
   char username[32];
   char password[64];
@@ -76,7 +77,7 @@ int main(){
   , sizeof(login_data), 0) < 0) {
     std::cerr << "Error sending datagram to node at " 
       << server_ip << ":" << server_port << std::endl;
-    close(client_socket);
+    //close(client_socket);
     return false;
   }
   // Se envió correctamente el mensaje
@@ -123,11 +124,43 @@ int main(){
       // se considera el mensaje como invalido.
       std::cout << "Received an invalid message." << std::endl;
       break;
+  }  */
+  
+  // Pedir log al dataNode
+  LogRequestCI logInfoRequest;
+  logInfoRequest.message_type = kLogRequestCI;
+  logInfoRequest.nodeRequired = KDataCollector;
+  logInfoRequest.source_node = kApplication;
+  logInfoRequest.user_identification = 30;
+
+  if (send(client_socket, reinterpret_cast<char*>(&logInfoRequest)
+  , sizeof(logInfoRequest), 0) < 0) {
+    std::cerr << "Error sending datagram to node at " 
+      << server_ip << ":" << server_port << std::endl;
+    //close(client_socket);
+    return false;
+  }
+  // Se envió correctamente el mensaje
+  std::cout << "Datagram sent to " << server_ip << ":" 
+    << server_port << std::endl;
+  
+  // LEER RESPUESTA DEL SERVIDOR
+  char response_buffer[kMaxDatagramSize];
+  memset(response_buffer, 0, sizeof(response_buffer));
+  // Leer la respuesta del servidor
+  ssize_t bytes_received = recv(client_socket
+  , response_buffer, sizeof(response_buffer), 0);
+  if (bytes_received < 0) {
+    std::cerr << "Error reading response from node at " << server_ip << ":" << server_port << std::endl;
+    close(client_socket);
+    return 4;
   }
 
-
+  std::cout << response_buffer << std::endl;
+  
   // Cerrar el socket
   close(client_socket);
 
   return result;
 }
+

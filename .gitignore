@@ -2,7 +2,11 @@
 *.vscode
 *.out
 *.bin
+*.json
 client
 server
 userHandler
 intermediary
+datacollector
+userNode
+datanode
