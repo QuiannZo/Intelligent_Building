@@ -26,8 +26,8 @@ bool Intermediary::handleDatagram(int client_socket, char *datagram
   bool invalidRequest = false;
 
   if (datagram_size >= 2) {
-    message_type = (int)datagram[0];
-    node_type = (int)datagram[1];
+    message_type = (uint8_t)datagram[0];
+    node_type = (uint8_t)datagram[1];
 
     // respondemos según el tipo de mensaje
     switch (message_type) {
@@ -52,7 +52,7 @@ bool Intermediary::handleDatagram(int client_socket, char *datagram
                   confirmation->message_type = kAuthenticationSuccessIC;
                   // TODO: trabajar en la tabla interna que se usa para llevar registro de
                   // los usuarios con sesión iniciada.
-                  confirmation->user_identification = 1;
+                  //confirmation->user_identification = 1;
                 }
               } else {
                 CommunicationError error;
@@ -67,7 +67,7 @@ bool Intermediary::handleDatagram(int client_socket, char *datagram
           }
         }
         break; 
-      case kLogRequestCI: 
+      case kLogRequestCI:
         // Solicitud debe venir de intermediario
         if (node_type != kApplication || datagram_size != sizeof(LogRequestCI)) {
           invalidRequest = true;

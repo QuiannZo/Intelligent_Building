@@ -122,12 +122,6 @@ struct AuthenticationSuccessIC {
   char name[33];
   char last_name[33];
   uint8_t permissions;
-  // identificación de devuelve el intermediario, es usada por el el mismo 
-  // para verificar que el usuario tenga la sesión iniciada. Es un sistema
-  // sencillo diseñado para evitar autenticar el usuario en cada solicitud.
-  // Por lo mismo, esta identificación debe ser usada por el cliente en
-  // futuras peticiones. 
-  uint16_t user_identification;
   // Tamaño: 71 bytes
 };
 

@@ -1,9 +1,12 @@
+#ifndef UTILITIES_HPP
+#define UTILITIES_HPP
+
 #include <vector>
 #include <string>
 #include <sstream>
 #include <fstream>
 
-#include "../UserHandler.hpp"
+#include <openssl/sha.h>
 
 using namespace std ;
 
@@ -36,6 +39,7 @@ string generateHASH_SHA256(const string& password) {
     return ss.str();
 }
 
+/*
 void checkPermissions(uint8_t user_permissions) {
     if (user_permissions == INVALID_PERMISSION) {
         std::cout << "No permissions assigned.\n";
@@ -62,3 +66,5 @@ void checkPermissions(uint8_t user_permissions) {
         std::cout << "- Auditor\n";
     }
 }
+*/
+#endif

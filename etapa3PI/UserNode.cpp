@@ -263,10 +263,10 @@ bool UserNode::authenticateUser(const std::string &username, const std::string &
     } else {
         if (userFound) {
             this->appendToLogTimeHour("[Log-in]: invalid hash for user '" + username + "'.");
-            error = "invalid_password";
+            error = "Invalid password";
         } else {
             this->appendToLogTimeHour("[Log-in]: user '" + username + "' not found.");
-            error = "invalid_username";
+            error = "Invalid username";
         }
     }
     return hashValidated;

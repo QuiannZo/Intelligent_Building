@@ -3,7 +3,7 @@
 
 #include "Log.hpp"
 class Client : public Log {
-protected:
+public:
   // Métodos esenciales:
   // Método que se usa para conectarse a otro nodo, devuelve el socket.
   int connectToNode(const std::string& ip, int port);

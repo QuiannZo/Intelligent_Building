@@ -13,10 +13,25 @@
 #include "utilities.hpp"
 #include "socketList.hpp"
 #include "networkConfig.hpp"
+#include "Client.hpp"
 
 // TODO: extraer de la clase Nodo todo el código relacionada a clientes, esto
 // para crear una clase Cliente.
 int main(){
+  Client* client = new Client("borrar.txt", 1);
+  int socket = client->connectToNode(kIntermediaryIPv4, kIntermediaryPort);
+  LogRequestCI datagram;
+  datagram.message_type = kLogRequestCI;
+  datagram.source_node = kApplication;
+  datagram.nodeRequired = kUserHandler;
+  datagram.user_identification = 1;
+  client->sendDatagram(socket, reinterpret_cast<char*>(&datagram), sizeof(datagram));
+
+  client->closeConnection(socket);
+
+  delete client;
+
+  /*
   // ESTABLECER CONEXIÓN
   int result = 0;
   const std::string server_ip = kLocalhostIPv4;
@@ -128,6 +143,7 @@ int main(){
 
   // Cerrar el socket
   close(client_socket);
-
-  return result;
+*/
+  //return result;
+  return 0
 }

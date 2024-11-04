@@ -3,10 +3,11 @@
 
 #include <vector>
 #include "Client.hpp"
+#include "socketList.hpp"
 
 class ClientNode : public Client {
 private:
-    /* data */
+    std::string getErrorString(int type);
 public:
   ClientNode(std::string logFilename, int processId);
   ~ClientNode();

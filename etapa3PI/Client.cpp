@@ -97,7 +97,6 @@ bool Client::receiveDatagramWithTimeout(int client_socket, char *response_buffer
       std::cerr << "Error reading response from node." << std::endl;
       return false;
   }
-  std::cout << "Response from node: " << response_buffer << std::endl;
   return true;
 }
 
