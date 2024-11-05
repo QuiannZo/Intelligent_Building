@@ -94,7 +94,7 @@ bool Intermediary::handleDatagram(int client_socket, char *datagram
           datagram[1] = kIntermediary;
           // Reenviar al nodo de usuarios
           if(this->connectSendReceive(kUserHandlerIPv4, kUserHandlerPort, datagram
-          , datagram_size - 2, response, kMaxDatagramSize, 10)) {
+          , sizeof(ModifyUserRequestIU), response, kMaxDatagramSize, 10)) {
             if (!response[0] == kUserChangesConfirmation) {
               response[0] = kUnknownError;
             }

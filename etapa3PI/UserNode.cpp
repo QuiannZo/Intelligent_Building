@@ -94,8 +94,7 @@ std::string UserNode::floorsToString(int8_t floors[32]) {
   return result;
 }
 
-bool UserNode::handleDatagram(int client_socket, char *datagram, size_t datagram_size)
-{
+bool UserNode::handleDatagram(int client_socket, char *datagram, size_t datagram_size) {
     int message_type;
     int node_type; // tipo de nodo emisor
     char response[kMaxDatagramSize];
@@ -147,6 +146,21 @@ bool UserNode::handleDatagram(int client_socket, char *datagram, size_t datagram
               invalidRequest = true;
             } else {
                 ModifyUserRequestIU *request = reinterpret_cast<ModifyUserRequestIU *>(datagram);
+                std::string error;
+                bool result = this->modifyUser(request->modify_by, request->current_username
+                , request->new_username, request->new_hash, request->new_permissions
+                , this->floorsToString(request->new_floors), request->new_name
+                , request->new_last_name, "102", error);
+                UserChangesConfirmation confirmation;
+                confirmation.message_type = kUserChangesConfirmation;
+                confirmation.source_node = kUserHandler;
+                confirmation.successful = result;
+                if(!result) {
+                  strncpy(confirmation.error, error.c_str(), sizeof(confirmation.error));
+                }
+                // guardamos la respuesta
+                sizeResponse = sizeof(UserChangesConfirmation);
+                memcpy(response, reinterpret_cast<char *>(&confirmation), sizeResponse);
             }
           break;
         case kAddUserRequestIU:
@@ -249,6 +263,59 @@ std::vector<std::string> UserNode::getUserList() {
     this->appendToLogTimeHour("[User information]: user list returned.");
   }
   return userVector;
+}
+
+bool UserNode::modifyUser(const std::string &modify_by_user
+, const std::string &current_username, const std::string &username
+, const std::string &hash, const uint8_t permissions, const std::string &floors
+, const std::string &name, const std::string &lastName, const std::string &userId
+, std::string &error) {
+  // Obtenemos la hora
+  std::string dateTime = this->getCurrentDateTime();
+  // Obtener la información del usuario
+  std::vector<std::string> user_info = this->getUserInformation(current_username);
+  if (user_info.size() != 10) {
+    this->appendToLogTimeHour(
+    "Modify user [failed]: '" + modify_by_user + "'  tried to modify '" +
+    username + "', but the user was not found in the registry.");
+    error = "User not found.";
+    return false;
+  }
+  // Guardamos una copia de la entrada
+  std::string user_copy = this->vectorToString(user_info); 
+  // revisar los valores que se deben modificar
+  if (!username.empty()) {
+    user_info[0] = username;
+  }
+  if(!hash.empty()) {
+    user_info[1] = hash;
+  }
+  if(permissions != 0){
+    user_info[2] = std::to_string(permissions);
+  }
+  if(!floors.empty()){
+    user_info[3] = floors;
+  }
+  if(!name.empty()){
+    user_info[4] = name;
+  }
+  if(!lastName.empty()){
+    user_info[5] = lastName;
+  }
+  // TODO: por el momento el userId no se modifica porque
+  // no se está usando.
+  // actualizamos la fecha de actualización 
+  user_info[8] = dateTime;
+  // obtenemos el string del usuario modificado
+  std::string user_mod = this->vectorToString(user_info);
+  if (this->modifyUserEntry(user_copy, user_mod)) {
+    return true;
+  }
+  this->appendToLogTimeHour(
+    "Modify user [failed]: '" + modify_by_user + "'  tried to modify '" +
+    username + "', but the user registry could not be modified.");
+  error = "Failed to modify user record.";
+  return false;
 }
 
 bool UserNode::addUser(const std::string &addedByUser, const std::string &username, const std::string &hash, const uint8_t permissions

@@ -179,7 +179,8 @@ bool ClientNode::modifyUser(const std::string &modify_by_user, const std::string
       if(confirmation->successful) {
         response = "User " + username + " modified successfully.";
       } else {
-        response = "Error: Failed to modify user " + username + ".";
+        response = "Error: Failed to modify user '" + current_username + "'. Error message: "
+        + confirmation->error + "\n";
         result = false;
       }
       std::cout << response << std::endl;
