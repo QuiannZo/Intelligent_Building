@@ -51,7 +51,7 @@ int main() {
   // Se estableció la conexión 
   std::cout << "Connected to node at " << server_ip << ":" << server_port << std::endl;
 
-  /*// CREAR MENSAJE:
+  // CREAR MENSAJE:
   // Pedir usuario y contraseña:
   char username[32];
   char password[64];
@@ -62,6 +62,9 @@ int main() {
   // Obtenemos el hash
   const std::string password_str(password);
   std::string hash = generateHASH_SHA256(password_str);
+  std::cout << "el hash generado es: " << hash <<std::endl;
+
+
   // Inicializar el datagrama
   AuthenticationRequest login_data;
   login_data.message_type = kAuthenticationRequestCI;
@@ -106,7 +109,7 @@ int main() {
       std::cout << "User verified. \n" << "\t Name: " 
       << confirmation->name << " | Last name: " << confirmation->last_name << std::endl;
       // imprimir los permisos de los usuarios
-      checkPermissions(confirmation->permissions);
+      //checkPermissions(confirmation->permissions);
       break; 
     case kAuthenticationFailure:
       AuthenticationFailure* failure;
@@ -124,9 +127,9 @@ int main() {
       // se considera el mensaje como invalido.
       std::cout << "Received an invalid message." << std::endl;
       break;
-  }  */
+  }  
   
-  // Pedir log al dataNode
+  /*// Pedir log al dataNode
   LogRequestCI logInfoRequest;
   logInfoRequest.message_type = kLogRequestCI;
   logInfoRequest.nodeRequired = KDataCollector;
@@ -156,7 +159,7 @@ int main() {
     return 4;
   }
 
-  std::cout << response_buffer << std::endl;
+  std::cout << response_buffer << std::endl;*/
   
   // Cerrar el socket
   close(client_socket);
