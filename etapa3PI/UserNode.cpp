@@ -110,8 +110,7 @@ bool UserNode::handleDatagram(int client_socket, char *datagram, size_t datagram
         {
         case kAuthenticationRequestIU:
             // Solicitud debe venir de intermediario
-            if (node_type != kIntermediary || datagram_size != sizeof(AuthenticationRequest))
-            {
+            if (node_type != kIntermediary || datagram_size != sizeof(AuthenticationRequest)) {
                 invalidRequest = true;
             }
             else
@@ -143,16 +142,21 @@ bool UserNode::handleDatagram(int client_socket, char *datagram, size_t datagram
                 }
             }
             break;
+        case kModifyUserRequestIU:
+            if (node_type != kIntermediary || datagram_size != sizeof(ModifyUserRequestIU)) {
+              invalidRequest = true;
+            } else {
+                ModifyUserRequestIU *request = reinterpret_cast<ModifyUserRequestIU *>(datagram);
+            }
+          break;
         case kAddUserRequestIU:
-            if (node_type != kIntermediary || datagram_size != sizeof(AddUserRequestIU))
-            {
+            if (node_type != kIntermediary || datagram_size != sizeof(AddUserRequestIU)) {
                 invalidRequest = true;
             }
             else
             {
                 // Convertimos el datagrama al respectivo `struct`.
                 AddUserRequestIU *request = reinterpret_cast<AddUserRequestIU *>(datagram);
-                request->addedByUser;
                 bool result = this->addUser(request->addedByUser, request->username
                 , request->hash, request->permissions, this->floorsToString(request->floors)
                 , request->name, request->last_name, "101");
@@ -182,6 +186,7 @@ bool UserNode::handleDatagram(int client_socket, char *datagram, size_t datagram
     invalid.source_node = kUserHandler;
     sizeResponse = sizeof(InvalidRequest);
     strncpy(response, reinterpret_cast<char*>(&invalid), sizeResponse);
+    std::cerr << "\tError: invalid request received." << std::endl;
   }
   if (send(client_socket, response, sizeResponse, 0) < 0) {
     std::cerr << "Error sending response to client." << std::endl;

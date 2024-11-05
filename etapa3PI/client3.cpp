@@ -15,6 +15,7 @@ int main() {
   floors[2] = 3;
   floors[4] = 0; //terminación
   std::string response;
-  //client.addUser("superuser", "PruebaXYZ", "PasswordXYZ", permissions, floors, "Juan", "Perez", "0", response);
+  //client.addUser("superuser", "PruebaXYZ", "PasswordXYZ", permissions, floors, "Juan", "Perez", response);
+  client.modifyUser("superuser", "PruebaXYZ", "PruebaWXYZ", "PasswordXYZ", permissions, floors, "Juan", "Perez", response);
   return 0;
 }

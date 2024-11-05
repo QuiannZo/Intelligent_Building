@@ -76,7 +76,7 @@ bool Intermediary::handleDatagram(int client_socket, char *datagram
           datagram[1] = kIntermediary;
           // Reenviar al nodo de usuarios
           if(this->connectSendReceive(kUserHandlerIPv4, kUserHandlerPort, datagram
-          , datagram_size - 2, response, kMaxDatagramSize, 15)) {
+          , datagram_size - 2, response, kMaxDatagramSize, 10)) {
             if (!response[0] == kUserChangesConfirmation) {
               response[0] = kUnknownError;
             }
@@ -85,7 +85,24 @@ bool Intermediary::handleDatagram(int client_socket, char *datagram
           }
         }    
         break;
-
+      case kModifyUserRequestCI:
+              std::cout << "Tamaño: " << datagram_size <<std::endl;
+        if (node_type != kApplication || datagram_size != sizeof(ModifyUserRequestCI)) {
+          invalidRequest = true;
+        } else {
+          datagram[0] = kModifyUserRequestIU;
+          datagram[1] = kIntermediary;
+          // Reenviar al nodo de usuarios
+          if(this->connectSendReceive(kUserHandlerIPv4, kUserHandlerPort, datagram
+          , datagram_size - 2, response, kMaxDatagramSize, 10)) {
+            if (!response[0] == kUserChangesConfirmation) {
+              response[0] = kUnknownError;
+            }
+          } else {
+            connection_error = true;
+          }
+        }
+        break;
       case kLogRequestCI:
         // Solicitud debe venir de intermediario
         if (node_type != kApplication || datagram_size != sizeof(LogRequestCI)) {
@@ -134,6 +151,7 @@ bool Intermediary::handleDatagram(int client_socket, char *datagram
     invalid.source_node = kIntermediary;
     sizeResponse = sizeof(InvalidRequest);
     memcpy(response, reinterpret_cast<char*>(&invalid), sizeResponse);
+    std::cerr << "\tError: invalid request received." << std::endl;
   } else if (connection_error) {
       CommunicationError error;
       error.message_type = kCommunicationError;

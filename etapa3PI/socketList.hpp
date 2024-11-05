@@ -4,7 +4,7 @@
 #include <cstdint>
 
 // Tamaño máximo del datagrama
-const int kMaxDatagramSize = 256;
+const int kMaxDatagramSize = 512;
 
 // Tipos de nodos que con capacidad de comunicación en la sistema distribuido
 enum NodeType : uint8_t {
@@ -209,7 +209,7 @@ struct ModifyUserRequestCI {
   // El cliente envía solicitud al intermediario, para poder modificar un usuario.
   MessageType message_type;
   NodeType source_node;
-  uint16_t user_identification;
+  char modify_by[33];
   char current_username[33];
   char new_username[33];
   char new_hash[65];
@@ -217,6 +217,7 @@ struct ModifyUserRequestCI {
   char new_last_name[33];
   uint8_t new_permissions;
   int8_t new_floors[32];
+  uint16_t user_identification;
 };
 
 struct ActivateDeactivateUserRequestCI {
@@ -236,6 +237,7 @@ struct UserChangesConfirmation {
   MessageType message_type;
   NodeType source_node;
   bool successful;
+  char error[65];
 };
 
 struct UserInfoRequestCI {
@@ -302,11 +304,10 @@ struct ModifyUserRequestIU {
   // El intermediario envía solicitud al user handler, para poder modificar un usuario.
   MessageType message_type;
   NodeType source_node;
-  uint16_t user_identification;
+  char modify_by[33];
   char current_username[33];
   char new_username[33];
   char new_hash[65];
-  uint16_t client_identification;
   char new_name[33];
   char new_last_name[33];
   uint8_t new_permissions;

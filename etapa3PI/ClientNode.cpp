@@ -87,11 +87,9 @@ bool ClientNode::authenticateUser(const std::string &username
 }
 
 // 
-bool ClientNode::addUser(const std::string &addedByUser, const std::string &username
+bool ClientNode::addUser(const std::string &added_by_user, const std::string &username
 , const std::string &password, const uint8_t permissions,  int8_t floors[32]
-, const std::string &name, const std::string &lastName, const std::string &userId,
-std::string& response) {
-  std::cout << "Dentro de add User" << std::endl;
+, const std::string &name, const std::string &lastName, std::string& response) {
   // buffer donde se recibe la respuesta;
   char buffer[kMaxDatagramSize];
   memset(buffer, 0, kMaxDatagramSize);
@@ -104,7 +102,7 @@ std::string& response) {
   // Copiamos los datos de entrada en la estructura
   string hash = generateHASH_SHA256(password);
   strncpy(user_Info.hash, hash.c_str(), sizeof(user_Info.hash) - 1);
-  strncpy(user_Info.addedByUser, addedByUser.c_str(), sizeof(user_Info.addedByUser) - 1);
+  strncpy(user_Info.addedByUser, added_by_user.c_str(), sizeof(user_Info.addedByUser) - 1);
   strncpy(user_Info.username, username.c_str(), sizeof(user_Info.username) - 1);
   user_Info.permissions = permissions;
   std::memcpy(user_Info.floors, floors, sizeof(user_Info.floors));
@@ -115,7 +113,7 @@ std::string& response) {
   // enviamos el mensaje al intermediario y recibimos la respuesta
   bool result = this->connectSendReceive(kIntermediaryIPv4
   , kIntermediaryPort, reinterpret_cast<char*>(&user_Info)
-  , sizeof(user_Info), buffer, kMaxDatagramSize, 5);
+  , sizeof(user_Info), buffer, kMaxDatagramSize, 15);
 
   if(result) {
     response.clear();
@@ -127,6 +125,61 @@ std::string& response) {
         response = "User " + username + " added successfully.";
       } else {
         response = "Error: Failed to add user " + username + ".";
+        result = false;
+      }
+      std::cout << response << std::endl;
+    } else {
+      response = this->getErrorString(message_type);
+      result = false;
+    }
+  }
+  return result;
+}
+
+// Si un argumento se envía vacío, el nodo de usuario mantiene el valor anterior. 
+bool ClientNode::modifyUser(const std::string &modify_by_user, const std::string current_username
+, const std::string &username, const std::string &password, const uint8_t permissions
+, int8_t floors[32], const std::string &name, const std::string &last_name
+, std::string &response) {
+  // buffer donde se recibe la respuesta;
+  char buffer[kMaxDatagramSize];
+  memset(buffer, 0, kMaxDatagramSize);
+
+  // construimos el datagrama
+  ModifyUserRequestCI user_Info;
+  // blanqueamos el datagrama
+  memset(&user_Info, 0, sizeof(ModifyUserRequestCI)); 
+  user_Info.source_node = kApplication;
+  user_Info.message_type = kModifyUserRequestCI;
+  // Copiamos los datos de entrada en la estructura
+  string hash;
+  if(!password.empty()){
+    hash = generateHASH_SHA256(password);
+  }
+  strncpy(user_Info.new_hash, hash.c_str(), sizeof(user_Info.new_hash) - 1);
+  strncpy(user_Info.modify_by, modify_by_user.c_str(), sizeof(user_Info.modify_by) - 1);
+  strncpy(user_Info.current_username, current_username.c_str(), sizeof(user_Info.current_username) - 1);
+  strncpy(user_Info.new_username, username.c_str(), sizeof(user_Info.new_username) - 1);
+  user_Info.new_permissions = permissions;
+  std::memcpy(user_Info.new_floors, floors, sizeof(user_Info.new_floors));
+  strncpy(user_Info.new_name, name.c_str(), sizeof(user_Info.new_name) - 1);
+  strncpy(user_Info.new_last_name, last_name.c_str(), sizeof(user_Info.new_last_name) - 1);
+  user_Info.user_identification = 1; // TODO: resolver esto
+  // enviamos el mensaje al intermediario y recibimos la respuesta
+  bool result = this->connectSendReceive(kIntermediaryIPv4
+  , kIntermediaryPort, reinterpret_cast<char*>(&user_Info)
+  , sizeof(ModifyUserRequestCI), buffer, kMaxDatagramSize, 15);
+
+  if(result) {
+    response.clear();
+    int message_type = (int)buffer[0];
+    if (message_type == kUserChangesConfirmation) {
+      UserChangesConfirmation* confirmation;
+      confirmation = reinterpret_cast<UserChangesConfirmation*>(buffer);
+      if(confirmation->successful) {
+        response = "User " + username + " modified successfully.";
+      } else {
+        response = "Error: Failed to modify user " + username + ".";
         result = false;
       }
       std::cout << response << std::endl;

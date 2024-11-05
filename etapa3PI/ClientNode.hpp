@@ -17,13 +17,15 @@ public:
   bool authenticateUser(const std::string& username, const std::string& password
   , std::vector<std::string>& response);
   // Agregar usuario
-  bool addUser(const std::string &addedByUser, const std::string& username, const std::string& password, const uint8_t permissions
+  bool addUser(const std::string &added_by_user, const std::string& username, const std::string& password, const uint8_t permissions
           , int8_t floors[32], const std::string& name, const std::string& lastName
-          ,const std::string& userId, std::string& response);
+          , std::string& response);
   // Modificar usuario
-  bool modifyUser(const std::string &ModifyByUser, const std::string& username, const std::string& hash, const uint8_t permissions
-          , const std::string& floors, const std::string& name, const std::string& lastName
-          ,const std::string& userId);
+  // Si un argumento se envía vacío, el nodo de usuario mantiene el valor anterior.
+  bool modifyUser(const std::string &modify_by_user, const std::string current_username
+          , const std::string& username, const std::string& password, const uint8_t permissions
+          , int8_t floors[32], const std::string& name, const std::string& last_name
+          , std::string& response);
   // Obtener lista de usuarios
   bool getUserList(std::vector<std::string>& response);
   // Obtener información de un usuario en particular
