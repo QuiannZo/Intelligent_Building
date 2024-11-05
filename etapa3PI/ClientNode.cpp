@@ -16,16 +16,19 @@ std::string ClientNode::getErrorString(int type) {
   std::string response;
   switch (type) {
     case kInvalidRequest:
-      response = "Intermediary node cannot handle the request.";
+      response = "The request arrived to a node that cannot handle it.";
       break;
     case kCommunicationError:
       response = "Intermediary node cannot communicate successfully with a secondary node.";
       break;
+    case kUnknownError:
+      response = "Unknown error.";
     default:
       // se considera el mensaje como invalido.
       response = "Received an invalid message from intermediary node.";
       break;
   }
+  std:cout << response << std::endl;
   return response;
 }
 
@@ -80,5 +83,57 @@ bool ClientNode::authenticateUser(const std::string &username
   // Imprimimos según la respuesta recibida
   }
 
+  return result;
+}
+
+// 
+bool ClientNode::addUser(const std::string &addedByUser, const std::string &username
+, const std::string &password, const uint8_t permissions,  int8_t floors[32]
+, const std::string &name, const std::string &lastName, const std::string &userId,
+std::string& response) {
+  std::cout << "Dentro de add User" << std::endl;
+  // buffer donde se recibe la respuesta;
+  char buffer[kMaxDatagramSize];
+  memset(buffer, 0, kMaxDatagramSize);
+  // construimos el datagrama
+  AddUserRequestCI user_Info;
+  // blanqueamos el datagrama
+  memset(&user_Info, 0, sizeof(user_Info)); 
+  user_Info.source_node = kApplication;
+  user_Info.message_type = kAddUserRequestCI;
+  // Copiamos los datos de entrada en la estructura
+  string hash = generateHASH_SHA256(password);
+  strncpy(user_Info.hash, hash.c_str(), sizeof(user_Info.hash) - 1);
+  strncpy(user_Info.addedByUser, addedByUser.c_str(), sizeof(user_Info.addedByUser) - 1);
+  strncpy(user_Info.username, username.c_str(), sizeof(user_Info.username) - 1);
+  user_Info.permissions = permissions;
+  std::memcpy(user_Info.floors, floors, sizeof(user_Info.floors));
+  strncpy(user_Info.name, name.c_str(), sizeof(user_Info.name) - 1);
+  strncpy(user_Info.last_name, lastName.c_str(), sizeof(user_Info.last_name) - 1);
+  user_Info.user_identification = 1; // TODO: resolver esto
+  
+  // enviamos el mensaje al intermediario y recibimos la respuesta
+  bool result = this->connectSendReceive(kIntermediaryIPv4
+  , kIntermediaryPort, reinterpret_cast<char*>(&user_Info)
+  , sizeof(user_Info), buffer, kMaxDatagramSize, 5);
+
+  if(result) {
+    response.clear();
+    int message_type = (int)buffer[0];
+    if (message_type == kUserChangesConfirmation) {
+      UserChangesConfirmation* confirmation;
+      confirmation = reinterpret_cast<UserChangesConfirmation*>(buffer);
+      if(confirmation->successful) {
+        response = "User " + username + " added successfully.";
+      } else {
+        response = "Error: Failed to add user " + username + ".";
+        result = false;
+      }
+      std::cout << response << std::endl;
+    } else {
+      response = this->getErrorString(message_type);
+      result = false;
+    }
+  }
   return result;
 }

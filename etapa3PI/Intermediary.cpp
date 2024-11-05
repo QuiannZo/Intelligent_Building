@@ -24,6 +24,7 @@ bool Intermediary::handleDatagram(int client_socket, char *datagram
   char response[kMaxDatagramSize];
   size_t sizeResponse = kMaxDatagramSize;
   bool invalidRequest = false;
+  bool connection_error= false;
 
   if (datagram_size >= 2) {
     message_type = (uint8_t)datagram[0];
@@ -67,6 +68,24 @@ bool Intermediary::handleDatagram(int client_socket, char *datagram
           }
         }
         break; 
+      case kAddUserRequestCI:
+        if (node_type != kApplication || datagram_size != sizeof(AddUserRequestCI)) {
+          invalidRequest = true;
+        } else {
+          datagram[0] = kAddUserRequestIU;
+          datagram[1] = kIntermediary;
+          // Reenviar al nodo de usuarios
+          if(this->connectSendReceive(kUserHandlerIPv4, kUserHandlerPort, datagram
+          , datagram_size - 2, response, kMaxDatagramSize, 15)) {
+            if (!response[0] == kUserChangesConfirmation) {
+              response[0] = kUnknownError;
+            }
+          } else {
+            connection_error = true;
+          }
+        }    
+        break;
+
       case kLogRequestCI:
         // Solicitud debe venir de intermediario
         if (node_type != kApplication || datagram_size != sizeof(LogRequestCI)) {
@@ -115,6 +134,12 @@ bool Intermediary::handleDatagram(int client_socket, char *datagram
     invalid.source_node = kIntermediary;
     sizeResponse = sizeof(InvalidRequest);
     memcpy(response, reinterpret_cast<char*>(&invalid), sizeResponse);
+  } else if (connection_error) {
+      CommunicationError error;
+      error.message_type = kCommunicationError;
+      error.error_node = kUserHandler;
+      sizeResponse = sizeof(CommunicationError);
+      memcpy(response, reinterpret_cast<char*>(&error), sizeResponse);
   }
   // Responder
   response[1] = kIntermediary; // cambiar origen
@@ -122,6 +147,7 @@ bool Intermediary::handleDatagram(int client_socket, char *datagram
     std::cerr << "Error sending response to client." << std::endl;
     return false;
   }
+  std::cout << "\tResponse send to client." << std::endl;
   return true;
 }
 

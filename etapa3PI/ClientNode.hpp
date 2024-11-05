@@ -17,9 +17,9 @@ public:
   bool authenticateUser(const std::string& username, const std::string& password
   , std::vector<std::string>& response);
   // Agregar usuario
-  bool addUser(const std::string &addedByUser, const std::string& username, const std::string& hash, const uint8_t permissions
-          , const std::string& floors, const std::string& name, const std::string& lastName
-          ,const std::string& userId);
+  bool addUser(const std::string &addedByUser, const std::string& username, const std::string& password, const uint8_t permissions
+          , int8_t floors[32], const std::string& name, const std::string& lastName
+          ,const std::string& userId, std::string& response);
   // Modificar usuario
   bool modifyUser(const std::string &ModifyByUser, const std::string& username, const std::string& hash, const uint8_t permissions
           , const std::string& floors, const std::string& name, const std::string& lastName

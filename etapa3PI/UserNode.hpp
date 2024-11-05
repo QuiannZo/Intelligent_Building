@@ -27,6 +27,7 @@ private:
   // Atributos
   std::string usersFilename;
   HashHandler* hashHandler;
+  std::string floorsToString(int8_t floors[32]);
   // Métodos
   bool handleDatagram(int client_socket, char* datagram
     , size_t datagram_size) override;

@@ -74,53 +74,104 @@ UserNode::~UserNode() {
   delete this->hashHandler;
 }
 
-bool UserNode::handleDatagram(int client_socket, char *datagram, size_t datagram_size) {
-  int message_type;
-  int node_type; // tipo de nodo emisor
-  char response[kMaxDatagramSize];
-  size_t sizeResponse = kMaxDatagramSize;
-  bool invalidRequest = false;
-  if (datagram_size >= 2) {
-    message_type = (int)datagram[0];
-    node_type = (int)datagram[1];
-    // respondemos según el tipo de mensaje
-    switch (message_type) {
-      case kAuthenticationRequestIU:
-        // Solicitud debe venir de intermediario
-        if (node_type != kIntermediary || datagram_size != sizeof(AuthenticationRequest)) {
-          invalidRequest = true;
-        } else {
-          // Convertimos el datagrama al respectivo `struct`.
-          AuthenticationRequest* request = reinterpret_cast<AuthenticationRequest*>(datagram);
-          std::string error;
-          if (this->authenticateUser(std::string(request->username)
-          , std::string(request->hash), error)) {
-            // Obtenemos un vector con la información del usuario
-            std::vector<std::string> userInformation = this->getUserInformation(std::string(request->username));
-            AuthenticationSuccessUI authInfo;
-            authInfo.message_type = kAuthenticationSuccessUI;
-            authInfo.source_node = kUserHandler;
-            authInfo.permissions = static_cast<uint8_t>(std::stoi(userInformation[2]));
-            strncpy(authInfo.name, userInformation[4].c_str(), 33);
-            strncpy(authInfo.last_name, userInformation[5].c_str(), 33);
-            // guardamos la respuesta
-            memcpy(response, reinterpret_cast<char*>(&authInfo), sizeResponse);
-          } else {
-            AuthenticationFailure errorInfo;
-            errorInfo.message_type = kAuthenticationFailure;
-            errorInfo.source_node = kUserHandler;
-            strncpy(errorInfo.error, error.c_str(), 64);   
-            // guardamos la respuesta
-            memcpy(response, reinterpret_cast<char*>(&errorInfo), sizeResponse);
-          }
-        }
-        break; 
-      default:
-        // se considera el mensaje como invalido.
-        invalidRequest = true;
-        break;
+std::string UserNode::floorsToString(int8_t floors[32]) {
+  int i = 0;
+  bool first = true;
+  std::string result;
+  while (i < 32) {
+    if(floors[i] != 0){
+      if (first) {
+        result = result + std::to_string(floors[i]);
+        first = false;
+      } else {
+        result = result + "&" +std::to_string(floors[i]);
+      }
+    } else {
+      break;
     }
-  } else {
+    i++;
+  }
+  return result;
+}
+
+bool UserNode::handleDatagram(int client_socket, char *datagram, size_t datagram_size)
+{
+    int message_type;
+    int node_type; // tipo de nodo emisor
+    char response[kMaxDatagramSize];
+    size_t sizeResponse = kMaxDatagramSize;
+    bool invalidRequest = false;
+    if (datagram_size >= 2)
+    {
+        message_type = (int)datagram[0];
+        node_type = (int)datagram[1];
+        // respondemos según el tipo de mensaje
+        switch (message_type)
+        {
+        case kAuthenticationRequestIU:
+            // Solicitud debe venir de intermediario
+            if (node_type != kIntermediary || datagram_size != sizeof(AuthenticationRequest))
+            {
+                invalidRequest = true;
+            }
+            else
+            {
+                // Convertimos el datagrama al respectivo `struct`.
+                AuthenticationRequest *request = reinterpret_cast<AuthenticationRequest *>(datagram);
+                std::string error;
+                if (this->authenticateUser(std::string(request->username), std::string(request->hash), error))
+                {
+                    // Obtenemos un vector con la información del usuario
+                    std::vector<std::string> userInformation = this->getUserInformation(std::string(request->username));
+                    AuthenticationSuccessUI authInfo;
+                    authInfo.message_type = kAuthenticationSuccessUI;
+                    authInfo.source_node = kUserHandler;
+                    authInfo.permissions = static_cast<uint8_t>(std::stoi(userInformation[2]));
+                    strncpy(authInfo.name, userInformation[4].c_str(), 33);
+                    strncpy(authInfo.last_name, userInformation[5].c_str(), 33);
+                    // guardamos la respuesta
+                    memcpy(response, reinterpret_cast<char *>(&authInfo), sizeResponse);
+                }
+                else
+                {
+                    AuthenticationFailure errorInfo;
+                    errorInfo.message_type = kAuthenticationFailure;
+                    errorInfo.source_node = kUserHandler;
+                    strncpy(errorInfo.error, error.c_str(), 64);
+                    // guardamos la respuesta
+                    memcpy(response, reinterpret_cast<char *>(&errorInfo), sizeResponse);
+                }
+            }
+            break;
+        case kAddUserRequestIU:
+            if (node_type != kIntermediary || datagram_size != sizeof(AddUserRequestIU))
+            {
+                invalidRequest = true;
+            }
+            else
+            {
+                // Convertimos el datagrama al respectivo `struct`.
+                AddUserRequestIU *request = reinterpret_cast<AddUserRequestIU *>(datagram);
+                request->addedByUser;
+                bool result = this->addUser(request->addedByUser, request->username
+                , request->hash, request->permissions, this->floorsToString(request->floors)
+                , request->name, request->last_name, "101");
+                // Construimos el mensaje de confirmación 
+                UserChangesConfirmation confirmation;
+                confirmation.message_type = kUserChangesConfirmation;
+                confirmation.source_node = kUserHandler;
+                confirmation.successful = result;
+                // guardamos la respuesta
+                sizeResponse = sizeof(UserChangesConfirmation);
+                memcpy(response, reinterpret_cast<char *>(&confirmation), sizeResponse);
+            }
+            break;
+        default:
+            // se considera el mensaje como invalido.
+            invalidRequest = true;
+            break;
+        }
+    } else {
     // el datagrama es invalido
     invalidRequest = true;
   }

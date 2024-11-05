@@ -139,7 +139,7 @@ bool Client::sendDatagram(int client_socket, char* datagram, size_t datagram_siz
     return false;
   }
   // Se envió correctamente el mensaje
-  std::cout << "Datagram sent to node." << std::endl;
+  std::cout << "\tDatagram sent to node." << std::endl;
   // Cerrar el socket
   // close(client_socket); <- cerrar el socket siempre afuera
   return true;

@@ -23,6 +23,7 @@ enum MessageType : uint8_t {
   // Mensajes generales:
   kInvalidRequest,
   kCommunicationError,
+  kUnknownError,
   // Mensajes entre cliente <-> `Intermediary` <-> `UserHandler`:
   kAuthenticationRequestCI,
   kAuthenticationSuccessIC,
@@ -40,7 +41,8 @@ enum MessageType : uint8_t {
   kAddUserRequestCI,
   kModifyUserRequestCI,
   kActivateDeactivateUserRequestCI,
-  kUserChangesConfirmationIC,
+  //kUserChangesConfirmationIC,
+  kUserChangesConfirmation,
   kUserInfoRequestCI,
   kUserInfoResponseIC,
   kUserRequestFailureIC,
@@ -51,7 +53,7 @@ enum MessageType : uint8_t {
   kAddUserRequestIU,
   kModifyUserRequestIU,
   kActivateDeactivateUserRequestIU,
-  kUserChangesConfirmationUI,
+  //kUserChangesConfirmationUI,
   kUserInfoRequestIU,
   kUserInfoResponseUI,
   // Mensajes entre `Intermediary`y `DataCollector`:
@@ -193,13 +195,14 @@ struct AddUserRequestCI {
   // El cliente envía solicitud al intermediario, para poder agregar un usuario.
   MessageType message_type;
   NodeType source_node;
-  uint16_t user_identification;
+  char  addedByUser[33];
   char username[33];
   char hash[65];
   char name[33];
   char last_name[33];
   uint8_t permissions;
   int8_t floors[32];
+  uint16_t user_identification;
 };
 
 struct ModifyUserRequestCI {
@@ -226,15 +229,13 @@ struct ActivateDeactivateUserRequestCI {
   uint8_t status;
 };
 
-struct UserChangesConfirmationIC {
+struct UserChangesConfirmation {
   // El intermediario le envía una respuesta al cliente, después de que 
   // el UserHandler haya modificado, agregado o cambiado el estado de 
   // los usuarios.
   MessageType message_type;
   NodeType source_node;
-  uint16_t user_identification;
-  uint8_t user_modification_type;
-  uint8_t error;
+  bool successful;
 };
 
 struct UserInfoRequestCI {
@@ -285,14 +286,12 @@ struct UserListRequestIU {
 };
 
 struct AddUserRequestIU {
-  // El intermediario envía solicitud al user handler, para poder agregar un usuario.
+  // El cliente envía solicitud al intermediario, para poder agregar un usuario.
   MessageType message_type;
   NodeType source_node;
-  uint16_t user_identification;
+  char  addedByUser[33];
   char username[33];
   char hash[65];
-  uint16_t client_identification;
-  uint16_t new_user_identification;
   char name[33];
   char last_name[33];
   uint8_t permissions;
@@ -325,14 +324,14 @@ struct ActivateDeactivateUserRequestIU {
   uint8_t status;
 };
 
-struct UserChangesConfirmationUI {
+//struct UserChangesConfirmationUI {
   // Mensaje que le envía el user handler al intermediario,
   // indicando el proceso que se realizó.
-  MessageType message_type;
-  NodeType source_node;
-  uint8_t user_modification_type;
-  uint8_t error;
-};
+  //MessageType message_type;
+  //NodeType source_node;
+  //uint8_t user_modification_type;
+  //uint8_t error;
+//};
 
 struct UserInfoRequestIU {
   // El intermediario envía solicitud al user handler, para poder obtener
