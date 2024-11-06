@@ -160,8 +160,9 @@ struct LogRequestCI {
   // Mensaje del cliente al intermediario, para pedir bitácora.
   MessageType message_type;
   NodeType source_node;
+  char request_by[33];
+  NodeType node_required;
   uint16_t user_identification;
-  NodeType nodeRequired;
 };
 
 struct UserListRequestCI {
@@ -280,11 +281,11 @@ struct UserRequestFailureIC {
 // Datagramas que intermediario envía a UserHandler y viceversa, 
 // con las peticiones hechas por el cliente.
 
-struct LogRequestIU {
-  // Mensaje del intermediario al user handler, para pedir bitácora.
+struct LogRequestIN {
+  // Mensaje del intermediario al a un nodo, para pedir bitácora.
   MessageType message_type;
   NodeType source_node;
-  uint16_t client_identification;
+  char request_by[33];
 };
 
 struct UserListRequestIU {
@@ -366,12 +367,13 @@ struct UserInfoResponse {
 
 // Datagramas entre `Intermediary`y `DataCollector`:
 
+/*
 struct LogRequestID {
   // El intermediario le solicita bitácora al data collector.
   MessageType message_type;
   NodeType source_node;
   uint16_t client_identification;
-};
+};*/
 
 struct kSensorInfoRequestID {
   // El intermediario pide al data collector solicitud de información de los sensores.

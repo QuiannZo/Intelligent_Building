@@ -86,25 +86,45 @@ bool DataNode::handleDatagram(int client_socket, char *datagram, size_t datagram
     char response[3000];
     size_t sizeResponse = 0; 
     bool invalidRequest = false;
+    bool result = true;
+    bool send_response = true;
 
     if (datagram_size >= 2) {
         message_type = (int)datagram[0];
         node_type = (int)datagram[1];
         // respondemos según el tipo de mensaje
         switch (message_type) {
-            case kLogRequestID:
-                // Solicitud debe venir de intermediario
-                if (node_type != kIntermediary || datagram_size != sizeof(LogRequestID)) {
-                    invalidRequest = true;
+          case kLogRequestID:
+            if (node_type != kIntermediary || datagram_size != sizeof(LogRequestIN)) {
+              invalidRequest = true;
+            } else {
+              LogRequestIN *request = reinterpret_cast<LogRequestIN*>(datagram);
+              // construimos el datagrama del header
+              std::string log = this->returnLog(request->request_by);
+              LongFileHeader header;
+              header.message_type = kLongFileHeader;
+              header.char_length = log.length();
+              if (!log.empty()) {
+                header.successful = true;
+              } else {
+                header.successful = false;
+              }
+              if (send(client_socket, reinterpret_cast<char *>(&header), sizeof(LongFileHeader), 0) > 0) {
+                if (send(client_socket, log.c_str(), log.size(), 0) < 0) {
+                  std::cerr << "Error sending response to client." << std::endl;
+                  result = false;
                 } else {
-                    strncpy(response, this->returnLog("username01").c_str(), 3000);
-                    sizeResponse = strlen(response); 
+                  send_response = false;
                 }
-                break;
+              } else {
+                std::cerr << "Error sending response to client." << std::endl;
+                result = false;
+              }
+            }
             default:
-                // se considera el mensaje como invalido.
-                invalidRequest = true;
-                break;
+              // se considera el mensaje como invalido.
+              invalidRequest = true;
+              break;
         }
     } else {
         // el datagrama es invalido
@@ -119,13 +139,13 @@ bool DataNode::handleDatagram(int client_socket, char *datagram, size_t datagram
         sizeResponse = sizeof(InvalidRequest);
         strncpy(response, reinterpret_cast<char*>(&invalid), sizeResponse);
     }
-
-    if (send(client_socket, response, sizeResponse, 0) < 0) {
-        std::cerr << "Error sending response to client." << std::endl;
-        return false;
+    if(send_response) {
+      if (send(client_socket, response, sizeResponse, 0) < 0) {
+      std::cerr << "Error sending response to client." << std::endl;
+      return false;
     }
-
+    }
     std::cout << "\tResponse sent to client." << std::endl;
-    return true;
+    return result;
 }
 

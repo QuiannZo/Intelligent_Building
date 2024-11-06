@@ -214,7 +214,6 @@ bool UserNode::handleDatagram(int client_socket, char *datagram, size_t datagram
           }
           break;
         case kUserInfoRequestIU:
-          //
           if (node_type != kIntermediary || datagram_size != sizeof(UserInfoRequestIU)) {
               invalidRequest = true;
           } else {
@@ -229,7 +228,13 @@ bool UserNode::handleDatagram(int client_socket, char *datagram, size_t datagram
                 if(userInformation.empty()) {
                   user_info.successful = false;
                   strcpy(user_info.error, "User not found.");
+                  this->appendToLogTimeHour("[User information]: '" + std::string(request->request_by) 
+                          + "' attempted to get information of user '" + std::string(request->username)
+                          + "', but the user does not exist.");
                 } else {
+                  this->appendToLogTimeHour("[User information]: '" + std::string(request->request_by) 
+                                            + "' got information of user '" + std::string(request->username)
+                                            + "'.");
                   user_info.successful = true;
                   user_info.permissions = static_cast<uint8_t>(std::stoi(userInformation[2]));
                   strncpy(user_info.username, userInformation[0].c_str(), 33);
@@ -246,10 +251,37 @@ bool UserNode::handleDatagram(int client_socket, char *datagram, size_t datagram
                 memcpy(response, reinterpret_cast<char *>(&user_info), sizeResponse);
           }
           break; 
-        default:
-            // se considera el mensaje como invalido.
+        case kLogRequestIU:
+          if (node_type != kIntermediary || datagram_size != sizeof(LogRequestIN)) {
             invalidRequest = true;
-            break;
+          } else {
+            LogRequestIN *request = reinterpret_cast<LogRequestIN*>(datagram);
+            // construimos el datagrama del header
+            std::string log = this->returnLog(request->request_by);
+            LongFileHeader header;
+            header.message_type = kLongFileHeader;
+            header.char_length = log.length();
+            if (!log.empty()) {
+              header.successful = true;
+            } else {
+              header.successful = false;
+            }
+            if (send(client_socket, reinterpret_cast<char *>(&header), sizeof(LongFileHeader), 0) > 0) {
+              if (send(client_socket, log.c_str(), log.size(), 0) < 0) {
+                std::cerr << "Error sending response to client." << std::endl;
+                result = false;
+              } else {
+                send_response = false;
+              }
+            } else {
+              std::cerr << "Error sending response to client." << std::endl;
+              result = false;
+            }
+          }
+        default:
+          // se considera el mensaje como invalido.
+          invalidRequest = true;
+          break;
         }
     } else {
     // el datagrama es invalido

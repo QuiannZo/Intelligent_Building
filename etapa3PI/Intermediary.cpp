@@ -57,11 +57,7 @@ bool Intermediary::handleDatagram(int client_socket, char *datagram
                   //confirmation->user_identification = 1;
                 }
               } else {
-                CommunicationError error;
-                error.message_type = kCommunicationError;
-                error.error_node = kUserHandler;
-                sizeResponse = sizeof(CommunicationError);
-                memcpy(response, reinterpret_cast<char*>(&error), sizeResponse);
+                  connection_error = true;
               }
               // Cerrar el socket
               this->closeConnection(client_socket);
@@ -143,39 +139,58 @@ bool Intermediary::handleDatagram(int client_socket, char *datagram
             }
         }
         break;
-
       case kLogRequestCI:
         // Solicitud debe venir de intermediario
         if (node_type != kApplication || datagram_size != sizeof(LogRequestCI)) {
           invalidRequest = true;
         } else {
-          // Establecemos una conexión con el `DataNode`
-          int client_socket = this->connectToNode(kDataNodeIPv4, kDataNodePort);
-          if (client_socket > 0) {
-            // Cambiamos el tipo de mensaje y el nodo de origen
-            LogRequestID datagram2;
-            datagram2.message_type = kLogRequestID;
-            datagram2.source_node = kIntermediary;
-            datagram2.client_identification = 20;
-
-            // Enviamos el datagrama
-            if (this->sendDatagram(client_socket, reinterpret_cast<char*>(&datagram2), sizeof(datagram2))) {
-              // Como máximo esperamos 15s
-              if (this->receiveDatagramWithTimeout(client_socket, response, kMaxDatagramSize, 15)) {
-              } else {
-                CommunicationError error;
-                error.message_type = kCommunicationError;
-                error.error_node = kUserHandler;
-                sizeResponse = sizeof(CommunicationError);
-                memcpy(response, reinterpret_cast<char*>(&error), sizeResponse);
-              }
-              // Cerrar el socket
-              this->closeConnection(client_socket);
+          datagram[1] = kIntermediary;
+          datagram_size = sizeof(LogRequestIN);
+          LogRequestCI* request = reinterpret_cast<LogRequestCI*>(datagram);
+          bool result = false;
+          if (request->node_required == kUserHandler) {
+            datagram[0] = kLogRequestIU;
+            result = this->connectResendLongString(client_socket, datagram, datagram_size, 
+                                            response, sizeof(LongFileHeader), 
+                                            kIntermediary, kUserHandlerIPv4, kUserHandlerPort, 5);
+          } else if (request->node_required == KDataCollector) {
+            datagram[0] = kLogRequestID;
+            result = this->connectResendLongString(client_socket, datagram, datagram_size, 
+                                            response, sizeof(LongFileHeader), 
+                                            kIntermediary, kDataNodeIPv4, kDataNodePort, 5);
+          } else if (request->node_required == kIntermediary) {
+            // caso en que se solicita la bitácora del nodo intermediario
+            LogRequestIN *request = reinterpret_cast<LogRequestIN*>(datagram);
+            // construimos el datagrama del header
+            std::string log = this->returnLog(request->request_by);
+            LongFileHeader header;
+            header.message_type = kLongFileHeader;
+            header.source_node = kIntermediary;
+            header.char_length = log.length();
+            if (!log.empty()) {
+              header.successful = true;
+            } else {
+              header.successful = false;
             }
+            if (send(client_socket, reinterpret_cast<char *>(&header), sizeof(LongFileHeader), 0) > 0) {
+              if (send(client_socket, log.c_str(), log.size(), 0) < 0) {
+                std::cerr << "Error sending response to client." << std::endl;
+              } else {
+                result = true;
+              }
+            } else {
+              std::cerr << "Error sending response to client." << std::endl;
+            }
+          } else {
+            invalidRequest = true;
+          }
+          if (result) {
+            send_response = false;
+          } else {
+            connection_error = true;
           }
         }
         break;
-      
       default:
         // se considera el mensaje como invalido.
         invalidRequest = true;
@@ -214,7 +229,6 @@ bool Intermediary::handleDatagram(int client_socket, char *datagram
 
 bool Intermediary::resendLongString(int source_socket, int dest_socket
 , int total_size, int timeout_sec) {
-  std::cout << ">>>> Total size: " << total_size << std::endl;
   if (source_socket < 0 || dest_socket < 0) {
     return false;
   }
@@ -226,8 +240,6 @@ bool Intermediary::resendLongString(int source_socket, int dest_socket
   size_t current_chunk_size;
 
   while (bytes_received < total_size) {
-    std::cout << ">>>> Total size: " << total_size << std::endl;
-    std::cout << ">>>> Bytes received: " << bytes_received << std::endl;
     memset(buffer, 0, chunk_size);
     // Configurar `fd_set` para monitorear el socket de origen
     fd_set read_fds;
@@ -254,7 +266,6 @@ bool Intermediary::resendLongString(int source_socket, int dest_socket
     current_chunk_size = (remaining < chunk_size) ? remaining : chunk_size;
     
     ssize_t result = recv(source_socket, buffer, current_chunk_size, 0);
-    std::cout << "Buffer: " << buffer << std::endl;
     if (result < 0) {
         std::cerr << "Error reading chunk from source node." << std::endl;
         return false;
@@ -272,7 +283,7 @@ bool Intermediary::resendLongString(int source_socket, int dest_socket
     bytes_received += result;
   }
 
-  std::cout << "\nData forwarded to destination node." << std::endl;
+  std::cout << "\tData forwarded to destination node." << std::endl;
   return true;
 }
 

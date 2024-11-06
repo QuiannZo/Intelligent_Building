@@ -21,8 +21,10 @@ int main() {
   //client.modifyUser("superuser", "PruebaXYZ", "PruebaWXYZ", "PasswordXYZ", permissions, floors, "Juan", "Perez", response);
   //client.getUserList("superuser", result);
   // Usuario no valido
-  client.getUserInformation("superuser", "Jose", result);
+  //client.getUserInformation("superuser", "Jose", result);
   // Usuario valido
-  client.getUserInformation("superuser", "PruebaWXYZ", result);
+  //client.getUserInformation("superuser", "PruebaWXYZ", result);
+  std::string response;
+  client.getNodeLog("superuser", response, KDataCollector);
   return 0;
 }

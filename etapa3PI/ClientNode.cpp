@@ -283,3 +283,28 @@ bool ClientNode::getUserInformation(const std::string request_by, const std::str
   }
   return false;
 }
+
+bool ClientNode::getNodeLog(std::string request_by, std::string &response, uint8_t node_type) {
+  // construimos el datagrama
+  LogRequestCI request;
+  memset(&request, 0, sizeof(LogRequestCI));
+  request.message_type = kLogRequestCI;
+  request.node_required = static_cast<NodeType>(node_type);
+  request.source_node = kApplication;
+  strncpy(request.request_by, request_by.c_str(), sizeof(request.request_by) - 1);
+  request.user_identification = 1; // TODO
+  bool result = true;
+  response.clear();
+  if(!this->connectSendReceiveLong(kIntermediaryIPv4, kIntermediaryPort
+  , reinterpret_cast<char*>(&request), sizeof(LogRequestCI), response, 5, 5)) {
+    response = this->getErrorString((uint8_t)response.c_str()[0]);
+    result = false; 
+  }
+  // TODO:borrar
+  std::cout << "Buffer[delete message]: " << response << std::endl;
+  return result;
+}
+
+bool ClientNode::getSensorData(std::string request_by, std::string &response) {
+  return false;
+}
