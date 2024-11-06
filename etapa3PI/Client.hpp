@@ -33,6 +33,11 @@ public:
   // La conexión se debe establecer y cerrar por separado. 
   bool receiveLongString(int client_socket
   , std::string& received_data, size_t total_size, int timeout_sec);
+  // Método que encapsula los métodos `connectToNode`, `sendDatagram`, receiveDatagramWithTimeout,
+  // `receiveLongString` y `closeConnection`. Está pensado para recibir archivos grandes.
+  bool connectSendReceiveLong(const std::string& ip, int port,  char* datagram
+  , size_t datagram_size, std::string& response_buffer
+  , int timeout_header_sec, int timeout_chunk_sec);
 
 
 public:

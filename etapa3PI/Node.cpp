@@ -78,6 +78,7 @@ void Node::run() {
     }
     // Cerrar el socket
     std::cout << "Connection closed: " << str_ip_remote << std::endl;
+    std::cout << std::endl;
     close(client_socket);
   }
 }

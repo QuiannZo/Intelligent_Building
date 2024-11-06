@@ -10,6 +10,10 @@ ClientNode::ClientNode(std::string logFilename, int processId)
 // destructor
 ClientNode::~ClientNode() {}
 
+uint16_t ClientNode::getUserID() {
+    return this->user_id;
+}
+
 // Método que devuelve el un string con el significado de ciertos
 // datagramas frecuentes que representan errores
 std::string ClientNode::getErrorString(int type) {
@@ -23,6 +27,10 @@ std::string ClientNode::getErrorString(int type) {
       break;
     case kUnknownError:
       response = "Unknown error.";
+      break;
+    case kTransmissionError:
+      response = "An error occurs during transmission.";
+      break;
     default:
       // se considera el mensaje como invalido.
       response = "Received an invalid message from intermediary node.";
@@ -64,6 +72,8 @@ bool ClientNode::authenticateUser(const std::string &username
       response.push_back(confirmation->name);
       response.push_back(confirmation->last_name);
       response.push_back(std::to_string(confirmation->permissions));
+      this->user_id = 1; // TODO:
+      this->username = username;
       // TODO: mover a bitacora
       std::cout << "User " + std::string(confirmation->name) + " " + 
                             std::string(confirmation->last_name) + 
@@ -189,5 +199,33 @@ bool ClientNode::modifyUser(const std::string &modify_by_user, const std::string
       result = false;
     }
   }
+  return result;
+}
+
+bool ClientNode::getUserList(std::string request_by, std::vector<std::string> &response) {
+  // buffer donde se recibe la respuesta;
+  // construimos el datagrama
+  UserListRequestCI request;
+  request.message_type = kUserListRequestCI;
+  request.source_node = kApplication;
+  strncpy(request.request_by, request_by.c_str(), sizeof(request.request_by) - 1);
+  request.user_identification = 1; // TODO:
+  string buffer;
+  bool result = true;
+  if(this->connectSendReceiveLong(kIntermediaryIPv4, kIntermediaryPort
+  , reinterpret_cast<char*>(&request), sizeof(UserListRequestCI), buffer, 5, 5)) {
+    response.clear();
+    std::stringstream ss(buffer);
+    std::string token;
+    // separar por comas
+    while (std::getline(ss, token, ',')) {
+      response.push_back(token);
+    }
+  } else {
+    response.push_back(getErrorString((uint8_t)buffer.c_str()[0]));
+    result = false;
+  } 
+  // TODO:borrar
+  std::cout << "Buffer[borrar mensaje]: " << buffer << std::endl;
   return result;
 }

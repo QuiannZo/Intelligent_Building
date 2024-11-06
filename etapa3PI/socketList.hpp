@@ -24,6 +24,8 @@ enum MessageType : uint8_t {
   kInvalidRequest,
   kCommunicationError,
   kUnknownError,
+  kLongFileHeader, 
+  kTransmissionError, 
   // Mensajes entre cliente <-> `Intermediary` <-> `UserHandler`:
   kAuthenticationRequestCI,
   kAuthenticationSuccessIC,
@@ -97,6 +99,7 @@ struct LongFileHeader {
   // después se envía el mensaje por el socket. 
   MessageType message_type;
   NodeType source_node;
+  bool successful;
   int char_length;
 };
 
@@ -124,6 +127,7 @@ struct AuthenticationSuccessIC {
   char name[33];
   char last_name[33];
   uint8_t permissions;
+  // int16_t user_id;
   // Tamaño: 71 bytes
 };
 
@@ -164,6 +168,7 @@ struct UserListRequestCI {
   // El cliente pide al intermediario solicitud de la lista de usuarios.
   MessageType message_type;
   NodeType source_node;
+  char request_by[33];
   uint16_t user_identification;
 };
 
@@ -284,7 +289,7 @@ struct UserListRequestIU {
   // El intermediario pide al user handler solicitud de la lista de usuarios.
   MessageType message_type;
   NodeType source_node;
-  uint16_t client_identification;
+  char request_by[33];
 };
 
 struct AddUserRequestIU {

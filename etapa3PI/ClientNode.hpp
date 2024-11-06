@@ -7,10 +7,14 @@
 
 class ClientNode : public Client {
 private:
-    std::string getErrorString(int type);
+  // atributos que se establecen cuando se realiza el login.
+  std::string username;
+  uint16_t user_id = 0;
+  std::string getErrorString(int type);
 public:
   ClientNode(std::string logFilename, int processId);
   ~ClientNode();
+  uint16_t getUserID();
   // Métodos que se usan para enviar mensajes al intermediario
   // Comunicación hacia el nodo de usuarios
   // Autenticar usuarios
@@ -27,7 +31,7 @@ public:
           , int8_t floors[32], const std::string& name, const std::string& last_name
           , std::string& response);
   // Obtener lista de usuarios
-  bool getUserList(std::vector<std::string>& response);
+  bool getUserList(std::string request_by, std::vector<std::string>& response);
   // Obtener información de un usuario en particular
   bool getUserInformation(const std::string& username, std::vector<std::string>& response);
   // Obtener la bitácora del nodo de usuarios

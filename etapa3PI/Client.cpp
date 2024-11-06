@@ -246,8 +246,38 @@ bool Client::receiveLongString(int client_socket, std::string& received_data, si
     received_data.append(buffer, result);
     bytes_received += result;
   }
-
-  std::cout << "Complete data received from node." << std::endl;
+  std::cout << "\nComplete data received from node." << std::endl;
   return true;
 }
 
+bool Client::connectSendReceiveLong(const std::string &ip, int port, char *datagram
+, size_t datagram_size, std::string& response_buffer, int timeout_header_sec, int timeout_chunk_sec) {
+  bool result = false;
+  // establecemos una conexión
+  int client_socket = this->connectToNode(ip, port);
+  if (client_socket > 0) {
+    // Enviamos el datagrama
+    if (this->sendDatagram(client_socket, datagram, datagram_size)) {
+      // Obtenemos la respuesta, como máximo esperamos `timeout_header_sec` s. 
+      // Para los archivos largos, siempre se debe recibir un encabezad indicando el tamaño 
+      size_t buffer_size = sizeof(LongFileHeader);
+      char buffer[buffer_size];
+      memset(buffer, 0, buffer_size);
+      if (this->receiveDatagramWithTimeout(client_socket, buffer
+      , buffer_size, timeout_header_sec)) {
+        if ((int)buffer[0] == kLongFileHeader) {
+          // "castear" el datagrama
+          LongFileHeader* header = reinterpret_cast<LongFileHeader*>(buffer);
+          result = this->receiveLongString(client_socket, response_buffer, header->char_length, timeout_chunk_sec);
+          if (!result) {
+            response_buffer[0] = kTransmissionError;
+          }
+        } else {
+          response_buffer.assign(buffer, buffer_size);
+        }
+      }
+    }
+    this->closeConnection(client_socket);
+  } 
+  return result;
+}

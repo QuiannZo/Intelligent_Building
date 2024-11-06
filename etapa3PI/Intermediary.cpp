@@ -23,6 +23,7 @@ bool Intermediary::handleDatagram(int client_socket, char *datagram
   int node_type; // tipo de nodo emisor
   char response[kMaxDatagramSize];
   size_t sizeResponse = kMaxDatagramSize;
+  bool send_response = true;
   bool invalidRequest = false;
   bool connection_error= false;
 
@@ -86,7 +87,6 @@ bool Intermediary::handleDatagram(int client_socket, char *datagram
         }    
         break;
       case kModifyUserRequestCI:
-              std::cout << "Tamaño: " << datagram_size <<std::endl;
         if (node_type != kApplication || datagram_size != sizeof(ModifyUserRequestCI)) {
           invalidRequest = true;
         } else {
@@ -100,6 +100,52 @@ bool Intermediary::handleDatagram(int client_socket, char *datagram
             }
           } else {
             connection_error = true;
+          }
+        }
+        break;
+      case kUserListRequestCI:
+        std::cout << "Dentrox\n";
+        // Solicitud debe venir de intermediario
+        if (node_type != kApplication || datagram_size != sizeof(UserListRequestCI)) {
+          invalidRequest = true;
+          std::cout << "tamaño\n";
+        } else {
+          datagram[0] = kUserListRequestIU;
+          datagram[1] = kIntermediary;
+          // Reenviar al nodo de usuarios
+          int user_node_socket = this->connectToNode(kUserHandlerIPv4, kUserHandlerPort);
+          if (user_node_socket > 0) {
+            datagram_size = sizeof(UserListRequestIU);
+            if (this->sendDatagram(user_node_socket, datagram, datagram_size)) {
+              // Como máximo esperamos 15s
+              if (this->receiveDatagramWithTimeout(user_node_socket, response, sizeof(LongFileHeader), 5)) {
+                // Verificamos si es un mensaje de tipo `kLongFileHeader`
+                if(response[0] == kLongFileHeader) {
+                  LongFileHeader* header = reinterpret_cast<LongFileHeader*>(response);
+                  //header->source_node = kIntermediary;
+                  //sizeResponse = sizeof(LongFileHeader);
+                  response[1] = kIntermediary;
+                  //memcpy(response, reinterpret_cast<char*>(&header), sizeResponse);
+                  // reenviamos la respuesta
+                  if (send(client_socket, response, sizeof(LongFileHeader), 0) < 0) {
+                    std::cerr << "Error sending header to client." << std::endl;
+                  } else {
+                    std::cout << "Se va a reenviar\n";
+                    
+                    if(this->resendLongString(user_node_socket, client_socket, header->char_length, 5)) {
+                      send_response = false;
+                    } else {
+                      connection_error = true;
+                    }
+                  }
+                }
+              } else {
+                connection_error = true;
+              }
+            } else {
+              connection_error = true;
+            }
+            this->closeConnection(user_node_socket);
           }
         }
         break;
@@ -160,17 +206,20 @@ bool Intermediary::handleDatagram(int client_socket, char *datagram
       memcpy(response, reinterpret_cast<char*>(&error), sizeResponse);
   }
   // Responder
-  response[1] = kIntermediary; // cambiar origen
-  if (send(client_socket, response, sizeResponse, 0) < 0) {
-    std::cerr << "Error sending response to client." << std::endl;
-    return false;
-  }
+  if (send_response) {
+    response[1] = kIntermediary; // cambiar origen
+    if (send(client_socket, response, sizeResponse, 0) < 0) {
+      std::cerr << "Error sending response to client." << std::endl;
+      return false;
+    }
   std::cout << "\tResponse send to client." << std::endl;
+  }
   return true;
 }
 
 bool Intermediary::resendLongString(int source_socket, int dest_socket
-, size_t total_size, int timeout_sec) {
+, int total_size, int timeout_sec) {
+  std::cout << ">>>> Total size: " << total_size << std::endl;
   if (source_socket < 0 || dest_socket < 0) {
     return false;
   }
@@ -182,6 +231,9 @@ bool Intermediary::resendLongString(int source_socket, int dest_socket
   size_t current_chunk_size;
 
   while (bytes_received < total_size) {
+    std::cout << ">>>> Total size: " << total_size << std::endl;
+    std::cout << ">>>> Bytes received: " << bytes_received << std::endl;
+    memset(buffer, 0, chunk_size);
     // Configurar `fd_set` para monitorear el socket de origen
     fd_set read_fds;
     FD_ZERO(&read_fds);
@@ -207,6 +259,7 @@ bool Intermediary::resendLongString(int source_socket, int dest_socket
     current_chunk_size = (remaining < chunk_size) ? remaining : chunk_size;
     
     ssize_t result = recv(source_socket, buffer, current_chunk_size, 0);
+    std::cout << "Buffer: " << buffer << std::endl;
     if (result < 0) {
         std::cerr << "Error reading chunk from source node." << std::endl;
         return false;
@@ -224,6 +277,6 @@ bool Intermediary::resendLongString(int source_socket, int dest_socket
     bytes_received += result;
   }
 
-  std::cout << "Data forwarded to destination node." << std::endl;
+  std::cout << "\nData forwarded to destination node." << std::endl;
   return true;
 }

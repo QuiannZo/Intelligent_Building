@@ -100,6 +100,8 @@ bool UserNode::handleDatagram(int client_socket, char *datagram, size_t datagram
     char response[kMaxDatagramSize];
     size_t sizeResponse = kMaxDatagramSize;
     bool invalidRequest = false;
+    bool send_response = true;
+    bool result = true;
     if (datagram_size >= 2)
     {
         message_type = (int)datagram[0];
@@ -167,8 +169,7 @@ bool UserNode::handleDatagram(int client_socket, char *datagram, size_t datagram
             if (node_type != kIntermediary || datagram_size != sizeof(AddUserRequestIU)) {
                 invalidRequest = true;
             }
-            else
-            {
+            else {
                 // Convertimos el datagrama al respectivo `struct`.
                 AddUserRequestIU *request = reinterpret_cast<AddUserRequestIU *>(datagram);
                 bool result = this->addUser(request->addedByUser, request->username
@@ -184,6 +185,38 @@ bool UserNode::handleDatagram(int client_socket, char *datagram, size_t datagram
                 memcpy(response, reinterpret_cast<char *>(&confirmation), sizeResponse);
             }
             break;
+        case kUserListRequestIU:
+          std::cout << "Dentro" << std::endl;
+          if (node_type != kIntermediary || datagram_size != sizeof(UserListRequestIU)) {
+            invalidRequest = true;
+          } else {
+            // construimos el datagrama del header
+            std::vector<std::string> users = this->getUserList();
+            std::string users_str = this->vectorToString(users);
+            LongFileHeader header;
+            header.message_type = kLongFileHeader;
+            header.char_length = users_str.length();
+            std::cout << "En largo del archivo es str: " <<  users_str.length() << std::endl;
+            std::cout << "En largo del archivo es: " <<  header.char_length << std::endl;
+            if (!users_str.empty()) {
+              header.successful = true;
+            } else {
+               header.successful = false;
+            }
+            if (send(client_socket, reinterpret_cast<char *>(&header), sizeof(LongFileHeader), 0) > 0) {
+              if (send(client_socket, users_str.c_str(), users_str.size(), 0) < 0) {
+                std::cerr << "Error sending response to client." << std::endl;
+                result = false;
+              } else {
+                send_response = false;
+              }
+              std::cout << "Se envió" << users_str << std::endl;
+            } else {
+              std::cerr << "Error sending response to client." << std::endl;
+              result = false;
+            }
+          }
+          break;
         default:
             // se considera el mensaje como invalido.
             invalidRequest = true;
@@ -202,12 +235,14 @@ bool UserNode::handleDatagram(int client_socket, char *datagram, size_t datagram
     strncpy(response, reinterpret_cast<char*>(&invalid), sizeResponse);
     std::cerr << "\tError: invalid request received." << std::endl;
   }
-  if (send(client_socket, response, sizeResponse, 0) < 0) {
-    std::cerr << "Error sending response to client." << std::endl;
-    return false;
+  if (send_response) {
+    if (send(client_socket, response, sizeResponse, 0) < 0) {
+      std::cerr << "Error sending response to client." << std::endl;
+      result = false;
+    }
+    std::cout << "\tResponse send to client." << std::endl;
   }
-  std::cout << "\tResponse send to client." << std::endl;
-  return true;
+  return result;
 }
 
 std::vector<std::string> UserNode::splitString(const char* input) {
@@ -294,7 +329,7 @@ bool UserNode::modifyUser(const std::string &modify_by_user
     user_info[2] = std::to_string(permissions);
   }
   if(!floors.empty()){
-    user_info[3] = floors;
+    user_info[3] = "[" + floors +"]";
   }
   if(!name.empty()){
     user_info[4] = name;
@@ -309,6 +344,9 @@ bool UserNode::modifyUser(const std::string &modify_by_user
   // obtenemos el string del usuario modificado
   std::string user_mod = this->vectorToString(user_info);
   if (this->modifyUserEntry(user_copy, user_mod)) {
+    this->appendToLogTimeHour(
+      "Modify user: '" + modify_by_user + "'   modified '" +
+      username + "'.");
     return true;
   }
   this->appendToLogTimeHour(
