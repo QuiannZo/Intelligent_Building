@@ -120,50 +120,30 @@ bool Intermediary::handleDatagram(int client_socket, char *datagram
                 connection_error = true;
             }
         }
-      /*
-        // Solicitud debe venir de intermediario
-        if (node_type != kApplication || datagram_size != sizeof(UserListRequestCI)) {
-          invalidRequest = true;
-        } else {
-          datagram[0] = kUserListRequestIU;
-          datagram[1] = kIntermediary;
-          // Reenviar al nodo de usuarios
-          int user_node_socket = this->connectToNode(kUserHandlerIPv4, kUserHandlerPort);
-          
-          if (user_node_socket > 0) {
-            datagram_size = sizeof(UserListRequestIU);
-            if (this->sendDatagram(user_node_socket, datagram, datagram_size)) {
-              // Como máximo esperamos 15s
-              if (this->receiveDatagramWithTimeout(user_node_socket, response, sizeof(LongFileHeader), 5)) {
-                // Verificamos si es un mensaje de tipo `kLongFileHeader`
-                if(response[0] == kLongFileHeader) {
-                  LongFileHeader* header = reinterpret_cast<LongFileHeader*>(response);
-                  //header->source_node = kIntermediary;
-                  //sizeResponse = sizeof(LongFileHeader);
-                  response[1] = kIntermediary;
-                  //memcpy(response, reinterpret_cast<char*>(&header), sizeResponse);
-                  // reenviamos la respuesta
-                  if (send(client_socket, response, sizeof(LongFileHeader), 0) < 0) {
-                    std::cerr << "Error sending header to client." << std::endl;
-                  } else {
-                    if(this->resendLongString(user_node_socket, client_socket, header->char_length, 5)) {
-                      send_response = false;
-                    } else {
-                      connection_error = true;
-                    }
-                  }
-                }
-              } else {
-                connection_error = true;
-              }
-            } else {
-              connection_error = true;
-            }
-            this->closeConnection(user_node_socket);
-          }
-        }
-        */
         break;
+      case kUserInfoRequestCI:
+        if (node_type != kApplication || datagram_size != sizeof(UserInfoRequestCI)) {
+            invalidRequest = true;
+        } else {
+            // Cambiar tipo de mensaje y el nodo de origen
+            datagram[0] = kUserInfoRequestIU;
+            datagram[1] = kIntermediary;
+            // Establecer conexión con el `UserHandler`
+            if (this->connectSendReceive(kUserHandlerIPv4, kUserHandlerPort, datagram,
+                                        sizeof(UserInfoRequestIU), response, kMaxDatagramSize, 15)) {
+                // Verificamos si el mensaje es del tipo `kUserInfoResponseUI`
+                if (response[0] == kUserInfoResponseUI) {
+                  response[0] = kUserInfoResponseIC;
+                  sizeResponse = sizeof(UserInfoResponse);
+                } else {
+                   response[0] = kUnknownError;
+                }
+            } else {
+                connection_error = true;
+            }
+        }
+        break;
+
       case kLogRequestCI:
         // Solicitud debe venir de intermediario
         if (node_type != kApplication || datagram_size != sizeof(LogRequestCI)) {

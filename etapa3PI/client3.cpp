@@ -19,6 +19,10 @@ int main() {
   //client.modifyUser("superuser", "PruebaXYZ", "PruebaWXYZ", "PasswordXYZ", permissions, floors, "Juan", "Perez", response);
   //modificación invalida:
   //client.modifyUser("superuser", "PruebaXYZ", "PruebaWXYZ", "PasswordXYZ", permissions, floors, "Juan", "Perez", response);
-  client.getUserList("superuser", result);
+  //client.getUserList("superuser", result);
+  // Usuario no valido
+  client.getUserInformation("superuser", "Jose", result);
+  // Usuario valido
+  client.getUserInformation("superuser", "PruebaWXYZ", result);
   return 0;
 }

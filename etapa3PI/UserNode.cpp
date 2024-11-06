@@ -186,7 +186,6 @@ bool UserNode::handleDatagram(int client_socket, char *datagram, size_t datagram
             }
             break;
         case kUserListRequestIU:
-          std::cout << "Dentro" << std::endl;
           if (node_type != kIntermediary || datagram_size != sizeof(UserListRequestIU)) {
             invalidRequest = true;
           } else {
@@ -196,8 +195,6 @@ bool UserNode::handleDatagram(int client_socket, char *datagram, size_t datagram
             LongFileHeader header;
             header.message_type = kLongFileHeader;
             header.char_length = users_str.length();
-            std::cout << "En largo del archivo es str: " <<  users_str.length() << std::endl;
-            std::cout << "En largo del archivo es: " <<  header.char_length << std::endl;
             if (!users_str.empty()) {
               header.successful = true;
             } else {
@@ -210,13 +207,45 @@ bool UserNode::handleDatagram(int client_socket, char *datagram, size_t datagram
               } else {
                 send_response = false;
               }
-              std::cout << "Se envió" << users_str << std::endl;
             } else {
               std::cerr << "Error sending response to client." << std::endl;
               result = false;
             }
           }
           break;
+        case kUserInfoRequestIU:
+          //
+          if (node_type != kIntermediary || datagram_size != sizeof(UserInfoRequestIU)) {
+              invalidRequest = true;
+          } else {
+            // Convertimos el datagrama al respectivo `struct`.
+                UserInfoRequestIU *request = reinterpret_cast<UserInfoRequestIU *>(datagram);
+                // TODO: agregar algo a la bitacora, porque getUserInformation no lo hace.
+                std::vector<std::string> userInformation = this->getUserInformation(request->username);
+                // Construimos el mensaje de respuesta 
+                UserInfoResponse user_info;
+                user_info.message_type = kUserInfoResponseUI;
+                user_info.source_node = kUserHandler;
+                if(userInformation.empty()) {
+                  user_info.successful = false;
+                  strcpy(user_info.error, "User not found.");
+                } else {
+                  user_info.successful = true;
+                  user_info.permissions = static_cast<uint8_t>(std::stoi(userInformation[2]));
+                  strncpy(user_info.username, userInformation[0].c_str(), 33);
+                  strncpy(user_info.name, userInformation[4].c_str(), 33);
+                  strncpy(user_info.last_name, userInformation[5].c_str(), 33);
+                  if (userInformation[9] == "1") {
+                    user_info.is_active = true;
+                  } else {
+                    user_info.is_active = false;
+                  }
+                }
+                // guardamos la respuesta
+                sizeResponse = sizeof(UserInfoResponse);
+                memcpy(response, reinterpret_cast<char *>(&user_info), sizeResponse);
+          }
+          break; 
         default:
             // se considera el mensaje como invalido.
             invalidRequest = true;

@@ -226,6 +226,60 @@ bool ClientNode::getUserList(std::string request_by, std::vector<std::string> &r
     result = false;
   } 
   // TODO:borrar
-  std::cout << "Buffer[borrar mensaje]: " << buffer << std::endl;
+  std::cout << "Buffer[delete message]: " << buffer << std::endl;
   return result;
+}
+
+bool ClientNode::getUserInformation(const std::string request_by, const std::string &username
+                                    , std::vector<std::string> &response) {
+  // buffer donde se recibe la respuesta;
+  char buffer[kMaxDatagramSize];
+  memset(buffer, 0, kMaxDatagramSize);
+
+  // construimos el datagrama
+  UserInfoRequestCI user_info;
+  // blanqueamos el datagrama
+  memset(&user_info, 0, sizeof(UserInfoRequestCI)); 
+  strncpy(user_info.username, username.c_str(), sizeof(user_info.username) - 1);
+  user_info.source_node = kApplication;
+  user_info.message_type = kUserInfoRequestCI;
+  user_info.user_identification = 1; // TODO
+  strncpy(user_info.request_by, request_by.c_str(), sizeof(user_info.request_by) - 1);
+
+  bool result = this->connectSendReceive(kIntermediaryIPv4
+  , kIntermediaryPort, reinterpret_cast<char*>(&user_info)
+  , sizeof(UserInfoRequestCI), buffer, kMaxDatagramSize, 15);
+  response.clear();
+  if(result) {
+    int message_type = (int)buffer[0];
+    if (message_type == kUserInfoResponseIC) {
+      UserInfoResponse* info_response;
+      info_response = reinterpret_cast<UserInfoResponse*>(buffer);
+      if(info_response->successful) {
+        std::cout << "[delete message] Username: " 
+          << info_response->username 
+          << ", Name: " << info_response->name 
+          << ", Last Name: " << info_response->last_name 
+          << ", Permissions: <" 
+          << static_cast<int>(info_response->permissions) 
+          << ">\n";
+          // almacenamos los datos en el vector
+          response.push_back(info_response->username);
+          response.push_back(info_response->name);
+          response.push_back(info_response->last_name);
+          response.push_back(std::to_string(info_response->permissions));
+          if (info_response->is_active) {
+            response.push_back("activate");
+          } else {
+            response.push_back("inactive");
+          }
+          return true;
+      } else {
+        std::cout << "\tError: " << info_response->error << std::endl;
+      }
+    } else {
+      response.push_back(this->getErrorString(message_type));
+    }
+  }
+  return false;
 }

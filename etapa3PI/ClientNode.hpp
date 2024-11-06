@@ -32,8 +32,8 @@ public:
           , std::string& response);
   // Obtener lista de usuarios
   bool getUserList(std::string request_by, std::vector<std::string>& response);
-  // Obtener información de un usuario en particular
-  bool getUserInformation(const std::string& username, std::vector<std::string>& response);
+  // Obtener información de un usuario en particular. Devuelve en el vector: nombre de usuario, nombre, apellido, permisos y estado.
+  bool getUserInformation(const std::string request_by, const std::string& username, std::vector<std::string>& response);
   // Obtener la bitácora del nodo de usuarios
   bool getUserNodeLog(std::string& response);
   

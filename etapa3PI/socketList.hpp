@@ -250,10 +250,12 @@ struct UserInfoRequestCI {
   // información de un usuario.
   MessageType message_type;
   NodeType source_node;
-  uint16_t user_identification;
   char username[33];
+  char request_by[33];
+  uint16_t user_identification;
 };
 
+/*
 struct UserInfoResponseIC {
   // Mensaje que va del intermediaro al cliente, con la información
   // del usuario solicitado.
@@ -265,7 +267,7 @@ struct UserInfoResponseIC {
   char last_name[33];
   uint8_t permissions;
   uint8_t error;
-};
+};*/
 
 struct UserRequestFailureIC {
   // Intemediario envía mensaje de rechazo a la petición del cliente.
@@ -344,11 +346,11 @@ struct UserInfoRequestIU {
   // información de un usuario.
   MessageType message_type;
   NodeType source_node;
-  uint16_t user_identification;
-  uint16_t client_identification;
+  char username[33];
+  char request_by[33];
 };
 
-struct UserInfoResponseUI {
+struct UserInfoResponse {
   // Mensaje que va del user handler al intermediario, con la información
   // del usuario solicitado.
   MessageType message_type;
@@ -357,7 +359,9 @@ struct UserInfoResponseUI {
   char name[33];
   char last_name[33];
   uint8_t permissions;
-  uint8_t error;
+  bool is_active;
+  bool successful;
+  char error[65];
 };
 
 // Datagramas entre `Intermediary`y `DataCollector`:
