@@ -68,12 +68,14 @@ enum MessageType : uint8_t {
   kSensorStatusRequestDG,
   kSensorInfoResponseGD,
   kSensorInfoConfirmationDG,
+  kSensorData, // nuevo
   // Mensajes entre `Intel Galileo` y `ESP8266`:
   kSensorInfoRequestGE,
   kSensorInfoResponseEG,
   // Mensajes entre `Backup_server` y `DataCollector` / `UserHandler`:
   kFileRequestBDU,
-  kRequestFailureDUB,
+  kRequestFailureDUB
+
 };
 
 // TODO: volver a calcular tamaños de los datagramas
@@ -458,6 +460,15 @@ struct RequestFailureDUB {
   MessageType message_type;
   NodeType source_node;
   uint8_t error;
+};
+
+// Nuevo
+struct SensorData {
+  MessageType message_type;
+  NodeType source_node;
+  char sensor_type[17];
+  char sensor_id[17];
+  int value;
 };
 
 # endif
