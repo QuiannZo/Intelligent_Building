@@ -298,7 +298,7 @@ bool FAT::saveFile(char *filename, int processID, char* writingName) {
     int frameCursor = this->directory[directoryPos].firstFrameAddress;
 
     while (!stop) {
-      //TODO: Probar que el archivo funcione bien con archivos formados por más de un frame. 
+      std::memset(buffer, 0, FRAME_SIZE + 1); // esto nos evita varios problemas.
       std::strncpy(buffer, &this->unit[frameCursor*FRAME_SIZE], FRAME_SIZE);
       outFile << buffer; 
       frameCursor = this->fatTable[frameCursor];
