@@ -104,16 +104,32 @@ bool Intermediary::handleDatagram(int client_socket, char *datagram
         }
         break;
       case kUserListRequestCI:
-        std::cout << "Dentrox\n";
+        // Solicitud debe venir de intermediario
+        if (node_type != kApplication || datagram_size != sizeof(UserListRequestCI)) {
+            invalidRequest = true;
+        } else {
+            datagram[0] = kUserListRequestIU;
+            datagram[1] = kIntermediary;
+            datagram_size = sizeof(UserListRequestIU);
+            // La función `connectResendLongString` se encargará del reenvío
+            if (this->connectResendLongString(client_socket, datagram, datagram_size, 
+                                              response, sizeof(LongFileHeader), 
+                                              kIntermediary, kUserHandlerIPv4, kUserHandlerPort, 5)) {
+                send_response = false;
+            } else {
+                connection_error = true;
+            }
+        }
+      /*
         // Solicitud debe venir de intermediario
         if (node_type != kApplication || datagram_size != sizeof(UserListRequestCI)) {
           invalidRequest = true;
-          std::cout << "tamaño\n";
         } else {
           datagram[0] = kUserListRequestIU;
           datagram[1] = kIntermediary;
           // Reenviar al nodo de usuarios
           int user_node_socket = this->connectToNode(kUserHandlerIPv4, kUserHandlerPort);
+          
           if (user_node_socket > 0) {
             datagram_size = sizeof(UserListRequestIU);
             if (this->sendDatagram(user_node_socket, datagram, datagram_size)) {
@@ -130,8 +146,6 @@ bool Intermediary::handleDatagram(int client_socket, char *datagram
                   if (send(client_socket, response, sizeof(LongFileHeader), 0) < 0) {
                     std::cerr << "Error sending header to client." << std::endl;
                   } else {
-                    std::cout << "Se va a reenviar\n";
-                    
                     if(this->resendLongString(user_node_socket, client_socket, header->char_length, 5)) {
                       send_response = false;
                     } else {
@@ -148,6 +162,7 @@ bool Intermediary::handleDatagram(int client_socket, char *datagram
             this->closeConnection(user_node_socket);
           }
         }
+        */
         break;
       case kLogRequestCI:
         // Solicitud debe venir de intermediario
@@ -279,4 +294,49 @@ bool Intermediary::resendLongString(int source_socket, int dest_socket
 
   std::cout << "\nData forwarded to destination node." << std::endl;
   return true;
+}
+
+bool Intermediary::connectResendLongString(int client_socket, char *datagram, size_t datagram_size, 
+                                           char *response, size_t response_size, 
+                                           uint8_t intermediary_type, const std::string ip, int port, size_t timeout) {
+  // Conectar con el nodo de usuario usando los parámetros de IP y puerto
+  int user_node_socket = this->connectToNode(ip, port);
+  if (user_node_socket < 0) {
+    std::cerr << "Error connecting to user handler node at " << ip << ":" << port << std::endl;
+    return false;
+  }
+  // Enviar el datagrama al nodo de usuario
+  if (this->sendDatagram(user_node_socket, datagram, datagram_size)) {
+    // Esperar respuesta
+    if (this->receiveDatagramWithTimeout(user_node_socket, response, response_size, timeout)) {
+      // Verificar si es un mensaje de tipo `kLongFileHeader`
+      if (response[0] == kLongFileHeader) {
+        response[1] = intermediary_type;  // Cambiar el origen a "intermediario"
+        // Reenviar la respuesta al cliente
+        if (send(client_socket, response, response_size, 0) < 0) {
+          std::cerr << "Error sending response to client." << std::endl;
+          this->closeConnection(user_node_socket);
+          return false;
+        }
+        // Procesar el reenvío de una cadena larga
+        LongFileHeader* header = reinterpret_cast<LongFileHeader*>(response);
+        if (!this->resendLongString(user_node_socket, client_socket, header->char_length, timeout)) {
+          std::cerr << "Error during long string resend." << std::endl;
+          this->closeConnection(user_node_socket);
+          return false;
+        }
+        this->closeConnection(user_node_socket);
+        return true;
+      } else {
+        std::cerr << "Unexpected response type received." << std::endl;
+      }
+    } else {
+      std::cerr << "Timeout receiving datagram response." << std::endl;
+    }
+  } else {
+    std::cerr << "Error sending datagram to user node socket." << std::endl;
+  }
+  // Cerrar la conexión en caso de error
+  this->closeConnection(user_node_socket);
+  return false;
 }

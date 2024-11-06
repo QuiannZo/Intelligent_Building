@@ -246,7 +246,7 @@ bool Client::receiveLongString(int client_socket, std::string& received_data, si
     received_data.append(buffer, result);
     bytes_received += result;
   }
-  std::cout << "\nComplete data received from node." << std::endl;
+  std::cout << "\tComplete data received from node." << std::endl;
   return true;
 }
 
