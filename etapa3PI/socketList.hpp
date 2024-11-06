@@ -177,6 +177,7 @@ struct SensorInfoRequestCI {
   // El cliente pide al intermediario solicitud de información de los sensores.
   MessageType message_type;
   NodeType source_node;
+  char request_by[33];
   uint16_t user_identification;
 };
 
@@ -375,12 +376,11 @@ struct LogRequestID {
   uint16_t client_identification;
 };*/
 
-struct kSensorInfoRequestID {
+struct SensorInfoRequestID {
   // El intermediario pide al data collector solicitud de información de los sensores.
   MessageType message_type;
   NodeType source_node;
-  uint16_t user_identification;
-  uint16_t client_identification;
+  char request_by[33];
 };
 
 struct SensorStatusRequestID {

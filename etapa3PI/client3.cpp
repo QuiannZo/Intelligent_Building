@@ -25,6 +25,6 @@ int main() {
   // Usuario valido
   //client.getUserInformation("superuser", "PruebaWXYZ", result);
   std::string response;
-  client.getNodeLog("superuser", response, KDataCollector);
+  client.getSensorData("superuser", response);
   return 0;
 }

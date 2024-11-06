@@ -191,6 +191,24 @@ bool Intermediary::handleDatagram(int client_socket, char *datagram
           }
         }
         break;
+      case kSensorInfoRequestCI:
+        if (node_type != kApplication || datagram_size != sizeof(SensorInfoRequestCI)) {
+          invalidRequest = true;
+        } else {
+          bool result;
+          datagram[0] = kSensorInfoRequestID;
+          datagram[1] = kIntermediary;
+          datagram_size = sizeof(SensorInfoRequestID);
+          result = this->connectResendLongString(client_socket, datagram, datagram_size, 
+                                            response, sizeof(LongFileHeader), 
+                                            kIntermediary, kDataNodeIPv4, kDataNodePort, 5);
+          if (result) {
+            send_response = false;
+          } else {
+            connection_error = true;
+          }
+        }
+        break;
       default:
         // se considera el mensaje como invalido.
         invalidRequest = true;
