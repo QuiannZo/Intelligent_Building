@@ -127,7 +127,6 @@ bool DataNode::handleDatagram(int client_socket, char *datagram, size_t datagram
               SensorInfoRequestID *request = reinterpret_cast<SensorInfoRequestID*>(datagram);
               // construimos el datagrama del header
               std::string sensors = this->returnSensorFile(request->request_by);
-              std::cout << "El string es: " << sensors << std::endl;
               LongFileHeader header;
               header.message_type = kLongFileHeader;
               header.char_length = sensors.length();
@@ -148,6 +147,30 @@ bool DataNode::handleDatagram(int client_socket, char *datagram, size_t datagram
                 result = false;
               }
             }
+            break;
+          case kSensorData:
+            //TODO: quitar mensaje
+            std::cout << "Datagram received from Intel Galileo\n";
+            if (node_type != kIntelGalileo || datagram_size != sizeof(SensorData)) {
+              invalidRequest = true;
+            } else {
+              SensorData *data = reinterpret_cast<SensorData*>(datagram);
+              //obtener fecha y hora
+              time_t now = time(nullptr);
+              struct tm *localTime = localtime(&now);
+              char dateBuffer[11];
+              char timeBuffer[6];
+              strftime(dateBuffer, sizeof(dateBuffer), "%d/%m/%Y", localTime); // Date : dd/mm/yyyy
+              strftime(timeBuffer, sizeof(timeBuffer), "%H:%M", localTime);     // Time : hh:mm
+              std::string entry = std::string(data->sensor_id) + "," 
+                                  + std::string(dateBuffer) + ","
+                                  + std::string(timeBuffer) + ","
+                                  + std::to_string(data->value);
+              if (!this->fileSystem->append((char*)sensorFilename.c_str(), this->getProcessId() , (char*)entry.c_str())) {
+                  std::cerr << "Error: could not append sensor data to '" << sensorFilename << "' file."  
+                  << std::endl;
+                }
+              }
             break;
           default:
             // se considera el mensaje como invalido.
