@@ -43,6 +43,6 @@ public:
   // Comunicación hacia el nodo de datos
   // Obtener datos de los sensores
   bool getSensorData(std::string request_by, std::string& response);
-
+  std::string checkPermissions(uint8_t user_permissions);
 };
 #endif

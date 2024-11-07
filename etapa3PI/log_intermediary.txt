@@ -18,3 +18,5 @@
 07/11/2024-00:51:24 : User 'y' gets access to entire LOG ('log_intermediary.txt').
 07/11/2024-01:10:07 : User 'y' gets access to entire LOG ('log_intermediary.txt').
 07/11/2024-01:14:02 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
+07/11/2024-01:34:24 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
+07/11/2024-01:57:56 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.

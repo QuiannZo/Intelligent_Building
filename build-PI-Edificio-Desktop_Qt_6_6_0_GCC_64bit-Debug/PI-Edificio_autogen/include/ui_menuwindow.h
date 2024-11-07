@@ -83,7 +83,7 @@ public:
 "                                  background-color: rgba(255, 255, 255, 0.2);"));
         label = new QLabel(mainwidget);
         label->setObjectName("label");
-        label->setGeometry(QRect(220, 160, 101, 20));
+        label->setGeometry(QRect(190, 160, 151, 20));
         QFont font1;
         font1.setPointSize(10);
         font1.setBold(true);
@@ -231,7 +231,7 @@ public:
         label_2->setText(QCoreApplication::translate("menuwindow", "Menu", nullptr));
         pushButton_2->setText(QCoreApplication::translate("menuwindow", "Log out", nullptr));
         pushButton->setText(QString());
-        label->setText(QCoreApplication::translate("menuwindow", "View Database", nullptr));
+        label->setText(QCoreApplication::translate("menuwindow", "View Sensor Database", nullptr));
         pushButton2->setText(QString());
         label_3->setText(QCoreApplication::translate("menuwindow", "Edit Database", nullptr));
         label_6->setText(QCoreApplication::translate("menuwindow", "Deactivate user", nullptr));

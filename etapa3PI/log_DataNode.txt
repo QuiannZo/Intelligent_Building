@@ -57,3 +57,8 @@
 07/11/2024-01:12:38 : Connection closed: 127.0.0.1
 07/11/2024-01:14:00 : Sensor data file closed and saved to file 'sensorsData.txt'.
 07/11/2024-01:14:00 : Filesystem <FAT> closed and saved to file 'log_DataNode.txt'.
+07/11/2024-01:34:27 : File 'log_DataNode.txt' <Type:Log> loaded into filesystem.
+07/11/2024-01:34:27 : File 'sensorsData.txt' <Type:File-sensor-data> loaded into filesystem.
+07/11/2024-01:34:27 : Connected to node at port 3002
+07/11/2024-01:57:55 : Sensor data file closed and saved to file 'sensorsData.txt'.
+07/11/2024-01:57:55 : Filesystem <FAT> closed and saved to file 'log_DataNode.txt'.

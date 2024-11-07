@@ -324,3 +324,30 @@ bool ClientNode::getSensorData(std::string request_by, std::string &response) {
   std::cout << "Buffer[delete message]: " << response << std::endl;
   return result;
 }
+
+std::string ClientNode::checkPermissions(uint8_t user_permissions) {
+    std::vector<std::string> result;
+
+    if (user_permissions & 1) {
+        result.push_back("User Administrator");
+    }
+    if (user_permissions & 2) {
+        result.push_back("Database Administrator");
+    }
+    if (user_permissions & 4) {
+        result.push_back("Floor Manager");
+    }
+    if (user_permissions & 8) {
+        result.push_back("Building Manager");
+    }
+    if (user_permissions & 16) {
+        result.push_back("System Administrator");
+    }
+    if (user_permissions & 32) {
+        result.push_back("Auditor");
+    }
+
+    result.push_back("No permissions assigned.");
+
+    return result[0];
+}

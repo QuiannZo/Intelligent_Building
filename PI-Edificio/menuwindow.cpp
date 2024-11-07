@@ -84,6 +84,120 @@ menuwindow::menuwindow(QWidget *parent, UserHandler& userHandler, MainWindow& ma
     path3 = ":/resource/img/document.png";
     ui->pushButton11->setIcon(QIcon(path3));  // Ruta del icono
     ui->pushButton11->setIconSize(QSize(48, 48));  // Ajusta el tamaño del icono
+
+    // Obtener los datos del usuario.
+    std::vector<std::string> userData;
+    clientNode.getUserInformation(clientNode.username, clientNode.username, userData);
+
+    // Permisos.
+    QString permission = QString::fromStdString(clientNode.checkPermissions(std::stoi(userData[3])));
+
+    // pushButton view sensor
+    // pushButton2 edit database
+    // pushButton4 deactivate user
+    // pushButton5 view user
+    // pushButton6 modify user
+    // pushButton7 add user
+    // pushButton9 view node information
+    // pushButton10 backup state
+    // pushButton11 view logs
+
+    if (permission == "User Administrator") {
+        ui->pushButton->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton2->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton2->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton9->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton9->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton10->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton10->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton11->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton11->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+    }
+    if (permission == "Database Administrator") {
+        ui->pushButton4->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton4->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton5->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton5->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton6->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton6->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton7->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton7->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton9->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton9->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton11->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton11->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+    }
+    if (permission == "Floor Manager") {
+        ui->pushButton2->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton2->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton4->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton4->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton5->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton5->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton6->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton6->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton7->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton7->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton9->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton9->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton10->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton10->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton11->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton11->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+    }
+    if (permission == "Building Manager") {
+        ui->pushButton2->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton2->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton4->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton4->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton5->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton5->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton6->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton6->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton7->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton7->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton9->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton9->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton10->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton10->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton11->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton11->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+    }
+
+    if (permission == "System Administrator") {
+        ui->pushButton->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton2->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton2->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton4->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton4->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton5->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton5->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton6->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton6->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton7->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton7->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton11->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton11->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+    }
+
+    if (permission == "Auditor") {
+        ui->pushButton->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton2->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton2->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton4->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton4->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton5->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton5->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton6->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton6->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton7->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton7->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+        ui->pushButton10->setEnabled(false); // Botón para modificar base de datos
+        ui->pushButton10->setStyleSheet("background-color: #888888; color: #AAAAAA;");
+    }
 }
 
 menuwindow::~menuwindow()
