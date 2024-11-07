@@ -4,6 +4,9 @@
 #include <QMainWindow>
 #include "../UserHandler.hpp"
 #include "menuwindow.h"
+#include "qlistwidget.h"
+#include <qfile.h>
+#include <QMessageBox>
 
 namespace Ui {
 class RemoveUser;
@@ -20,10 +23,17 @@ public:
 private slots:
     void on_pushButton1_2_clicked();
 
+    void on_listWidget_itemClicked(QListWidgetItem *item);
+
+    void loadUserList();
+
+    void on_pushButton1_clicked();
+
 private:
     Ui::RemoveUser *ui;
     UserHandler& userHandler;
     menuwindow& menu;
+    QString selectedUser;
 };
 
 #endif // REMOVEUSER_H

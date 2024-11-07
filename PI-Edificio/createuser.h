@@ -2,8 +2,13 @@
 #define CREATEUSER_H
 
 #include <QMainWindow>
+#include <QDialog>
+#include <QCheckBox>
+#include <QVBoxLayout>
+#include <QPushButton>
 #include "../UserHandler.hpp"
 #include "menuwindow.h"
+#include "floorselectiondialog.h"
 
 namespace Ui {
 class createuser;

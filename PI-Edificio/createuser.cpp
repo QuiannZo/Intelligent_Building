@@ -71,16 +71,23 @@ void createuser::closeEvent(QCloseEvent *event)
 
 void createuser::onSubmitClicked()
 {
-    // Obtener datos de los campos
     QString username = ui->usernamelineEdit->text();
     QString password = ui->passwordlineEdit->text();
     QString name = ui->namelineEdit->text();
     QString lastName = ui->lastNamelineEdit->text();
-    QString role;  // Variable para almacenar el rol seleccionado
+    QString role;
+    QString floors = ""; // Inicializa los pisos seleccionados como vacío
+
     if (ui->dbAdm->isChecked()) {
         role = "Database Administrator";
     } else if (ui->floorMng->isChecked()) {
         role = "Floor Manager";
+
+        // Crear y mostrar el diálogo de selección de pisos
+        FloorSelectionDialog floorDialog(this);
+        if (floorDialog.exec() == QDialog::Accepted) {
+            floors = floorDialog.getSelectedFloors();
+        }
     } else if (ui->Auditor->isChecked()) {
         role = "Auditor";
     } else if (ui->systemAd->isChecked()) {
@@ -92,18 +99,22 @@ void createuser::onSubmitClicked()
     } else {
         role = "Invalid";
     }
+
     std::string hash = this->userHandler.generateHash(password.toStdString());
-    if(this->userHandler.addUser("superuser", username.toStdString(), hash, 1, "[]", name.toStdString(), lastName.toStdString(), "ID00000")) {
-        //this->userHandler->saveUsersFile();
+    if(this->userHandler.addUser("superuser", username.toStdString(), hash, 1, floors.toStdString(), name.toStdString(), lastName.toStdString(), "ID00000")) {
         qDebug() << "User added";
     }
 
-    // por el momento vamos a imprimir aquí
     qDebug() << "Username:" << username;
     qDebug() << "Password:" << password;
     qDebug() << "Name:" << name;
     qDebug() << "Last Name:" << lastName;
     qDebug() << "Role:" << role;
+    qDebug() << "Floors:" << floors;
+
+    this->menu.show();
+    this->hide();
+    this->deleteLater();
 }
 
 

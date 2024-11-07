@@ -2,8 +2,10 @@
 #define VIEWUSER_H
 
 #include <QMainWindow>
+#include <QFile>
 #include "../UserHandler.hpp"
 #include "menuwindow.h"
+#include "qlistwidget.h"
 
 namespace Ui {
 class ViewUser;
@@ -19,6 +21,10 @@ public:
 
 private slots:
     void on_pushButton1_2_clicked();
+
+    void on_listWidget_itemClicked(QListWidgetItem *item);
+
+    void loadUserList();
 
 private:
     Ui::ViewUser *ui;

@@ -35,6 +35,8 @@ public:
     bool addUser(const std::string &addedByUser, const std::string& username, const std::string& hash, const uint8_t permissions
                 , const std::string& floors, const std::string& name, const std::string& lastName
                 ,const std::string& userId);
+    bool deleteUser(const std::string &deletedByUser, const std::string &username);
+    std::string getUsersFile();
     bool authenticateUser(const std::string& username, const std::string& hash, std::string &error);
     //TODO: hay que diseñar algún sistema que únicamente devuelva información cuando el usuario tiene "sesión iniciada"
      bool hasPermissions(const std::string& username, permissions role);

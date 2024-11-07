@@ -14,22 +14,12 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="widgetUser" native="true">
-    <property name="geometry">
-     <rect>
-      <x>390</x>
-      <y>40</y>
-      <width>171</width>
-      <height>151</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QLabel" name="nombre">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>220</y>
-      <width>251</width>
+      <x>110</x>
+      <y>270</y>
+      <width>291</width>
       <height>31</height>
      </rect>
     </property>
@@ -39,15 +29,15 @@
      </font>
     </property>
     <property name="text">
-     <string>Nombre:</string>
+     <string>Name: </string>
     </property>
    </widget>
    <widget class="QLabel" name="apellido">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>260</y>
-      <width>251</width>
+      <x>110</x>
+      <y>310</y>
+      <width>291</width>
       <height>31</height>
      </rect>
     </property>
@@ -57,15 +47,15 @@
      </font>
     </property>
     <property name="text">
-     <string>Apellido: </string>
+     <string>Lastname: </string>
     </property>
    </widget>
    <widget class="QLabel" name="rol">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>300</y>
-      <width>251</width>
+      <x>110</x>
+      <y>350</y>
+      <width>291</width>
       <height>31</height>
      </rect>
     </property>
@@ -75,15 +65,15 @@
      </font>
     </property>
     <property name="text">
-     <string>Rol:</string>
+     <string>Role:</string>
     </property>
    </widget>
    <widget class="QLabel" name="ultimaActividad">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>340</y>
-      <width>251</width>
+      <x>110</x>
+      <y>390</y>
+      <width>291</width>
       <height>31</height>
      </rect>
     </property>
@@ -93,7 +83,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Última actividad:</string>
+     <string>Last activity:</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton1_2">
@@ -131,6 +121,159 @@
      <string>Return</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>30</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="palette">
+     <palette>
+      <active>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled/>
+     </palette>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>View user information</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="listWidget">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>150</y>
+      <width>271</width>
+      <height>381</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>110</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="palette">
+     <palette>
+      <active>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled/>
+     </palette>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Select an user</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="user">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>230</y>
+      <width>291</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="palette">
+     <palette>
+      <active>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled/>
+     </palette>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Username: </string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -138,7 +281,7 @@
      <x>0</x>
      <y>0</y>
      <width>1000</width>
-     <height>23</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

@@ -62,6 +62,52 @@ UserHandler::~UserHandler() {
     delete this->hashHandler;
 }
 
+std::string UserHandler::getUsersFile(){
+    return usersFilename;
+}
+
+bool UserHandler::deleteUser(const std::string &deletedByUser, const std::string &username) {
+    std::ifstream inputFile(usersFilename);  // Abrir el archivo de usuarios para lectura
+    if (!inputFile.is_open()) {
+        return false;  // Si no se puede abrir el archivo, retornar false
+    }
+
+    std::stringstream buffer;
+    bool userFound = false;
+    std::string line;
+
+    // Leer todas las líneas y copiar al buffer, excepto la que corresponde al usuario a eliminar
+    while (std::getline(inputFile, line)) {
+        // Comprobar si la línea contiene el nombre de usuario
+        if (line.substr(0, line.find(',')) != username) {
+            buffer << line << '\n';  // Copiar la línea si no es el usuario que se quiere eliminar
+        } else {
+            userFound = true;  // Si encontramos el usuario, marcar como encontrado
+        }
+    }
+
+    inputFile.close();  // Cerrar el archivo de entrada
+
+    if (!userFound) {
+        return false;  // Si no se encontró el usuario, retornar false
+    }
+
+    // Escribir el contenido actualizado (sin el usuario eliminado) de vuelta al archivo
+    std::ofstream outputFile(usersFilename, std::ios::trunc);  // Abrir el archivo en modo truncado para sobrescribirlo
+    if (!outputFile.is_open()) {
+        return false;  // Si no se puede abrir el archivo para escritura, retornar false
+    }
+
+    outputFile << buffer.str();  // Escribir el buffer de nuevo al archivo
+    outputFile.close();  // Cerrar el archivo de salida
+
+    // Registrar la eliminación en los logs
+    this->appendToLogTimeHour(
+        "User deleted: '" + deletedByUser + "' deleted [Username: " + username + "].");
+
+    return true;  // Retornar true si el usuario fue eliminado con éxito
+}
+
 std::vector<std::string> UserHandler::splitString(const char* input) {
     std::vector<std::string> result;
     std::stringstream ss(input);

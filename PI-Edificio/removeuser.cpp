@@ -29,6 +29,32 @@ RemoveUser::RemoveUser(QWidget *parent, UserHandler& userHandler, menuwindow& me
     } else {
         qDebug() << "Error: no se pudo cargar la imagen";
     }
+
+    //
+    // Cargar usuarios
+    loadUserList();
+
+    // Conectar la selección de usuario en QListWidget
+    connect(ui->listWidget, &QListWidget::itemClicked, this, &RemoveUser::on_listWidget_itemClicked);
+}
+
+void RemoveUser::loadUserList() {
+    // Abrir el archivo CSV y cargar los usernames en QListWidget
+    std::string filep = userHandler.getUsersFile();
+    QFile file = (QString::fromStdString(filep));  // Cambia a la ruta de tu archivo
+    if (file.open(QIODevice::ReadOnly)) {
+        QTextStream in(&file);
+        in.readLine(); // Ignora la primera línea de cabecera
+
+        while (!in.atEnd()) {
+            QString line = in.readLine();
+            QStringList userInfo = line.split(',');
+            if (userInfo.size() >= 1) {
+                ui->listWidget->addItem(userInfo[0]); // Añade solo el username
+            }
+        }
+        file.close();
+    }
 }
 
 RemoveUser::~RemoveUser()
@@ -41,5 +67,32 @@ void RemoveUser::on_pushButton1_2_clicked()
     this->menu.show();
     this->hide();
     this->deleteLater();
+}
+
+
+void RemoveUser::on_listWidget_itemClicked(QListWidgetItem *item)
+{
+    selectedUser = item->text();
+}
+
+
+void RemoveUser::on_pushButton1_clicked()
+{
+    // Verifica que hay un usuario seleccionado
+    if (selectedUser.isEmpty()) {
+        qDebug() << "No se ha seleccionado ningún usuario para eliminar.";
+            return;
+    }
+
+    // Llama a la función para eliminar el usuario utilizando UserHandler
+    if (userHandler.deleteUser("admin", selectedUser.toStdString())) {
+        qDebug() << "Usuario eliminado con éxito.";
+
+                    // Actualiza la lista de usuarios en la interfaz
+                    //ui->listWidget->clear();
+        //loadUserList();  // Vuelve a cargar la lista de usuarios
+    } else {
+        qDebug() << "Error al eliminar el usuario.";
+    }
 }
 

@@ -8,7 +8,7 @@ sensorBuilding::sensorBuilding(QWidget *parent, UserHandler& userHandler, menuwi
 
     // Load background
     QPalette palette;
-    QPixmap bkgnd(":/resource/img/build.png");
+    QPixmap bkgnd(":/resource/img/img1.jpg");
     bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     palette.setBrush(QPalette::Window, bkgnd);
     this->setAutoFillBackground(true);

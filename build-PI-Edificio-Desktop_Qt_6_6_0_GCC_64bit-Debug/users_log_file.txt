@@ -1,0 +1,24 @@
+06/11/2024-19:05:49 : File 'users_log_file.txt' <Type:Log> created and loaded into filesystem.
+06/11/2024-19:05:49 : File 'usersData.txt' <Type:File-user-data> created and loaded into filesystem.
+06/11/2024-19:05:52 : [Log-in]: attempting to authenticate 'ty'.
+06/11/2024-19:05:52 : [Log-in]: user 'ty' not found.
+06/11/2024-19:05:54 : Users data file closed and saved to file 'usersData.txt'.
+06/11/2024-19:05:54 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
+06/11/2024-19:06:55 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+06/11/2024-19:06:55 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+06/11/2024-19:07:03 : [Log-in]: attempting to authenticate 'username01'.
+06/11/2024-19:07:03 : [Log-in]: user 'username01' validated.
+06/11/2024-19:07:12 : New user: 'superuser' added [Username: ty | Name: ty ty | Permissions: 1].
+06/11/2024-19:07:18 : User deleted: 'admin' deleted [Username: username08].
+06/11/2024-19:07:21 : Users data file closed and saved to file 'usersData.txt'.
+06/11/2024-19:07:21 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
+06/11/2024-19:07:23 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+06/11/2024-19:07:23 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+06/11/2024-19:07:25 : [Log-in]: attempting to authenticate 'ty'.
+06/11/2024-19:07:25 : [Log-in]: user 'ty' validated.
+06/11/2024-19:07:33 : [Log-in]: attempting get information of user 'ty'.
+06/11/2024-19:07:33 : [User information]: information of user 'ty' returned.
+06/11/2024-19:07:33 : [Log-in]: attempting get information of user 'ty'.
+06/11/2024-19:07:33 : [User information]: information of user 'ty' returned.
+06/11/2024-19:08:53 : Users data file closed and saved to file 'usersData.txt'.
+06/11/2024-19:08:53 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
