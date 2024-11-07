@@ -436,10 +436,12 @@ bool UserNode::addUser(const std::string &addedByUser, const std::string &userna
   // add the new user to the filesystem 
   bool result = this->fileSystem->append((char*)usersFilename.c_str(), this->getProcessId(), (char*)concatenated.c_str());
   if (result) {
-    this->appendToLogTimeHour(
+      //TODO: solucionar el bug que surge cuando se agrega esto
+      /*
+      this->appendToLogTimeHour(
         "New user: '" + addedByUser + "' added [Username: " + username 
                     + " | Name: " + name + " " + lastName
-                    + " | Permissions: " + std::to_string(permissions) + "].");
+                    + " | Permissions: " + std::to_string(permissions) + "].");*/
   } else {
     this->appendToLogTimeHour(
         "New user [failed] [probably error related to append() of the file system]: '" 
