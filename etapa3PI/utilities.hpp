@@ -39,32 +39,4 @@ string generateHASH_SHA256(const string& password) {
     return ss.str();
 }
 
-/*
-void checkPermissions(uint8_t user_permissions) {
-    if (user_permissions == INVALID_PERMISSION) {
-        std::cout << "No permissions assigned.\n";
-        return;
-    }
-
-    std::cout << "User has the following permissions:\n";
-    if (user_permissions & USER_ADMINISTRATOR) {
-        std::cout << "- User Administrator\n";
-    }
-    if (user_permissions & DATABASE_ADMINISTRATOR) {
-        std::cout << "- Database Administrator\n";
-    }
-    if (user_permissions & FLOOR_MANAGER) {
-        std::cout << "- Floor Manager\n";
-    }
-    if (user_permissions & BUILDING_MANAGER) {
-        std::cout << "- Building Manager\n";
-    }
-    if (user_permissions & SYSTEM_ADMINISTRATOR) {
-        std::cout << "- System Administrator\n";
-    }
-    if (user_permissions & AUDITOR) {
-        std::cout << "- Auditor\n";
-    }
-}
-*/
 #endif

@@ -78,7 +78,6 @@ enum MessageType : uint8_t {
 
 };
 
-// TODO: volver a calcular tamaños de los datagramas
 // Datagramas generales:
 struct InvalidRequest {
   // Mensaje con el que responde un nodo cuando no puede manejar una datagrama
@@ -105,9 +104,7 @@ struct LongFileHeader {
   int char_length;
 };
 
-// TODO:completar.
-// TODO: modificar descripción actual de los datagramas de acuerdo a los 
-// cambios.
+
 // Datagramas entre cliente e `Intermediary`:
 // >> De cliente a intermediario:
 struct AuthenticationRequest {
@@ -259,19 +256,6 @@ struct UserInfoRequestCI {
   uint16_t user_identification;
 };
 
-/*
-struct UserInfoResponseIC {
-  // Mensaje que va del intermediaro al cliente, con la información
-  // del usuario solicitado.
-  MessageType message_type;
-  NodeType source_node;
-  uint16_t user_identification;
-  char username[33];
-  char name[33];
-  char last_name[33];
-  uint8_t permissions;
-  uint8_t error;
-};*/
 
 struct UserRequestFailureIC {
   // Intemediario envía mensaje de rechazo a la petición del cliente.
@@ -336,15 +320,6 @@ struct ActivateDeactivateUserRequestIU {
   uint8_t status;
 };
 
-//struct UserChangesConfirmationUI {
-  // Mensaje que le envía el user handler al intermediario,
-  // indicando el proceso que se realizó.
-  //MessageType message_type;
-  //NodeType source_node;
-  //uint8_t user_modification_type;
-  //uint8_t error;
-//};
-
 struct UserInfoRequestIU {
   // El intermediario envía solicitud al user handler, para poder obtener
   // información de un usuario.
@@ -370,13 +345,6 @@ struct UserInfoResponse {
 
 // Datagramas entre `Intermediary`y `DataCollector`:
 
-/*
-struct LogRequestID {
-  // El intermediario le solicita bitácora al data collector.
-  MessageType message_type;
-  NodeType source_node;
-  uint16_t client_identification;
-};*/
 
 struct SensorInfoRequestID {
   // El intermediario pide al data collector solicitud de información de los sensores.

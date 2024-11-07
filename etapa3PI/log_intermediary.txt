@@ -1,68 +1,5 @@
 02/11/2024-19:39:13 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
 02/11/2024-19:39:13 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
-03/11/2024-17:04:50 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
-03/11/2024-17:04:50 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
-03/11/2024-17:05:00 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
-03/11/2024-17:05:00 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
-03/11/2024-17:25:04 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
-03/11/2024-17:25:04 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
-03/11/2024-17:25:10 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
-03/11/2024-17:25:10 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
-03/11/2024-17:25:18 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
-03/11/2024-17:25:18 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
-03/11/2024-17:25:23 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
-03/11/2024-17:25:23 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
-03/11/2024-17:25:33 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
-03/11/2024-17:25:33 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
-03/11/2024-18:52:57 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
-03/11/2024-18:52:57 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
-03/11/2024-18:53:16 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
-03/11/2024-18:53:16 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
-05/11/2024-15:06:56 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
-05/11/2024-15:07:25 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
-05/11/2024-15:11:38 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
-05/11/2024-15:11:53 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
-05/11/2024-15:14:25 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
-05/11/2024-15:21:01 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
-05/11/2024-15:21:13 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
-05/11/2024-15:21:13 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
-05/11/2024-15:22:59 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
-05/11/2024-15:24:31 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
-05/11/2024-15:24:46 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
-05/11/2024-15:24:46 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
-05/11/2024-15:25:19 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
-05/11/2024-15:28:51 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
-05/11/2024-15:29:45 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
-05/11/2024-15:31:00 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
-05/11/2024-15:31:31 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
-05/11/2024-15:40:52 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
-05/11/2024-15:41:09 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
-05/11/2024-15:41:40 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
-05/11/2024-15:43:46 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
-05/11/2024-15:44:11 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
-05/11/2024-15:47:35 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
-05/11/2024-15:48:26 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
-05/11/2024-15:48:44 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
-05/11/2024-15:48:44 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
-05/11/2024-15:49:01 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
-05/11/2024-15:49:01 : Filesystem@�,M��̃*������@lY���U����-�P��	� <FAT> closed and saved to file 'log_intermediary.txt'.
-05/11/2024-15:49:48 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
-05/11/2024-15:51:12 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
-05/11/2024-15:51:33 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
-05/11/2024-15:51:33 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
-05/11/2024-15:51:39 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
-05/11/2024-15:55:17 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
-05/11/2024-15:58:27 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
-05/11/2024-15:58:56 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
-05/11/2024-16:01:00 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
-05/11/2024-16:04:45 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
-05/11/2024-16:05:46 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
-05/11/2024-16:06:16 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
-06/11/2024-21:33:42 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
-06/11/2024-22:18:11 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
-06/11/2024-22:18:19 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
-06/11/2024-22:20:34 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
-06/11/2024-22:20:41 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
 06/11/2024-22:20:41 : Connected to node at port 3000
 06/11/2024-22:21:42 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
 06/11/2024-22:32:39 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.

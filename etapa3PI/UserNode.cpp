@@ -63,7 +63,6 @@ UserNode::UserNode(std::string logFilename, int processId, std::string usersFile
 
 // Destructor
 UserNode::~UserNode() {
-  // TODO: se debe manejar la excepción que sucede cuando control + c
   // save log before destroy object 
   this->fileSystem->saveFile((char*)usersFilename.c_str(), defaultProcessId, (char*)usersFilename.c_str());
   this->fileSystem->close((char*)usersFilename.c_str(), defaultProcessId);

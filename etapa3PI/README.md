@@ -1,12 +1,7 @@
-# Tarea 6 de PI
+# Etapa III PI
 
 # Compilación
-**Notar que la compilación se debe realizar desde la carpeta `tarea6PI`, los archivos que se encuentran afuera de esta carpeta son necesarios para el funcionamiento el proceso de compilación.**
-
-## Nodo cliente 
-```
-g++ client.cpp -o client -lssl -lcrypto
-```
+**Notar que la compilación se debe realizar desde la carpeta `etapa3PI`, los archivos que se encuentran afuera de esta carpeta son necesarios para el funcionamiento el proceso de compilación.**
 
 # Nodo cliente3
 ```
