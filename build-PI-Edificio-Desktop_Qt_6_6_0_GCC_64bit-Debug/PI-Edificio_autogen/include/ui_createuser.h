@@ -59,7 +59,7 @@ public:
         widgetUser->setGeometry(QRect(380, 20, 171, 151));
         username = new QLabel(centralwidget);
         username->setObjectName("username");
-        username->setGeometry(QRect(420, 180, 101, 31));
+        username->setGeometry(QRect(420, 180, 111, 31));
         QFont font;
         font.setPointSize(16);
         username->setFont(font);
@@ -68,7 +68,7 @@ public:
         usernamelineEdit->setGeometry(QRect(360, 210, 221, 26));
         name = new QLabel(centralwidget);
         name->setObjectName("name");
-        name->setGeometry(QRect(440, 300, 61, 31));
+        name->setGeometry(QRect(440, 300, 71, 31));
         name->setFont(font);
         password = new QLabel(centralwidget);
         password->setObjectName("password");
@@ -105,7 +105,7 @@ public:
         lastNamelineEdit->setGeometry(QRect(360, 390, 221, 26));
         lastName = new QLabel(centralwidget);
         lastName->setObjectName("lastName");
-        lastName->setGeometry(QRect(420, 360, 101, 31));
+        lastName->setGeometry(QRect(420, 360, 111, 31));
         lastName->setFont(font);
         role = new QLabel(centralwidget);
         role->setObjectName("role");

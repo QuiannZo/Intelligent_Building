@@ -269,9 +269,9 @@ bool ClientNode::getUserInformation(const std::string request_by, const std::str
           response.push_back(info_response->last_name);
           response.push_back(std::to_string(info_response->permissions));
           if (info_response->is_active) {
-            response.push_back("active");
+            response.push_back("Active");
           } else {
-            response.push_back("inactive");
+            response.push_back("Inactive");
           }
           return true;
       } else {
