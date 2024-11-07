@@ -45,7 +45,7 @@
 05/11/2024-15:48:44 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
 05/11/2024-15:48:44 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
 05/11/2024-15:49:01 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
-05/11/2024-15:49:01 : Filesystem@Æ,MüÀÌƒ*üÀù°÷ü@lYŞÿUßÿÀÒ-ÿPÚâ	ş <FAT> closed and saved to file 'log_intermediary.txt'.
+05/11/2024-15:49:01 : Filesystem@ï¿½,Mï¿½ï¿½Ìƒ*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½@lYï¿½ï¿½ï¿½Uï¿½ï¿½ï¿½ï¿½-ï¿½Pï¿½ï¿½	ï¿½ <FAT> closed and saved to file 'log_intermediary.txt'.
 05/11/2024-15:49:48 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
 05/11/2024-15:51:12 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
 05/11/2024-15:51:33 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
@@ -58,3 +58,15 @@
 05/11/2024-16:04:45 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
 05/11/2024-16:05:46 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
 05/11/2024-16:06:16 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
+06/11/2024-21:33:42 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
+06/11/2024-22:18:11 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
+06/11/2024-22:18:19 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
+06/11/2024-22:20:34 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
+06/11/2024-22:20:41 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
+06/11/2024-22:20:41 : Connected to node at port 3000
+06/11/2024-22:21:42 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
+06/11/2024-22:32:39 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
+06/11/2024-22:32:39 : Connected to node at port 3000
+06/11/2024-22:35:11 : Connection from Remote IP: 127.0.0.1
+06/11/2024-22:35:44 : Connection closed: 127.0.0.1
+06/11/2024-22:35:55 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
