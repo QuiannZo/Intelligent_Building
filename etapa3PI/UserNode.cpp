@@ -408,9 +408,10 @@ bool UserNode::modifyUser(const std::string &modify_by_user
   // obtenemos el string del usuario modificado
   std::string user_mod = this->vectorToString(user_info);
   if (this->modifyUserEntry(user_copy, user_mod)) {
+    /*
     this->appendToLogTimeHour(
       "Modify user: '" + modify_by_user + "'   modified '" +
-      username + "'.");
+      username + "'.");*/
     return true;
   }
   this->appendToLogTimeHour(
