@@ -430,7 +430,7 @@ bool UserNode::addUser(const std::string &addedByUser, const std::string &userna
                               + floors + "],"
                               + name + "," + lastName + "," + userId + ","
                               + dateTime + "," + dateTime // created and updated
-                              + ",1\n"; //  the `1` is used to indicate that the user is active 
+                              + ",1"; //  the `1` is used to indicate that the user is active 
   if(concatenated.empty()) {
     return false;
   }

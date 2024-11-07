@@ -165,7 +165,7 @@ bool DataNode::handleDatagram(int client_socket, char *datagram, size_t datagram
               std::string entry = std::string(data->sensor_id) + "," 
                                   + std::string(dateBuffer) + ","
                                   + std::string(timeBuffer) + ","
-                                  + std::to_string(data->value);
+                                  + std::to_string(data->value) + "\n";
               if (!this->fileSystem->append((char*)sensorFilename.c_str(), this->getProcessId() , (char*)entry.c_str())) {
                   std::cerr << "Error: could not append sensor data to '" << sensorFilename << "' file."  
                   << std::endl;
