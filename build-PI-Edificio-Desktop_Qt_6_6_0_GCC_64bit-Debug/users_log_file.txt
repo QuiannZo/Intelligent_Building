@@ -353,3 +353,19 @@
 07/11/2024-01:56:39 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
 07/11/2024-01:57:48 : Users data file closed and saved to file 'usersData.txt'.
 07/11/2024-01:57:48 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
+07/11/2024-02:00:14 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+07/11/2024-02:00:14 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+07/11/2024-02:00:51 : User deleted: 'admin' deleted [Username: username08].
+07/11/2024-02:01:01 : Users data file closed and saved to file 'usersData.txt'.
+07/11/2024-02:01:01 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
+07/11/2024-02:01:40 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+07/11/2024-02:01:40 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+07/11/2024-02:01:44 : User deleted: 'admin' deleted [Username: username06].
+07/11/2024-02:01:47 : User deleted: 'admin' deleted [Username: ty].
+07/11/2024-02:01:49 : User deleted: 'admin' deleted [Username: username09].
+07/11/2024-02:01:54 : Users data file closed and saved to file 'usersData.txt'.
+07/11/2024-02:01:54 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
+07/11/2024-02:11:36 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+07/11/2024-02:11:36 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+07/11/2024-02:12:20 : Users data file closed and saved to file 'usersData.txt'.
+07/11/2024-02:12:20 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.

@@ -20,3 +20,136 @@
 07/11/2024-01:14:02 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
 07/11/2024-01:34:24 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
 07/11/2024-01:57:56 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
+07/11/2024-02:00:02 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
+07/11/2024-02:00:02 : Connected to node at port 3000
+07/11/2024-02:00:16 : Connection from Remote IP: 127.0.0.1
+07/11/2024-02:00:16 : Connected to node at 127.0.0.1:3001
+07/11/2024-02:00:16 : 	Datagram sent to node.
+07/11/2024-02:00:16 : Connection closed successfully.
+07/11/2024-02:00:16 : Connection closed: 127.0.0.1
+07/11/2024-02:00:16 : Connection from Remote IP: 127.0.0.1
+07/11/2024-02:00:16 : Connected to node at 127.0.0.1:3001
+07/11/2024-02:00:16 : 	Datagram sent to node.
+07/11/2024-02:00:16 : Connection closed successfully.
+07/11/2024-02:00:16 : Connection closed: 127.0.0.1
+07/11/2024-02:00:18 : Connection from Remote IP: 127.0.0.1
+07/11/2024-02:00:18 : Connected to node at 127.0.0.1:3001
+07/11/2024-02:00:18 : 	Datagram sent to node.
+07/11/2024-02:00:18 : Connection closed successfully.
+07/11/2024-02:00:18 : Connection closed: 127.0.0.1
+07/11/2024-02:00:19 : Connection from Remote IP: 127.0.0.1
+07/11/2024-02:00:19 : Connected to node at 127.0.0.1:3001
+07/11/2024-02:00:19 : 	Datagram sent to node.
+07/11/2024-02:00:19 : Connection closed successfully.
+07/11/2024-02:00:19 : Connection closed: 127.0.0.1
+07/11/2024-02:00:19 : Connection from Remote IP: 127.0.0.1
+07/11/2024-02:00:19 : Connected to node at 127.0.0.1:3001
+07/11/2024-02:00:19 : 	Datagram sent to node.
+07/11/2024-02:00:19 : Connection closed successfully.
+07/11/2024-02:00:19 : Connection closed: 127.0.0.1
+07/11/2024-02:00:20 : Connection from Remote IP: 127.0.0.1
+07/11/2024-02:00:20 : Connected to node at 127.0.0.1:3001
+07/11/2024-02:00:20 : 	Datagram sent to node.
+07/11/2024-02:00:20 : Connection closed successfully.
+07/11/2024-02:00:20 : Connection closed: 127.0.0.1
+07/11/2024-02:00:20 : Connection from Remote IP: 127.0.0.1
+07/11/2024-02:00:20 : Connected to node at 127.0.0.1:3001
+07/11/2024-02:00:20 : 	Datagram sent to node.
+07/11/2024-02:00:20 : Connection closed successfully.
+07/11/2024-02:00:20 : Connection closed: 127.0.0.1
+07/11/2024-02:00:20 : Connection from Remote IP: 127.0.0.1
+07/11/2024-02:00:20 : Connected to node at 127.0.0.1:3001
+07/11/2024-02:00:20 : 	Datagram sent to node.
+07/11/2024-02:00:20 : Connection closed successfully.
+07/11/2024-02:00:20 : Connection closed: 127.0.0.1
+07/11/2024-02:00:20 : Connection from Remote IP: 127.0.0.1
+07/11/2024-02:00:20 : Connected to node at 127.0.0.1:3001
+07/11/2024-02:00:20 : 	Datagram sent to node.
+07/11/2024-02:00:20 : Connection closed successfully.
+07/11/2024-02:00:20 : Connection closed: 127.0.0.1
+07/11/2024-02:00:23 : Connection from Remote IP: 127.0.0.1
+07/11/2024-02:00:23 : Connected to node at 127.0.0.1:3001
+07/11/2024-02:00:23 : 	Datagram sent to node.
+07/11/2024-02:00:23 : Connection closed successfully.
+07/11/2024-02:00:23 : Connection closed: 127.0.0.1
+07/11/2024-02:00:23 : Connection from Remote IP: 127.0.0.1
+07/11/2024-02:00:23 : Connected to node at 127.0.0.1:3001
+07/11/2024-02:00:23 : 	Datagram sent to node.
+07/11/2024-02:00:23 : Connection closed successfully.
+07/11/2024-02:00:23 : Connection closed: 127.0.0.1
+07/11/2024-02:00:23 : Connection from Remote IP: 127.0.0.1
+07/11/2024-02:00:23 : Connected to node at 127.0.0.1:3001
+07/11/2024-02:00:23 : 	Datagram sent to node.
+07/11/2024-02:00:23 : Connection closed successfully.
+07/11/2024-02:00:23 : Connection closed: 127.0.0.1
+07/11/2024-02:00:23 : Connection from Remote IP: 127.0.0.1
+07/11/2024-02:00:23 : Connected to node at 127.0.0.1:3001
+07/11/2024-02:00:23 : 	Datagram sent to node.
+07/11/2024-02:00:23 : Connection closed successfully.
+07/11/2024-02:00:23 : Connection closed: 127.0.0.1
+07/11/2024-02:00:27 : Connection from Remote IP: 127.0.0.1
+07/11/2024-02:00:27 : Connected to node at 127.0.0.1:3001
+07/11/2024-02:00:27 : 	Datagram sent to node.
+07/11/2024-02:00:27 : Connection closed successfully.
+07/11/2024-02:00:27 : Connection closed: 127.0.0.1
+07/11/2024-02:00:27 : Connection from Remote IP: 127.0.0.1
+07/11/2024-02:00:27 : Connected to node at 127.0.0.1:3001
+07/11/2024-02:00:27 : 	Datagram sent to node.
+07/11/2024-02:00:27 : Connection closed successfully.
+07/11/2024-02:00:27 : Connection closed: 127.0.0.1
+07/11/2024-02:00:27 : Connection from Remote IP: 127.0.0.1
+07/11/2024-02:00:27 : Connected to node at 127.0.0.1:3001
+07/11/2024-02:00:27 : 	Datagram sent to node.
+07/11/2024-02:00:27 : Connection closed successfully.
+07/11/2024-02:00:27 : Connection closed: 127.0.0.1
+07/11/2024-02:00:27 : Connection from Remote IP: 127.0.0.1
+07/11/2024-02:00:27 : Connected to node at 127.0.0.1:3001
+07/11/2024-02:00:27 : 	Datagram sent to node.
+07/11/2024-02:00:27 : Connection closed successfully.
+07/11/2024-02:00:27 : Connection closed: 127.0.0.1
+07/11/2024-02:00:35 : Connection from Remote IP: 127.0.0.1
+07/11/2024-02:00:35 : Connected to node at 127.0.0.1:3001
+07/11/2024-02:00:35 : 	Datagram sent to node.
+07/11/2024-02:00:35 : Connection closed successfully.
+07/11/2024-02:00:35 : Connection closed: 127.0.0.1
+07/11/2024-02:00:37 : Connection from Remote IP: 127.0.0.1
+07/11/2024-02:00:37 : Connected to node at 127.0.0.1:3001
+07/11/2024-02:00:37 : 	Datagram sent to node.
+07/11/2024-02:00:37 : Connection closed successfully.
+07/11/2024-02:00:37 : Connection closed: 127.0.0.1
+07/11/2024-02:00:37 : Connection from Remote IP: 127.0.0.1
+07/11/2024-02:00:37 : Connected to node at 127.0.0.1:3001
+07/11/2024-02:00:37 : 	Datagram sent to node.
+07/11/2024-02:00:37 : Connection closed successfully.
+07/11/2024-02:00:37 : Connection closed: 127.0.0.1
+07/11/2024-02:00:43 : Connection from Remote IP: 127.0.0.1
+07/11/2024-02:00:43 : Connected to node at 127.0.0.1:3001
+07/11/2024-02:00:43 : 	Datagram sent to node.
+07/11/2024-02:00:43 : Connection closed successfully.
+07/11/2024-02:00:43 : Connection closed: 127.0.0.1
+07/11/2024-02:00:43 : Connection from Remote IP: 127.0.0.1
+07/11/2024-02:00:43 : Connected to node at 127.0.0.1:3001
+07/11/2024-02:00:43 : 	Datagram sent to node.
+07/11/2024-02:00:43 : Connection closed successfully.
+07/11/2024-02:00:43 : Connection closed: 127.0.0.1
+07/11/2024-02:01:42 : Connection from Remote IP: 127.0.0.1
+07/11/2024-02:01:42 : Connected to node at 127.0.0.1:3001
+07/11/2024-02:01:42 : 	Datagram sent to node.
+07/11/2024-02:01:42 : Connection closed successfully.
+07/11/2024-02:01:42 : Connection closed: 127.0.0.1
+07/11/2024-02:01:42 : Connection from Remote IP: 127.0.0.1
+07/11/2024-02:01:42 : Connected to node at 127.0.0.1:3001
+07/11/2024-02:01:42 : 	Datagram sent to node.
+07/11/2024-02:01:42 : Connection closed successfully.
+07/11/2024-02:01:42 : Connection closed: 127.0.0.1
+07/11/2024-02:11:40 : Connection from Remote IP: 127.0.0.1
+07/11/2024-02:11:40 : Connected to node at 127.0.0.1:3001
+07/11/2024-02:11:40 : 	Datagram sent to node.
+07/11/2024-02:11:40 : Connection closed successfully.
+07/11/2024-02:11:40 : Connection closed: 127.0.0.1
+07/11/2024-02:11:40 : Connection from Remote IP: 127.0.0.1
+07/11/2024-02:11:40 : Connected to node at 127.0.0.1:3001
+07/11/2024-02:11:40 : 	Datagram sent to node.
+07/11/2024-02:11:40 : Connection closed successfully.
+07/11/2024-02:11:40 : Connection closed: 127.0.0.1
+07/11/2024-02:13:19 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.

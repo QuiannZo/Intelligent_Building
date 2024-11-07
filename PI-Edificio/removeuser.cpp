@@ -89,8 +89,8 @@ void RemoveUser::on_pushButton1_clicked()
         qDebug() << "Usuario eliminado con éxito.";
 
                     // Actualiza la lista de usuarios en la interfaz
-                    //ui->listWidget->clear();
-        //loadUserList();  // Vuelve a cargar la lista de usuarios
+                    ui->listWidget->clear();
+        loadUserList();  // Vuelve a cargar la lista de usuarios
     } else {
         qDebug() << "Error al eliminar el usuario.";
     }
