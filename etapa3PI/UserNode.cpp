@@ -240,9 +240,13 @@ bool UserNode::handleDatagram(int client_socket, char *datagram, size_t datagram
                   strncpy(user_info.username, userInformation[0].c_str(), 33);
                   strncpy(user_info.name, userInformation[4].c_str(), 33);
                   strncpy(user_info.last_name, userInformation[5].c_str(), 33);
-                  if (userInformation[9] == "1") {
+                  std::cout << "El estado de activo es " << userInformation[9] << std::endl;
+                  std::cout << "El largo de estado es " << userInformation[9].size() << std::endl;
+                  if (userInformation[9].c_str()[0] == '1') {
+                    std::cout << "Dentro de 1 ";
                     user_info.is_active = true;
                   } else {
+                    std::cout << "Dentro de 0 ";
                     user_info.is_active = false;
                   }
                 }
