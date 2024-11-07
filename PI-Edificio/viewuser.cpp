@@ -1,9 +1,9 @@
 #include "viewuser.h"
 #include "ui_viewuser.h"
 
-ViewUser::ViewUser(QWidget *parent, UserHandler& userHandler, menuwindow& menu)
+ViewUser::ViewUser(QWidget *parent, UserHandler& userHandler, menuwindow& menu, ClientNode& clientNode)
     : QMainWindow(parent)
-    , ui(new Ui::ViewUser), userHandler(userHandler), menu(menu)
+    , ui(new Ui::ViewUser), userHandler(userHandler), menu(menu), clientNode(clientNode)
 {
     ui->setupUi(this);
 
@@ -63,7 +63,7 @@ ViewUser::ViewUser(QWidget *parent, UserHandler& userHandler, menuwindow& menu)
 
 void ViewUser::loadUserList() {
     // Abrir el archivo CSV y cargar los usernames en QListWidget
-    std::string filep = userHandler.getUsersFile();
+    /*std::string filep = userHandler.getUsersFile();
     QFile file = (QString::fromStdString(filep));  // Cambia a la ruta de tu archivo
     if (file.open(QIODevice::ReadOnly)) {
         QTextStream in(&file);
@@ -77,6 +77,15 @@ void ViewUser::loadUserList() {
             }
         }
         file.close();
+    }*/
+    std::vector<std::string> list;
+    bool error = clientNode.getUserList(this->clientNode.username, list);
+    if(error){
+        for(int i = 0; i < list.size(); ++i){
+            ui->listWidget->addItem(QString::fromStdString(list[i]));
+        }
+    } else {
+        // TODO: Error.
     }
 }
 
@@ -92,22 +101,48 @@ void ViewUser::on_pushButton1_2_clicked()
     this->deleteLater();
 }
 
+std::string ViewUser::checkPermissions(uint8_t user_permissions) {
+    std::vector<std::string> result;
+
+    if (user_permissions & USER_ADMINISTRATOR) {
+        result.push_back("User Administrator");
+    }
+    if (user_permissions & DATABASE_ADMINISTRATOR) {
+        result.push_back("Database Administrator");
+    }
+    if (user_permissions & FLOOR_MANAGER) {
+        result.push_back("Floor Manager");
+    }
+    if (user_permissions & BUILDING_MANAGER) {
+        result.push_back("Building Manager");
+    }
+    if (user_permissions & SYSTEM_ADMINISTRATOR) {
+        result.push_back("System Administrator");
+    }
+    if (user_permissions & AUDITOR) {
+        result.push_back("Auditor");
+    }
+
+    result.push_back("No permissions assigned.");
+
+    return result[0];
+}
 
 void ViewUser::on_listWidget_itemClicked(QListWidgetItem *item)
 {
     // Llama a getUserInformation() con el username seleccionado
     std::string username = item->text().toStdString();
-    std::vector<std::string> userInfo = userHandler.getUserInformation(username);
+    std::vector<std::string> userInfo;
+    bool error = clientNode.getUserInformation(this->clientNode.username, username, userInfo);
 
-    if (userInfo.size() == 10) {
+    //if (userInfo.size() == 4) {
         // Actualiza los QLabel con los datos del usuario seleccionado
         ui->user->setText(QString::fromStdString(userInfo[0]));
-        ui->nombre->setText(QString::fromStdString(userInfo[4]));
-        ui->apellido->setText(QString::fromStdString(userInfo[5]));
-        ui->ultimaActividad->setText(QString::fromStdString(userInfo[8]));
-        //ui->rol->setText(QString::fromStdString(userInfo[9] == "1" ? "Active" : "Inactive"));
-    } else {
-        qDebug() << "Error: Información incompleta o usuario no encontrado.";
-    }
+        ui->nombre->setText(QString::fromStdString(userInfo[1]));
+        ui->apellido->setText(QString::fromStdString(userInfo[2]));
+        ui->rol->setText(QString::fromStdString(checkPermissions(std::stoi(userInfo[3]))));
+        ui->ultimaActividad->setText(QString::fromStdString(userInfo[4]));
+    //} else {
+        //qDebug() << "Error: Información incompleta o usuario no encontrado.";
+    //}
 }
-

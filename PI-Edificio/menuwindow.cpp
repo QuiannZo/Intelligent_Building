@@ -13,8 +13,8 @@
 #include "sensorbuilding.h"
 #include "viewbackup.h"
 
-menuwindow::menuwindow(QWidget *parent, UserHandler& userHandler, MainWindow& mainwindow)
-    : QMainWindow(parent), userHandler(userHandler), mainwindow(mainwindow)
+menuwindow::menuwindow(QWidget *parent, UserHandler& userHandler, MainWindow& mainwindow, ClientNode& clientNode)
+    : QMainWindow(parent), userHandler(userHandler), mainwindow(mainwindow), clientNode(clientNode)
     , ui(new Ui::menuwindow)
 {
     ui->setupUi(this);
@@ -117,7 +117,7 @@ void menuwindow::on_pushButton_clicked()
 
 void menuwindow::on_pushButton6_clicked()
 {
-    createuser *createUser = new createuser(this, this->userHandler, *this);  // Crear la nueva ventana
+    createuser *createUser = new createuser(this, this->userHandler, *this, clientNode);  // Crear la nueva ventana
     createUser->show();  // Mostrar la nueva ventana
     hide();
 }
@@ -141,7 +141,7 @@ void menuwindow::on_pushButton7_clicked()
 
 void menuwindow::on_pushButton5_clicked()
 {
-    ModifyUser *modifyUser = new ModifyUser(this, this->userHandler, *this);  // Crear la nueva ventana
+    ModifyUser *modifyUser = new ModifyUser(this, this->userHandler, *this, this->clientNode);  // Crear la nueva ventana
     modifyUser->show();  // Mostrar la nueva ventana
     hide();
 }
@@ -163,7 +163,7 @@ void menuwindow::on_pushButton3_clicked()
 
 void menuwindow::on_pushButton4_clicked()
 {
-    ViewUser *viewUser = new ViewUser(this, this->userHandler, *this); // Crear la nueva ventana
+    ViewUser *viewUser = new ViewUser(this, this->userHandler,*this, this->clientNode); // Crear la nueva ventana
     viewUser->show();                        // Mostrar la nueva ventana
     hide();
 }

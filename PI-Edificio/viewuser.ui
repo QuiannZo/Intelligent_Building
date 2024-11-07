@@ -19,7 +19,7 @@
      <rect>
       <x>110</x>
       <y>270</y>
-      <width>291</width>
+      <width>301</width>
       <height>31</height>
      </rect>
     </property>
@@ -37,7 +37,7 @@
      <rect>
       <x>110</x>
       <y>310</y>
-      <width>291</width>
+      <width>301</width>
       <height>31</height>
      </rect>
     </property>
@@ -55,7 +55,7 @@
      <rect>
       <x>110</x>
       <y>350</y>
-      <width>291</width>
+      <width>301</width>
       <height>31</height>
      </rect>
     </property>
@@ -65,7 +65,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Role:</string>
+     <string>Main role:</string>
     </property>
    </widget>
    <widget class="QLabel" name="ultimaActividad">
@@ -73,7 +73,7 @@
      <rect>
       <x>110</x>
       <y>390</y>
-      <width>291</width>
+      <width>301</width>
       <height>31</height>
      </rect>
     </property>
@@ -83,7 +83,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Last activity:</string>
+     <string>Status:</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton1_2">

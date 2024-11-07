@@ -53,8 +53,8 @@ void RemoveUser::loadUserList() {
                 ui->listWidget->addItem(userInfo[0]); // Añade solo el username
             }
         }
-        file.close();
     }
+    file.close();
 }
 
 RemoveUser::~RemoveUser()

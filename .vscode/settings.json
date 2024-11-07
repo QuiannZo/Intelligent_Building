@@ -55,7 +55,8 @@
         "fstream": "cpp",
         "cinttypes": "cpp",
         "iomanip": "cpp",
-        "sstream": "cpp"
+        "sstream": "cpp",
+        "csignal": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled",
     "cmake.sourceDirectory": "/home/quiannzc/Desktop/filesystem_oper/PI-Edificio"

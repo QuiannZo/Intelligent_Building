@@ -72,7 +72,7 @@ public:
         name->setFont(font);
         password = new QLabel(centralwidget);
         password->setObjectName("password");
-        password->setGeometry(QRect(420, 240, 91, 31));
+        password->setGeometry(QRect(420, 240, 101, 31));
         password->setFont(font);
         passwordlineEdit = new QLineEdit(centralwidget);
         passwordlineEdit->setObjectName("passwordlineEdit");
@@ -150,7 +150,7 @@ public:
         createuser->setCentralWidget(centralwidget);
         menubar = new QMenuBar(createuser);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1000, 23));
+        menubar->setGeometry(QRect(0, 0, 1000, 22));
         createuser->setMenuBar(menubar);
         statusbar = new QStatusBar(createuser);
         statusbar->setObjectName("statusbar");

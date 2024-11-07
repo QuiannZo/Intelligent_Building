@@ -3,7 +3,9 @@
 
 #include <QMainWindow>
 #include <QFile>
+#include <qstring.h>
 #include "../UserHandler.hpp"
+#include "../etapa3PI/ClientNode.hpp"
 #include "menuwindow.h"
 #include "qlistwidget.h"
 
@@ -16,7 +18,7 @@ class ViewUser : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit ViewUser(QWidget *parent, UserHandler& userHandler, menuwindow& menu);
+    explicit ViewUser(QWidget *parent, UserHandler& userHandler, menuwindow& menu, ClientNode& clientNode);
     ~ViewUser();
 
 private slots:
@@ -26,9 +28,12 @@ private slots:
 
     void loadUserList();
 
+    std::string checkPermissions(uint8_t user_permissions);
+
 private:
     Ui::ViewUser *ui;
     UserHandler& userHandler;
+    ClientNode& clientNode;
     menuwindow& menu;
 };
 

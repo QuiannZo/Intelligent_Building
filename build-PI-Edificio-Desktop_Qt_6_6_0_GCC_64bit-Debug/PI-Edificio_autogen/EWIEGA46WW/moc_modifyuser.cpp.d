@@ -6,6 +6,10 @@
   /home/quiannzc/Desktop/filesystem_oper/PI-Edificio/mainwindow.h \
   /home/quiannzc/Desktop/filesystem_oper/PI-Edificio/menuwindow.h \
   /home/quiannzc/Desktop/filesystem_oper/UserHandler.hpp \
+  /home/quiannzc/Desktop/filesystem_oper/etapa3PI/Client.hpp \
+  /home/quiannzc/Desktop/filesystem_oper/etapa3PI/ClientNode.hpp \
+  /home/quiannzc/Desktop/filesystem_oper/etapa3PI/Log.hpp \
+  /home/quiannzc/Desktop/filesystem_oper/etapa3PI/socketList.hpp \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/QList \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/QObject \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/QRect \
@@ -15,6 +19,7 @@
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/q20memory.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/q20type_traits.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/q23utility.h \
+  /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/qabstractitemmodel.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/qalgorithms.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/qanystringview.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/qarraydata.h \
@@ -56,11 +61,13 @@
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/qhashfunctions.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/qiodevice.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/qiodevicebase.h \
+  /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/qitemselectionmodel.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/qiterable.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/qiterator.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/qlatin1stringview.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/qline.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/qlist.h \
+  /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/qlocale.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/qlogging.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/qmalloc.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/qmap.h \
@@ -83,6 +90,7 @@
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/qprocessordetection.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/qrect.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/qrefcount.h \
+  /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/qregularexpression.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/qscopedpointer.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/qscopeguard.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/qset.h \
@@ -159,12 +167,27 @@
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtGui/qtguiexports.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtGui/qtguiglobal.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtGui/qtransform.h \
+  /home/quiannzc/Qt/6.6.0/gcc_64/include/QtGui/qvalidator.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtGui/qvector2d.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtGui/qvectornd.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtGui/qwindowdefs.h \
+  /home/quiannzc/Qt/6.6.0/gcc_64/include/QtWidgets/QListWidgetItem \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtWidgets/QMainWindow \
+  /home/quiannzc/Qt/6.6.0/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+  /home/quiannzc/Qt/6.6.0/gcc_64/include/QtWidgets/qabstractitemview.h \
+  /home/quiannzc/Qt/6.6.0/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+  /home/quiannzc/Qt/6.6.0/gcc_64/include/QtWidgets/qabstractslider.h \
+  /home/quiannzc/Qt/6.6.0/gcc_64/include/QtWidgets/qabstractspinbox.h \
+  /home/quiannzc/Qt/6.6.0/gcc_64/include/QtWidgets/qframe.h \
+  /home/quiannzc/Qt/6.6.0/gcc_64/include/QtWidgets/qlistview.h \
+  /home/quiannzc/Qt/6.6.0/gcc_64/include/QtWidgets/qlistwidget.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtWidgets/qmainwindow.h \
+  /home/quiannzc/Qt/6.6.0/gcc_64/include/QtWidgets/qrubberband.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtWidgets/qsizepolicy.h \
+  /home/quiannzc/Qt/6.6.0/gcc_64/include/QtWidgets/qslider.h \
+  /home/quiannzc/Qt/6.6.0/gcc_64/include/QtWidgets/qstyle.h \
+  /home/quiannzc/Qt/6.6.0/gcc_64/include/QtWidgets/qstyleoption.h \
+  /home/quiannzc/Qt/6.6.0/gcc_64/include/QtWidgets/qtabbar.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtWidgets/qtabwidget.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtWidgets/qtwidgets-config.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtWidgets/qtwidgetsexports.h \

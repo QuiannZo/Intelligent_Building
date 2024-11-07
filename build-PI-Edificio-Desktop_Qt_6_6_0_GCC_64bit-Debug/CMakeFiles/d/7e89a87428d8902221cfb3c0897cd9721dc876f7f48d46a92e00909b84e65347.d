@@ -3,7 +3,6 @@ PI-Edificio_autogen/timestamp: \
   /home/quiannzc/Desktop/filesystem_oper/Authenticator.hpp \
   /home/quiannzc/Desktop/filesystem_oper/DataCollector.cpp \
   /home/quiannzc/Desktop/filesystem_oper/DataCollector.hpp \
-  /home/quiannzc/Desktop/filesystem_oper/FAT.cpp \
   /home/quiannzc/Desktop/filesystem_oper/FAT.hpp \
   /home/quiannzc/Desktop/filesystem_oper/HashHandler.cpp \
   /home/quiannzc/Desktop/filesystem_oper/HashHandler.hpp \
@@ -48,6 +47,14 @@ PI-Edificio_autogen/timestamp: \
   CMakeFiles/3.24.2/CMakeCXXCompiler.cmake \
   CMakeFiles/3.24.2/CMakeSystem.cmake \
   PI-Edificio_autogen/moc_predefs.h \
+  /home/quiannzc/Desktop/filesystem_oper/etapa3PI/Client.cpp \
+  /home/quiannzc/Desktop/filesystem_oper/etapa3PI/Client.hpp \
+  /home/quiannzc/Desktop/filesystem_oper/etapa3PI/ClientNode.cpp \
+  /home/quiannzc/Desktop/filesystem_oper/etapa3PI/ClientNode.hpp \
+  /home/quiannzc/Desktop/filesystem_oper/etapa3PI/FAT.cpp \
+  /home/quiannzc/Desktop/filesystem_oper/etapa3PI/FAT.hpp \
+  /home/quiannzc/Desktop/filesystem_oper/etapa3PI/Log.hpp \
+  /home/quiannzc/Desktop/filesystem_oper/etapa3PI/socketList.hpp \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/QFile \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/QList \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/QObject \
@@ -214,6 +221,7 @@ PI-Edificio_autogen/timestamp: \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtGui/qwindowdefs.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtWidgets/QCheckBox \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtWidgets/QDialog \
+  /home/quiannzc/Qt/6.6.0/gcc_64/include/QtWidgets/QListWidgetItem \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtWidgets/QMainWindow \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtWidgets/QMessageBox \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtWidgets/QPushButton \
@@ -457,76 +465,22 @@ PI-Edificio_autogen/timestamp: \
   /home/quiannzc/Qt/6.6.0/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-relwithdebinfo.cmake \
   /home/quiannzc/Qt/6.6.0/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake \
   /home/quiannzc/Qt/6.6.0/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeCXXCompiler.cmake.in \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeCXXCompilerABI.cpp \
   /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeCXXInformation.cmake \
   /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
   /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeCompilerIdDetection.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeDetermineCXXCompiler.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeDetermineCompileFeatures.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeDetermineCompiler.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeDetermineCompilerABI.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeDetermineCompilerId.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeDetermineSystem.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeFindBinUtils.cmake \
   /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeFindDependencyMacro.cmake \
   /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeGenericSystem.cmake \
   /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake \
   /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeNinjaFindMake.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeParseImplicitIncludeInfo.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeParseImplicitLinkInfo.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeParseLibraryArchitecture.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeSystem.cmake.in \
   /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake \
   /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeTestCXXCompiler.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/CMakeTestCompilerCommon.cmake \
   /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/CheckCXXCompilerFlag.cmake \
   /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/CheckCXXSourceCompiles.cmake \
   /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/CheckIncludeFileCXX.cmake \
   /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/CheckLibraryExists.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/ADSP-DetermineCompiler.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/ARMCC-DetermineCompiler.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/ARMClang-DetermineCompiler.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/AppleClang-DetermineCompiler.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/Borland-DetermineCompiler.cmake \
   /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/Clang-DetermineCompiler.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/Clang-DetermineCompilerInternal.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/Cray-DetermineCompiler.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/Embarcadero-DetermineCompiler.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/Fujitsu-DetermineCompiler.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/GHS-DetermineCompiler.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake \
   /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/GNU-CXX.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/GNU-FindBinUtils.cmake \
   /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/GNU.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/HP-CXX-DetermineCompiler.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/IAR-DetermineCompiler.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/Intel-DetermineCompiler.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/MSVC-DetermineCompiler.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/NVHPC-DetermineCompiler.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/NVIDIA-DetermineCompiler.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/PGI-DetermineCompiler.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/PathScale-DetermineCompiler.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/SCO-DetermineCompiler.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/TI-DetermineCompiler.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/Watcom-DetermineCompiler.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/XL-CXX-DetermineCompiler.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake \
   /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/FeatureSummary.cmake \
   /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/FindOpenGL.cmake \
   /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/FindOpenSSL.cmake \
@@ -539,9 +493,7 @@ PI-Edificio_autogen/timestamp: \
   /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Internal/CheckCompilerFlag.cmake \
   /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Internal/CheckFlagCommonConfig.cmake \
   /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Internal/CheckSourceCompiles.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Internal/FeatureTesting.cmake \
   /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/MacroAddFileDependencies.cmake \
-  /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Platform/Linux-Determine-CXX.cmake \
   /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Platform/Linux-GNU-CXX.cmake \
   /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Platform/Linux-GNU.cmake \
   /home/quiannzc/Qt/Tools/CMake/share/cmake-3.24/Modules/Platform/Linux.cmake \

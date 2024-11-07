@@ -44,11 +44,15 @@ static constexpr auto qt_meta_stringdata_CLASSViewUserENDCLASS = QtMocHelpers::s
     "on_listWidget_itemClicked",
     "QListWidgetItem*",
     "item",
-    "loadUserList"
+    "loadUserList",
+    "checkPermissions",
+    "std::string",
+    "uint8_t",
+    "user_permissions"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSViewUserENDCLASS_t {
-    uint offsetsAndSizes[14];
+    uint offsetsAndSizes[22];
     char stringdata0[9];
     char stringdata1[25];
     char stringdata2[1];
@@ -56,6 +60,10 @@ struct qt_meta_stringdata_CLASSViewUserENDCLASS_t {
     char stringdata4[17];
     char stringdata5[5];
     char stringdata6[13];
+    char stringdata7[17];
+    char stringdata8[12];
+    char stringdata9[8];
+    char stringdata10[17];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSViewUserENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -67,7 +75,11 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSViewUserENDCLASS_t qt_meta_stri
         QT_MOC_LITERAL(35, 25),  // "on_listWidget_itemClicked"
         QT_MOC_LITERAL(61, 16),  // "QListWidgetItem*"
         QT_MOC_LITERAL(78, 4),  // "item"
-        QT_MOC_LITERAL(83, 12)   // "loadUserList"
+        QT_MOC_LITERAL(83, 12),  // "loadUserList"
+        QT_MOC_LITERAL(96, 16),  // "checkPermissions"
+        QT_MOC_LITERAL(113, 11),  // "std::string"
+        QT_MOC_LITERAL(125, 7),  // "uint8_t"
+        QT_MOC_LITERAL(133, 16)   // "user_permissions"
     },
     "ViewUser",
     "on_pushButton1_2_clicked",
@@ -75,7 +87,11 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSViewUserENDCLASS_t qt_meta_stri
     "on_listWidget_itemClicked",
     "QListWidgetItem*",
     "item",
-    "loadUserList"
+    "loadUserList",
+    "checkPermissions",
+    "std::string",
+    "uint8_t",
+    "user_permissions"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -87,7 +103,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSViewUserENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-       3,   14, // methods
+       4,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -95,14 +111,16 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSViewUserENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   32,    2, 0x08,    1 /* Private */,
-       3,    1,   33,    2, 0x08,    2 /* Private */,
-       6,    0,   36,    2, 0x08,    4 /* Private */,
+       1,    0,   38,    2, 0x08,    1 /* Private */,
+       3,    1,   39,    2, 0x08,    2 /* Private */,
+       6,    0,   42,    2, 0x08,    4 /* Private */,
+       7,    1,   43,    2, 0x08,    5 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void, 0x80000000 | 4,    5,
     QMetaType::Void,
+    0x80000000 | 8, 0x80000000 | 9,   10,
 
        0        // eod
 };
@@ -122,7 +140,10 @@ Q_CONSTINIT const QMetaObject ViewUser::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<QListWidgetItem *, std::false_type>,
         // method 'loadUserList'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'checkPermissions'
+        QtPrivate::TypeAndForceComplete<std::string, std::false_type>,
+        QtPrivate::TypeAndForceComplete<uint8_t, std::false_type>
     >,
     nullptr
 } };
@@ -136,6 +157,8 @@ void ViewUser::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         case 0: _t->on_pushButton1_2_clicked(); break;
         case 1: _t->on_listWidget_itemClicked((*reinterpret_cast< std::add_pointer_t<QListWidgetItem*>>(_a[1]))); break;
         case 2: _t->loadUserList(); break;
+        case 3: { std::string _r = _t->checkPermissions((*reinterpret_cast< std::add_pointer_t<uint8_t>>(_a[1])));
+            if (_a[0]) *reinterpret_cast< std::string*>(_a[0]) = std::move(_r); }  break;
         default: ;
         }
     }
@@ -160,13 +183,13 @@ int ViewUser::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 4;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 3)
+        if (_id < 4)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 3;
+        _id -= 4;
     }
     return _id;
 }

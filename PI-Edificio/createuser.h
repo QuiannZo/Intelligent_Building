@@ -7,6 +7,7 @@
 #include <QVBoxLayout>
 #include <QPushButton>
 #include "../UserHandler.hpp"
+#include "../etapa3PI/ClientNode.hpp"
 #include "menuwindow.h"
 #include "floorselectiondialog.h"
 
@@ -19,7 +20,7 @@ class createuser : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit createuser(QWidget *parent, UserHandler& userHandler, menuwindow& menu);
+    explicit createuser(QWidget *parent, UserHandler& userHandler, menuwindow& menu, ClientNode& clientNode);
     ~createuser();
 protected:
     void closeEvent(QCloseEvent *event) override;  // Sobrescribir closeEvent
@@ -27,6 +28,7 @@ private:
     Ui::createuser *ui;
     UserHandler& userHandler;
     menuwindow& menu;
+    ClientNode& clientNode;
 private slots:
     void onSubmitClicked();
     void on_pushButton1_2_clicked();

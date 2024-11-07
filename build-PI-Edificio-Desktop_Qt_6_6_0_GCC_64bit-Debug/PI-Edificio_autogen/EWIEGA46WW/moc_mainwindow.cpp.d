@@ -4,6 +4,10 @@
   /home/quiannzc/Desktop/filesystem_oper/HashHandler.hpp \
   /home/quiannzc/Desktop/filesystem_oper/Log.hpp \
   /home/quiannzc/Desktop/filesystem_oper/UserHandler.hpp \
+  /home/quiannzc/Desktop/filesystem_oper/etapa3PI/Client.hpp \
+  /home/quiannzc/Desktop/filesystem_oper/etapa3PI/ClientNode.hpp \
+  /home/quiannzc/Desktop/filesystem_oper/etapa3PI/Log.hpp \
+  /home/quiannzc/Desktop/filesystem_oper/etapa3PI/socketList.hpp \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/q20functional.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/q20memory.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/q20type_traits.h \

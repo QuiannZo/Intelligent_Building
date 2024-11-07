@@ -12,7 +12,7 @@ class FloorSelectionDialog : public QDialog {
 
 public:
     explicit FloorSelectionDialog(QWidget *parent = nullptr);
-    QString getSelectedFloors() const;
+    void getSelectedFloors(int8_t floorsArray[], int maxSize) const;
 
 private:
     QList<QCheckBox*> floorCheckboxes;

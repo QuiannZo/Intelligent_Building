@@ -66,48 +66,6 @@ std::string UserHandler::getUsersFile(){
     return usersFilename;
 }
 
-bool UserHandler::deleteUser(const std::string &deletedByUser, const std::string &username) {
-    std::ifstream inputFile(usersFilename);  // Abrir el archivo de usuarios para lectura
-    if (!inputFile.is_open()) {
-        return false;  // Si no se puede abrir el archivo, retornar false
-    }
-
-    std::stringstream buffer;
-    bool userFound = false;
-    std::string line;
-
-    // Leer todas las líneas y copiar al buffer, excepto la que corresponde al usuario a eliminar
-    while (std::getline(inputFile, line)) {
-        // Comprobar si la línea contiene el nombre de usuario
-        if (line.substr(0, line.find(',')) != username) {
-            buffer << line << '\n';  // Copiar la línea si no es el usuario que se quiere eliminar
-        } else {
-            userFound = true;  // Si encontramos el usuario, marcar como encontrado
-        }
-    }
-
-    inputFile.close();  // Cerrar el archivo de entrada
-
-    if (!userFound) {
-        return false;  // Si no se encontró el usuario, retornar false
-    }
-
-    // Escribir el contenido actualizado (sin el usuario eliminado) de vuelta al archivo
-    std::ofstream outputFile(usersFilename, std::ios::trunc);  // Abrir el archivo en modo truncado para sobrescribirlo
-    if (!outputFile.is_open()) {
-        return false;  // Si no se puede abrir el archivo para escritura, retornar false
-    }
-
-    outputFile << buffer.str();  // Escribir el buffer de nuevo al archivo
-    outputFile.close();  // Cerrar el archivo de salida
-
-    // Registrar la eliminación en los logs
-    this->appendToLogTimeHour(
-        "User deleted: '" + deletedByUser + "' deleted [Username: " + username + "].");
-
-    return true;  // Retornar true si el usuario fue eliminado con éxito
-}
-
 std::vector<std::string> UserHandler::splitString(const char* input) {
     std::vector<std::string> result;
     std::stringstream ss(input);
@@ -191,6 +149,53 @@ bool UserHandler::addUser(const std::string &addedByUser, const std::string &use
                         + " | Permissions: " + std::to_string(permissions) + "].");
     }
     return result;
+}
+
+bool UserHandler::deleteUser(const std::string &deletedByUser, const std::string &username) {
+    std::ifstream inputFile(usersFilename);  // Abrir el archivo de usuarios para lectura
+    if (!inputFile.is_open()) {
+        return false;  // Si no se puede abrir el archivo, retornar false
+    }
+
+    std::stringstream buffer;
+    bool userFound = false;
+    std::string line;
+
+    // Leer todas las líneas y modificar la línea correspondiente al usuario a eliminar
+    while (std::getline(inputFile, line)) {
+        // Si la línea contiene el nombre de usuario, marcarla como inactiva (0)
+        if (line.substr(0, line.find(',')) == username) {
+            // Aquí modificamos la última columna (estado del usuario) de 1 a 0
+            size_t lastCommaPos = line.rfind(',');
+            if (lastCommaPos != std::string::npos) {
+                line.replace(lastCommaPos + 1, 1, "0");  // Cambiar el estado del usuario a 0 (inactivo)
+            }
+            userFound = true;
+        }
+
+        buffer << line << '\n';  // Copiar la línea al buffer, ya sea modificada o sin cambios
+    }
+
+    inputFile.close();  // Cerrar el archivo de entrada
+
+    if (!userFound) {
+        return false;  // Si no se encontró el usuario, retornar false
+    }
+
+    // Escribir el contenido actualizado (con el usuario inactivo) de vuelta al archivo
+    std::ofstream outputFile(usersFilename, std::ios::trunc);  // Abrir el archivo en modo truncado para sobrescribirlo
+    if (!outputFile.is_open()) {
+        return false;  // Si no se puede abrir el archivo para escritura, retornar false
+    }
+
+    outputFile << buffer.str();  // Escribir el buffer con los cambios al archivo
+    outputFile.close();  // Cerrar el archivo de salida
+
+    // Registrar la eliminación en los logs
+    this->appendToLogTimeHour(
+        "User deleted: '" + deletedByUser + "' deleted [Username: " + username + "].");
+
+    return true;
 }
 
 bool UserHandler::authenticateUser(const std::string &username, const std::string &hash, std::string &error) {

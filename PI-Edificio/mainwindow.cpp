@@ -2,11 +2,13 @@
 #include "./ui_mainwindow.h"
 #include "menuwindow.h"
 #include <QMessageBox>
+#include <vector>
 
-MainWindow::MainWindow(QWidget *parent, UserHandler &userHandler)
+MainWindow::MainWindow(QWidget *parent, UserHandler &userHandler, ClientNode& clientNode)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow),
-    userHandler(userHandler)
+    userHandler(userHandler),
+    clientNode(clientNode)
 {
     ui->setupUi(this);
 
@@ -38,17 +40,24 @@ void MainWindow::on_pushButton1_clicked()
 
     // Genera el hash de la contraseña
     // crear la ventana de menu
-    std::string passwordHash = userHandler.generateHash(passwordStr);
-    std::string error;
+    //std::string passwordHash = userHandler.generateHash(passwordStr);
+    std::vector<std::string> result;
+    //std::string error;
 
     // Autenticación
-    if (userHandler.authenticateUser(usernameStr, passwordHash, error)) {
+    if (clientNode.authenticateUser(usernameStr, passwordStr, result)) {
         // crear la ventana de menu
-        menuwindow* menu = new menuwindow(this, this->userHandler, *this);
+        menuwindow* menu = new menuwindow(this, this->userHandler, *this, this->clientNode);
         menu->show();
         this->hide();
+
+        // guardar los datos.
+        clientNode.name = result[0];
+        clientNode.lastName = result[1];
+        clientNode.permissions = std::stoi(result[2]);
+        clientNode.username = usernameStr;
     } else {
         // mensaje de error
-        QMessageBox::warning(this, "Incorrect user.", QString::fromStdString(error));
+        QMessageBox::warning(this, "Incorrect user.", QString::fromStdString(result[0]));
     }
 }

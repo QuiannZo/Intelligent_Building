@@ -6,6 +6,10 @@
   /home/quiannzc/Desktop/filesystem_oper/PI-Edificio/mainwindow.h \
   /home/quiannzc/Desktop/filesystem_oper/PI-Edificio/menuwindow.h \
   /home/quiannzc/Desktop/filesystem_oper/UserHandler.hpp \
+  /home/quiannzc/Desktop/filesystem_oper/etapa3PI/Client.hpp \
+  /home/quiannzc/Desktop/filesystem_oper/etapa3PI/ClientNode.hpp \
+  /home/quiannzc/Desktop/filesystem_oper/etapa3PI/Log.hpp \
+  /home/quiannzc/Desktop/filesystem_oper/etapa3PI/socketList.hpp \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/QFile \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/QList \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/QObject \

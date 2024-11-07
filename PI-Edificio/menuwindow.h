@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "../UserHandler.hpp"
+#include "../etapa3PI/ClientNode.hpp"
 #include <QCloseEvent>
 #include "mainwindow.h"
 
@@ -15,7 +16,7 @@ class menuwindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit menuwindow(QWidget *parent, UserHandler& userHandler, MainWindow& mainwindow);
+    explicit menuwindow(QWidget *parent, UserHandler& userHandler, MainWindow& mainwindow, ClientNode& clientNode);
     ~menuwindow();
 
 private slots:
@@ -46,6 +47,7 @@ private:
     Ui::menuwindow *ui;
     UserHandler& userHandler;
     MainWindow& mainwindow;
+    ClientNode& clientNode;
 
 protected:
     void closeEvent(QCloseEvent *event) override;  // Sobrescribir closeEvent

@@ -36,13 +36,18 @@ set(PROJECT_SOURCES
         #../UserTest.cpp
         #../main.cpp
         ../Intento.ino
-        ../FAT.cpp
-        ../FAT.hpp
+        ../etapa3PI/FAT.cpp
+        ../etapa3PI/FAT.hpp
         ../DataCollector.cpp
         ../DataCollector.hpp
         ../Authenticator.cpp
         ../Authenticator.hpp
         ../usersData.txt
+        ../etapa3PI/ClientNode.hpp
+        ../etapa3PI/ClientNode.cpp
+        ../etapa3PI/Client.hpp
+        ../etapa3PI/Client.cpp
+        ../etapa3PI/socketList.hpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

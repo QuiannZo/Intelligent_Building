@@ -6,10 +6,13 @@
 #include "socketList.hpp"
 
 class ClientNode : public Client {
-private:
+public:
   // atributos que se establecen cuando se realiza el login.
   std::string username;
+  std::string name;
+  std::string lastName;
   uint16_t user_id = 0;
+  uint8_t permissions = 0;
   std::string getErrorString(int type);
 public:
   ClientNode(std::string logFilename, int processId);
@@ -40,5 +43,6 @@ public:
   // Comunicación hacia el nodo de datos
   // Obtener datos de los sensores
   bool getSensorData(std::string request_by, std::string& response);
+
 };
 #endif

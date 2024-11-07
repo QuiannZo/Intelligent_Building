@@ -49,6 +49,139 @@
      <string>Return</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label_15">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>320</y>
+      <width>121</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: white;</string>
+    </property>
+    <property name="text">
+     <string>View Sensor Floor</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton8_2">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>220</y>
+      <width>191</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #32383D;
+                                  color: white;
+                                  }
+                                  QPushButton:pressed {
+                                  background-color: rgba(255, 255, 255, 0.2);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton8_3">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>220</y>
+      <width>191</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #32383D;
+                                  color: white;
+                                  }
+                                  QPushButton:pressed {
+                                  background-color: rgba(255, 255, 255, 0.2);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_13">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>320</y>
+      <width>141</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: white;</string>
+    </property>
+    <property name="text">
+     <string>View Sensor Building</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton8">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>220</y>
+      <width>191</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #32383D;
+                                  color: white;
+                                  }
+                                  QPushButton:pressed {
+                                  background-color: rgba(255, 255, 255, 0.2);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_14">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>320</y>
+      <width>151</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: white;</string>
+    </property>
+    <property name="text">
+     <string>View Node Information</string>
+    </property>
+   </widget>
+   <zorder>pushButton8_3</zorder>
+   <zorder>pushButton8</zorder>
+   <zorder>pushButton1_2</zorder>
+   <zorder>label_15</zorder>
+   <zorder>pushButton8_2</zorder>
+   <zorder>label_13</zorder>
+   <zorder>label_14</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -56,7 +189,7 @@
      <x>0</x>
      <y>0</y>
      <width>1000</width>
-     <height>23</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

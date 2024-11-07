@@ -3,9 +3,9 @@
 #include "ui_createuser.h"
 #include "menuwindow.h"
 
-createuser::createuser(QWidget *parent, UserHandler& userHandler, menuwindow& menu)
+createuser::createuser(QWidget *parent, UserHandler& userHandler, menuwindow& menu, ClientNode& clientNode)
     : QMainWindow(parent)
-    , ui(new Ui::createuser), userHandler(userHandler), menu(menu)
+    , ui(new Ui::createuser), userHandler(userHandler), menu(menu), clientNode(clientNode)
 {
     ui->setupUi(this);
 
@@ -76,7 +76,7 @@ void createuser::onSubmitClicked()
     QString name = ui->namelineEdit->text();
     QString lastName = ui->lastNamelineEdit->text();
     QString role;
-    QString floors = ""; // Inicializa los pisos seleccionados como vacío
+    int8_t floors[32] = {}; // Inicializa los pisos seleccionados como vacío.
 
     if (ui->dbAdm->isChecked()) {
         role = "Database Administrator";
@@ -86,7 +86,7 @@ void createuser::onSubmitClicked()
         // Crear y mostrar el diálogo de selección de pisos
         FloorSelectionDialog floorDialog(this);
         if (floorDialog.exec() == QDialog::Accepted) {
-            floors = floorDialog.getSelectedFloors();
+            floorDialog.getSelectedFloors(floors, 32); // Almacena los pisos seleccionados en el arreglo
         }
     } else if (ui->Auditor->isChecked()) {
         role = "Auditor";
@@ -100,9 +100,9 @@ void createuser::onSubmitClicked()
         role = "Invalid";
     }
 
-    std::string hash = this->userHandler.generateHash(password.toStdString());
-    if(this->userHandler.addUser("superuser", username.toStdString(), hash, 1, floors.toStdString(), name.toStdString(), lastName.toStdString(), "ID00000")) {
-        qDebug() << "User added";
+    std::string response;
+    if(this->clientNode.addUser(this->clientNode.username, username.toStdString(), password.toStdString(), 1, floors, name.toStdString(), lastName.toStdString(), response)){
+        qDebug() << "User added correctly.";
     }
 
     qDebug() << "Username:" << username;
