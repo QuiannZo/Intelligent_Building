@@ -2,6 +2,8 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <unistd.h>
+#include <sstream>
+#include <string>
 #include <iostream>
 #include <cstring>
 #include "Client.hpp"
@@ -24,9 +26,14 @@ int Client::connectToNode(const std::string& ip, int port) {
   // `SOCK_STREAM`: especifica que se usa un socket de tipo TCP
   int client_socket = socket(AF_INET, SOCK_STREAM, 0);
     if (client_socket < 0) {
-      std::cerr 
-        << "Error creating the socket to connect to another node" 
-        << std::endl;
+      std::ostringstream ss;
+      ss << "Error creating the socket to connect to another node";
+      std::string message = ss.str();
+
+      this->appendToLogTimeHour(message);
+
+      std::cout << message << std::endl;
+
       return -1;
     }
   // estructura que almacena la dirección del nodo destino 
@@ -36,18 +43,40 @@ int Client::connectToNode(const std::string& ip, int port) {
   server_address.sin_port = htons(port);
   // convertir la IP al binario 
   if (inet_pton(AF_INET, ip.c_str(), &server_address.sin_addr) <= 0) {
-    std::cerr << "Invalid IP address: " << ip << std::endl;
+    std::ostringstream ss;
+    ss << "Invalid IP address: " << ip;
+    std::string message = ss.str();
+
+    this->appendToLogTimeHour(message);
+
+    std::cout << message << std::endl;
+
     close(client_socket);
     return -1;
   }
   // Conectar con el nodo servidor
   if (connect(client_socket, (struct sockaddr*)&server_address, sizeof(server_address)) < 0) {
-    std::cerr << "Error connecting to node at " << ip << ":" << port << std::endl;
+    std::ostringstream ss;
+    ss << "Error connecting to node at " << ip << ":" << port;
+    std::string message = ss.str();
+
+    this->appendToLogTimeHour(message);
+
+    std::cout << message << std::endl;
+
     close(client_socket);
     return -1;
   }
   // Se estableció la conexión 
-  std::cout << "Connected to node at " << ip << ":" << port << std::endl;
+
+  std::ostringstream ss;
+  ss << "Connected to node at " << ip << ":" << port;
+  std::string message = ss.str();
+
+  this->appendToLogTimeHour(message);
+
+  std::cout << message << std::endl;
+
   return client_socket;
 }
 
@@ -55,14 +84,32 @@ int Client::connectToNode(const std::string& ip, int port) {
 // Retorna `true` si se cerró exitosamente, `false` en caso contrario.
 bool Client::closeConnection(int client_socket) {
   if (client_socket < 0) {
-    std::cerr << "Invalid socket. Cannot close connection." << std::endl;
+    std::ostringstream ss;
+    ss << "Invalid socket. Cannot close connection.";
+    std::string message = ss.str();
+
+    this->appendToLogTimeHour(message);
+
+    std::cout << message << std::endl;
     return false;
   }
   if (close(client_socket) == 0) {
-    std::cout << "Connection closed successfully." << std::endl;
+    std::ostringstream ss;
+    ss << "Connection closed successfully.";
+    std::string message = ss.str();
+
+    this->appendToLogTimeHour(message);
+
+    std::cout << message << std::endl;
     return true;
   } else {
-    std::cerr << "Error closing the connection." << std::endl;
+    std::ostringstream ss;
+    ss << "Error closing the connection.";
+    std::string message = ss.str();
+
+    this->appendToLogTimeHour(message);
+
+    std::cout << message << std::endl;
     return false;
   }
 }
@@ -85,16 +132,34 @@ bool Client::receiveDatagramWithTimeout(int client_socket, char *response_buffer
   // Esperar hasta que hayan datos o se haya cumplido el `timeout`
   int activity = select(client_socket + 1, &read_fds, nullptr, nullptr, &timeout);
   if (activity < 0) {
-      std::cerr << "Error with select()." << std::endl;
-      return false;
+    std::ostringstream ss;
+    ss << "Error with select().";
+    std::string message = ss.str();
+
+    this->appendToLogTimeHour(message);
+
+    std::cout << message << std::endl;
+    return false;
   } else if (activity == 0) {
-      std::cerr << "Timeout reached, no response received from node." << std::endl;
+      std::ostringstream ss;
+      ss << "Timeout reached, no response received from node.";
+      std::string message = ss.str();
+
+      this->appendToLogTimeHour(message);
+
+      std::cout << message << std::endl;
       return false;
   }
   // Leemos la respuesta
   ssize_t bytes_received = recv(client_socket, response_buffer, buffer_size, 0);
   if (bytes_received < 0) {
-      std::cerr << "Error reading response from node." << std::endl;
+      std::ostringstream ss;
+      ss << "Error reading response from node.";
+      std::string message = ss.str();
+
+      this->appendToLogTimeHour(message);
+
+      std::cout << message << std::endl;
       return false;
   }
   return true;
@@ -105,18 +170,33 @@ bool Client::receiveDatagramWithTimeout(int client_socket, char *response_buffer
 bool Client::handleDatagram(int client_socket, char *datagram
   , size_t datagram_size) {
   // Imprimimos el mensaje completo
-  std::cout << "\tMessage received: ";
+  std::ostringstream ss;
+  ss << "\tMessage received: ";
   for (size_t i = 0; i < datagram_size; ++i) {
-    std::cout << datagram[i];
+    ss << datagram[i];
   }
-  std::cout << std::endl;
-  std::cout << "\tMessage type: " << (int)datagram[0]
+
+  std::string message = ss.str();
+  this->appendToLogTimeHour(message);
+  std::cout << message << std::endl;
+
+  std::ostringstream ss2;
+  ss2 << "\tMessage type: " << (int)datagram[0]
     << " | Node type: " << (int)datagram[1];
-  std::cout << std::endl;
+  std::string message2 = ss2.str();
+  this->appendToLogTimeHour(message2);
+  std::cout << message2 << std::endl;
+
   // Damos la respuesta que se va a enviar al cliente
   std::string response = "Datagram received successfully.";
   if (send(client_socket, response.c_str(), response.size(), 0) < 0) {
-    std::cerr << "Error sending response to client." << std::endl;
+    std::ostringstream ss;
+    ss << "Error sending response to client.";
+    std::string message = ss.str();
+
+    this->appendToLogTimeHour(message);
+
+    std::cout << message << std::endl;
     // Solo debe devolver `false` cuando hay un error con la conexión. Si el
     // datagrama recibido es incorrecto, va a enviar un mensaje indicando el
     // error. En ese caso, se considera que se manejo correctamente el
@@ -134,12 +214,24 @@ bool Client::sendDatagram(int client_socket, char* datagram, size_t datagram_siz
   }
   // No se envió correctamente el mensaje
   if (send(client_socket, datagram, datagram_size, 0) < 0) {
-    std::cerr << "Error sending datagram to node." << std::endl;
+    std::ostringstream ss;
+    ss << "Error sending datagram to node.";
+    std::string message = ss.str();
+
+    this->appendToLogTimeHour(message);
+
+    std::cout << message << std::endl;
     close(client_socket);
     return false;
   }
+  std::ostringstream ss;
+  ss << "\tDatagram sent to node.";
+  std::string message = ss.str();
+
+  this->appendToLogTimeHour(message);
+
+  std::cout << message << std::endl;
   // Se envió correctamente el mensaje
-  std::cout << "\tDatagram sent to node." << std::endl;
   // Cerrar el socket
   // close(client_socket); <- cerrar el socket siempre afuera
   return true;
@@ -187,13 +279,24 @@ bool Client::sendLongString(int client_socket, const std::string &data) {
     // Enviar el fragmento actual
     int result = send(client_socket, data.c_str() + bytes_sent, current_chunk_size, 0);
     if (result < 0) {
-        std::cerr << "Error sending chunk to node." << std::endl;
+        std::ostringstream ss;
+        ss << "Error sending chunk to node.";
+        std::string message = ss.str();
+
+        this->appendToLogTimeHour(message);
+
+        std::cout << message << std::endl;
         return false;
     }
     bytes_sent += result;
   }
+  std::ostringstream ss;
+  ss << "\tComplete data sent to node.";
+  std::string message = ss.str();
 
-  std::cout << "\tComplete data sent to node." << std::endl;
+  this->appendToLogTimeHour(message);
+
+  std::cout << message << std::endl;
   return true;
 }
 
@@ -223,10 +326,22 @@ bool Client::receiveLongString(int client_socket, std::string& received_data, si
     // Esperar hasta que haya datos o se alcance el timeout
     int activity = select(client_socket + 1, &read_fds, nullptr, nullptr, &timeout);
     if (activity < 0) {
-      std::cerr << "Error with select()." << std::endl;
+      std::ostringstream ss;
+      ss << "Error with select().";
+      std::string message = ss.str();
+
+      this->appendToLogTimeHour(message);
+
+      std::cout << message << std::endl;
       return false;
     } else if (activity == 0) {
-      std::cerr << "Timeout reached, no data received from node." << std::endl;
+      std::ostringstream ss;
+      ss << "Timeout reached, no data received from node.";
+      std::string message = ss.str();
+
+      this->appendToLogTimeHour(message);
+
+      std::cout << message << std::endl;
       return false;
     }
 
@@ -236,17 +351,35 @@ bool Client::receiveLongString(int client_socket, std::string& received_data, si
     
     ssize_t result = recv(client_socket, buffer, current_chunk_size, 0);
     if (result < 0) {
-      std::cerr << "Error reading chunk from node." << std::endl;
+      std::ostringstream ss;
+      ss << "Error reading chunk from node.";
+      std::string message = ss.str();
+
+      this->appendToLogTimeHour(message);
+
+      std::cout << message << std::endl;
       return false;
     } else if (result == 0) {
-      std::cerr << "Connection closed by node before full message was received." << std::endl;
+      std::ostringstream ss;
+      ss << "Connection closed by node before full message was received.";
+      std::string message = ss.str();
+
+      this->appendToLogTimeHour(message);
+
+      std::cout << message << std::endl;
       return false;
     }
     // Agregar el fragmento recibido al string
     received_data.append(buffer, result);
     bytes_received += result;
   }
-  std::cout << "\tComplete data received from node." << std::endl;
+  std::ostringstream ss;
+  ss << "\tComplete data received from node.";
+  std::string message = ss.str();
+
+  this->appendToLogTimeHour(message);
+
+  std::cout << message << std::endl;
   return true;
 }
 
