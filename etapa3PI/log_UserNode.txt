@@ -10,3 +10,55 @@
 05/11/2024-16:06:11 : [User information]: information of user 'SebasUlaca7' returned.
 05/11/2024-16:06:14 : Users data file closed and saved to file 'usersData.txt'.
 05/11/2024-16:06:14 : Filesystem <FAT> closed and saved to file 'log_UserNode.txt'.
+07/11/2024-00:16:24 : File 'log_UserNode.txt' <Type:Log> loaded into filesystem.
+07/11/2024-00:16:24 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+07/11/2024-00:22:39 : [Log-in]: attempting to authenticate 'y'.
+07/11/2024-00:22:39 : [Log-in]: user 'y' validated.
+07/11/2024-00:22:39 : [Log-in]: attempting get information of user 'y'.
+07/11/2024-00:22:39 : [User information]: information of user 'y' returned.
+07/11/2024-00:24:43 : [Log-in]: attempting to authenticate 'y'.
+07/11/2024-00:24:43 : [Log-in]: user 'y' validated.
+07/11/2024-00:24:43 : [Log-in]: attempting get information of user 'y'.
+07/11/2024-00:24:43 : [User information]: information of user 'y' returned.
+07/11/2024-00:38:24 : [Log-in]: attempting to authenticate 'y'.
+07/11/2024-00:38:24 : [Log-in]: user 'y' validated.
+07/11/2024-00:38:24 : [Log-in]: attempting get information of user 'y'.
+07/11/2024-00:38:24 : [User information]: information of user 'y' returned.
+07/11/2024-00:40:00 : [Log-in]: attempting to authenticate 'y'.
+07/11/2024-00:40:00 : [Log-in]: user 'y' validated.
+07/11/2024-00:40:00 : [Log-in]: attempting get information of user 'y'.
+07/11/2024-00:40:00 : [User information]: information of user 'y' returned.
+07/11/2024-00:40:06 : User 'y' gets access to entire LOG ('log_UserNode.txt').
+07/11/2024-00:40:38 : User 'y' gets access to entire LOG ('log_UserNode.txt').
+07/11/2024-00:41:45 : User 'y' gets access to entire LOG ('log_UserNode.txt').
+07/11/2024-00:41:51 : User 'y' gets access to entire LOG ('log_UserNode.txt').
+07/11/2024-00:51:16 : [Log-in]: attempting to authenticate 'y'.
+07/11/2024-00:51:16 : [Log-in]: user 'y' validated.
+07/11/2024-00:51:16 : [Log-in]: attempting get information of user 'y'.
+07/11/2024-00:51:16 : [User information]: information of user 'y' returned.
+07/11/2024-00:51:25 : User 'y' gets access to entire LOG ('log_UserNode.txt').
+07/11/2024-01:04:07 : [Log-in]: attempting to authenticate 'y'.
+07/11/2024-01:04:07 : [Log-in]: user 'y' validated.
+07/11/2024-01:04:07 : [Log-in]: attempting get information of user 'y'.
+07/11/2024-01:04:07 : [User information]: information of user 'y' returned.
+07/11/2024-01:05:58 : [Log-in]: attempting to authenticate 'y'.
+07/11/2024-01:05:58 : [Log-in]: user 'y' validated.
+07/11/2024-01:05:58 : [Log-in]: attempting get information of user 'y'.
+07/11/2024-01:05:58 : [User information]: information of user 'y' returned.
+07/11/2024-01:09:48 : [Log-in]: attempting to authenticate 'y'.
+07/11/2024-01:09:48 : [Log-in]: user 'y' validated.
+07/11/2024-01:09:48 : [Log-in]: attempting get information of user 'y'.
+07/11/2024-01:09:48 : [User information]: information of user 'y' returned.
+07/11/2024-01:10:08 : User 'y' gets access to entire LOG ('log_UserNode.txt').
+07/11/2024-01:10:53 : [User information]: attempting get user list.
+07/11/2024-01:10:53 : [User information]: user list returned.
+07/11/2024-01:11:55 : [Log-in]: attempting to authenticate 'y'.
+07/11/2024-01:11:55 : [Log-in]: user 'y' validated.
+07/11/2024-01:11:55 : [Log-in]: attempting get information of user 'y'.
+07/11/2024-01:11:55 : [User information]: information of user 'y' returned.
+07/11/2024-01:12:29 : [Log-in]: attempting to authenticate 'y'.
+07/11/2024-01:12:29 : [Log-in]: user 'y' validated.
+07/11/2024-01:12:29 : [Log-in]: attempting get information of user 'y'.
+07/11/2024-01:12:29 : [User information]: information of user 'y' returned.
+07/11/2024-01:14:01 : Users data file closed and saved to file 'usersData.txt'.
+07/11/2024-01:14:01 : Filesystem <FAT> closed and saved to file 'log_UserNode.txt'.

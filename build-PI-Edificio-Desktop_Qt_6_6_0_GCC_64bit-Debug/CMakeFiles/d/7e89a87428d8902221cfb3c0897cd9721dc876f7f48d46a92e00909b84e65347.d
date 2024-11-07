@@ -61,6 +61,7 @@ PI-Edificio_autogen/timestamp: \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/QRect \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/QSize \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/QSizeF \
+  /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/QString \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/q20functional.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/q20memory.h \
   /home/quiannzc/Qt/6.6.0/gcc_64/include/QtCore/q20type_traits.h \

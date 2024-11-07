@@ -31,9 +31,7 @@ public:
     QPushButton *pushButton;
     QLabel *label;
     QPushButton *pushButton2;
-    QPushButton *pushButton3;
     QLabel *label_3;
-    QLabel *label_4;
     QLabel *label_6;
     QLabel *label_7;
     QLabel *label_8;
@@ -45,9 +43,7 @@ public:
     QLabel *label_10;
     QLabel *label_11;
     QLabel *label_12;
-    QLabel *label_13;
     QPushButton *pushButton11;
-    QPushButton *pushButton8;
     QPushButton *pushButton9;
     QPushButton *pushButton10;
     QMenuBar *menubar;
@@ -79,7 +75,7 @@ public:
         mainwidget->setGeometry(QRect(-2, 39, 1011, 560));
         pushButton = new QPushButton(mainwidget);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(60, 60, 191, 131));
+        pushButton->setGeometry(QRect(170, 60, 191, 131));
         pushButton->setStyleSheet(QString::fromUtf8("background-color: #32383D;\n"
 "                                  color: white;\n"
 "                                  }\n"
@@ -87,7 +83,7 @@ public:
 "                                  background-color: rgba(255, 255, 255, 0.2);"));
         label = new QLabel(mainwidget);
         label->setObjectName("label");
-        label->setGeometry(QRect(110, 160, 101, 20));
+        label->setGeometry(QRect(220, 160, 101, 20));
         QFont font1;
         font1.setPointSize(10);
         font1.setBold(true);
@@ -95,53 +91,40 @@ public:
         label->setStyleSheet(QString::fromUtf8("color: white;"));
         pushButton2 = new QPushButton(mainwidget);
         pushButton2->setObjectName("pushButton2");
-        pushButton2->setGeometry(QRect(290, 60, 191, 131));
+        pushButton2->setGeometry(QRect(400, 60, 191, 131));
         pushButton2->setStyleSheet(QString::fromUtf8("background-color: #32383D;\n"
-"                                  color: white;\n"
-"                                  }\n"
-"                                  QPushButton:pressed {\n"
-"                                  background-color: rgba(255, 255, 255, 0.2);"));
-        pushButton3 = new QPushButton(mainwidget);
-        pushButton3->setObjectName("pushButton3");
-        pushButton3->setGeometry(QRect(520, 60, 191, 131));
-        pushButton3->setStyleSheet(QString::fromUtf8("background-color: #32383D;\n"
 "                                  color: white;\n"
 "                                  }\n"
 "                                  QPushButton:pressed {\n"
 "                                  background-color: rgba(255, 255, 255, 0.2);"));
         label_3 = new QLabel(mainwidget);
         label_3->setObjectName("label_3");
-        label_3->setGeometry(QRect(340, 160, 101, 20));
+        label_3->setGeometry(QRect(450, 160, 101, 20));
         label_3->setFont(font1);
         label_3->setStyleSheet(QString::fromUtf8("color: white;"));
-        label_4 = new QLabel(mainwidget);
-        label_4->setObjectName("label_4");
-        label_4->setGeometry(QRect(560, 160, 121, 20));
-        label_4->setFont(font1);
-        label_4->setStyleSheet(QString::fromUtf8("color: white;"));
         label_6 = new QLabel(mainwidget);
         label_6->setObjectName("label_6");
-        label_6->setGeometry(QRect(800, 320, 101, 20));
+        label_6->setGeometry(QRect(680, 160, 101, 20));
         label_6->setFont(font1);
         label_6->setStyleSheet(QString::fromUtf8("color: white;"));
         label_7 = new QLabel(mainwidget);
         label_7->setObjectName("label_7");
-        label_7->setGeometry(QRect(350, 320, 91, 20));
+        label_7->setGeometry(QRect(460, 320, 91, 20));
         label_7->setFont(font1);
         label_7->setStyleSheet(QString::fromUtf8("color: white;"));
         label_8 = new QLabel(mainwidget);
         label_8->setObjectName("label_8");
-        label_8->setGeometry(QRect(590, 320, 71, 20));
+        label_8->setGeometry(QRect(700, 320, 71, 20));
         label_8->setFont(font1);
         label_8->setStyleSheet(QString::fromUtf8("color: white;"));
         label_9 = new QLabel(mainwidget);
         label_9->setObjectName("label_9");
-        label_9->setGeometry(QRect(120, 320, 91, 20));
+        label_9->setGeometry(QRect(230, 320, 91, 20));
         label_9->setFont(font1);
         label_9->setStyleSheet(QString::fromUtf8("color: white;"));
         pushButton7 = new QPushButton(mainwidget);
         pushButton7->setObjectName("pushButton7");
-        pushButton7->setGeometry(QRect(750, 220, 191, 131));
+        pushButton7->setGeometry(QRect(630, 60, 191, 131));
         pushButton7->setStyleSheet(QString::fromUtf8("background-color: #32383D;\n"
 "                                  color: white;\n"
 "                                  }\n"
@@ -149,7 +132,7 @@ public:
 "                                  background-color: rgba(255, 255, 255, 0.2);"));
         pushButton4 = new QPushButton(mainwidget);
         pushButton4->setObjectName("pushButton4");
-        pushButton4->setGeometry(QRect(60, 220, 191, 131));
+        pushButton4->setGeometry(QRect(170, 220, 191, 131));
         pushButton4->setStyleSheet(QString::fromUtf8("background-color: #32383D;\n"
 "                                  color: white;\n"
 "                                  }\n"
@@ -157,7 +140,7 @@ public:
 "                                  background-color: rgba(255, 255, 255, 0.2);"));
         pushButton5 = new QPushButton(mainwidget);
         pushButton5->setObjectName("pushButton5");
-        pushButton5->setGeometry(QRect(290, 220, 191, 131));
+        pushButton5->setGeometry(QRect(400, 220, 191, 131));
         pushButton5->setStyleSheet(QString::fromUtf8("background-color: #32383D;\n"
 "                                  color: white;\n"
 "                                  }\n"
@@ -165,7 +148,7 @@ public:
 "                                  background-color: rgba(255, 255, 255, 0.2);"));
         pushButton6 = new QPushButton(mainwidget);
         pushButton6->setObjectName("pushButton6");
-        pushButton6->setGeometry(QRect(520, 220, 191, 131));
+        pushButton6->setGeometry(QRect(630, 220, 191, 131));
         pushButton6->setStyleSheet(QString::fromUtf8("background-color: #32383D;\n"
 "                                  color: white;\n"
 "                                  }\n"
@@ -173,43 +156,30 @@ public:
 "                                  background-color: rgba(255, 255, 255, 0.2);"));
         label_10 = new QLabel(mainwidget);
         label_10->setObjectName("label_10");
-        label_10->setGeometry(QRect(810, 480, 101, 20));
+        label_10->setGeometry(QRect(690, 480, 101, 20));
         label_10->setFont(font1);
         label_10->setStyleSheet(QString::fromUtf8("color: white;"));
         label_11 = new QLabel(mainwidget);
         label_11->setObjectName("label_11");
-        label_11->setGeometry(QRect(310, 480, 161, 20));
+        label_11->setGeometry(QRect(190, 480, 161, 20));
         label_11->setFont(font1);
         label_11->setStyleSheet(QString::fromUtf8("color: white;"));
         label_12 = new QLabel(mainwidget);
         label_12->setObjectName("label_12");
-        label_12->setGeometry(QRect(560, 480, 121, 20));
+        label_12->setGeometry(QRect(440, 480, 121, 20));
         label_12->setFont(font1);
         label_12->setStyleSheet(QString::fromUtf8("color: white;"));
-        label_13 = new QLabel(mainwidget);
-        label_13->setObjectName("label_13");
-        label_13->setGeometry(QRect(90, 480, 141, 20));
-        label_13->setFont(font1);
-        label_13->setStyleSheet(QString::fromUtf8("color: white;"));
         pushButton11 = new QPushButton(mainwidget);
         pushButton11->setObjectName("pushButton11");
-        pushButton11->setGeometry(QRect(750, 380, 191, 131));
+        pushButton11->setGeometry(QRect(630, 380, 191, 131));
         pushButton11->setStyleSheet(QString::fromUtf8("background-color: #32383D;\n"
-"                                  color: white;\n"
-"                                  }\n"
-"                                  QPushButton:pressed {\n"
-"                                  background-color: rgba(255, 255, 255, 0.2);"));
-        pushButton8 = new QPushButton(mainwidget);
-        pushButton8->setObjectName("pushButton8");
-        pushButton8->setGeometry(QRect(60, 380, 191, 131));
-        pushButton8->setStyleSheet(QString::fromUtf8("background-color: #32383D;\n"
 "                                  color: white;\n"
 "                                  }\n"
 "                                  QPushButton:pressed {\n"
 "                                  background-color: rgba(255, 255, 255, 0.2);"));
         pushButton9 = new QPushButton(mainwidget);
         pushButton9->setObjectName("pushButton9");
-        pushButton9->setGeometry(QRect(290, 380, 191, 131));
+        pushButton9->setGeometry(QRect(170, 380, 191, 131));
         pushButton9->setStyleSheet(QString::fromUtf8("background-color: #32383D;\n"
 "                                  color: white;\n"
 "                                  }\n"
@@ -217,7 +187,7 @@ public:
 "                                  background-color: rgba(255, 255, 255, 0.2);"));
         pushButton10 = new QPushButton(mainwidget);
         pushButton10->setObjectName("pushButton10");
-        pushButton10->setGeometry(QRect(520, 380, 191, 131));
+        pushButton10->setGeometry(QRect(400, 380, 191, 131));
         pushButton10->setStyleSheet(QString::fromUtf8("background-color: #32383D;\n"
 "                                  color: white;\n"
 "                                  }\n"
@@ -225,8 +195,6 @@ public:
 "                                  background-color: rgba(255, 255, 255, 0.2);"));
         pushButton10->raise();
         label_12->raise();
-        pushButton8->raise();
-        label_13->raise();
         pushButton9->raise();
         pushButton11->raise();
         label_10->raise();
@@ -238,9 +206,7 @@ public:
         pushButton->raise();
         label->raise();
         pushButton2->raise();
-        pushButton3->raise();
         label_3->raise();
-        label_4->raise();
         label_6->raise();
         label_7->raise();
         label_8->raise();
@@ -248,7 +214,7 @@ public:
         menuwindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(menuwindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1000, 23));
+        menubar->setGeometry(QRect(0, 0, 1000, 22));
         menuwindow->setMenuBar(menubar);
         statusbar = new QStatusBar(menuwindow);
         statusbar->setObjectName("statusbar");
@@ -267,9 +233,7 @@ public:
         pushButton->setText(QString());
         label->setText(QCoreApplication::translate("menuwindow", "View Database", nullptr));
         pushButton2->setText(QString());
-        pushButton3->setText(QString());
         label_3->setText(QCoreApplication::translate("menuwindow", "Edit Database", nullptr));
-        label_4->setText(QCoreApplication::translate("menuwindow", "View Sensor Floor", nullptr));
         label_6->setText(QCoreApplication::translate("menuwindow", "Deactivate user", nullptr));
         label_7->setText(QCoreApplication::translate("menuwindow", "Modify User", nullptr));
         label_8->setText(QCoreApplication::translate("menuwindow", "Add User", nullptr));
@@ -281,9 +245,7 @@ public:
         label_10->setText(QCoreApplication::translate("menuwindow", "View Logs", nullptr));
         label_11->setText(QCoreApplication::translate("menuwindow", "View Node Information", nullptr));
         label_12->setText(QCoreApplication::translate("menuwindow", "View Backup State", nullptr));
-        label_13->setText(QCoreApplication::translate("menuwindow", "View Sensor Building", nullptr));
         pushButton11->setText(QString());
-        pushButton8->setText(QString());
         pushButton9->setText(QString());
         pushButton10->setText(QString());
     } // retranslateUi

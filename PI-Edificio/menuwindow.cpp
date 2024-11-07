@@ -57,10 +57,6 @@ menuwindow::menuwindow(QWidget *parent, UserHandler& userHandler, MainWindow& ma
     ui->pushButton2->setIcon(QIcon(path3));  // Ruta del icono
     ui->pushButton2->setIconSize(QSize(48, 48));  // Ajusta el tamaño del icono
 
-    path3 = ":/resource/img/sensor.png";
-    ui->pushButton3->setIcon(QIcon(path3));  // Ruta del icono
-    ui->pushButton3->setIconSize(QSize(48, 48));  // Ajusta el tamaño del icono
-
     path3 = ":/resource/img/user.png";
     ui->pushButton4->setIcon(QIcon(path3));  // Ruta del icono
     ui->pushButton4->setIconSize(QSize(48, 48));  // Ajusta el tamaño del icono
@@ -76,10 +72,6 @@ menuwindow::menuwindow(QWidget *parent, UserHandler& userHandler, MainWindow& ma
     path3 = ":/resource/img/remove-user.png";
     ui->pushButton7->setIcon(QIcon(path3));  // Ruta del icono
     ui->pushButton7->setIconSize(QSize(48, 48));  // Ajusta el tamaño del icono
-
-    path3 = ":/resource/img/sensor.png";
-    ui->pushButton8->setIcon(QIcon(path3));  // Ruta del icono
-    ui->pushButton8->setIconSize(QSize(48, 48));  // Ajusta el tamaño del icono
 
     path3 = ":/resource/img/document.png";
     ui->pushButton9->setIcon(QIcon(path3));  // Ruta del icono
@@ -101,7 +93,7 @@ menuwindow::~menuwindow()
 
 void menuwindow::on_pushButton_clicked()
 {
-    viewdatabasewindow *databaseWindow = new viewdatabasewindow(this, this->userHandler, *this);  // Crear la nueva ventana
+    viewdatabasewindow *databaseWindow = new viewdatabasewindow(this, this->userHandler, *this, clientNode);  // Crear la nueva ventana
     databaseWindow->show();  // Mostrar la nueva ventana
     hide();
 }
@@ -191,7 +183,7 @@ void menuwindow::on_pushButton10_clicked()
 
 void menuwindow::on_pushButton11_clicked()
 {
-    viewLog *log = new viewLog(this, this->userHandler, *this); // Crear la nueva ventana
+    viewLog *log = new viewLog(this, this->userHandler, *this, clientNode); // Crear la nueva ventana
     log->show();                      // Mostrar la nueva ventana
     hide();
 }

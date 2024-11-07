@@ -52,9 +52,9 @@
    <widget class="QLabel" name="label_15">
     <property name="geometry">
      <rect>
-      <x>700</x>
-      <y>320</y>
-      <width>121</width>
+      <x>110</x>
+      <y>270</y>
+      <width>101</width>
       <height>20</height>
      </rect>
     </property>
@@ -68,16 +68,16 @@
      <string notr="true">color: white;</string>
     </property>
     <property name="text">
-     <string>View Sensor Floor</string>
+     <string>User Node Log</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton8_2">
+   <widget class="QPushButton" name="interlogbtn">
     <property name="geometry">
      <rect>
-      <x>400</x>
-      <y>220</y>
+      <x>60</x>
+      <y>170</y>
       <width>191</width>
-      <height>131</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -91,13 +91,13 @@
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton8_3">
+   <widget class="QPushButton" name="userlogbtn">
     <property name="geometry">
      <rect>
-      <x>660</x>
-      <y>220</y>
+      <x>60</x>
+      <y>250</y>
       <width>191</width>
-      <height>131</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -114,9 +114,9 @@
    <widget class="QLabel" name="label_13">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>320</y>
-      <width>141</width>
+      <x>110</x>
+      <y>110</y>
+      <width>111</width>
       <height>20</height>
      </rect>
     </property>
@@ -130,16 +130,16 @@
      <string notr="true">color: white;</string>
     </property>
     <property name="text">
-     <string>View Sensor Building</string>
+     <string>Data Node Log</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton8">
+   <widget class="QPushButton" name="datanodebtn">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>220</y>
+      <x>60</x>
+      <y>90</y>
       <width>191</width>
-      <height>131</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -156,9 +156,9 @@
    <widget class="QLabel" name="label_14">
     <property name="geometry">
      <rect>
-      <x>420</x>
-      <y>320</y>
-      <width>151</width>
+      <x>100</x>
+      <y>190</y>
+      <width>121</width>
       <height>20</height>
      </rect>
     </property>
@@ -172,16 +172,27 @@
      <string notr="true">color: white;</string>
     </property>
     <property name="text">
-     <string>View Node Information</string>
+     <string>Intermediary Log</string>
     </property>
    </widget>
-   <zorder>pushButton8_3</zorder>
-   <zorder>pushButton8</zorder>
+   <widget class="QTextEdit" name="textEdit">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>90</y>
+      <width>631</width>
+      <height>461</height>
+     </rect>
+    </property>
+   </widget>
+   <zorder>userlogbtn</zorder>
+   <zorder>datanodebtn</zorder>
    <zorder>pushButton1_2</zorder>
    <zorder>label_15</zorder>
-   <zorder>pushButton8_2</zorder>
+   <zorder>interlogbtn</zorder>
    <zorder>label_13</zorder>
    <zorder>label_14</zorder>
+   <zorder>textEdit</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

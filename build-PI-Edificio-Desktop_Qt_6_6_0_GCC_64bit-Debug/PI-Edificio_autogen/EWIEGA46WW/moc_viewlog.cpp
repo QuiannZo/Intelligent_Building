@@ -40,14 +40,20 @@ struct qt_meta_stringdata_CLASSviewLogENDCLASS_t {};
 static constexpr auto qt_meta_stringdata_CLASSviewLogENDCLASS = QtMocHelpers::stringData(
     "viewLog",
     "on_pushButton1_2_clicked",
-    ""
+    "",
+    "on_datanodebtn_clicked",
+    "on_interlogbtn_clicked",
+    "on_userlogbtn_clicked"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSviewLogENDCLASS_t {
-    uint offsetsAndSizes[6];
+    uint offsetsAndSizes[12];
     char stringdata0[8];
     char stringdata1[25];
     char stringdata2[1];
+    char stringdata3[23];
+    char stringdata4[23];
+    char stringdata5[22];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSviewLogENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -55,11 +61,17 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSviewLogENDCLASS_t qt_meta_strin
     {
         QT_MOC_LITERAL(0, 7),  // "viewLog"
         QT_MOC_LITERAL(8, 24),  // "on_pushButton1_2_clicked"
-        QT_MOC_LITERAL(33, 0)   // ""
+        QT_MOC_LITERAL(33, 0),  // ""
+        QT_MOC_LITERAL(34, 22),  // "on_datanodebtn_clicked"
+        QT_MOC_LITERAL(57, 22),  // "on_interlogbtn_clicked"
+        QT_MOC_LITERAL(80, 21)   // "on_userlogbtn_clicked"
     },
     "viewLog",
     "on_pushButton1_2_clicked",
-    ""
+    "",
+    "on_datanodebtn_clicked",
+    "on_interlogbtn_clicked",
+    "on_userlogbtn_clicked"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -71,7 +83,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSviewLogENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   14, // methods
+       4,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -79,9 +91,15 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSviewLogENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   20,    2, 0x08,    1 /* Private */,
+       1,    0,   38,    2, 0x08,    1 /* Private */,
+       3,    0,   39,    2, 0x08,    2 /* Private */,
+       4,    0,   40,    2, 0x08,    3 /* Private */,
+       5,    0,   41,    2, 0x08,    4 /* Private */,
 
  // slots: parameters
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
 
        0        // eod
@@ -97,6 +115,12 @@ Q_CONSTINIT const QMetaObject viewLog::staticMetaObject = { {
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<viewLog, std::true_type>,
         // method 'on_pushButton1_2_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_datanodebtn_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_interlogbtn_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_userlogbtn_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -109,6 +133,9 @@ void viewLog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         (void)_t;
         switch (_id) {
         case 0: _t->on_pushButton1_2_clicked(); break;
+        case 1: _t->on_datanodebtn_clicked(); break;
+        case 2: _t->on_interlogbtn_clicked(); break;
+        case 3: _t->on_userlogbtn_clicked(); break;
         default: ;
         }
     }
@@ -134,13 +161,13 @@ int viewLog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 4;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 1)
+        if (_id < 4)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 1;
+        _id -= 4;
     }
     return _id;
 }

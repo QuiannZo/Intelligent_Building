@@ -91,6 +91,9 @@ void ModifyUser::on_pushButton1_clicked()
                                           permissions, floors, name.toStdString(),
                                           lastName.toStdString(), response);
 
+    this->menu.show();
+    this->hide();
+    this->deleteLater();
 }
 
 
