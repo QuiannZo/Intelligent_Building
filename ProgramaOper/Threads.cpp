@@ -10,11 +10,6 @@
 // TamaÃ±o mÃ¡ximo del datagrama
 const int kMaxDatagramSize = 512;
 
-std::queue<std::string> message_queue;
-std::mutex mtx;
-std::condition_variable cv;
-bool finish = false;
-
 // Tipos de nodos que con capacidad de comunicaciÃ³n en la sistema distribuido
 enum NodeType : uint8_t {
   kTest,
@@ -30,7 +25,7 @@ enum NodeType : uint8_t {
 // Tipos de mensajes en el sistema distribuido
 enum MessageType : uint8_t {
   // Mensajes generales:
-  kInvalidRequest,
+  kRequest,
   kCommunicationError,
   kUnknownError,
   kLongFileHeader, 
@@ -38,18 +33,27 @@ enum MessageType : uint8_t {
 };
 
 // Datagramas generales:
-struct InvalidRequest {
+struct Request {
   // Mensaje con el que responde un nodo cuando no puede manejar una datagrama
   // recibido previamente. 
   MessageType message_type;
   NodeType source_node;
+  int value;
 };
+
+std::queue<Request> message_queue;
+std::mutex mtx;
+std::condition_variable cv;
+bool finish = false;
 
 
 void writer() {
-    for (int i = 1; i <= 10; ++i) {
+    for (int index = 1; index <= 10; ++index) {
       std::this_thread::sleep_for(std::chrono::milliseconds(500)); // Simula trabajo
-      std::string message = "Mensaje " + std::to_string(i);
+      Request message;
+      message.message_type = kRequest;
+      message.source_node = kTest;
+      message.value = index;
 
       // Bloquea y agrega un mensaje a la cola
       {
@@ -59,7 +63,7 @@ void writer() {
 
       // Notifica al lector
       cv.notify_one();
-      std::cout << "[Writer] Enviado: " << message << std::endl;
+      std::cout << "[Writer] Enviado: " << message.value << std::endl;
     }
 
     // Señal para terminar
@@ -77,9 +81,9 @@ void reader() {
     cv.wait(lock, [] { return !message_queue.empty() || finish; }); // Espera hasta que haya mensajes o se indique que termina
 
     while (!message_queue.empty()) {
-      std::string message = message_queue.front();
+      Request message = message_queue.front();
       message_queue.pop();
-      std::cout << "[Reader] Recibido: " << message << std::endl;
+      std::cout << "[Reader] Recibido: " << message.value << std::endl;
     }
 
     // Si el escritor termina y la cola esta vaci­a, sale del bucle
