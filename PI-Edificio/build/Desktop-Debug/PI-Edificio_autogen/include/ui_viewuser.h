@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'viewuser.ui'
 **
-** Created by: Qt User Interface Compiler version 6.7.3
+** Created by: Qt User Interface Compiler version 6.7.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -24,12 +25,15 @@ class Ui_ViewUser
 {
 public:
     QWidget *centralwidget;
-    QWidget *widgetUser;
     QLabel *nombre;
     QLabel *apellido;
     QLabel *rol;
     QLabel *ultimaActividad;
     QPushButton *pushButton1_2;
+    QLabel *label;
+    QListWidget *listWidget;
+    QLabel *label_2;
+    QLabel *user;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -40,26 +44,23 @@ public:
         ViewUser->resize(1000, 600);
         centralwidget = new QWidget(ViewUser);
         centralwidget->setObjectName("centralwidget");
-        widgetUser = new QWidget(centralwidget);
-        widgetUser->setObjectName("widgetUser");
-        widgetUser->setGeometry(QRect(390, 40, 171, 151));
         nombre = new QLabel(centralwidget);
         nombre->setObjectName("nombre");
-        nombre->setGeometry(QRect(340, 220, 251, 31));
+        nombre->setGeometry(QRect(110, 270, 301, 31));
         QFont font;
         font.setPointSize(16);
         nombre->setFont(font);
         apellido = new QLabel(centralwidget);
         apellido->setObjectName("apellido");
-        apellido->setGeometry(QRect(340, 260, 251, 31));
+        apellido->setGeometry(QRect(110, 310, 301, 31));
         apellido->setFont(font);
         rol = new QLabel(centralwidget);
         rol->setObjectName("rol");
-        rol->setGeometry(QRect(340, 300, 251, 31));
+        rol->setGeometry(QRect(110, 350, 301, 31));
         rol->setFont(font);
         ultimaActividad = new QLabel(centralwidget);
         ultimaActividad->setObjectName("ultimaActividad");
-        ultimaActividad->setGeometry(QRect(340, 340, 251, 31));
+        ultimaActividad->setGeometry(QRect(110, 390, 301, 31));
         ultimaActividad->setFont(font);
         pushButton1_2 = new QPushButton(centralwidget);
         pushButton1_2->setObjectName("pushButton1_2");
@@ -81,10 +82,43 @@ public:
 "    QPushButton:pressed {\n"
 "        background-color: #B0B0B0; /* Click effect */\n"
 "    }"));
+        label = new QLabel(centralwidget);
+        label->setObjectName("label");
+        label->setGeometry(QRect(390, 30, 181, 31));
+        QPalette palette;
+        QBrush brush(QColor(255, 255, 255, 255));
+        brush.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::WindowText, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
+        label->setPalette(palette);
+        QFont font2;
+        font2.setPointSize(12);
+        font2.setBold(true);
+        label->setFont(font2);
+        listWidget = new QListWidget(centralwidget);
+        listWidget->setObjectName("listWidget");
+        listWidget->setGeometry(QRect(670, 150, 271, 381));
+        listWidget->setFont(font2);
+        label_2 = new QLabel(centralwidget);
+        label_2->setObjectName("label_2");
+        label_2->setGeometry(QRect(750, 110, 121, 31));
+        QPalette palette1;
+        palette1.setBrush(QPalette::Active, QPalette::WindowText, brush);
+        palette1.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
+        label_2->setPalette(palette1);
+        label_2->setFont(font2);
+        user = new QLabel(centralwidget);
+        user->setObjectName("user");
+        user->setGeometry(QRect(110, 230, 291, 31));
+        QPalette palette2;
+        palette2.setBrush(QPalette::Active, QPalette::WindowText, brush);
+        palette2.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
+        user->setPalette(palette2);
+        user->setFont(font);
         ViewUser->setCentralWidget(centralwidget);
         menubar = new QMenuBar(ViewUser);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1000, 23));
+        menubar->setGeometry(QRect(0, 0, 1000, 22));
         ViewUser->setMenuBar(menubar);
         statusbar = new QStatusBar(ViewUser);
         statusbar->setObjectName("statusbar");
@@ -98,11 +132,14 @@ public:
     void retranslateUi(QMainWindow *ViewUser)
     {
         ViewUser->setWindowTitle(QCoreApplication::translate("ViewUser", "MainWindow", nullptr));
-        nombre->setText(QCoreApplication::translate("ViewUser", "Nombre:", nullptr));
-        apellido->setText(QCoreApplication::translate("ViewUser", "Apellido: ", nullptr));
-        rol->setText(QCoreApplication::translate("ViewUser", "Rol:", nullptr));
-        ultimaActividad->setText(QCoreApplication::translate("ViewUser", "\303\232ltima actividad:", nullptr));
+        nombre->setText(QCoreApplication::translate("ViewUser", "Name: ", nullptr));
+        apellido->setText(QCoreApplication::translate("ViewUser", "Lastname: ", nullptr));
+        rol->setText(QCoreApplication::translate("ViewUser", "Main role:", nullptr));
+        ultimaActividad->setText(QCoreApplication::translate("ViewUser", "Status:", nullptr));
         pushButton1_2->setText(QCoreApplication::translate("ViewUser", "Return", nullptr));
+        label->setText(QCoreApplication::translate("ViewUser", "View user information", nullptr));
+        label_2->setText(QCoreApplication::translate("ViewUser", "Select an user", nullptr));
+        user->setText(QCoreApplication::translate("ViewUser", "Username: ", nullptr));
     } // retranslateUi
 
 };

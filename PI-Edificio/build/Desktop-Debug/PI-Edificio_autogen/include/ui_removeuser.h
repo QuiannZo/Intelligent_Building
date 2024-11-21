@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'removeuser.ui'
 **
-** Created by: Qt User Interface Compiler version 6.7.3
+** Created by: Qt User Interface Compiler version 6.7.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -12,7 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -27,9 +27,9 @@ public:
     QWidget *centralwidget;
     QWidget *widgetUser;
     QLabel *nombre;
-    QLineEdit *lineEdit_2;
     QPushButton *pushButton1;
     QPushButton *pushButton1_2;
+    QListWidget *listWidget;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -42,19 +42,22 @@ public:
         centralwidget->setObjectName("centralwidget");
         widgetUser = new QWidget(centralwidget);
         widgetUser->setObjectName("widgetUser");
-        widgetUser->setGeometry(QRect(380, 60, 171, 151));
+        widgetUser->setGeometry(QRect(430, 40, 81, 71));
         nombre = new QLabel(centralwidget);
         nombre->setObjectName("nombre");
-        nombre->setGeometry(QRect(380, 220, 181, 31));
+        nombre->setGeometry(QRect(390, 150, 181, 31));
+        QPalette palette;
+        QBrush brush(QColor(255, 255, 255, 255));
+        brush.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::WindowText, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
+        nombre->setPalette(palette);
         QFont font;
         font.setPointSize(16);
         nombre->setFont(font);
-        lineEdit_2 = new QLineEdit(centralwidget);
-        lineEdit_2->setObjectName("lineEdit_2");
-        lineEdit_2->setGeometry(QRect(360, 250, 221, 26));
         pushButton1 = new QPushButton(centralwidget);
         pushButton1->setObjectName("pushButton1");
-        pushButton1->setGeometry(QRect(390, 300, 151, 41));
+        pushButton1->setGeometry(QRect(400, 480, 151, 41));
         QFont font1;
         font1.setBold(true);
         pushButton1->setFont(font1);
@@ -90,10 +93,13 @@ public:
 "    QPushButton:pressed {\n"
 "        background-color: #B0B0B0; /* Click effect */\n"
 "    }"));
+        listWidget = new QListWidget(centralwidget);
+        listWidget->setObjectName("listWidget");
+        listWidget->setGeometry(QRect(340, 190, 261, 261));
         RemoveUser->setCentralWidget(centralwidget);
         menubar = new QMenuBar(RemoveUser);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1000, 23));
+        menubar->setGeometry(QRect(0, 0, 1000, 22));
         RemoveUser->setMenuBar(menubar);
         statusbar = new QStatusBar(RemoveUser);
         statusbar->setObjectName("statusbar");
@@ -107,8 +113,8 @@ public:
     void retranslateUi(QMainWindow *RemoveUser)
     {
         RemoveUser->setWindowTitle(QCoreApplication::translate("RemoveUser", "MainWindow", nullptr));
-        nombre->setText(QCoreApplication::translate("RemoveUser", "Usuario a eliminar: ", nullptr));
-        pushButton1->setText(QCoreApplication::translate("RemoveUser", "Eliminar usuario", nullptr));
+        nombre->setText(QCoreApplication::translate("RemoveUser", "User to remove:", nullptr));
+        pushButton1->setText(QCoreApplication::translate("RemoveUser", "Delete user", nullptr));
         pushButton1_2->setText(QCoreApplication::translate("RemoveUser", "Return", nullptr));
     } // retranslateUi
 

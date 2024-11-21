@@ -1,0 +1,4 @@
+# Hashes of file build rules.
+d931eb307066b47917ea64d3f23ac5cc CMakeFiles/PI-Edificio_autogen
+c48ba9ea6abd6c9d928520ad6e9b5180 PI-Edificio_autogen/EWIEGA46WW/qrc_resource.cpp
+46bd98d0f06d8d6c80f33c343f9169d5 PI-Edificio_autogen/timestamp

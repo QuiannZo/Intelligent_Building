@@ -1,64 +1,40 @@
-31/10/2024-10:09:36 : File 'users_log_file.txt' <Type:Log> created and loaded into filesystem.
-31/10/2024-10:09:36 : File 'usersData.txt' <Type:File-user-data> created and loaded into filesystem.
-31/10/2024-10:09:47 : [Log-in]: attempting to authenticate 'username01'.
-31/10/2024-10:09:47 : [Log-in]: user 'username01' not found.
-31/10/2024-10:09:56 : [Log-in]: attempting to authenticate 'username02'.
-31/10/2024-10:09:56 : [Log-in]: user 'username02' not found.
-31/10/2024-10:10:00 : [Log-in]: attempting to authenticate 'username'.
-31/10/2024-10:10:00 : [Log-in]: user 'username' not found.
-31/10/2024-10:10:06 : [Log-in]: attempting to authenticate 'username00'.
-31/10/2024-10:10:06 : [Log-in]: user 'username00' not found.
-31/10/2024-10:10:13 : [Log-in]: attempting to authenticate 'username01'.
-31/10/2024-10:10:13 : [Log-in]: user 'username01' not found.
-31/10/2024-10:10:16 : Users data file closed and saved to file 'usersData.txt'.
-31/10/2024-10:10:16 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
-31/10/2024-10:33:06 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
-31/10/2024-10:33:06 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
-31/10/2024-10:33:16 : [Log-in]: attempting to authenticate 'username01'.
-31/10/2024-10:33:16 : [Log-in]: user 'username01' validated.
-31/10/2024-10:33:37 : Users data file closed and saved to file 'usersData.txt'.
-31/10/2024-10:33:37 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
-31/10/2024-10:49:31 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
-31/10/2024-10:49:31 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
-31/10/2024-10:49:43 : [Log-in]: attempting to authenticate 'username01'.
-31/10/2024-10:49:43 : [Log-in]: user 'username01' validated.
-31/10/2024-10:50:15 : Users data file closed and saved to file 'usersData.txt'.
-31/10/2024-10:50:15 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
-31/10/2024-10:51:39 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
-31/10/2024-10:51:39 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
-31/10/2024-10:51:49 : [Log-in]: attempting to authenticate 'username01'.
-31/10/2024-10:51:49 : [Log-in]: user 'username01' validated.
-31/10/2024-11:02:08 : Users data file closed and saved to file 'usersData.txt'.
-31/10/2024-11:02:08 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
-31/10/2024-11:05:56 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
-31/10/2024-11:05:56 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
-31/10/2024-11:06:08 : [Log-in]: attempting to authenticate 'username01'.
-31/10/2024-11:06:08 : [Log-in]: user 'username01' validated.
-31/10/2024-11:13:08 : Users data file closed and saved to file 'usersData.txt'.
-31/10/2024-11:13:08 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
-31/10/2024-11:17:41 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
-31/10/2024-11:17:41 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
-31/10/2024-11:17:43 : Users data file closed and saved to file 'usersData.txt'.
-31/10/2024-11:17:43 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
-31/10/2024-11:26:30 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
-31/10/2024-11:26:30 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
-31/10/2024-11:26:39 : [Log-in]: attempting to authenticate 'username01'.
-31/10/2024-11:26:39 : [Log-in]: user 'username01' validated.
-31/10/2024-11:26:48 : Users data file closed and saved to file 'usersData.txt'.
-31/10/2024-11:26:48 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
-31/10/2024-11:28:12 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
-31/10/2024-11:28:12 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
-31/10/2024-11:28:24 : [Log-in]: attempting to authenticate 'username01'.
-31/10/2024-11:28:24 : [Log-in]: user 'username01' validated.
-31/10/2024-11:29:41 : Users data file closed and saved to file 'ê≥gˆ˛ ‡a˛ˇêï√ÑˇusersData.txt'.
-31/10/2024-11:29:41 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
-31/10/2024-11:31:03 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
-31/10/2024-11:31:03 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
-31/10/2024-11:31:15 : [Log-in]: attempting to authenticate 'username01'.
-31/10/2024-11:31:15 : [Log-in]: user 'username01' validated.
-31/10/2024-11:32:42 : Users data file closed and saved to file 'usersData.txt'.
-31/10/2024-11:32:42 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
-31/10/2024-11:33:29 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
-31/10/2024-11:33:29 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
-31/10/2024-11:33:31 : Users data file closed and saved to file 'usersData.txt'.
-31/10/2024-11:33:31 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
+07/11/2024-09:28:13 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+07/11/2024-09:28:13 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+07/11/2024-09:31:32 : Users data file closed and saved to file 'usersData.txt'.
+07/11/2024-09:31:32 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
+07/11/2024-09:32:45 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+07/11/2024-09:32:45 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+07/11/2024-09:33:06 : Users data file closed and saved to file 'usersData.txt'.
+07/11/2024-09:33:06 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
+07/11/2024-09:33:39 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+07/11/2024-09:33:39 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+07/11/2024-09:33:52 : Users data file closed and saved to file 'usersData.txt'.
+07/11/2024-09:33:52 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
+07/11/2024-09:34:31 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+07/11/2024-09:34:31 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+07/11/2024-09:36:26 : Users data file closed and saved to file 'usersData.txt'.
+07/11/2024-09:36:26 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
+07/11/2024-09:36:30 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+07/11/2024-09:36:30 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+07/11/2024-09:36:38 : Users data file closed and saved to file 'usersData.txt'.
+07/11/2024-09:36:38 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
+07/11/2024-09:37:02 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+07/11/2024-09:37:02 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+07/11/2024-09:37:50 : Users data file closed and saved to file 'usersData.txt'.
+07/11/2024-09:37:50 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
+07/11/2024-09:50:32 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+07/11/2024-09:50:32 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+07/11/2024-09:56:33 : Users data file closed and saved to file 'usersData.txt'.
+07/11/2024-09:56:33 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
+07/11/2024-09:56:37 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+07/11/2024-09:56:37 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+07/11/2024-09:57:08 : Users data file closed and saved to file 'usersData.txt'.
+07/11/2024-09:57:08 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
+07/11/2024-09:57:10 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+07/11/2024-09:57:10 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+07/11/2024-09:57:12 : Users data file closed and saved to file 'usersData.txt'.
+07/11/2024-09:57:12 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.
+07/11/2024-10:06:39 : File 'users_log_file.txt' <Type:Log> loaded into filesystem.
+07/11/2024-10:06:39 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+07/11/2024-10:08:40 : Users data file closed and saved to file 'usersData.txt'.
+07/11/2024-10:08:40 : Filesystem <FAT> closed and saved to file 'users_log_file.txt'.

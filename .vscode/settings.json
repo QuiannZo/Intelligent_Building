@@ -56,7 +56,19 @@
         "cinttypes": "cpp",
         "iomanip": "cpp",
         "sstream": "cpp",
-        "csignal": "cpp"
+        "csignal": "cpp",
+        "chrono": "cpp",
+        "codecvt": "cpp",
+        "condition_variable": "cpp",
+        "list": "cpp",
+        "map": "cpp",
+        "ratio": "cpp",
+        "future": "cpp",
+        "mutex": "cpp",
+        "semaphore": "cpp",
+        "stdfloat": "cpp",
+        "stop_token": "cpp",
+        "thread": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled",
     "cmake.sourceDirectory": "/home/quiannzc/Desktop/filesystem_oper/PI-Edificio"
