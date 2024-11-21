@@ -5,7 +5,7 @@
 
 // Configuración de la red
 uint8_t mac[] = { 0x98, 0x4F, 0xEE, 0x00, 0xCD, 0xC2 };  // Dirección MAC como uint8_t
-IPAddress server(192, 168, 0, 100);  // IP del servidor destino
+IPAddress server(10, 1, 35, 19);  // IP del servidor destino
 int serverPort = 3002;  // Puerto del servidor
 
 EthernetClient client;  // Cliente Ethernet
@@ -94,7 +94,11 @@ SensorData createPhotoSensorData(const std::string& sensor_id) {
     data.source_node = (uint8_t)7;  // kIntelGalileo <- 7U
     strcpy(data.sensor_type, "PhotoSensor");
     strcpy(data.sensor_id, sensor_id.c_str());
-    data.value = rand() % 1024;  // Generar un valor aleatorio para el sensor
+    //data.value = rand() % 1024;  // Generar un valor aleatorio para el sensor
+    int ldr = 0; 
+    data.value = analogRead (ldr);
+    Serial.println ("\nPhotosensor data: ");
+    Serial.println (data.value);
     return data;
 }
 
