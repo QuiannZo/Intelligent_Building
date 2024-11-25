@@ -2,8 +2,8 @@
 
 int main() {
   // Crear los hilos
-  std::thread writer_thread(writer);
-  std::thread reader_thread(reader);
+  std::thread writer_thread(receiver);
+  std::thread reader_thread(processor);
 
   // Esperar a que terminen
   writer_thread.join();

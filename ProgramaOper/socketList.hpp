@@ -74,8 +74,8 @@ enum MessageType : uint8_t {
   kSensorInfoResponseEG,
   // Mensajes entre `Backup_server` y `DataCollector` / `UserHandler`:
   kFileRequestBDU,
-  kRequestFailureDUB
-
+  kRequestFailureDUB,
+  kRequest
 };
 
 // Datagramas generales:

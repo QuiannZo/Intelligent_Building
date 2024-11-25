@@ -7,9 +7,29 @@
 #include <arpa/inet.h>
 #include <cmath>
 
-#include "utilities.hpp"
-
 using namespace std ;
+
+// Tipos de nodos que con capacidad de comunicaciÃ³n en la sistema distribuido
+enum NodeType : uint8_t {
+  kTest,
+  kApplication,
+  kIntermediary,
+  kUserHandler,
+  KDataCollector,
+  kBackupServer,
+  kEsp8266,
+  kIntelGalileo
+};
+
+// Tipos de mensajes en el sistema distribuido
+enum MessageType : uint8_t {
+  // Mensajes generales:
+  kRequest,
+  kCommunicationError,
+  kUnknownError,
+  kLongFileHeader, 
+  kTransmissionError,
+};
 
 // Datagramas generales:
 struct Request {
@@ -21,12 +41,10 @@ struct Request {
 };
 
 int main(){
-    int resultado 0;
-    int s = 0
-    char mensaje[256];
+    int resultado = 0;
+    int s = 0;  char mensajeRecibido[256];
+   
     struct sockaddr_in ipServidor;
-
-    memset(mensaje, '0', sizeof(mensaje));
 
     if((s = socket(AF_INET, SOCK_STREAM, 0))< 0){
       cout << "Error de creación de socket" << endl;
@@ -41,15 +59,18 @@ int main(){
         resultado= 2;
       } else {
         Request message;
-        for(int i = 0; i < 100; ++1){
-          message.message_type = kRequest;
-          message.source_node = kTest;
-          message.value = index;
+        message.message_type = kRequest;
+        message.source_node = kTest;
+        for(int i = 0; i < 100; ++i){
+   
+          message.value = i;
+
+          write(s, reinterpret_cast<char *>(&message), sizeof(message));
+          cout << "Mensaje enviado: " << i << endl;
         }
-        
-        write(s, mensaje, strlen(mensaje));
 
         close(s);
+        cout << "Cliente finalizado" << endl;
       
       }
     }

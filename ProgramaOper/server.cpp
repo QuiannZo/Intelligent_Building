@@ -59,36 +59,10 @@ int main(){
       struct sockaddr_in *s = (struct sockaddr_in *)&ipRemoto;
       port = ntohs(s->sin_port);
       inet_ntop(AF_INET, &s->sin_addr, strIpRemoto, sizeof strIpRemoto);
-      cout << " IP Remoto: " << strIpRemoto << endl ;
-      cout << "Se ingresó comando: " << comandoSeparado[0] << endl;
+
       
-      bool verificarAutenticacion;
-      bool mode;
-      string respuesta;
-      if(comandoSeparado[0] == "autenticar") {
-        verificarAutenticacion = autenticar(comandoSeparado);
-        // se envía la respuesta al cliente
-        if(verificarAutenticacion) {
-          respuesta = "verdadero";
-        } else {
-          respuesta = "falso";
-        }
-      } else if (comandoSeparado[0] == "crearArchivo") {
-        mode = crearArchivo(comandoSeparado);
-        respuesta = "Comando identificado como: crearArchivo";
-      } else if (comandoSeparado[0] == "guardarArchivo") {
-        mode = guardarArchivo(mensajeRecibido, conexion);
-        respuesta = "Archivo guardado exitosamente";
-      } else if (comandoSeparado[0] == "eliminarArchivo") {
-        mode = eliminarArchivo(comandoSeparado);
-        respuesta = "Comando identificado como: eliminarArchivo";
-      } else {
-        respuesta = "debe ingresar comando válido";
-      }
-      send(conexion, (char*)respuesta.c_str(), respuesta.size(), 0);
       close(conexion);
     }
-    sleep(1);
   }
 
   cout << endl << "[SERVIDOR DETENIDO]" << endl;
