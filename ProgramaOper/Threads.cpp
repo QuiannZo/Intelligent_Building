@@ -112,6 +112,9 @@ void receiver() {
       }
      
       close(conexion);
+      cout << endl << "[CONEXION CERRADA]" << endl;
+      cout << "Presione Control C" << endl;
+
     }
   }
   // Señal para terminar
