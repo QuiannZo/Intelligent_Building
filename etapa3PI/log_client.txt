@@ -1,0 +1,33 @@
+28/11/2024-10:19:51 : File 'log_client.txt' <Type:Log> created and loaded into filesystem.
+28/11/2024-10:19:54 : Error connecting to node at 10.1.35.20:3000
+28/11/2024-10:19:54 : Filesystem <FAT> closed and saved to file 'log_client.txt'.
+28/11/2024-10:22:47 : File 'log_client.txt' <Type:Log> loaded into filesystem.
+28/11/2024-10:22:51 : Error connecting to node at 10.1.35.20:3000
+28/11/2024-10:22:51 : Filesystem <FAT> closed and saved to file 'log_client.txt'.
+28/11/2024-10:26:18 : File 'log_client.txt' <Type:Log> loaded into filesystem.
+28/11/2024-10:26:18 : Connected to node at 127.0.0.1:3000
+28/11/2024-10:26:18 : 	Datagram sent to node.
+28/11/2024-10:26:18 : 	Complete data received from node.
+28/11/2024-10:26:18 : Connection closed successfully.
+28/11/2024-10:26:18 : Filesystem <FAT> closed and saved to file 'log_client.txt'.
+28/11/2024-10:28:52 : File 'log_client.txt' <Type:Log> loaded into filesystem.
+28/11/2024-10:28:52 : Connected to node at 127.0.0.1:3000
+28/11/2024-10:28:52 : 	Datagram sent to node.
+28/11/2024-10:28:52 : 	Complete data received from node.
+28/11/2024-10:28:52 : Connection closed successfully.
+28/11/2024-10:28:52 : Filesystem <FAT> closed and saved to file 'log_client.txt'.
+28/11/2024-10:30:02 : File 'log_client.txt' <Type:Log> loaded into filesystem.
+28/11/2024-10:30:02 : Error connecting to node at 127.0.0.1:3000
+28/11/2024-10:30:02 : Filesystem <FAT> closed and saved to file 'log_client.txt'.
+28/11/2024-10:30:06 : File 'log_client.txt' <Type:Log> loaded into filesystem.
+28/11/2024-10:30:06 : Error connecting to node at 127.0.0.1:3000
+28/11/2024-10:30:06 : Filesystem <FAT> closed and saved to file 'log_client.txt'.
+28/11/2024-10:31:18 : File 'log_client.txt' <Type:Log> loaded into filesystem.
+28/11/2024-10:31:18 : Error connecting to node at 127.0.0.1:3000
+28/11/2024-10:31:18 : Filesystem <FAT> closed and saved to file 'log_client.txt'.
+28/11/2024-10:31:59 : File 'log_client.txt' <Type:Log> loaded into filesystem.
+28/11/2024-10:31:59 : Connected to node at 127.0.0.1:3000
+28/11/2024-10:31:59 : 	Datagram sent to node.
+28/11/2024-10:31:59 : 	Complete data received from node.
+28/11/2024-10:31:59 : Connection closed successfully.
+28/11/2024-10:31:59 : Filesystem <FAT> closed and saved to file 'log_client.txt'.
