@@ -43,3 +43,151 @@
 07/11/2024-02:22:39 : Connection closed: 127.0.0.1
 07/11/2024-02:22:45 : Users data file closed and saved to file 'usersData.txt'.
 07/11/2024-02:22:45 : Filesystem <FAT> closed and saved to file 'log_UserNode.txt'.
+28/11/2024-10:19:28 : File 'log_UserNode.txt' <Type:Log> loaded into filesystem.
+28/11/2024-10:19:28 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+28/11/2024-10:19:28 : Connected to node at port 3001
+28/11/2024-10:26:13 : Users data file closed and saved to file 'usersData.txt'.
+28/11/2024-10:26:13 : Filesystem <FAT> closed and saved to file 'log_UserNode.txt'.
+28/11/2024-10:26:15 : File 'log_UserNode.txt' <Type:Log> loaded into filesystem.
+28/11/2024-10:26:15 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+28/11/2024-10:26:15 : Connected to node at port 3001
+28/11/2024-10:26:42 : Connection from Remote IP: 127.0.0.1
+28/11/2024-10:26:42 : [Log-in]: attempting to authenticate 's'.
+28/11/2024-10:26:42 : [Log-in]: user 's' not found.
+28/11/2024-10:26:42 : Connection closed: 127.0.0.1
+28/11/2024-10:26:54 : Connection from Remote IP: 127.0.0.1
+28/11/2024-10:26:54 : [Log-in]: attempting to authenticate 'username01'.
+28/11/2024-10:26:54 : [Log-in]: user 'username01' not found.
+28/11/2024-10:26:54 : Connection closed: 127.0.0.1
+28/11/2024-10:27:05 : Connection from Remote IP: 127.0.0.1
+28/11/2024-10:27:05 : [Log-in]: attempting to authenticate 'username0'.
+28/11/2024-10:27:05 : [Log-in]: user 'username0' not found.
+28/11/2024-10:27:05 : Connection closed: 127.0.0.1
+28/11/2024-10:28:05 : Connection from Remote IP: 127.0.0.1
+28/11/2024-10:28:05 : [Log-in]: attempting to authenticate 'username01'.
+28/11/2024-10:28:05 : [Log-in]: user 'username01' not found.
+28/11/2024-10:28:05 : Connection closed: 127.0.0.1
+28/11/2024-10:28:06 : Connection from Remote IP: 127.0.0.1
+28/11/2024-10:28:06 : [Log-in]: attempting to authenticate 'username01'.
+28/11/2024-10:28:06 : [Log-in]: user 'username01' not found.
+28/11/2024-10:28:06 : Connection closed: 127.0.0.1
+28/11/2024-10:29:14 : Users data file closed and saved to file 'usersData.txt'.
+28/11/2024-10:29:14 : Filesystem <FAT> closed and saved to file 'log_UserNode.txt'.
+28/11/2024-10:29:56 : File 'log_UserNode.txt' <Type:Log> loaded into filesystem.
+28/11/2024-10:29:56 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+28/11/2024-10:29:56 : Connected to node at port 3001
+28/11/2024-10:32:41 : Connection from Remote IP: 127.0.0.1
+28/11/2024-10:32:41 : [Log-in]: attempting to authenticate 'username01'.
+28/11/2024-10:32:41 : [Log-in]: invalid hash for user 'username01'.
+28/11/2024-10:32:41 : Connection closed: 127.0.0.1
+28/11/2024-10:32:48 : Connection from Remote IP: 127.0.0.1
+28/11/2024-10:32:48 : [Log-in]: attempting to authenticate 'username01'.
+28/11/2024-10:32:48 : [Log-in]: user 'username01' validated.
+28/11/2024-10:32:48 : [Log-in]: attempting get information of user 'username01'.
+28/11/2024-10:32:48 : [User information]: information of user 'username01' returned.
+28/11/2024-10:32:48 : Connection closed: 127.0.0.1
+28/11/2024-10:32:48 : Connection from Remote IP: 127.0.0.1
+28/11/2024-10:32:48 : [Log-in]: attempting get information of user 'username01'.
+28/11/2024-10:32:48 : [User information]: information of user 'username01' returned.
+28/11/2024-10:32:48 : [User information]: 'username01' got information of user 'username01'.
+28/11/2024-10:32:48 : Connection closed: 127.0.0.1
+28/11/2024-10:32:55 : Connection from Remote IP: 127.0.0.1
+28/11/2024-10:32:55 : [User information]: attempting get user list.
+28/11/2024-10:32:55 : [User information]: user list returned.
+28/11/2024-10:32:55 : Connection closed: 127.0.0.1
+28/11/2024-10:32:57 : Connection from Remote IP: 127.0.0.1
+28/11/2024-10:32:57 : [User information]: attempting get user list.
+28/11/2024-10:32:57 : [User information]: user list returned.
+28/11/2024-10:32:57 : Connection closed: 127.0.0.1
+28/11/2024-10:33:01 : Connection from Remote IP: 127.0.0.1
+28/11/2024-10:33:01 : [User information]: attempting get user list.
+28/11/2024-10:33:01 : [User information]: user list returned.
+28/11/2024-10:33:01 : Connection closed: 127.0.0.1
+28/11/2024-10:33:04 : Connection from Remote IP: 127.0.0.1
+28/11/2024-10:33:04 : [Log-in]: attempting get information of user 'username01'.
+28/11/2024-10:33:04 : [User information]: information of user 'username01' returned.
+28/11/2024-10:33:04 : [User information]: 'username01' got information of user 'username01'.
+28/11/2024-10:33:04 : Connection closed: 127.0.0.1
+28/11/2024-10:33:04 : Connection from Remote IP: 127.0.0.1
+28/11/2024-10:33:04 : [Log-in]: attempting get information of user 'username01'.
+28/11/2024-10:33:04 : [User information]: information of user 'username01' returned.
+28/11/2024-10:33:04 : [User information]: 'username01' got information of user 'username01'.
+28/11/2024-10:33:04 : Connection closed: 127.0.0.1
+28/11/2024-10:48:12 : Connection from Remote IP: 127.0.0.1
+28/11/2024-10:48:12 : [Log-in]: attempting to authenticate 'username01'.
+28/11/2024-10:48:12 : [Log-in]: user 'username01' validated.
+28/11/2024-10:48:12 : [Log-in]: attempting get information of user 'username01'.
+28/11/2024-10:48:12 : [User information]: information of user 'username01' returned.
+28/11/2024-10:48:12 : Connection closed: 127.0.0.1
+28/11/2024-10:48:12 : Connection from Remote IP: 127.0.0.1
+28/11/2024-10:48:12 : [Log-in]: attempting get information of user 'username01'.
+28/11/2024-10:48:12 : [User information]: information of user 'username01' returned.
+28/11/2024-10:48:12 : [User information]: 'username01' got information of user 'username01'.
+28/11/2024-10:48:12 : Connection closed: 127.0.0.1
+28/11/2024-10:49:47 : Users data file closed and saved to file 'usersData.txt'.
+28/11/2024-10:49:47 : Filesystem <FAT> closed and saved to file 'log_UserNode.txt'.
+28/11/2024-10:50:06 : File 'log_UserNode.txt' <Type:Log> loaded into filesystem.
+28/11/2024-10:50:06 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+28/11/2024-10:50:06 : Connected to node at port 3001
+28/11/2024-10:50:44 : Connection from Remote IP: 127.0.0.1
+28/11/2024-10:50:44 : [Log-in]: attempting to authenticate 'username01'.
+28/11/2024-10:50:44 : [Log-in]: user 'username01' validated.
+28/11/2024-10:50:44 : [Log-in]: attempting get information of user 'username01'.
+28/11/2024-10:50:44 : [User information]: information of user 'username01' returned.
+28/11/2024-10:50:44 : Connection closed: 127.0.0.1
+28/11/2024-10:50:44 : Connection from Remote IP: 127.0.0.1
+28/11/2024-10:50:44 : [Log-in]: attempting get information of user 'username01'.
+28/11/2024-10:50:44 : [User information]: information of user 'username01' returned.
+28/11/2024-10:50:44 : [User information]: 'username01' got information of user 'username01'.
+28/11/2024-10:50:44 : Connection closed: 127.0.0.1
+28/11/2024-10:51:00 : Users data file closed and saved to file 'usersData.txt'.
+28/11/2024-10:51:00 : Filesystem <FAT> closed and saved to file 'log_UserNode.txt'.
+28/11/2024-10:51:21 : File 'log_UserNode.txt' <Type:Log> loaded into filesystem.
+28/11/2024-10:51:21 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+28/11/2024-10:51:21 : Error binding the server socket 3
+28/11/2024-10:51:21 : Users data file closed and saved to file 'usersData.txt'.
+28/11/2024-10:51:21 : Filesystem <FAT> closed and saved to file 'log_UserNode.txt'.
+28/11/2024-10:51:57 : File 'log_UserNode.txt' <Type:Log> loaded into filesystem.
+28/11/2024-10:51:57 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+28/11/2024-10:51:57 : Connected to node at port 3001
+28/11/2024-10:52:11 : Connection from Remote IP: 127.0.0.1
+28/11/2024-10:52:11 : [Log-in]: attempting to authenticate 'username01'.
+28/11/2024-10:52:11 : [Log-in]: user 'username01' validated.
+28/11/2024-10:52:11 : [Log-in]: attempting get information of user 'username01'.
+28/11/2024-10:52:11 : [User information]: information of user 'username01' returned.
+28/11/2024-10:52:11 : Connection closed: 127.0.0.1
+28/11/2024-10:52:11 : Connection from Remote IP: 127.0.0.1
+28/11/2024-10:52:11 : [Log-in]: attempting get information of user 'username01'.
+28/11/2024-10:52:11 : [User information]: information of user 'username01' returned.
+28/11/2024-10:52:11 : [User information]: 'username01' got information of user 'username01'.
+28/11/2024-10:52:11 : Connection closed: 127.0.0.1
+28/11/2024-10:52:19 : Connection from Remote IP: 127.0.0.1
+28/11/2024-10:52:19 : User 'username01' gets access to entire LOG ('log_UserNode.txt').
+28/11/2024-10:52:19 : Connection closed: 127.0.0.1
+28/11/2024-10:55:05 : Connection from Remote IP: 127.0.0.1
+28/11/2024-10:55:05 : [Log-in]: attempting to authenticate 'username01'.
+28/11/2024-10:55:05 : [Log-in]: user 'username01' validated.
+28/11/2024-10:55:05 : [Log-in]: attempting get information of user 'username01'.
+28/11/2024-10:55:05 : [User information]: information of user 'username01' returned.
+28/11/2024-10:55:05 : Connection closed: 127.0.0.1
+28/11/2024-10:55:05 : Connection from Remote IP: 127.0.0.1
+28/11/2024-10:55:05 : [Log-in]: attempting get information of user 'username01'.
+28/11/2024-10:55:05 : [User information]: information of user 'username01' returned.
+28/11/2024-10:55:05 : [User information]: 'username01' got information of user 'username01'.
+28/11/2024-10:55:05 : Connection closed: 127.0.0.1
+28/11/2024-11:30:50 : Connection from Remote IP: 127.0.0.1
+28/11/2024-11:30:50 : [Log-in]: attempting to authenticate 'username01'.
+28/11/2024-11:30:50 : [Log-in]: user 'username01' validated.
+28/11/2024-11:30:50 : [Log-in]: attempting get information of user 'username01'.
+28/11/2024-11:30:50 : [User information]: information of user 'username01' returned.
+28/11/2024-11:30:50 : Connection closed: 127.0.0.1
+28/11/2024-11:30:50 : Connection from Remote IP: 127.0.0.1
+28/11/2024-11:30:50 : [Log-in]: attempting get information of user 'username01'.
+28/11/2024-11:30:50 : [User information]: information of user 'username01' returned.
+28/11/2024-11:30:50 : [User information]: 'username01' got information of user 'username01'.
+28/11/2024-11:30:50 : Connection closed: 127.0.0.1
+28/11/2024-11:30:59 : Connection from Remote IP: 127.0.0.1
+28/11/2024-11:30:59 : User 'username01' gets access to entire LOG ('log_UserNode.txt').
+28/11/2024-11:30:59 : Connection closed: 127.0.0.1
+28/11/2024-11:33:49 : Users data file closed and saved to file 'usersData.txt'.
+28/11/2024-11:33:49 : Filesystem <FAT> closed and saved to file 'log_UserNode.txt'.

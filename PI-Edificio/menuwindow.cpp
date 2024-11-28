@@ -6,7 +6,6 @@
 #include "viewlog.h"
 #include "removeuser.h"
 #include "modifyuser.h"
-#include "modifydatabase.h"
 #include "viewlog.h"
 #include "viewnode.h"
 #include "sensorfloor.h"
@@ -52,10 +51,6 @@ menuwindow::menuwindow(QWidget *parent, UserHandler& userHandler, MainWindow& ma
     QString path3 = ":/resource/img/database.png";
     ui->pushButton->setIcon(QIcon(path3));
     ui->pushButton->setIconSize(QSize(48, 48));
-
-    path3 = ":/resource/img/database.png";
-    ui->pushButton2->setIcon(QIcon(path3));  // Ruta del icono
-    ui->pushButton2->setIconSize(QSize(48, 48));  // Ajusta el tamaño del icono
 
     path3 = ":/resource/img/user.png";
     ui->pushButton4->setIcon(QIcon(path3));  // Ruta del icono
@@ -105,8 +100,6 @@ menuwindow::menuwindow(QWidget *parent, UserHandler& userHandler, MainWindow& ma
     if (permission == "User Administrator") {
         ui->pushButton->setEnabled(false); // Botón para modificar base de datos
         ui->pushButton->setStyleSheet("background-color: #888888; color: #AAAAAA;");
-        ui->pushButton2->setEnabled(false); // Botón para modificar base de datos
-        ui->pushButton2->setStyleSheet("background-color: #888888; color: #AAAAAA;");
         ui->pushButton9->setEnabled(false); // Botón para modificar base de datos
         ui->pushButton9->setStyleSheet("background-color: #888888; color: #AAAAAA;");
         ui->pushButton10->setEnabled(false); // Botón para modificar base de datos
@@ -129,8 +122,6 @@ menuwindow::menuwindow(QWidget *parent, UserHandler& userHandler, MainWindow& ma
         ui->pushButton11->setStyleSheet("background-color: #888888; color: #AAAAAA;");
     }
     if (permission == "Floor Manager") {
-        ui->pushButton2->setEnabled(false); // Botón para modificar base de datos
-        ui->pushButton2->setStyleSheet("background-color: #888888; color: #AAAAAA;");
         ui->pushButton4->setEnabled(false); // Botón para modificar base de datos
         ui->pushButton4->setStyleSheet("background-color: #888888; color: #AAAAAA;");
         ui->pushButton5->setEnabled(false); // Botón para modificar base de datos
@@ -147,8 +138,6 @@ menuwindow::menuwindow(QWidget *parent, UserHandler& userHandler, MainWindow& ma
         ui->pushButton11->setStyleSheet("background-color: #888888; color: #AAAAAA;");
     }
     if (permission == "Building Manager") {
-        ui->pushButton2->setEnabled(false); // Botón para modificar base de datos
-        ui->pushButton2->setStyleSheet("background-color: #888888; color: #AAAAAA;");
         ui->pushButton4->setEnabled(false); // Botón para modificar base de datos
         ui->pushButton4->setStyleSheet("background-color: #888888; color: #AAAAAA;");
         ui->pushButton5->setEnabled(false); // Botón para modificar base de datos
@@ -168,8 +157,6 @@ menuwindow::menuwindow(QWidget *parent, UserHandler& userHandler, MainWindow& ma
     if (permission == "System Administrator") {
         ui->pushButton->setEnabled(false); // Botón para modificar base de datos
         ui->pushButton->setStyleSheet("background-color: #888888; color: #AAAAAA;");
-        ui->pushButton2->setEnabled(false); // Botón para modificar base de datos
-        ui->pushButton2->setStyleSheet("background-color: #888888; color: #AAAAAA;");
         ui->pushButton4->setEnabled(false); // Botón para modificar base de datos
         ui->pushButton4->setStyleSheet("background-color: #888888; color: #AAAAAA;");
         ui->pushButton5->setEnabled(false); // Botón para modificar base de datos
@@ -185,8 +172,6 @@ menuwindow::menuwindow(QWidget *parent, UserHandler& userHandler, MainWindow& ma
     if (permission == "Auditor") {
         ui->pushButton->setEnabled(false); // Botón para modificar base de datos
         ui->pushButton->setStyleSheet("background-color: #888888; color: #AAAAAA;");
-        ui->pushButton2->setEnabled(false); // Botón para modificar base de datos
-        ui->pushButton2->setStyleSheet("background-color: #888888; color: #AAAAAA;");
         ui->pushButton4->setEnabled(false); // Botón para modificar base de datos
         ui->pushButton4->setStyleSheet("background-color: #888888; color: #AAAAAA;");
         ui->pushButton5->setEnabled(false); // Botón para modificar base de datos
@@ -249,14 +234,6 @@ void menuwindow::on_pushButton5_clicked()
 {
     ModifyUser *modifyUser = new ModifyUser(this, this->userHandler, *this, this->clientNode);  // Crear la nueva ventana
     modifyUser->show();  // Mostrar la nueva ventana
-    hide();
-}
-
-
-void menuwindow::on_pushButton2_clicked()
-{
-    ModifyDataBase *modifyData = new ModifyDataBase(this, this->userHandler, *this);  // Crear la nueva ventana
-    modifyData->show();  // Mostrar la nueva ventana
     hide();
 }
 

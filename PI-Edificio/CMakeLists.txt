@@ -65,7 +65,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         viewlog.h viewlog.cpp viewlog.ui
         removeuser.h removeuser.cpp removeuser.ui
         modifyuser.h modifyuser.cpp modifyuser.ui
-        modifydatabase.h modifydatabase.cpp modifydatabase.ui
+
         sensorbuilding.h sensorbuilding.cpp sensorbuilding.ui
         sensorfloor.h sensorfloor.cpp sensorfloor.ui
         viewbackup.h viewbackup.cpp viewbackup.ui
