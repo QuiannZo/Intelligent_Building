@@ -15,7 +15,7 @@ void signalControlCHandler(int signum) {
 }
 
 int main() {
-  node = new Backup("log_BackupNode.txt", 1, "sensorsData.txt", kBackupPort);
+  node = new Backup("log_BackupNode.txt", 1, kBackupPort);
   signal(SIGINT, signalControlCHandler); 
   if(node->initServer()) {
     node->run();

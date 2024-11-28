@@ -9,12 +9,17 @@ using namespace std;
 
 class Backup : public Node{
     private:
-        std::string sensorFilename;
+        std::string updateLogDataNode;
+        std::string updateLogIntermediary;
+        std::string updateLogUser;
+        std::string updateSensorsInfo;
+        std::string updateUserInfo;
     public:
-        Backup(std::string logFilename, int processId, std::string sensorFilename, int port);
+        // Cambiar constructor 
+        Backup(std::string logFilename, int processId, int port);
         ~Backup();
-        std::string returnSensorFile(std::string username);
         bool handleDatagram(int client_socket, char *datagram, size_t datagram_size);
+        void run();
     };
 
 

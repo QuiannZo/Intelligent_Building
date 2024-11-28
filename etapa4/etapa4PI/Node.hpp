@@ -21,6 +21,6 @@ public:
     bool initServer(); 
     // Método que se utiliza para que el servidor empiece a correr,
     // siempre debe ser previamente inicializado.
-    void run();
+    virtual void run();
 };
 #endif
