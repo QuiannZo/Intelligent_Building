@@ -3,3 +3,12 @@
 28/11/2024-09:39:13 : Connected to node at port 3003
 28/11/2024-09:39:24 : Sensor data file closed and saved to file 'sensorsData.txt'.
 28/11/2024-09:39:24 : Filesystem <FAT> closed and saved to file 'log_BackupNode.txt'.
+28/11/2024-10:12:15 : File 'log_BackupNode.txt' <Type:Log> loaded into filesystem.
+28/11/2024-10:12:15 : Connected to node at port 3003
+28/11/2024-10:17:07 : Filesystem <FAT> closed and saved to file 'log_BackupNode.txt'.
+28/11/2024-10:17:12 : File 'log_BackupNode.txt' <Type:Log> loaded into filesystem.
+28/11/2024-10:17:12 : Connected to node at port 3003
+28/11/2024-10:17:18 : Filesystem <FAT> closed and saved to file 'log_BackupNode.txt'.
+28/11/2024-10:19:25 : File 'log_BackupNode.txt' <Type:Log> loaded into filesystem.
+28/11/2024-10:19:25 : Connected to node at port 3003
+28/11/2024-10:19:27 : Filesystem <FAT> closed and saved to file 'log_BackupNode.txt'.
