@@ -23,3 +23,6 @@
 07/11/2024-02:22:39 : Connection closed successfully.
 07/11/2024-02:22:39 : Connection closed: 127.0.0.1
 07/11/2024-02:22:44 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
+28/11/2024-11:33:58 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
+28/11/2024-11:33:58 : Connected to node at port 3000
+28/11/2024-11:34:05 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.

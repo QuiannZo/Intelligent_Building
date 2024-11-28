@@ -74,8 +74,10 @@ enum MessageType : uint8_t {
   kSensorInfoResponseEG,
   // Mensajes entre `Backup_server` y `DataCollector` / `UserHandler`:
   kFileRequestBDU,
-  kRequestFailureDUB
-
+  kRequestFailureDUB,
+  // Mensajes entre `Backup_server` y las bitacoras, 1 datagrama
+  kLogRequestBL, // backup de log
+  kLogRequestBD // BACKUP de datos
 };
 
 // Datagramas generales:
@@ -437,6 +439,15 @@ struct SensorData {
   char sensor_type[17];
   char sensor_id[17];
   int value;
+};
+
+
+struct LogRequestBL {
+  // Mensaje que indicar el tamaño del archivo que vamos a enviar. Inmediatamente
+  // después se envía el mensaje por el socket. 
+  MessageType message_type;
+  NodeType source_node;
+  int char_length;
 };
 
 # endif

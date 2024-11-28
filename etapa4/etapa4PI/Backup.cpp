@@ -10,7 +10,7 @@
 // Constructor
 Backup::Backup(std::string logFilename, int processId, int port) 
 : Node(logFilename, processId, port) {
- 
+   this->requestSaveFiles();
 }
 
 Backup::~Backup() {
@@ -59,7 +59,8 @@ bool Backup::handleDatagram(int client_socket, char *datagram, size_t datagram_s
               }
             }
           default:
-            // se considera el mensaje como invalido.
+       
+    // se considera el mensaje como invalido.
             invalidRequest = true;
             break;
         }
@@ -94,6 +95,7 @@ void Backup::run() {
   char str_ip_remote[INET6_ADDRSTRLEN];
   // Socket del cliente
   int client_socket = -1;
+  // por ejemplo cada 30 minutos pedirlo
   while (true) {
     // Aceptar la conexión
     client_socket = accept(server_socket, (struct sockaddr*)&ip_remote, &l);
@@ -126,3 +128,57 @@ void Backup::run() {
   }
 
 }
+/*
+Metodo que se comunica cada de uno de los sensores y GUARDE
+reciba el string y que si lo recibe bien lo guarde.
+*/
+void Backup::requestSaveFiles() {
+  // hora fecha nombre del archivo
+  // Pasos: Definir datagrama
+
+  // Backup le pide log al DataNode
+  LogRequestBL request;
+  request.message_type = kLogRequestBL;
+  request.source_node = kBackupServer;
+   
+  string buffer;
+
+  this->connectSendReceiveLong(kDataNodeIPv4, kDataNodePort,
+  reinterpret_cast<char*>(&request), sizeof(LogRequestBL), buffer, 5, 5);
+  
+
+  string getDate = this->getCurrentDateTime();
+
+  //TODO: concatenar
+  saveFile("logData.txt" , "buffer");
+
+
+  
+  // Backup le pide log al Intermediary
+
+  // Backup le pide log al UserNode
+
+  // Backup le pide datos al DataNode
+  
+  // Backup le pide informacion de usuario al UserNode
+
+
+
+  // Enviar el datagrama
+
+  // Guardar el resultado
+  // En los atributos, la fecha en las que se hizo el update
+  // Una cuestion es sobreescribirla... etc
+}
+
+ void Backup::saveFile(string filename, string data) {
+  // Abrir un archivo con extensión .txt en modo de escritura
+  std::ofstream outFile(filename);
+  if (outFile.is_open()) {
+      outFile << data;
+      outFile.close();
+  } else {
+      std::cerr << "No se pudo abrir el archivo para escribir." << std::endl;
+  }
+
+ }
