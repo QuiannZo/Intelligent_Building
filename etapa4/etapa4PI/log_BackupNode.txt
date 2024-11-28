@@ -1,0 +1,5 @@
+28/11/2024-09:39:13 : File 'log_BackupNode.txt' <Type:Log> created and loaded into filesystem.
+28/11/2024-09:39:13 : File 'sensorsData.txt' <Type:File-sensor-data> loaded into filesystem.
+28/11/2024-09:39:13 : Connected to node at port 3003
+28/11/2024-09:39:24 : Sensor data file closed and saved to file 'sensorsData.txt'.
+28/11/2024-09:39:24 : Filesystem <FAT> closed and saved to file 'log_BackupNode.txt'.

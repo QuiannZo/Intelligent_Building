@@ -22,3 +22,8 @@ g++ main_userNode.cpp Node.cpp Client.cpp FAT.cpp Log.cpp HashHandler.cpp -o use
 ```
 g++ main_dataNode.cpp DataNode.cpp Node.cpp Client.cpp Log.cpp FAT.cpp -o datanode
 ``` 
+
+## Nodo Backup
+```
+g++ main_backup.cpp Backup.cpp Node.cpp Client.cpp Log.cpp FAT.cpp -o backup
+``` 
