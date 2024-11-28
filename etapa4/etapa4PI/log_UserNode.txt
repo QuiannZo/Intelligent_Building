@@ -1,0 +1,45 @@
+05/11/2024-16:05:43 : File 'log_UserNode.txt' <Type:Log> loaded into filesystem.
+05/11/2024-16:05:43 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+05/11/2024-16:05:58 : [Log-in]: attempting to authenticate 'GabySU9'.
+05/11/2024-16:05:58 : [Log-in]: user 'GabySU9' validated.
+05/11/2024-16:05:58 : [Log-in]: attempting get information of user 'GabySU9'.
+05/11/2024-16:05:58 : [User information]: information of user 'GabySU9' returned.
+05/11/2024-16:06:11 : [Log-in]: attempting to authenticate 'SebasUlaca7'.
+05/11/2024-16:06:11 : [Log-in]: user 'SebasUlaca7' validated.
+05/11/2024-16:06:11 : [Log-in]: attempting get information of user 'SebasUlaca7'.
+05/11/2024-16:06:11 : [User information]: information of user 'SebasUlaca7' returned.
+05/11/2024-16:06:14 : Users data file closed and saved to file 'usersData.txt'.
+05/11/2024-16:06:14 : Filesystem <FAT> closed and saved to file 'log_UserNode.txt'.
+07/11/2024-00:16:24 : File 'log_UserNode.txt' <Type:Log> loaded into filesystem.
+07/11/2024-02:00:07 : File 'log_UserNode.txt' <Type:Log> loaded into filesystem.
+07/11/2024-02:00:07 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+07/11/2024-02:00:07 : Connected to node at port 3001
+07/11/2024-02:00:16 : Connection from Remote IP: 127.0.0.1
+07/11/2024-02:00:16 : [Log-in]: attempting to authenticate 'y'.
+07/11/2024-02:00:16 : [Log-in]: user 'y' validated.
+07/11/2024-02:00:16 : [Log-in]: attempting get information of user 'y'.
+07/11/2024-02:00:16 : [User information]: information of user 'y' returned.
+07/11/2024-02:00:16 : Connection closed: 127.0.0.1
+07/11/2024-02:00:19 : Connection from Remote IP: 127.0.0.1
+07/11/2024-02:00:19 : [Log-in]: attempting get information of user 'BrayanST3'.
+07/11/2024-02:00:19 : [User information]: information of user 'BrayanST3' returned.
+07/11/2024-02:00:19 : [User information]: 'y' got information of user 'BrayanST3'.
+07/11/2024-02:00:19 : Connection closed: 127.0.0.1
+07/11/2024-02:00:19 : Connection from Remote IP: 127.0.0.1
+07/11/2024-02:00:19 : [Log-in]: attempting get information of user 'BrayanST3'.
+07/11/2024-02:00:19 : [User information]: information of user 'BrayanST3' returned.
+07/11/2024-02:00:19 : [User information]: 'y' got information of user 'BrayanST3'.
+07/11/2024-02:00:19 : Connection closed: 127.0.0.1
+07/11/2024-02:22:39 : Connection from Remote IP: 127.0.0.1
+07/11/2024-02:22:39 : [Log-in]: attempting to authenticate 'superuser'.
+07/11/2024-02:22:39 : [Log-in]: user 'superuser' validated.
+07/11/2024-02:22:39 : [Log-in]: attempting get information of user 'superuser'.
+07/11/2024-02:22:39 : [User information]: information of user 'superuser' returned.
+07/11/2024-02:22:39 : Connection closed: 127.0.0.1
+07/11/2024-02:22:39 : Connection from Remote IP: 127.0.0.1
+07/11/2024-02:22:39 : [Log-in]: attempting get information of user 'superuser'.
+07/11/2024-02:22:39 : [User information]: information of user 'superuser' returned.
+07/11/2024-02:22:39 : [User information]: 'superuser' got information of user 'superuser'.
+07/11/2024-02:22:39 : Connection closed: 127.0.0.1
+07/11/2024-02:22:45 : Users data file closed and saved to file 'usersData.txt'.
+07/11/2024-02:22:45 : Filesystem <FAT> closed and saved to file 'log_UserNode.txt'.
