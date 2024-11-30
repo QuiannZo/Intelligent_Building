@@ -209,6 +209,8 @@ bool Intermediary::handleDatagram(int client_socket, char *datagram
           }
         }
         break;
+      case kLogRequestBL:
+        std::cout << "funcionaré" << std::endl;
       default:
         // se considera el mensaje como invalido.
         invalidRequest = true;

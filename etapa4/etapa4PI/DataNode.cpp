@@ -87,11 +87,12 @@ bool DataNode::handleDatagram(int client_socket, char *datagram, size_t datagram
     bool invalidRequest = false;
     bool result = true;
     bool send_response = true;
-
+ 
     if (datagram_size >= 2) {
         message_type = (int)datagram[0];
         node_type = (int)datagram[1];
         // respondemos según el tipo de mensaje
+        std::string log;
         switch (message_type) {
           case kLogRequestID:
             if (node_type != kIntermediary || datagram_size != sizeof(LogRequestIN)) {
@@ -171,6 +172,29 @@ bool DataNode::handleDatagram(int client_socket, char *datagram, size_t datagram
                   << std::endl;
                 }
               }
+            break;
+          case kLogRequestBL:
+            // construimos el datagrama del header
+            log = this->returnLog("Backup");
+            LongFileHeader header;
+            header.message_type = kLongFileHeader;
+            header.char_length = log.length();
+            if (!log.empty()) {
+              header.successful = true;
+            } else {
+              header.successful = false;
+            }
+            if (send(client_socket, reinterpret_cast<char *>(&header), sizeof(LongFileHeader), 0) > 0) {
+              if (send(client_socket, log.c_str(), log.size(), 0) < 0) {
+                std::cerr << "Error sending response to client." << std::endl;
+                result = false;
+              } else {
+                send_response = false;
+              }
+            } else {
+              std::cerr << "Error sending response to client." << std::endl;
+              result = false;
+            }
             break;
           default:
             // se considera el mensaje como invalido.

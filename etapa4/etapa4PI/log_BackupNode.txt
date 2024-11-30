@@ -52,3 +52,155 @@
 28/11/2024-11:37:48 : Connection closed successfully.
 28/11/2024-11:37:48 : Connected to node at port 3003
 28/11/2024-11:40:10 : Filesystem <FAT> closed and saved to file 'log_BackupNode.txt'.
+30/11/2024-15:23:01 : File 'log_BackupNode.txt' <Type:Log> loaded into filesystem.
+30/11/2024-15:23:01 : Connected to node at 127.0.0.1:3002
+30/11/2024-15:23:01 : 	Datagram sent to node.
+30/11/2024-15:23:01 : Connection closed successfully.
+30/11/2024-15:23:01 : Connected to node at port 3003
+30/11/2024-15:23:24 : Filesystem <FAT> closed and saved to file 'log_BackupNode.txt'.
+30/11/2024-15:27:00 : File 'log_BackupNode.txt' <Type:Log> loaded into filesystem.
+30/11/2024-15:27:00 : Connected to node at 127.0.0.1:3002
+30/11/2024-15:27:00 : 	Datagram sent to node.
+30/11/2024-15:27:00 : Connection closed successfully.
+30/11/2024-15:27:00 : Connected to node at port 3003
+30/11/2024-15:27:02 : Filesystem <FAT> closed and saved to file 'log_BackupNode.txt'.
+30/11/2024-15:28:12 : File 'log_BackupNode.txt' <Type:Log> loaded into filesystem.
+30/11/2024-15:28:12 : Connected to node at 127.0.0.1:3002
+30/11/2024-15:28:12 : 	Datagram sent to node.
+30/11/2024-15:28:12 : Connection closed successfully.
+30/11/2024-15:28:12 : Connected to node at port 3003
+30/11/2024-15:28:21 : Filesystem <FAT> closed and saved to file 'log_BackupNode.txt'.
+30/11/2024-15:44:34 : File 'log_BackupNode.txt' <Type:Log> loaded into filesystem.
+30/11/2024-15:44:34 : Connected to node at 127.0.0.1:3002
+30/11/2024-15:44:34 : 	Datagram sent to node.
+30/11/2024-15:44:34 : Connection closed successfully.
+30/11/2024-15:44:34 : Connected to node at port 3003
+30/11/2024-15:44:57 : Filesystem <FAT> closed and saved to file 'log_BackupNode.txt'.
+30/11/2024-15:45:45 : File 'log_BackupNode.txt' <Type:Log> loaded into filesystem.
+30/11/2024-15:45:45 : Connected to node at 127.0.0.1:3002
+30/11/2024-15:45:45 : 	Datagram sent to node.
+30/11/2024-15:45:45 : Connection closed successfully.
+30/11/2024-15:45:45 : Connected to node at port 3003
+30/11/2024-15:45:58 : Filesystem <FAT> closed and saved to file 'log_BackupNode.txt'.
+30/11/2024-15:48:16 : File 'log_BackupNode.txt' <Type:Log> loaded into filesystem.
+30/11/2024-15:48:16 : Connected to node at 127.0.0.1:3002
+30/11/2024-15:48:16 : 	Datagram sent to node.
+30/11/2024-15:48:16 : Connection closed successfully.
+30/11/2024-15:48:16 : Connected to node at port 3003
+30/11/2024-15:48:37 : Filesystem <FAT> closed and saved to file 'log_BackupNode.txt'.
+30/11/2024-15:52:43 : File 'log_BackupNode.txt' <Type:Log> loaded into filesystem.
+30/11/2024-15:52:43 : Error connecting to node at 127.0.0.1:3002
+30/11/2024-15:52:43 : Connected to node at port 3003
+30/11/2024-15:52:48 : Filesystem <FAT> closed and saved to file 'log_BackupNode.txt'.
+30/11/2024-16:02:46 : File 'log_BackupNode.txt' <Type:Log> loaded into filesystem.
+30/11/2024-16:02:46 : Error connecting to node at 127.0.0.1:3002
+30/11/2024-16:02:46 : Connected to node at port 3003
+30/11/2024-16:02:59 : Filesystem <FAT> closed and saved to file 'log_BackupNode.txt'.
+30/11/2024-16:03:45 : File 'log_BackupNode.txt' <Type:Log> loaded into filesystem.
+30/11/2024-16:03:45 : Error connecting to node at 127.0.0.1:3002
+30/11/2024-16:03:45 : Connected to node at port 3003
+30/11/2024-16:03:48 : Filesystem <FAT> closed and saved to file 'log_BackupNode.txt'.
+30/11/2024-16:03:58 : File 'log_BackupNode.txt' <Type:Log> loaded into filesystem.
+30/11/2024-16:03:58 : Connected to node at 127.0.0.1:3001
+30/11/2024-16:03:58 : 	Datagram sent to node.
+30/11/2024-16:03:58 : Connection closed successfully.
+30/11/2024-16:03:58 : Connected to node at port 3003
+30/11/2024-16:04:09 : Filesystem <FAT> closed and saved to file 'log_BackupNode.txt'.
+30/11/2024-16:05:49 : File 'log_BackupNode.txt' <Type:Log> loaded into filesystem.
+30/11/2024-16:05:49 : Connected to node at 127.0.0.1:3001
+30/11/2024-16:05:49 : 	Datagram sent to node.
+30/11/2024-16:05:49 : Connection closed successfully.
+30/11/2024-16:05:49 : Connected to node at port 3003
+30/11/2024-16:05:59 : Filesystem <FAT> closed and saved to file 'log_BackupNode.txt'.
+30/11/2024-16:10:54 : File 'log_BackupNode.txt' <Type:Log> loaded into filesystem.
+30/11/2024-16:10:54 : Connected to node at 127.0.0.1:3001
+30/11/2024-16:10:54 : 	Datagram sent to node.
+30/11/2024-16:10:54 : 	Complete data received from node.
+30/11/2024-16:10:54 : Connection closed successfully.
+30/11/2024-16:10:54 : Connected to node at port 3003
+30/11/2024-16:11:05 : Filesystem <FAT> closed and saved to file 'log_BackupNode.txt'.
+30/11/2024-16:12:13 : File 'log_BackupNode.txt' <Type:Log> loaded into filesystem.
+30/11/2024-16:12:13 : Connected to node at 127.0.0.1:3001
+30/11/2024-16:12:13 : 	Datagram sent to node.
+30/11/2024-16:12:13 : 	Complete data received from node.
+30/11/2024-16:12:13 : Connection closed successfully.
+30/11/2024-16:12:13 : Connected to node at port 3003
+30/11/2024-16:12:18 : Filesystem <FAT> closed and saved to file 'log_BackupNode.txt'.
+30/11/2024-16:16:41 : File 'log_BackupNode.txt' <Type:Log> loaded into filesystem.
+30/11/2024-16:16:41 : Connected to node at 127.0.0.1:3001
+30/11/2024-16:16:41 : 	Datagram sent to node.
+30/11/2024-16:16:41 : 	Complete data received from node.
+30/11/2024-16:16:41 : Connection closed successfully.
+30/11/2024-16:16:41 : Connected to node at port 3003
+30/11/2024-16:16:51 : Filesystem <FAT> closed and saved to file 'log_BackupNode.txt'.
+30/11/2024-16:17:18 : File 'log_BackupNode.txt' <Type:Log> loaded into filesystem.
+30/11/2024-16:17:18 : Connected to node at 127.0.0.1:3001
+30/11/2024-16:17:18 : 	Datagram sent to node.
+30/11/2024-16:17:18 : 	Complete data received from node.
+30/11/2024-16:17:18 : Connection closed successfully.
+30/11/2024-16:17:18 : Connected to node at port 3003
+30/11/2024-16:17:30 : Filesystem <FAT> closed and saved to file 'log_BackupNode.txt'.
+30/11/2024-16:18:10 : File 'log_BackupNode.txt' <Type:Log> loaded into filesystem.
+30/11/2024-16:18:10 : Connected to node at 127.0.0.1:3001
+30/11/2024-16:18:10 : 	Datagram sent to node.
+30/11/2024-16:18:10 : 	Complete data received from node.
+30/11/2024-16:18:10 : Connection closed successfully.
+30/11/2024-16:18:10 : Connected to node at port 3003
+30/11/2024-16:18:19 : Filesystem <FAT> closed and saved to file 'log_BackupNode.txt'.
+30/11/2024-16:19:34 : File 'log_BackupNode.txt' <Type:Log> loaded into filesystem.
+30/11/2024-16:19:34 : Connected to node at 127.0.0.1:3001
+30/11/2024-16:19:34 : 	Datagram sent to node.
+30/11/2024-16:19:34 : 	Complete data received from node.
+30/11/2024-16:19:34 : Connection closed successfully.
+30/11/2024-16:19:34 : Error binding the server socket 3
+30/11/2024-16:19:34 : Filesystem <FAT> closed and saved to file 'log_BackupNode.txt'.
+30/11/2024-16:21:01 : File 'log_BackupNode.txt' <Type:Log> loaded into filesystem.
+30/11/2024-16:21:01 : Connected to node at 127.0.0.1:3001
+30/11/2024-16:21:01 : 	Datagram sent to node.
+30/11/2024-16:21:01 : 	Complete data received from node.
+30/11/2024-16:21:01 : Connection closed successfully.
+30/11/2024-16:21:01 : Connected to node at port 3003
+30/11/2024-16:21:07 : Filesystem <FAT> closed and saved to file 'log_BackupNode.txt'.
+30/11/2024-16:24:08 : File 'log_BackupNode.txt' <Type:Log> loaded into filesystem.
+30/11/2024-16:24:08 : Connected to node at 127.0.0.1:3001
+30/11/2024-16:24:08 : 	Datagram sent to node.
+30/11/2024-16:24:08 : 	Complete data received from node.
+30/11/2024-16:24:08 : Connection closed successfully.
+30/11/2024-16:24:08 : Connected to node at port 3003
+30/11/2024-16:25:24 : Filesystem <FAT> closed and saved to file 'log_BackupNode.txt'.
+30/11/2024-16:25:29 : File 'log_BackupNode.txt' <Type:Log> loaded into filesystem.
+30/11/2024-16:25:29 : Connected to node at 127.0.0.1:3001
+30/11/2024-16:25:29 : 	Datagram sent to node.
+30/11/2024-16:25:29 : 	Complete data received from node.
+30/11/2024-16:25:29 : Connection closed successfully.
+30/11/2024-16:25:29 : Connected to node at port 3003
+30/11/2024-16:26:33 : Filesystem <FAT> closed and saved to file 'log_BackupNode.txt'.
+30/11/2024-16:27:26 : File 'log_BackupNode.txt' <Type:Log> loaded into filesystem.
+30/11/2024-16:27:26 : Connected to node at 127.0.0.1:3001
+30/11/2024-16:27:26 : 	Datagram sent to node.
+30/11/2024-16:27:26 : 	Complete data received from node.
+30/11/2024-16:27:26 : Connection closed successfully.
+30/11/2024-16:27:26 : Connected to node at port 3003
+30/11/2024-16:27:37 : Filesystem <FAT> closed and saved to file 'log_BackupNode.txt'.
+30/11/2024-16:27:41 : File 'log_BackupNode.txt' <Type:Log> loaded into filesystem.
+30/11/2024-16:27:41 : Connected to node at 127.0.0.1:3001
+30/11/2024-16:27:41 : 	Datagram sent to node.
+30/11/2024-16:27:41 : 	Complete data received from node.
+30/11/2024-16:27:41 : Connection closed successfully.
+30/11/2024-16:27:41 : Connected to node at port 3003
+30/11/2024-16:28:17 : Filesystem <FAT> closed and saved to file 'log_BackupNode.txt'.
+30/11/2024-16:30:03 : File 'log_BackupNode.txt' <Type:Log> loaded into filesystem.
+30/11/2024-16:30:03 : Connected to node at 127.0.0.1:3001
+30/11/2024-16:30:03 : 	Datagram sent to node.
+30/11/2024-16:30:03 : 	Complete data received from node.
+30/11/2024-16:30:03 : Connection closed successfully.
+30/11/2024-16:30:03 : Connected to node at port 3003
+30/11/2024-16:30:11 : Filesystem <FAT> closed and saved to file 'log_BackupNode.txt'.
+30/11/2024-16:34:33 : File 'log_BackupNode.txt' <Type:Log> loaded into filesystem.
+30/11/2024-16:34:33 : Error connecting to node at 127.0.0.1:3001
+30/11/2024-16:34:33 : Connected to node at 127.0.0.1:3002
+30/11/2024-16:34:33 : 	Datagram sent to node.
+30/11/2024-16:34:33 : 	Complete data received from node.
+30/11/2024-16:34:33 : Connection closed successfully.
+30/11/2024-16:34:33 : Connected to node at port 3003
+30/11/2024-16:35:56 : Filesystem <FAT> closed and saved to file 'log_BackupNode.txt'.

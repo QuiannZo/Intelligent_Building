@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <iostream>
 #include <cstring>
+#include <vector>
 
 #include "Backup.hpp"
 
@@ -136,28 +137,37 @@ void Backup::requestSaveFiles() {
   // hora fecha nombre del archivo
   // Pasos: Definir datagrama
 
-  // Backup le pide log al DataNode
+  // Backup le pide log al UserNode
   LogRequestBL request;
   request.message_type = kLogRequestBL;
   request.source_node = kBackupServer;
    
   string buffer;
 
-  this->connectSendReceiveLong(kDataNodeIPv4, kDataNodePort,
+  this->connectSendReceiveLong(kUserHandlerIPv4, kUserHandlerPort,
   reinterpret_cast<char*>(&request), sizeof(LogRequestBL), buffer, 5, 5);
   
+  std::string file_name = "updated_log_user_node.txt";
+  saveFile(file_name, buffer);
 
-  string getDate = this->getCurrentDateTime();
+  // Backup le pide log al DataNode
+  string buffer2;
 
-  //TODO: concatenar
-  saveFile("logData.txt" , "buffer");
-
-
+  this->connectSendReceiveLong(kDataNodeIPv4, kDataNodePort,
+  reinterpret_cast<char*>(&request), sizeof(LogRequestBL), buffer2, 5, 5);
   
-  // Backup le pide log al Intermediary
+  file_name = "updated_log_data_node.txt";
+  saveFile(file_name, buffer2);
 
-  // Backup le pide log al UserNode
+  // Backup le pide log al Intermediary POR ALGUNA RAZÓN SE QUEDA PEGADO
+  string buffer3;
 
+  this->connectSendReceiveLong(kIntermediaryIPv4, kIntermediaryPort,
+  reinterpret_cast<char*>(&request), sizeof(LogRequestBL), buffer3, 5, 5);
+  
+  file_name = "updated_log_intermediary_node.txt";
+  saveFile(file_name, buffer3);
+  
   // Backup le pide datos al DataNode
   
   // Backup le pide informacion de usuario al UserNode
