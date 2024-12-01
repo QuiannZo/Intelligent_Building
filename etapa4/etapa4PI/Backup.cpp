@@ -6,6 +6,7 @@
 #include <cstring>
 #include <vector>
 #include <algorithm>
+#include <chrono>
 
 #include "Backup.hpp"
 
@@ -14,9 +15,16 @@ Backup::Backup(std::string logFilename, int processId, int port)
 : Node(logFilename, processId, port) {
   // apenas se inicia, se hace un backup 
   this->requestSaveFiles();
+  // iniciar el hilo secundario
+  backupThread = std::thread(&Backup::backupTask, this);
 }
 
 Backup::~Backup() {
+  // detener y esperar el hilo secundario
+  running = false;
+  if (backupThread.joinable()) {
+    backupThread.join();
+  }
   // cuando se cierra, también se hace backup
   this->requestSaveFiles();
 }
@@ -151,7 +159,7 @@ void Backup::requestSaveFiles() {
   reinterpret_cast<char*>(&request), sizeof(LogRequestBL), buffer3, 5, 5);
   file_name = "log_intermediary_node";
   saveFile(file_name.append("_").append(time).append(".txt"), buffer3);
-    updateLogIntermediary = time;
+  updateLogIntermediary = time;
   this->appendToLogTimeHour("The security copy of 'log_intermediary_node' was made.");
   std::cout << "The files were backed up." << std::endl;
 }
@@ -171,3 +179,19 @@ void Backup::requestSaveFiles() {
   }
 
  }
+
+
+void Backup::backupTask() {
+  // revisar cada minuto que no se haya detenido el programa
+  while (running) {
+    std::this_thread::sleep_for(std::chrono::minutes(1)); // Espera 1 minuto
+    if (++minutesPassed == 30) {
+      //solicitar los archivos y realizar la copia de seguridad
+      this->requestSaveFiles();
+      minutesPassed = 0; 
+    }
+    if (!running) {
+      break;
+    }
+  }
+}

@@ -25,5 +25,5 @@ g++ main_dataNode.cpp DataNode.cpp Node.cpp Client.cpp Log.cpp FAT.cpp -o datano
 
 ## Nodo Backup
 ```
-g++ main_backup.cpp Backup.cpp Node.cpp Client.cpp Log.cpp FAT.cpp -o backup
+g++ main_backup.cpp Backup.cpp Node.cpp Client.cpp Log.cpp FAT.cpp -o backup -pthread
 ``` 
