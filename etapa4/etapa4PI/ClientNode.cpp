@@ -325,6 +325,25 @@ bool ClientNode::getSensorData(std::string request_by, std::string &response) {
   return result;
 }
 
+bool ClientNode::getBackupState(std::string request_by, std::string& response) {
+  // construimos el datagrama
+  BackupState request;
+  memset(&request, 0, sizeof(BackupState));
+  request.message_type = KBackupState;
+  request.source_node = kApplication;
+  strncpy(request.request_by, request_by.c_str(), sizeof(request.request_by) - 1);
+  bool result = true;
+  response.clear();
+  if(!this->connectSendReceiveLong(kIntermediaryIPv4, kIntermediaryPort
+  , reinterpret_cast<char*>(&request), sizeof(BackupState), response, 5, 5)) {
+    response = this->getErrorString((uint8_t)response.c_str()[0]);
+    result = false; 
+  }
+  // TODO:borrar
+  std::cout << "Buffer[delete message]: " << response << std::endl;
+  return result;
+}
+
 std::string ClientNode::checkPermissions(uint8_t user_permissions) {
     std::vector<std::string> result;
 

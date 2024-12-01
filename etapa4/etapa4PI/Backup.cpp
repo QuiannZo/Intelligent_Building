@@ -70,9 +70,36 @@ bool Backup::handleDatagram(int client_socket, char *datagram, size_t datagram_s
                 result = false;
               }
             }
+          case KBackupState:
+            if (node_type != kIntermediary || datagram_size != sizeof(BackupState)) {
+              invalidRequest = true;
+            } else { 
+              BackupState *request = reinterpret_cast<BackupState*>(datagram);
+
+              std::string state = "Last backups made:\nUser node log: " + this->updateLogUser +
+                "\nData node log: " + this->updateLogDataNode + "\nIntermediary node log: " +
+                this->updateLogIntermediary + "\nSensors database: " + this->updateUserInfo +
+                "\nUsers database: " + this->updateUserInfo + "\n";
+              LongFileHeader header;
+              // construimos el datagrama del header
+              header.message_type = kLongFileHeader;
+              header.char_length = state.length();
+              if (send(client_socket, reinterpret_cast<char *>(&header), sizeof(LongFileHeader), 0) > 0) {
+                if (send(client_socket, state.c_str(), state.size(), 0) < 0) {
+                  std::cerr << "Error sending response to client." << std::endl;
+                  result = false;
+                } else {
+                  send_response = false;
+                  this->appendToLogTimeHour(std::string("Status of backups returned to the user ").append(request->request_by));
+                }
+              } else {
+                std::cerr << "Error sending response to client." << std::endl;
+                result = false;
+              }
+            }
+
           default:
-       
-    // se considera el mensaje como invalido.
+          // se considera el mensaje como invalido.
             invalidRequest = true;
             break;
         }

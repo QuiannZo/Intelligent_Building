@@ -6,6 +6,6 @@ int main() {
   std::vector<std::string> result;
  
   std::string response;
-  client.getNodeLog("superUser", response, kBackupServer);
+  client.getBackupState("superUser", response);
   return 0;
 }

@@ -245,6 +245,23 @@ bool Intermediary::handleDatagram(int client_socket, char *datagram
           connection_error = true;
         }
         break;
+      case KBackupState:
+        if (node_type != kApplication || datagram_size != sizeof(BackupState)) {
+          invalidRequest = true;
+        } else {
+          bool result;
+          datagram[1] = kIntermediary;
+          datagram_size = sizeof(BackupState);
+          result = this->connectResendLongString(client_socket, datagram, datagram_size, 
+                                            response, sizeof(LongFileHeader), 
+                                            kIntermediary, kBackupNodeIPv4, kBackupPort, 5);
+          if (result) {
+            send_response = false;
+          } else {
+            connection_error = true;
+          }
+        }
+        break;
       default:
         // se considera el mensaje como invalido.
         invalidRequest = true;

@@ -39,6 +39,8 @@ public:
   bool getUserInformation(const std::string request_by, const std::string& username, std::vector<std::string>& response);
   // Obtener la bitácora del nodo `node_type`
   bool getNodeLog(std::string request_by, std::string& response, uint8_t node_type);
+  // Obtener el estado de las copias de seguridad
+  bool getBackupState(std::string request_by, std::string& response);
   
   // Comunicación hacia el nodo de datos
   // Obtener datos de los sensores

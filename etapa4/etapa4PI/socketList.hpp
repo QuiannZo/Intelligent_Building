@@ -77,6 +77,7 @@ enum MessageType : uint8_t {
   kRequestFailureDUB,
   // Mensaje entre intermediario y backup
   kLogRequestIB,
+  KBackupState,
   // Mensajes entre `Backup_server` y nodos
   kLogRequestBL, // backup de log
   kDataRequestBD // BACKUP de datos
@@ -454,6 +455,13 @@ struct DataRequestBD {
   // Mensaje que se usa para solicitar los datos (usuarios o sensores) por parte del nodo de respaldo. 
   MessageType message_type;
   NodeType source_node;
+};
+
+struct BackupState {
+  // Mensaje que se usa para solicitar el estado de las copias de seguridad
+  MessageType message_type;
+  NodeType source_node;
+  char request_by[33];
 };
 
 # endif
