@@ -331,6 +331,26 @@ bool UserNode::handleDatagram(int client_socket, char *datagram, size_t datagram
               result = false;
             }
             break;
+          case kActivateDeactivateUserRequest:
+            if (node_type != kIntermediary || datagram_size != sizeof(ActivateDeactivateUserRequest)) {
+              invalidRequest = true;
+            } else {
+              ActivateDeactivateUserRequest *mod = reinterpret_cast<ActivateDeactivateUserRequest *>(datagram);
+              std::string error;
+              bool changed =  this->activeDeactivateUser(mod->modify_by, mod->username
+                                                        , mod->status, error);
+              UserChangesConfirmation confirmation;
+              confirmation.message_type = kUserChangesConfirmation;
+              confirmation.source_node = kUserHandler;
+              confirmation.successful = changed;
+              if(!changed) {
+                strncpy(confirmation.error, error.c_str(), sizeof(confirmation.error));
+              }
+              // guardamos la respuesta
+              sizeResponse = sizeof(UserChangesConfirmation);
+              memcpy(response, reinterpret_cast<char *>(&confirmation), sizeResponse);
+            }
+            break;
         case kNodeState:
           strcpy(response, "ON");
           sizeResponse = 3;
@@ -617,6 +637,8 @@ bool UserNode::modifyUserEntry(std::string currentUserEntry, std::string newUser
     if (pos != std::string::npos) {
     // replace 
         usersData.replace(pos, currentUserEntry.length(), newUserEntry);
+        //usersData.append("\n");
+        std::cout << usersData << std::endl;
     }
     // rewrite the file system
     return this->fileSystem->write((char*)this->usersFilename.c_str(), this->defaultProcessId, (char*)usersData.c_str());
@@ -624,3 +646,43 @@ bool UserNode::modifyUserEntry(std::string currentUserEntry, std::string newUser
   return false;
 }
 
+bool UserNode::activeDeactivateUser(const std::string &modify_by_user
+, const std::string &username, bool status, std::string &error) {
+  // Obtenemos la hora
+  std::string dateTime = this->getCurrentDateTime();
+  // Obtener la información del usuario
+  std::vector<std::string> user_info = this->getUserInformation(username);
+  if (user_info.size() != 10) {
+    this->appendToLogTimeHour(
+    "Modify user [failed]: '" + modify_by_user + "'  tried to modify '" +
+    username + "', but the user was not found in the registry.");
+    error = "User not found.";
+    return false;
+  }
+  // Guardamos una copia de la entrada
+  std::string user_copy = this->vectorToString(user_info); 
+  // revisar los valores que se deben modificar
+  if(status){
+    user_info[9] = "1\n";
+  } else {
+    user_info[9] = "0\n";
+  }
+  // TODO: por el momento el userId no se modifica porque
+  // no se está usando.
+  // actualizamos la fecha de actualización 
+  user_info[8] = dateTime;
+  // obtenemos el string del usuario modificado
+  std::string user_mod = this->vectorToString(user_info);
+  if (this->modifyUserEntry(user_copy, user_mod)) {
+    /*
+    this->appendToLogTimeHour(
+      "Modify user: '" + modify_by_user + "'   modified '" +
+      username + "'.");*/
+    return true;
+  }
+  this->appendToLogTimeHour(
+    "Modify user [failed]: '" + modify_by_user + "'  tried to modify '" +
+    username + "', but the user registry could not be modified.");
+  error = "Failed to modify user record.";
+  return false;
+}

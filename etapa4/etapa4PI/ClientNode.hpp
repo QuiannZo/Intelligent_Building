@@ -33,6 +33,7 @@ public:
           , const std::string& username, const std::string& password, const uint8_t permissions
           , int8_t floors[32], const std::string& name, const std::string& last_name
           , std::string& response);
+  bool activeDeactivateUser(const std::string &modify_by_user, const std::string username, bool status, std::string& response);
   // Obtener lista de usuarios
   bool getUserList(std::string request_by, std::vector<std::string>& response);
   // Obtener información de un usuario en particular. Devuelve en el vector: nombre de usuario, nombre, apellido, permisos y estado.

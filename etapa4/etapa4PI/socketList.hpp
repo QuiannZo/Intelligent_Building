@@ -42,7 +42,7 @@ enum MessageType : uint8_t {
   // Mensajes que cliente envía a intermediario y viceversa, para modificar o agregar usuarios.
   kAddUserRequestCI,
   kModifyUserRequestCI,
-  kActivateDeactivateUserRequestCI,
+  kActivateDeactivateUserRequest,
   //kUserChangesConfirmationIC,
   kUserChangesConfirmation,
   kUserInfoRequestCI,
@@ -54,7 +54,6 @@ enum MessageType : uint8_t {
   kUserListRequestIU,
   kAddUserRequestIU,
   kModifyUserRequestIU,
-  kActivateDeactivateUserRequestIU,
   //kUserChangesConfirmationUI,
   kUserInfoRequestIU,
   kUserInfoResponseUI,
@@ -232,14 +231,14 @@ struct ModifyUserRequestCI {
   uint16_t user_identification;
 };
 
-struct ActivateDeactivateUserRequestCI {
+struct ActivateDeactivateUserRequest {
   // El cliente envía solicitud al intermediario, para poder activar 
   // o desactivar un usuario.
   MessageType message_type;
   NodeType source_node;
-  uint16_t user_identification;
+  char modify_by[33];
   char username[33];
-  uint8_t status;
+  bool status;
 };
 
 struct UserChangesConfirmation {
@@ -315,16 +314,6 @@ struct ModifyUserRequestIU {
   int8_t new_floors[32];
 };
 
-struct ActivateDeactivateUserRequestIU {
-  // El intermediario envía solicitud al user handler, para poder activar 
-  // o desactivar un usuario.
-  MessageType message_type;
-  NodeType source_node;
-  uint16_t user_identification;
-  char username[33];
-  uint16_t client_identification;
-  uint8_t status;
-};
 
 struct UserInfoRequestIU {
   // El intermediario envía solicitud al user handler, para poder obtener

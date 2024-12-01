@@ -48,7 +48,8 @@ private:
                 , const std::string& username, const std::string& hash
                 , const uint8_t permissions, const std::string& floors, const std::string& name
                 , const std::string& lastName, const std::string& userId, std::string &error);
-
+  bool activeDeactivateUser(const std::string &modify_by_user, const std::string& username,
+                            bool status, std::string &error);
 
 public:
   UserNode(std::string logFilename, int processId, std::string usersFilename, int port);

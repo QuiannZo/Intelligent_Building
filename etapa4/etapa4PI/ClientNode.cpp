@@ -325,7 +325,49 @@ bool ClientNode::getSensorData(std::string request_by, std::string &response) {
   return result;
 }
 
-bool ClientNode::getBackupState(std::string request_by, std::string& response) {
+bool ClientNode::activeDeactivateUser(const std::string &modify_by_user, const std::string username, bool status, std::string& response) {
+  // buffer donde se recibe la respuesta;
+  char buffer[kMaxDatagramSize];
+  memset(buffer, 0, kMaxDatagramSize);
+
+  // construimos el datagrama
+  ActivateDeactivateUserRequest user_Info;
+  // blanqueamos el datagrama
+  memset(&user_Info, 0, sizeof(ActivateDeactivateUserRequest)); 
+  user_Info.source_node = kApplication;
+  user_Info.message_type = kActivateDeactivateUserRequest;
+  // Copiamos los datos de entrada en la estructura
+  strncpy(user_Info.modify_by, modify_by_user.c_str(), sizeof(user_Info.modify_by) - 1);
+  strncpy(user_Info.username, username.c_str(), sizeof(user_Info.username) - 1);
+  user_Info.status = status;
+  // enviamos el mensaje al intermediario y recibimos la respuesta
+  bool result = this->connectSendReceive(kIntermediaryIPv4
+  , kIntermediaryPort, reinterpret_cast<char*>(&user_Info)
+  , sizeof(ActivateDeactivateUserRequest), buffer, kMaxDatagramSize, 15);
+
+  if(result) {
+    response.clear();
+    int message_type = (int)buffer[0];
+    if (message_type == kUserChangesConfirmation) {
+      UserChangesConfirmation* confirmation;
+      confirmation = reinterpret_cast<UserChangesConfirmation*>(buffer);
+      if(confirmation->successful) {
+        response = "User " + username + " modified successfully.";
+      } else {
+        response = "Error: Failed to modify user '" + username + "'. Error message: "
+        + confirmation->error + "\n";
+        result = false;
+      }
+      std::cout << response << std::endl;
+    } else {
+      response = this->getErrorString(message_type);
+      result = false;
+    }
+  }
+  return result;
+}
+
+bool ClientNode::getBackupState(std::string request_by, std::string &response) {
   // construimos el datagrama
   BackupState request;
   memset(&request, 0, sizeof(BackupState));
@@ -334,10 +376,10 @@ bool ClientNode::getBackupState(std::string request_by, std::string& response) {
   strncpy(request.request_by, request_by.c_str(), sizeof(request.request_by) - 1);
   bool result = true;
   response.clear();
-  if(!this->connectSendReceiveLong(kIntermediaryIPv4, kIntermediaryPort
-  , reinterpret_cast<char*>(&request), sizeof(BackupState), response, 5, 5)) {
-    response = this->getErrorString((uint8_t)response.c_str()[0]);
-    result = false; 
+  if (!this->connectSendReceiveLong(kIntermediaryIPv4, kIntermediaryPort, reinterpret_cast<char *>(&request), sizeof(BackupState), response, 5, 5))
+  {
+      response = this->getErrorString((uint8_t)response.c_str()[0]);
+      result = false;
   }
   // TODO:borrar
   std::cout << "Buffer[delete message]: " << response << std::endl;

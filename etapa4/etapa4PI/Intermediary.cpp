@@ -262,6 +262,22 @@ bool Intermediary::handleDatagram(int client_socket, char *datagram
           }
         }
         break;
+      case kActivateDeactivateUserRequest:
+        if (node_type != kApplication || datagram_size != sizeof(ActivateDeactivateUserRequest)) {
+          invalidRequest = true;
+        } else {
+          datagram[1] = kIntermediary;
+          // Reenviar al nodo de usuarios
+          if(this->connectSendReceive(kUserHandlerIPv4, kUserHandlerPort, datagram
+          , sizeof(ActivateDeactivateUserRequest), response, kMaxDatagramSize, 10)) {
+            if (!response[0] == kUserChangesConfirmation) {
+              response[0] = kUnknownError;
+            }
+          } else {
+            connection_error = true;
+          }
+        }
+        break;
       case kNodeState:
         strcpy(response, "ON");
         sizeResponse = 3;
