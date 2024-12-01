@@ -5,17 +5,19 @@
 #include <iostream>
 #include <cstring>
 #include <vector>
+#include <algorithm>
 
 #include "Backup.hpp"
 
 // Constructor
 Backup::Backup(std::string logFilename, int processId, int port) 
 : Node(logFilename, processId, port) {
-   this->requestSaveFiles();
+  // apenas se inicia, se hace un backup 
+  this->requestSaveFiles();
 }
 
 Backup::~Backup() {
-
+  // cuando se cierra, también se hace backup
 }
 
 bool Backup::handleDatagram(int client_socket, char *datagram, size_t datagram_size) {
@@ -134,9 +136,9 @@ Metodo que se comunica cada de uno de los sensores y GUARDE
 reciba el string y que si lo recibe bien lo guarde.
 */
 void Backup::requestSaveFiles() {
-  // hora fecha nombre del archivo
-  // Pasos: Definir datagrama
-
+  // obtener hora en que se comienza el proceso de copia de seguridad
+  string time = this->getCurrentDateTime();
+  time.append(".txt");
   // Backup le pide log al UserNode
   LogRequestBL request;
   request.message_type = kLogRequestBL;
@@ -147,8 +149,8 @@ void Backup::requestSaveFiles() {
   this->connectSendReceiveLong(kUserHandlerIPv4, kUserHandlerPort,
   reinterpret_cast<char*>(&request), sizeof(LogRequestBL), buffer, 5, 5);
   
-  std::string file_name = "updated_log_user_node.txt";
-  saveFile(file_name, buffer);
+  std::string file_name = "log_user_node";
+  saveFile(file_name.append("_").append(time), buffer);
 
   // Backup le pide log al DataNode
   string buffer2;
@@ -156,8 +158,8 @@ void Backup::requestSaveFiles() {
   this->connectSendReceiveLong(kDataNodeIPv4, kDataNodePort,
   reinterpret_cast<char*>(&request), sizeof(LogRequestBL), buffer2, 5, 5);
   
-  file_name = "updated_log_data_node.txt";
-  saveFile(file_name, buffer2);
+  file_name = "log_data_node";
+  saveFile(file_name.append("_").append(time), buffer2);
 
   // Backup le pide log al Intermediary POR ALGUNA RAZÓN SE QUEDA PEGADO
   string buffer3;
@@ -165,8 +167,8 @@ void Backup::requestSaveFiles() {
   this->connectSendReceiveLong(kIntermediaryIPv4, kIntermediaryPort,
   reinterpret_cast<char*>(&request), sizeof(LogRequestBL), buffer3, 5, 5);
   
-  file_name = "updated_log_intermediary_node.txt";
-  saveFile(file_name, buffer3);
+  file_name = "log_intermediary.txt";
+  saveFile(file_name.append("_").append(time), buffer3);
   
   // Backup le pide datos al DataNode
   
@@ -182,13 +184,17 @@ void Backup::requestSaveFiles() {
 }
 
  void Backup::saveFile(string filename, string data) {
+  // modificamos el nombre del archivo para que no de problemas
+  std::string newFilename = filename; std::replace(newFilename.begin(), newFilename.end(), '/', '-'); 
+  std::replace(newFilename.begin(), newFilename.end(), ':', '-');
+
   // Abrir un archivo con extensión .txt en modo de escritura
-  std::ofstream outFile(filename);
+  std::ofstream outFile(newFilename);
   if (outFile.is_open()) {
       outFile << data;
       outFile.close();
   } else {
-      std::cerr << "No se pudo abrir el archivo para escribir." << std::endl;
+      std::cerr << "Error: could not open file." << std::endl;
   }
 
  }
