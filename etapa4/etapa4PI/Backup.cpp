@@ -43,7 +43,7 @@ bool Backup::handleDatagram(int client_socket, char *datagram, size_t datagram_s
         node_type = (int)datagram[1];
         // respondemos según el tipo de mensaje
         switch (message_type) {
-          case kLogRequestID:
+          case kLogRequestIB:
             if (node_type != kIntermediary || datagram_size != sizeof(LogRequestIN)) {
               invalidRequest = true;
             } else {

@@ -6,6 +6,6 @@ int main() {
   std::vector<std::string> result;
  
   std::string response;
-  client.getSensorData("superuser", response);
+  client.getNodeLog("superUser", response, kBackupServer);
   return 0;
 }

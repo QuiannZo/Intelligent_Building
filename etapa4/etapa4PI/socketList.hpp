@@ -75,7 +75,9 @@ enum MessageType : uint8_t {
   // Mensajes entre `Backup_server` y `DataCollector` / `UserHandler`:
   kFileRequestBDU,
   kRequestFailureDUB,
-  // Mensajes entre `Backup_server` y las bitacoras, 1 datagrama
+  // Mensaje entre intermediario y backup
+  kLogRequestIB,
+  // Mensajes entre `Backup_server` y nodos
   kLogRequestBL, // backup de log
   kDataRequestBD // BACKUP de datos
 };

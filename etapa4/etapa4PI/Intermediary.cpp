@@ -160,7 +160,13 @@ bool Intermediary::handleDatagram(int client_socket, char *datagram
             result = this->connectResendLongString(client_socket, datagram, datagram_size, 
                                             response, sizeof(LongFileHeader), 
                                             kIntermediary, kDataNodeIPv4, kDataNodePort, 5);
-          } else if (request->node_required == kIntermediary) {
+          } else if (request->node_required == kBackupServer) {
+            datagram[0] = kLogRequestIB; //al nodo de backup
+            result = this->connectResendLongString(client_socket, datagram, datagram_size, 
+                                            response, sizeof(LongFileHeader), 
+                                            kIntermediary, kBackupNodeIPv4, kBackupPort, 5);
+          }
+          else if (request->node_required == kIntermediary) {
             // caso en que se solicita la bitácora del nodo intermediario
             LogRequestIN *request = reinterpret_cast<LogRequestIN*>(datagram);
             // construimos el datagrama del header
