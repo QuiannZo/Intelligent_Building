@@ -370,3 +370,39 @@ std::string ClientNode::checkPermissions(uint8_t user_permissions) {
 
     return result[0];
 }
+
+std::string ClientNode::getSystemState() {
+  string result = "Distributed system status:\nIntermediary Node: ";
+  NodeState request;
+  request.message_type = kNodeState;
+  request.source_node = kApplication;
+  char buffer[10];
+  // consultarle a todos los nodos si están activos:
+  // enviamos el mensaje al intermediario y recibimos la respuesta
+  // Intermediario
+  bool connection = this->connectSendReceive(kIntermediaryIPv4
+  , kIntermediaryPort, reinterpret_cast<char*>(&request)
+  , sizeof(NodeState), buffer, 10, 5);
+  if (connection) {result.append("ON\n");} else {result.append("OFF\n");}
+  // Node de datos 
+  result.append("Data node: ");
+  connection = this->connectSendReceive(kDataNodeIPv4
+  , kDataNodePort, reinterpret_cast<char*>(&request)
+  , sizeof(NodeState), buffer, 10, 5);
+  if (connection) {result.append("ON\n");} else {result.append("OFF\n");}
+  // Nodo de usuarios
+  result.append("User node: ");
+  connection = this->connectSendReceive(kUserHandlerIPv4
+  , kUserHandlerPort, reinterpret_cast<char*>(&request)
+  , sizeof(NodeState), buffer, 10, 5);
+  if (connection) {result.append("ON\n");} else {result.append("OFF\n");}
+  // Nodo de copia de seguridad
+  result.append("Backup node: ");
+  connection = this->connectSendReceive(kBackupNodeIPv4
+  , kBackupPort, reinterpret_cast<char*>(&request)
+  , sizeof(NodeState), buffer, 10, 5);
+  if (connection) {result.append("ON\n");} else {result.append("OFF\n");}
+
+  std::cout << "Buffer[delete message]:\n" << result << std::endl;
+  return result;
+}

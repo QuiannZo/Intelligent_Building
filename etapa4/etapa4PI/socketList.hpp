@@ -80,7 +80,8 @@ enum MessageType : uint8_t {
   KBackupState,
   // Mensajes entre `Backup_server` y nodos
   kLogRequestBL, // backup de log
-  kDataRequestBD // BACKUP de datos
+  kDataRequestBD, // BACKUP de datos
+  kNodeState // para determinar si el nodo está encendido 
 };
 
 // Datagramas generales:
@@ -462,6 +463,12 @@ struct BackupState {
   MessageType message_type;
   NodeType source_node;
   char request_by[33];
+};
+
+struct NodeState {
+  // Mensaje que se usa para solicitar el estado de las copias de seguridad
+  MessageType message_type;
+  NodeType source_node;
 };
 
 # endif

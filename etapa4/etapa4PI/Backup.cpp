@@ -97,7 +97,10 @@ bool Backup::handleDatagram(int client_socket, char *datagram, size_t datagram_s
                 result = false;
               }
             }
-
+          case kNodeState:
+            strcpy(response, "ON");
+            sizeResponse = 3;
+            break;
           default:
           // se considera el mensaje como invalido.
             invalidRequest = true;
