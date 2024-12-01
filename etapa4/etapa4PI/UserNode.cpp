@@ -637,8 +637,6 @@ bool UserNode::modifyUserEntry(std::string currentUserEntry, std::string newUser
     if (pos != std::string::npos) {
     // replace 
         usersData.replace(pos, currentUserEntry.length(), newUserEntry);
-        //usersData.append("\n");
-        std::cout << usersData << std::endl;
     }
     // rewrite the file system
     return this->fileSystem->write((char*)this->usersFilename.c_str(), this->defaultProcessId, (char*)usersData.c_str());

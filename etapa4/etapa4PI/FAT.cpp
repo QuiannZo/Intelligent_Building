@@ -214,7 +214,7 @@ bool FAT::write(char* filename, int processID, char* data) {
         return append(filename, processID, data);
       } else {
         // over-write the file
-        deleteFromPosition(position);
+        this->deleteFromPosition(directory[position].firstFrameAddress);
         this->directory[position].firstFrameAddress = -1;
         return append(filename, processID, data);
         //return writeUnit(data, firstFrame, true);

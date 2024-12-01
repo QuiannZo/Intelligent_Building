@@ -9,5 +9,7 @@ int main() {
   //client.getBackupState("superUser", response);
   //client.getSystemState();
   client.activeDeactivateUser("superuser", "WarrenMI8", false, response);
+  //int8_t floors[32];
+  //client.addUser("asd", "asd", "asd", 1,floors, "asd", "asd", response);
   return 0;
 }
