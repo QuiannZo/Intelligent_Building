@@ -282,10 +282,34 @@ bool UserNode::handleDatagram(int client_socket, char *datagram, size_t datagram
               result = false;
             }
           }
- 
         case kLogRequestBL:
             // construimos el datagrama del header
             log = this->returnLog("Backup");
+            LongFileHeader headerData;
+            headerData.message_type = kLongFileHeader;
+            headerData.char_length = log.length();
+            if (!log.empty()) {
+              headerData.successful = true;
+            } else {
+              headerData.successful = false;
+            }
+            if (send(client_socket, reinterpret_cast<char *>(&headerData), sizeof(LongFileHeader), 0) > 0) {
+              if (send(client_socket, log.c_str(), log.size(), 0) < 0) {
+                std::cerr << "Error sending response to client." << std::endl;
+                result = false;
+              } else {
+                send_response = false;
+              }
+            } else {
+              std::cerr << "Error sending response to client." << std::endl;
+              result = false;
+            }
+            break; 
+          case kDataRequestBD:
+            //SensorInfoRequestID *request = reinterpret_cast<SensorInfoRequestID*>(datagram);
+            // almacenamos el resultado en log
+            this->fileSystem->getCompleteFile((char*)usersFilename.c_str(), this->getProcessId(), log);
+            // construimos el datagrama del header
             LongFileHeader header;
             header.message_type = kLongFileHeader;
             header.char_length = log.length();
@@ -300,6 +324,7 @@ bool UserNode::handleDatagram(int client_socket, char *datagram, size_t datagram
                 result = false;
               } else {
                 send_response = false;
+                this->appendToLogTimeHour("Sensors data send to backup node.");
               }
             } else {
               std::cerr << "Error sending response to client." << std::endl;

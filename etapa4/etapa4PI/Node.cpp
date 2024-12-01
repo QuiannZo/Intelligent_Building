@@ -106,7 +106,6 @@ void Node::run() {
     std::string message_connection_closed = ss7.str();
     this->appendToLogTimeHour(message_connection_closed);
     std::cout << message_connection_closed << std::endl;
-    std::cout << message_connection_closed << std::endl;
     close(client_socket);
   }
 }

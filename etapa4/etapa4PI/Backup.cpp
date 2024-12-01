@@ -18,6 +18,7 @@ Backup::Backup(std::string logFilename, int processId, int port)
 
 Backup::~Backup() {
   // cuando se cierra, también se hace backup
+  this->requestSaveFiles();
 }
 
 bool Backup::handleDatagram(int client_socket, char *datagram, size_t datagram_size) {
@@ -90,47 +91,7 @@ bool Backup::handleDatagram(int client_socket, char *datagram, size_t datagram_s
     return result;
 }
 
-void Backup::run() {
-  // Estructura que contiene la dirección del cliente
-  struct sockaddr_storage ip_remote;
-  socklen_t l = sizeof(ip_remote);
-  // Se usa para almacenar la dirección IP del cliente
-  char str_ip_remote[INET6_ADDRSTRLEN];
-  // Socket del cliente
-  int client_socket = -1;
-  // por ejemplo cada 30 minutos pedirlo
-  while (true) {
-    // Aceptar la conexión
-    client_socket = accept(server_socket, (struct sockaddr*)&ip_remote, &l);
-    if (client_socket < 0) {
-        sleep(1); // aqui es donde se debe hacer la confirmacion
-        continue;
-    }
-    struct sockaddr_in *s = (struct sockaddr_in*)&ip_remote;
-    inet_ntop(AF_INET, &s->sin_addr, str_ip_remote, sizeof str_ip_remote);
-    std::ostringstream ss5;
-    ss5 << "Connection from Remote IP: " << str_ip_remote;
-    std::string message_remote_connected = ss5.str();
-    this->appendToLogTimeHour(message_remote_connected);
-    std::cout << message_remote_connected << std::endl;
-    if (!handleConnection(client_socket)) {
-        std::ostringstream ss6;
-        ss6 << "Error handling the connection with the client ";
-        std::string message_error_connection = ss6.str();
-        this->appendToLogTimeHour(message_error_connection);
-        std::cout << message_error_connection << std::endl;
-    }
-    // Cerrar el socket
-    std::ostringstream ss7;
-    ss7 << "Connection closed: " << str_ip_remote;
-    std::string message_connection_closed = ss7.str();
-    this->appendToLogTimeHour(message_connection_closed);
-    std::cout << message_connection_closed << std::endl;
-    std::cout << message_connection_closed << std::endl;
-    close(client_socket);
-  }
 
-}
 /*
 Metodo que se comunica cada de uno de los sensores y GUARDE
 reciba el string y que si lo recibe bien lo guarde.
@@ -138,49 +99,61 @@ reciba el string y que si lo recibe bien lo guarde.
 void Backup::requestSaveFiles() {
   // obtener hora en que se comienza el proceso de copia de seguridad
   string time = this->getCurrentDateTime();
-  time.append(".txt");
-  // Backup le pide log al UserNode
+  //time.append(".txt");
+  // crear datagram
   LogRequestBL request;
   request.message_type = kLogRequestBL;
   request.source_node = kBackupServer;
-   
+  DataRequestBD requestData;
+  requestData.message_type = kDataRequestBD;
+  requestData.source_node = kBackupServer;
+  
   string buffer;
-
+  // Pedir datos a nodo de usuarios 
+  // Bitácora
   this->connectSendReceiveLong(kUserHandlerIPv4, kUserHandlerPort,
-  reinterpret_cast<char*>(&request), sizeof(LogRequestBL), buffer, 5, 5);
-  
+    reinterpret_cast<char*>(&request), sizeof(LogRequestBL), buffer, 5, 5);
   std::string file_name = "log_user_node";
-  saveFile(file_name.append("_").append(time), buffer);
-
-  // Backup le pide log al DataNode
-  string buffer2;
-
-  this->connectSendReceiveLong(kDataNodeIPv4, kDataNodePort,
-  reinterpret_cast<char*>(&request), sizeof(LogRequestBL), buffer2, 5, 5);
+  saveFile(file_name.append("_").append(time).append(".txt"), buffer);
+  this->appendToLogTimeHour("The security copy of 'log_user_node' was made.");
+  updateLogUser = time;
+  // Pedir datos de usuarios
+  buffer.clear();
+  this->connectSendReceiveLong(kUserHandlerIPv4, kUserHandlerPort,
+    reinterpret_cast<char*>(&requestData), sizeof(DataRequestBD), buffer, 5, 5);
+  file_name = "users_data";
+  saveFile(file_name.append("_").append(time).append(".txt"), buffer);
+  this->appendToLogTimeHour("The security copy of 'log_user_node' was made.");
+  updateSensorsInfo = time;
   
+  // Pedir datos a nodo de datos
+  // Bitácora
+  string buffer2;
+  this->connectSendReceiveLong(kDataNodeIPv4, kDataNodePort,
+    reinterpret_cast<char*>(&request), sizeof(LogRequestBL), buffer2, 5, 5);
   file_name = "log_data_node";
-  saveFile(file_name.append("_").append(time), buffer2);
+  saveFile(file_name.append("_").append(time).append(".txt"), buffer2);
+  this->appendToLogTimeHour("The security copy of 'log_data_node' was made.");
+  updateLogDataNode = time;
+  // Pedir datos de sensores
+  buffer2.clear();
+  this->connectSendReceiveLong(kDataNodeIPv4, kDataNodePort,
+    reinterpret_cast<char*>(&requestData), sizeof(DataRequestBD), buffer2, 5, 5);
+  file_name = "sensors_data";
+  saveFile(file_name.append("_").append(time).append(".txt"), buffer2);
+  this->appendToLogTimeHour("The security copy of 'log_user_node' was made.");
+  updateUserInfo = time;
 
-  // Backup le pide log al Intermediary POR ALGUNA RAZÓN SE QUEDA PEGADO
+  //  Pedir datos a nodo intermediario 
+  // Bitácora
   string buffer3;
-
   this->connectSendReceiveLong(kIntermediaryIPv4, kIntermediaryPort,
   reinterpret_cast<char*>(&request), sizeof(LogRequestBL), buffer3, 5, 5);
-  
-  file_name = "log_intermediary.txt";
-  saveFile(file_name.append("_").append(time), buffer3);
-  
-  // Backup le pide datos al DataNode
-  
-  // Backup le pide informacion de usuario al UserNode
-
-
-
-  // Enviar el datagrama
-
-  // Guardar el resultado
-  // En los atributos, la fecha en las que se hizo el update
-  // Una cuestion es sobreescribirla... etc
+  file_name = "log_intermediary_node";
+  saveFile(file_name.append("_").append(time).append(".txt"), buffer3);
+    updateLogIntermediary = time;
+  this->appendToLogTimeHour("The security copy of 'log_intermediary_node' was made.");
+  std::cout << "The files were backed up." << std::endl;
 }
 
  void Backup::saveFile(string filename, string data) {

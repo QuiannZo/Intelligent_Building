@@ -175,20 +175,21 @@ bool DataNode::handleDatagram(int client_socket, char *datagram, size_t datagram
             break;
           case kLogRequestBL:
             // construimos el datagrama del header
-            log = this->returnLog("Backup");
-            LongFileHeader header;
-            header.message_type = kLongFileHeader;
-            header.char_length = log.length();
+            log = this->returnLog("Backup_node");
+            LongFileHeader headerData;
+            headerData.message_type = kLongFileHeader;
+            headerData.char_length = log.length();
             if (!log.empty()) {
-              header.successful = true;
+              headerData.successful = true;
             } else {
-              header.successful = false;
+              headerData.successful = false;
             }
-            if (send(client_socket, reinterpret_cast<char *>(&header), sizeof(LongFileHeader), 0) > 0) {
+            if (send(client_socket, reinterpret_cast<char *>(&headerData), sizeof(LongFileHeader), 0) > 0) {
               if (send(client_socket, log.c_str(), log.size(), 0) < 0) {
                 std::cerr << "Error sending response to client." << std::endl;
                 result = false;
               } else {
+                this->appendToLogTimeHour("Log send to backup node.");
                 send_response = false;
               }
             } else {
@@ -196,8 +197,33 @@ bool DataNode::handleDatagram(int client_socket, char *datagram, size_t datagram
               result = false;
             }
             break;
+          case kDataRequestBD:
+              //SensorInfoRequestID *request = reinterpret_cast<SensorInfoRequestID*>(datagram);
+              // construimos el datagrama del header
+              log = this->returnSensorFile("Backup data");
+              LongFileHeader header;
+              header.message_type = kLongFileHeader;
+              header.char_length = log.length();
+              if (!log.empty()) {
+                header.successful = true;
+              } else {
+                header.successful = false;
+              }
+              if (send(client_socket, reinterpret_cast<char *>(&header), sizeof(LongFileHeader), 0) > 0) {
+                if (send(client_socket, log.c_str(), log.size(), 0) < 0) {
+                  std::cerr << "Error sending response to client." << std::endl;
+                  result = false;
+                } else {
+                  send_response = false;
+                  this->appendToLogTimeHour("Sensors data send to backup node.");
+                }
+              } else {
+                std::cerr << "Error sending response to client." << std::endl;
+                result = false;
+              }
+            break;
           default:
-            // se considera el mensaje como invalido.
+            // Se considera el mensaje como invalido.
             invalidRequest = true;
             break;
         }

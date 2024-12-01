@@ -26,6 +26,8 @@ bool Intermediary::handleDatagram(int client_socket, char *datagram
   bool send_response = true;
   bool invalidRequest = false;
   bool connection_error= false;
+  bool result = true;
+  std::string log;
 
   if (datagram_size >= 2) {
     message_type = (uint8_t)datagram[0];
@@ -162,7 +164,7 @@ bool Intermediary::handleDatagram(int client_socket, char *datagram
             // caso en que se solicita la bitácora del nodo intermediario
             LogRequestIN *request = reinterpret_cast<LogRequestIN*>(datagram);
             // construimos el datagrama del header
-            std::string log = this->returnLog(request->request_by);
+            log = this->returnLog(request->request_by);
             LongFileHeader header;
             header.message_type = kLongFileHeader;
             header.source_node = kIntermediary;
@@ -210,7 +212,33 @@ bool Intermediary::handleDatagram(int client_socket, char *datagram
         }
         break;
       case kLogRequestBL:
-        std::cout << "funcionaré" << std::endl;
+        // construimos el datagrama del header
+        log = this->returnLog("Backup_node");
+        LongFileHeader header;
+        header.message_type = kLongFileHeader;
+        header.char_length = log.length();
+        if (!log.empty()) {
+          header.successful = true;
+        } else {
+          header.successful = false;
+        }
+        if (send(client_socket, reinterpret_cast<char *>(&header), sizeof(LongFileHeader), 0) > 0) {
+          if (send(client_socket, log.c_str(), log.size(), 0) < 0) {
+            std::cerr << "Error sending response to client." << std::endl;
+            result = false;
+          } else {
+            send_response = false;
+          }
+        } else {
+          std::cerr << "Error sending response to client." << std::endl;
+          result = false;
+        }
+        if (result) {
+          send_response = false;
+        } else {
+          connection_error = true;
+        }
+        break;
       default:
         // se considera el mensaje como invalido.
         invalidRequest = true;

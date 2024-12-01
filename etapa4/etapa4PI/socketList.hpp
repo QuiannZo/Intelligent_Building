@@ -77,7 +77,7 @@ enum MessageType : uint8_t {
   kRequestFailureDUB,
   // Mensajes entre `Backup_server` y las bitacoras, 1 datagrama
   kLogRequestBL, // backup de log
-  kLogRequestBD // BACKUP de datos
+  kDataRequestBD // BACKUP de datos
 };
 
 // Datagramas generales:
@@ -443,11 +443,15 @@ struct SensorData {
 
 
 struct LogRequestBL {
-  // Mensaje que indicar el tamaño del archivo que vamos a enviar. Inmediatamente
-  // después se envía el mensaje por el socket. 
+  // Mensaje que se usa para solicitar la bitácora por parte del nodo de respaldo
   MessageType message_type;
   NodeType source_node;
-  int char_length;
+};
+
+struct DataRequestBD {
+  // Mensaje que se usa para solicitar los datos (usuarios o sensores) por parte del nodo de respaldo. 
+  MessageType message_type;
+  NodeType source_node;
 };
 
 # endif
