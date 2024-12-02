@@ -1,9 +1,9 @@
 #include "viewbackup.h"
 #include "ui_viewbackup.h"
 
-ViewBackup::ViewBackup(QWidget *parent, UserHandler& userHandler, menuwindow& menu)
+ViewBackup::ViewBackup(QWidget *parent, UserNode& userHandler, menuwindow& menu, ClientNode& clientNode)
     : QMainWindow(parent), ui(new Ui::ViewBackup),
-    userHandler(userHandler), menu(menu)
+    userHandler(userHandler), menu(menu), clientNode(clientNode)
 {
     ui->setupUi(this);
 
@@ -26,5 +26,13 @@ void ViewBackup::on_pushButton1_2_clicked()
     this->menu.show();
     this->hide();
     this->deleteLater();
+}
+
+
+void ViewBackup::on_backupbtn_clicked()
+{
+    std::string response;
+    clientNode.getNodeLog(this->clientNode.username, response, 4);
+    ui->textEdit->setText(QString::fromStdString(response));
 }
 

@@ -1,7 +1,7 @@
 #include "viewdatabasewindow.h"
 #include "ui_viewdatabasewindow.h"
 
-viewdatabasewindow::viewdatabasewindow(QWidget *parent, UserHandler& userHandler, menuwindow& menu, ClientNode& clientNode) :
+viewdatabasewindow::viewdatabasewindow(QWidget *parent, UserNode& userHandler, menuwindow& menu, ClientNode& clientNode) :
     QMainWindow(parent),
     ui(new Ui::viewdatabasewindow), userHandler(userHandler), menu(menu), clientNode(clientNode)
 {

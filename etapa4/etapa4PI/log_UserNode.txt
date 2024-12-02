@@ -149,3 +149,1104 @@
 30/11/2024-16:30:03 : Connection closed: 127.0.0.1
 30/11/2024-16:30:12 : Users data file closed and saved to file 'usersData.txt'.
 30/11/2024-16:30:12 : Filesystem <FAT> closed and saved to file 'log_UserNode.txt'.
+02/12/2024-02:41:47 : File 'log_UserNode.txt' <Type:Log> loaded into filesystem.
+02/12/2024-02:41:47 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+02/12/2024-02:41:47 : Connected to node at port 3001
+02/12/2024-02:42:23 : Connection from Remote IP: 127.0.0.1
+02/12/2024-02:42:23 : [Log-in]: attempting to authenticate 'quiann'.
+02/12/2024-02:42:23 : [Log-in]: invalid hash for user 'quiann'.
+02/12/2024-02:42:23 : Connection closed: 127.0.0.1
+02/12/2024-02:42:34 : Connection from Remote IP: 127.0.0.1
+02/12/2024-02:42:34 : User 'Backup' gets access to entire LOG ('log_UserNode.txt').
+02/12/2024-02:42:34 : Connection closed: 127.0.0.1
+02/12/2024-02:42:34 : Connection from Remote IP: 127.0.0.1
+02/12/2024-02:42:34 : Sensors data send to backup node.
+02/12/2024-02:42:34 : Connection closed: 127.0.0.1
+02/12/2024-02:42:35 : Users data file closed and saved to file 'usersData.txt'.
+02/12/2024-02:42:35 : Filesystem <FAT> closed and saved to file 'log_UserNode.txt'.
+02/12/2024-02:43:04 : File 'log_UserNode.txt' <Type:Log> loaded into filesystem.
+02/12/2024-02:43:04 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+02/12/2024-02:43:04 : Error binding the server socket 3
+02/12/2024-02:43:04 : Users data file closed and saved to file 'usersData.txt'.
+02/12/2024-02:43:04 : Filesystem <FAT> closed and saved to file 'log_UserNode.txt'.
+02/12/2024-02:43:11 : File 'log_UserNode.txt' <Type:Log> loaded into filesystem.
+02/12/2024-02:43:11 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+02/12/2024-02:43:11 : Error binding the server socket 3
+02/12/2024-02:43:11 : Users data file closed and saved to file 'usersData.txt'.
+02/12/2024-02:43:11 : Filesystem <FAT> closed and saved to file 'log_UserNode.txt'.
+02/12/2024-02:43:20 : File 'log_UserNode.txt' <Type:Log> loaded into filesystem.
+02/12/2024-02:43:20 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+02/12/2024-02:43:20 : Error binding the server socket 3
+02/12/2024-02:43:20 : Users data file closed and saved to file 'usersData.txt'.
+02/12/2024-02:43:20 : Filesystem <FAT> closed and saved to file 'log_UserNode.txt'.
+02/12/2024-02:43:42 : File 'log_UserNode.txt' <Type:Log> loaded into filesystem.
+02/12/2024-02:43:42 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+02/12/2024-02:43:42 : Connected to node at port 3001
+02/12/2024-02:43:56 : Connection from Remote IP: 127.0.0.1
+02/12/2024-02:43:56 : [Log-in]: attempting to authenticate 'username01'.
+02/12/2024-02:43:56 : [Log-in]: user 'username01' validated.
+02/12/2024-02:43:56 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-02:43:56 : [User information]: information of user 'username01' returned.
+02/12/2024-02:43:56 : Connection closed: 127.0.0.1
+02/12/2024-02:43:56 : Connection from Remote IP: 127.0.0.1
+02/12/2024-02:43:56 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-02:43:56 : [User information]: information of user 'username01' returned.
+02/12/2024-02:43:56 : [User information]: 'username01' got information of user 'username01'.
+02/12/2024-02:43:56 : Connection closed: 127.0.0.1
+02/12/2024-02:44:21 : Connection from Remote IP: 127.0.0.1
+02/12/2024-02:44:21 : User 'username01' gets access to entire LOG ('log_UserNode.txt').
+02/12/2024-02:44:21 : User 'Backup' gets access to entire LOG ('log_UserNode.txt').
+02/12/2024-02:44:21 : Connection closed: 127.0.0.1
+02/12/2024-02:45:29 : Connection from Remote IP: 127.0.0.1
+02/12/2024-02:45:29 : [Log-in]: attempting to authenticate 'username01'.
+02/12/2024-02:45:29 : [Log-in]: user 'username01' validated.
+02/12/2024-02:45:29 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-02:45:29 : [User information]: information of user 'username01' returned.
+02/12/2024-02:45:29 : Connection closed: 127.0.0.1
+02/12/2024-02:45:29 : Connection from Remote IP: 127.0.0.1
+02/12/2024-02:45:29 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-02:45:29 : [User information]: information of user 'username01' returned.
+02/12/2024-02:45:29 : [User information]: 'username01' got information of user 'username01'.
+02/12/2024-02:45:29 : Connection closed: 127.0.0.1
+02/12/2024-02:45:39 : Connection from Remote IP: 127.0.0.1
+02/12/2024-02:45:39 : User 'username01' gets access to entire LOG ('log_UserNode.txt').
+02/12/2024-02:45:39 : User 'Backup' gets access to entire LOG ('log_UserNode.txt').
+02/12/2024-02:45:39 : Connection closed: 127.0.0.1
+02/12/2024-02:48:38 : Connection from Remote IP: 127.0.0.1
+02/12/2024-02:48:38 : User 'Backup' gets access to entire LOG ('log_UserNode.txt').
+02/12/2024-02:48:38 : Connection closed: 127.0.0.1
+02/12/2024-02:48:38 : Connection from Remote IP: 127.0.0.1
+02/12/2024-02:48:38 : Sensors data send to backup node.
+02/12/2024-02:48:38 : Connection closed: 127.0.0.1
+02/12/2024-02:48:38 : Users data file closed and saved to file 'usersData.txt'.
+02/12/2024-02:48:38 : Filesystem <FAT> closed and saved to file 'log_UserNode.txt'.
+02/12/2024-02:51:53 : File 'log_UserNode.txt' <Type:Log> loaded into filesystem.
+02/12/2024-02:51:53 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+02/12/2024-02:51:53 : Connected to node at port 3001
+02/12/2024-02:52:32 : Connection from Remote IP: 127.0.0.1
+02/12/2024-02:52:32 : [Log-in]: attempting to authenticate 'username01'.
+02/12/2024-02:52:32 : [Log-in]: user 'username01' validated.
+02/12/2024-02:52:32 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-02:52:32 : [User information]: information of user 'username01' returned.
+02/12/2024-02:52:32 : Connection closed: 127.0.0.1
+02/12/2024-02:52:32 : Connection from Remote IP: 127.0.0.1
+02/12/2024-02:52:32 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-02:52:32 : [User information]: information of user 'username01' returned.
+02/12/2024-02:52:32 : [User information]: 'username01' got information of user 'username01'.
+02/12/2024-02:52:32 : Connection closed: 127.0.0.1
+02/12/2024-04:35:00 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:35:00 : [Log-in]: attempting to authenticate 'username01'.
+02/12/2024-04:35:00 : [Log-in]: user 'username01' validated.
+02/12/2024-04:35:00 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-04:35:00 : [User information]: information of user 'username01' returned.
+02/12/2024-04:35:00 : Connection closed: 127.0.0.1
+02/12/2024-04:35:00 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:35:00 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-04:35:00 : [User information]: information of user 'username01' returned.
+02/12/2024-04:35:00 : [User information]: 'username01' got information of user 'username01'.
+02/12/2024-04:35:00 : Connection closed: 127.0.0.1
+02/12/2024-04:39:14 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:39:14 : [Log-in]: attempting to authenticate 'username01'.
+02/12/2024-04:39:14 : [Log-in]: user 'username01' validated.
+02/12/2024-04:39:14 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-04:39:14 : [User information]: information of user 'username01' returned.
+02/12/2024-04:39:14 : Connection closed: 127.0.0.1
+02/12/2024-04:39:14 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:39:14 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-04:39:14 : [User information]: information of user 'username01' returned.
+02/12/2024-04:39:14 : [User information]: 'username01' got information of user 'username01'.
+02/12/2024-04:39:14 : Connection closed: 127.0.0.1
+02/12/2024-04:39:27 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:39:27 : User 'username01' gets access to entire LOG ('log_UserNode.txt').
+02/12/2024-04:39:27 : User 'Backup' gets access to entire LOG ('log_UserNode.txt').
+02/12/2024-04:39:27 : Connection closed: 127.0.0.1
+02/12/2024-04:44:27 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:44:27 : [Log-in]: attempting to authenticate 'username01'.
+02/12/2024-04:44:27 : [Log-in]: user 'username01' validated.
+02/12/2024-04:44:27 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-04:44:27 : [User information]: information of user 'username01' returned.
+02/12/2024-04:44:27 : Connection closed: 127.0.0.1
+02/12/2024-04:44:27 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:44:27 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-04:44:27 : [User information]: information of user 'username01' returned.
+02/12/2024-04:44:27 : [User information]: 'username01' got information of user 'username01'.
+02/12/2024-04:44:27 : Connection closed: 127.0.0.1
+02/12/2024-04:46:16 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:46:16 : [Log-in]: attempting to authenticate 'username01'.
+02/12/2024-04:46:16 : [Log-in]: user 'username01' validated.
+02/12/2024-04:46:16 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-04:46:16 : [User information]: information of user 'username01' returned.
+02/12/2024-04:46:16 : Connection closed: 127.0.0.1
+02/12/2024-04:46:16 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:46:16 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-04:46:16 : [User information]: information of user 'username01' returned.
+02/12/2024-04:46:16 : [User information]: 'username01' got information of user 'username01'.
+02/12/2024-04:46:16 : Connection closed: 127.0.0.1
+02/12/2024-04:46:20 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:46:20 : Connection closed: 127.0.0.1
+02/12/2024-04:47:01 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:47:01 : User 'username01' gets access to entire LOG ('log_UserNode.txt').
+02/12/2024-04:47:01 : User 'Backup' gets access to entire LOG ('log_UserNode.txt').
+02/12/2024-04:47:01 : Connection closed: 127.0.0.1
+02/12/2024-04:47:03 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:47:03 : [User information]: attempting get user list.
+02/12/2024-04:47:03 : [User information]: user list returned.
+02/12/2024-04:47:03 : Connection closed: 127.0.0.1
+02/12/2024-04:47:04 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:47:04 : [Log-in]: attempting get information of user 'MartaES2'.
+02/12/2024-04:47:04 : [User information]: information of user 'MartaES2' returned.
+02/12/2024-04:47:04 : [User information]: 'username01' got information of user 'MartaES2'.
+02/12/2024-04:47:04 : Connection closed: 127.0.0.1
+02/12/2024-04:47:04 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:47:04 : [Log-in]: attempting get information of user 'MartaES2'.
+02/12/2024-04:47:04 : [User information]: information of user 'MartaES2' returned.
+02/12/2024-04:47:04 : [User information]: 'username01' got information of user 'MartaES2'.
+02/12/2024-04:47:04 : Connection closed: 127.0.0.1
+02/12/2024-04:47:05 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:47:05 : [Log-in]: attempting get information of user 'AshleyAG3'.
+02/12/2024-04:47:05 : [User information]: information of user 'AshleyAG3' returned.
+02/12/2024-04:47:05 : [User information]: 'username01' got information of user 'AshleyAG3'.
+02/12/2024-04:47:05 : Connection closed: 127.0.0.1
+02/12/2024-04:47:05 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:47:05 : [Log-in]: attempting get information of user 'AshleyAG3'.
+02/12/2024-04:47:05 : [User information]: information of user 'AshleyAG3' returned.
+02/12/2024-04:47:05 : [User information]: 'username01' got information of user 'AshleyAG3'.
+02/12/2024-04:47:05 : Connection closed: 127.0.0.1
+02/12/2024-04:47:05 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:47:05 : [Log-in]: attempting get information of user 'JudithS7'.
+02/12/2024-04:47:05 : [User information]: information of user 'JudithS7' returned.
+02/12/2024-04:47:05 : [User information]: 'username01' got information of user 'JudithS7'.
+02/12/2024-04:47:05 : Connection closed: 127.0.0.1
+02/12/2024-04:47:05 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:47:05 : [Log-in]: attempting get information of user 'JudithS7'.
+02/12/2024-04:47:05 : [User information]: information of user 'JudithS7' returned.
+02/12/2024-04:47:05 : [User information]: 'username01' got information of user 'JudithS7'.
+02/12/2024-04:47:05 : Connection closed: 127.0.0.1
+02/12/2024-04:47:06 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:47:06 : [Log-in]: attempting get information of user 'Ximena1'.
+02/12/2024-04:47:06 : [User information]: information of user 'Ximena1' returned.
+02/12/2024-04:47:06 : [User information]: 'username01' got information of user 'Ximena1'.
+02/12/2024-04:47:06 : Connection closed: 127.0.0.1
+02/12/2024-04:47:06 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:47:06 : [Log-in]: attempting get information of user 'Ximena1'.
+02/12/2024-04:47:06 : [User information]: information of user 'Ximena1' returned.
+02/12/2024-04:47:06 : [User information]: 'username01' got information of user 'Ximena1'.
+02/12/2024-04:47:06 : Connection closed: 127.0.0.1
+02/12/2024-04:47:07 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:47:07 : [Log-in]: attempting get information of user 're'.
+02/12/2024-04:47:07 : [User information]: information of user 're' returned.
+02/12/2024-04:47:07 : [User information]: 'username01' got information of user 're'.
+02/12/2024-04:47:07 : Connection closed: 127.0.0.1
+02/12/2024-04:47:07 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:47:07 : [Log-in]: attempting get information of user 're'.
+02/12/2024-04:47:07 : [User information]: information of user 're' returned.
+02/12/2024-04:47:07 : [User information]: 'username01' got information of user 're'.
+02/12/2024-04:47:07 : Connection closed: 127.0.0.1
+02/12/2024-04:47:07 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:47:07 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-04:47:07 : [User information]: information of user 'username01' returned.
+02/12/2024-04:47:07 : [User information]: 'username01' got information of user 'username01'.
+02/12/2024-04:47:07 : Connection closed: 127.0.0.1
+02/12/2024-04:47:07 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:47:07 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-04:47:07 : [User information]: information of user 'username01' returned.
+02/12/2024-04:47:07 : [User information]: 'username01' got information of user 'username01'.
+02/12/2024-04:47:07 : Connection closed: 127.0.0.1
+02/12/2024-04:47:08 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:47:08 : [Log-in]: attempting get information of user 're'.
+02/12/2024-04:47:08 : [User information]: information of user 're' returned.
+02/12/2024-04:47:08 : [User information]: 'username01' got information of user 're'.
+02/12/2024-04:47:08 : Connection closed: 127.0.0.1
+02/12/2024-04:47:08 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:47:08 : [Log-in]: attempting get information of user 're'.
+02/12/2024-04:47:08 : [User information]: information of user 're' returned.
+02/12/2024-04:47:08 : [User information]: 'username01' got information of user 're'.
+02/12/2024-04:47:08 : Connection closed: 127.0.0.1
+02/12/2024-04:47:08 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:47:08 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-04:47:08 : [User information]: information of user 'quiann' returned.
+02/12/2024-04:47:08 : [User information]: 'username01' got information of user 'quiann'.
+02/12/2024-04:47:08 : Connection closed: 127.0.0.1
+02/12/2024-04:47:08 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:47:08 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-04:47:08 : [User information]: information of user 'quiann' returned.
+02/12/2024-04:47:08 : [User information]: 'username01' got information of user 'quiann'.
+02/12/2024-04:47:08 : Connection closed: 127.0.0.1
+02/12/2024-04:47:09 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:47:09 : [Log-in]: attempting get information of user 'Pablix'.
+02/12/2024-04:47:09 : [User information]: information of user 'Pablix' returned.
+02/12/2024-04:47:09 : [User information]: 'username01' got information of user 'Pablix'.
+02/12/2024-04:47:09 : Connection closed: 127.0.0.1
+02/12/2024-04:47:09 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:47:09 : [Log-in]: attempting get information of user 'Pablix'.
+02/12/2024-04:47:09 : [User information]: information of user 'Pablix' returned.
+02/12/2024-04:47:09 : [User information]: 'username01' got information of user 'Pablix'.
+02/12/2024-04:47:09 : Connection closed: 127.0.0.1
+02/12/2024-04:47:15 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:47:15 : User 'username01' gets access to entire LOG ('log_UserNode.txt').
+02/12/2024-04:47:15 : User 'Backup' gets access to entire LOG ('log_UserNode.txt').
+02/12/2024-04:47:15 : Connection closed: 127.0.0.1
+02/12/2024-04:47:24 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:47:24 : Connection closed: 127.0.0.1
+02/12/2024-04:51:16 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:51:16 : [Log-in]: attempting to authenticate 'username01'.
+02/12/2024-04:51:16 : [Log-in]: user 'username01' validated.
+02/12/2024-04:51:16 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-04:51:16 : [User information]: information of user 'username01' returned.
+02/12/2024-04:51:16 : Connection closed: 127.0.0.1
+02/12/2024-04:51:16 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:51:16 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-04:51:16 : [User information]: information of user 'username01' returned.
+02/12/2024-04:51:16 : [User information]: 'username01' got information of user 'username01'.
+02/12/2024-04:51:16 : Connection closed: 127.0.0.1
+02/12/2024-04:51:18 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:51:18 : Connection closed: 127.0.0.1
+02/12/2024-04:51:23 : Connection from Remote IP: 127.0.0.1
+02/12/2024-04:51:23 : [User information]: attempting get user list.
+02/12/2024-04:51:23 : [User information]: user list returned.
+02/12/2024-04:51:23 : Connection closed: 127.0.0.1
+02/12/2024-05:07:42 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:07:42 : [Log-in]: attempting to authenticate 'username01'.
+02/12/2024-05:07:42 : [Log-in]: user 'username01' validated.
+02/12/2024-05:07:42 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-05:07:42 : [User information]: information of user 'username01' returned.
+02/12/2024-05:07:42 : Connection closed: 127.0.0.1
+02/12/2024-05:07:42 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:07:42 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-05:07:42 : [User information]: information of user 'username01' returned.
+02/12/2024-05:07:42 : [User information]: 'username01' got information of user 'username01'.
+02/12/2024-05:07:42 : Connection closed: 127.0.0.1
+02/12/2024-05:07:51 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:07:51 : Connection closed: 127.0.0.1
+02/12/2024-05:07:55 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:07:55 : User 'username01' gets access to entire LOG ('log_UserNode.txt').
+02/12/2024-05:07:55 : User 'Backup' gets access to entire LOG ('log_UserNode.txt').
+02/12/2024-05:07:55 : Connection closed: 127.0.0.1
+02/12/2024-05:07:57 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:07:57 : [User information]: attempting get user list.
+02/12/2024-05:07:57 : [User information]: user list returned.
+02/12/2024-05:07:57 : Connection closed: 127.0.0.1
+02/12/2024-05:07:58 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:07:58 : [Log-in]: attempting get information of user 'MilenaSO6'.
+02/12/2024-05:07:58 : [User information]: information of user 'MilenaSO6' returned.
+02/12/2024-05:07:58 : [User information]: 'username01' got information of user 'MilenaSO6'.
+02/12/2024-05:07:58 : Connection closed: 127.0.0.1
+02/12/2024-05:07:58 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:07:58 : [Log-in]: attempting get information of user 'MilenaSO6'.
+02/12/2024-05:07:58 : [User information]: information of user 'MilenaSO6' returned.
+02/12/2024-05:07:58 : [User information]: 'username01' got information of user 'MilenaSO6'.
+02/12/2024-05:07:58 : Connection closed: 127.0.0.1
+02/12/2024-05:07:58 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:07:58 : [Log-in]: attempting get information of user 'superuser'.
+02/12/2024-05:07:58 : [User information]: information of user 'superuser' returned.
+02/12/2024-05:07:58 : [User information]: 'username01' got information of user 'superuser'.
+02/12/2024-05:07:58 : Connection closed: 127.0.0.1
+02/12/2024-05:07:58 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:07:58 : [Log-in]: attempting get information of user 'superuser'.
+02/12/2024-05:07:58 : [User information]: information of user 'superuser' returned.
+02/12/2024-05:07:58 : [User information]: 'username01' got information of user 'superuser'.
+02/12/2024-05:07:58 : Connection closed: 127.0.0.1
+02/12/2024-05:07:59 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:07:59 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:07:59 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:07:59 : [User information]: 'username01' got information of user 'quiann'.
+02/12/2024-05:07:59 : Connection closed: 127.0.0.1
+02/12/2024-05:07:59 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:07:59 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:07:59 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:07:59 : [User information]: 'username01' got information of user 'quiann'.
+02/12/2024-05:07:59 : Connection closed: 127.0.0.1
+02/12/2024-05:08:00 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:08:00 : [User information]: attempting get user list.
+02/12/2024-05:08:00 : [User information]: user list returned.
+02/12/2024-05:08:00 : Connection closed: 127.0.0.1
+02/12/2024-05:08:04 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:08:04 : [User information]: attempting get user list.
+02/12/2024-05:08:04 : [User information]: user list returned.
+02/12/2024-05:08:04 : Connection closed: 127.0.0.1
+02/12/2024-05:08:08 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:08:08 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:08:08 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:08:08 : [User information]: 'username01' got information of user 'quiann'.
+02/12/2024-05:08:08 : Connection closed: 127.0.0.1
+02/12/2024-05:08:08 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:08:08 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:08:08 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:08:08 : Connection closed: 127.0.0.1
+02/12/2024-05:08:12 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:08:12 : [User information]: attempting get user list.
+02/12/2024-05:08:12 : [User information]: user list returned.
+02/12/2024-05:08:12 : Connection closed: 127.0.0.1
+02/12/2024-05:08:13 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:08:13 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:08:13 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:08:13 : [User information]: 'username01' got information of user 'quiann'.
+02/12/2024-05:08:13 : Connection closed: 127.0.0.1
+02/12/2024-05:08:13 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:08:13 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:08:13 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:08:13 : [User information]: 'username01' got information of user 'quiann'.
+02/12/2024-05:08:13 : Connection closed: 127.0.0.1
+02/12/2024-05:08:14 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:08:14 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:08:14 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:08:14 : [User information]: 'username01' got information of user 'quiann'.
+02/12/2024-05:08:14 : Connection closed: 127.0.0.1
+02/12/2024-05:08:14 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:08:14 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:08:14 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:08:14 : [User information]: 'username01' got information of user 'quiann'.
+02/12/2024-05:08:14 : Connection closed: 127.0.0.1
+02/12/2024-05:08:18 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:08:18 : [Log-in]: attempting to authenticate 'username01'.
+02/12/2024-05:08:18 : [Log-in]: user 'username01' validated.
+02/12/2024-05:08:18 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-05:08:18 : [User information]: information of user 'username01' returned.
+02/12/2024-05:08:18 : Connection closed: 127.0.0.1
+02/12/2024-05:08:18 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:08:18 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-05:08:18 : [User information]: information of user 'username01' returned.
+02/12/2024-05:08:18 : [User information]: 'username01' got information of user 'username01'.
+02/12/2024-05:08:18 : Connection closed: 127.0.0.1
+02/12/2024-05:08:19 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:08:19 : [User information]: attempting get user list.
+02/12/2024-05:08:19 : [User information]: user list returned.
+02/12/2024-05:08:19 : Connection closed: 127.0.0.1
+02/12/2024-05:08:21 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:08:21 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:08:21 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:08:21 : [User information]: 'username01' got information of user 'quiann'.
+02/12/2024-05:08:21 : Connection closed: 127.0.0.1
+02/12/2024-05:08:21 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:08:21 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:08:21 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:08:21 : [User information]: 'username01' got information of user 'quiann'.
+02/12/2024-05:08:21 : Connection closed: 127.0.0.1
+02/12/2024-05:08:32 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:08:32 : User 'Backup' gets access to entire LOG ('log_UserNode.txt').
+02/12/2024-05:08:32 : Connection closed: 127.0.0.1
+02/12/2024-05:08:32 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:08:32 : Sensors data send to backup node.
+02/12/2024-05:08:32 : Connection closed: 127.0.0.1
+02/12/2024-05:08:33 : Users data file closed and saved to file 'usersData.txt'.
+02/12/2024-05:08:33 : Filesystem <FAT> closed and saved to file 'log_UserNode.txt'.
+02/12/2024-05:08:49 : File 'log_UserNode.txt' <Type:Log> loaded into filesystem.
+02/12/2024-05:08:49 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+02/12/2024-05:08:49 : Error binding the server socket 3
+02/12/2024-05:08:49 : Users data file closed and saved to file 'usersData.txt'.
+02/12/2024-05:08:49 : Filesystem <FAT> closed and saved to file 'log_UserNode.txt'.
+02/12/2024-05:08:51 : File 'log_UserNode.txt' <Type:Log> loaded into filesystem.
+02/12/2024-05:08:51 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+02/12/2024-05:08:51 : Error binding the server socket 3
+02/12/2024-05:08:51 : Users data file closed and saved to file 'usersData.txt'.
+02/12/2024-05:08:51 : Filesystem <FAT> closed and saved to file 'log_UserNode.txt'.
+02/12/2024-05:08:58 : File 'log_UserNode.txt' <Type:Log> loaded into filesystem.
+02/12/2024-05:08:58 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+02/12/2024-05:08:58 : Error binding the server socket 3
+02/12/2024-05:08:58 : Users data file closed and saved to file 'usersData.txt'.
+02/12/2024-05:08:58 : Filesystem <FAT> closed and saved to file 'log_UserNode.txt'.
+02/12/2024-05:09:06 : File 'log_UserNode.txt' <Type:Log> loaded into filesystem.
+02/12/2024-05:09:06 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+02/12/2024-05:09:06 : Error binding the server socket 3
+02/12/2024-05:09:06 : Users data file closed and saved to file 'usersData.txt'.
+02/12/2024-05:09:06 : Filesystem <FAT> closed and saved to file 'log_UserNode.txt'.
+02/12/2024-05:09:34 : File 'log_UserNode.txt' <Type:Log> loaded into filesystem.
+02/12/2024-05:09:34 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+02/12/2024-05:09:34 : Error binding the server socket 3
+02/12/2024-05:09:34 : Users data file closed and saved to file 'usersData.txt'.
+02/12/2024-05:09:34 : Filesystem <FAT> closed and saved to file 'log_UserNode.txt'.
+02/12/2024-05:09:35 : File 'log_UserNode.txt' <Type:Log> loaded into filesystem.
+02/12/2024-05:09:35 : File 'usersData.txt' <Type:File-user-data> loaded into filesystem.
+02/12/2024-05:09:35 : Connected to node at port 3001
+02/12/2024-05:09:45 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:45 : [Log-in]: attempting to authenticate 'username01'.
+02/12/2024-05:09:45 : [Log-in]: user 'username01' validated.
+02/12/2024-05:09:45 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-05:09:45 : [User information]: information of user 'username01' returned.
+02/12/2024-05:09:45 : Connection closed: 127.0.0.1
+02/12/2024-05:09:45 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:45 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-05:09:45 : [User information]: information of user 'username01' returned.
+02/12/2024-05:09:45 : [User information]: 'username01' got information of user 'username01'.
+02/12/2024-05:09:45 : Connection closed: 127.0.0.1
+02/12/2024-05:09:46 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:46 : [User information]: attempting get user list.
+02/12/2024-05:09:46 : [User information]: user list returned.
+02/12/2024-05:09:46 : Connection closed: 127.0.0.1
+02/12/2024-05:09:48 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:48 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:09:48 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:09:48 : [User information]: 'username01' got information of user 'quiann'.
+02/12/2024-05:09:48 : Connection closed: 127.0.0.1
+02/12/2024-05:09:48 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:48 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:09:48 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:09:48 : [User information]: 'username01' got information of user 'quiann'.
+02/12/2024-05:09:48 : Connection closed: 127.0.0.1
+02/12/2024-05:09:49 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:49 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:09:49 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:09:49 : [User information]: 'username01' got information of user 'quiann'.
+02/12/2024-05:09:49 : Connection closed: 127.0.0.1
+02/12/2024-05:09:49 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:49 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:09:49 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:09:49 : [User information]: 'username01' got information of user 'quiann'.
+02/12/2024-05:09:49 : Connection closed: 127.0.0.1
+02/12/2024-05:09:50 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:50 : [Log-in]: attempting get information of user 'Pablix'.
+02/12/2024-05:09:50 : [User information]: information of user 'Pablix' returned.
+02/12/2024-05:09:50 : [User information]: 'username01' got information of user 'Pablix'.
+02/12/2024-05:09:50 : Connection closed: 127.0.0.1
+02/12/2024-05:09:50 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:50 : [Log-in]: attempting get information of user 'Pablix'.
+02/12/2024-05:09:50 : [User information]: information of user 'Pablix' returned.
+02/12/2024-05:09:50 : [User information]: 'username01' got information of user 'Pablix'.
+02/12/2024-05:09:50 : Connection closed: 127.0.0.1
+02/12/2024-05:09:50 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:50 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:09:50 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:09:50 : [User information]: 'username01' got information of user 'quiann'.
+02/12/2024-05:09:50 : Connection closed: 127.0.0.1
+02/12/2024-05:09:50 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:50 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:09:50 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:09:50 : [User information]: 'username01' got information of user 'quiann'.
+02/12/2024-05:09:50 : Connection closed: 127.0.0.1
+02/12/2024-05:09:50 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:50 : [Log-in]: attempting get information of user 're'.
+02/12/2024-05:09:50 : [User information]: information of user 're' returned.
+02/12/2024-05:09:50 : [User information]: 'username01' got information of user 're'.
+02/12/2024-05:09:50 : Connection closed: 127.0.0.1
+02/12/2024-05:09:50 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:50 : [Log-in]: attempting get information of user 're'.
+02/12/2024-05:09:50 : [User information]: information of user 're' returned.
+02/12/2024-05:09:50 : [User information]: 'username01' got information of user 're'.
+02/12/2024-05:09:50 : Connection closed: 127.0.0.1
+02/12/2024-05:09:51 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:51 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-05:09:51 : [User information]: information of user 'username01' returned.
+02/12/2024-05:09:51 : [User information]: 'username01' got information of user 'username01'.
+02/12/2024-05:09:51 : Connection closed: 127.0.0.1
+02/12/2024-05:09:51 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:51 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-05:09:51 : [User information]: information of user 'username01' returned.
+02/12/2024-05:09:51 : [User information]: 'username01' got information of user 'username01'.
+02/12/2024-05:09:51 : Connection closed: 127.0.0.1
+02/12/2024-05:09:53 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:53 : [Log-in]: attempting get information of user 'Pablix'.
+02/12/2024-05:09:53 : [User information]: information of user 'Pablix' returned.
+02/12/2024-05:09:53 : [User information]: 'username01' got information of user 'Pablix'.
+02/12/2024-05:09:53 : Connection closed: 127.0.0.1
+02/12/2024-05:09:53 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:53 : [Log-in]: attempting get information of user 'Pablix'.
+02/12/2024-05:09:53 : [User information]: information of user 'Pablix' returned.
+02/12/2024-05:09:53 : [User information]: 'username01' got information of user 'Pablix'.
+02/12/2024-05:09:53 : Connection closed: 127.0.0.1
+02/12/2024-05:09:53 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:53 : [Log-in]: attempting get information of user 'Ximena1'.
+02/12/2024-05:09:53 : [User information]: information of user 'Ximena1' returned.
+02/12/2024-05:09:53 : [User information]: 'username01' got information of user 'Ximena1'.
+02/12/2024-05:09:53 : Connection closed: 127.0.0.1
+02/12/2024-05:09:53 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:53 : [Log-in]: attempting get information of user 'Ximena1'.
+02/12/2024-05:09:53 : [User information]: information of user 'Ximena1' returned.
+02/12/2024-05:09:53 : [User information]: 'username01' got information of user 'Ximena1'.
+02/12/2024-05:09:53 : Connection closed: 127.0.0.1
+02/12/2024-05:09:54 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:54 : [Log-in]: attempting get information of user 'superuser'.
+02/12/2024-05:09:54 : [User information]: information of user 'superuser' returned.
+02/12/2024-05:09:54 : [User information]: 'username01' got information of user 'superuser'.
+02/12/2024-05:09:54 : Connection closed: 127.0.0.1
+02/12/2024-05:09:54 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:54 : [Log-in]: attempting get information of user 'superuser'.
+02/12/2024-05:09:54 : [User information]: information of user 'superuser' returned.
+02/12/2024-05:09:54 : [User information]: 'username01' got information of user 'superuser'.
+02/12/2024-05:09:54 : Connection closed: 127.0.0.1
+02/12/2024-05:09:54 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:54 : [Log-in]: attempting get information of user 'GabySU9'.
+02/12/2024-05:09:54 : [User information]: information of user 'GabySU9' returned.
+02/12/2024-05:09:54 : [User information]: 'username01' got information of user 'GabySU9'.
+02/12/2024-05:09:54 : Connection closed: 127.0.0.1
+02/12/2024-05:09:54 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:54 : [Log-in]: attempting get information of user 'GabySU9'.
+02/12/2024-05:09:54 : [User information]: information of user 'GabySU9' returned.
+02/12/2024-05:09:54 : [User information]: 'username01' got information of user 'GabySU9'.
+02/12/2024-05:09:54 : Connection closed: 127.0.0.1
+02/12/2024-05:09:54 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:54 : [Log-in]: attempting get information of user 'WarrenMI8'.
+02/12/2024-05:09:54 : [User information]: information of user 'WarrenMI8' returned.
+02/12/2024-05:09:54 : [User information]: 'username01' got information of user 'WarrenMI8'.
+02/12/2024-05:09:54 : Connection closed: 127.0.0.1
+02/12/2024-05:09:54 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:54 : [Log-in]: attempting get information of user 'WarrenMI8'.
+02/12/2024-05:09:54 : [User information]: information of user 'WarrenMI8' returned.
+02/12/2024-05:09:54 : [User information]: 'username01' got information of user 'WarrenMI8'.
+02/12/2024-05:09:54 : Connection closed: 127.0.0.1
+02/12/2024-05:09:55 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:55 : [Log-in]: attempting get information of user 'JudithS7'.
+02/12/2024-05:09:55 : [User information]: information of user 'JudithS7' returned.
+02/12/2024-05:09:55 : [User information]: 'username01' got information of user 'JudithS7'.
+02/12/2024-05:09:55 : Connection closed: 127.0.0.1
+02/12/2024-05:09:55 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:55 : [Log-in]: attempting get information of user 'JudithS7'.
+02/12/2024-05:09:55 : [User information]: information of user 'JudithS7' returned.
+02/12/2024-05:09:55 : [User information]: 'username01' got information of user 'JudithS7'.
+02/12/2024-05:09:55 : Connection closed: 127.0.0.1
+02/12/2024-05:09:55 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:55 : [Log-in]: attempting get information of user 'HectorHG522'.
+02/12/2024-05:09:55 : [User information]: information of user 'HectorHG522' returned.
+02/12/2024-05:09:55 : [User information]: 'username01' got information of user 'HectorHG522'.
+02/12/2024-05:09:55 : Connection closed: 127.0.0.1
+02/12/2024-05:09:55 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:55 : [Log-in]: attempting get information of user 'HectorHG522'.
+02/12/2024-05:09:55 : [User information]: information of user 'HectorHG522' returned.
+02/12/2024-05:09:55 : [User information]: 'username01' got information of user 'HectorHG522'.
+02/12/2024-05:09:55 : Connection closed: 127.0.0.1
+02/12/2024-05:09:55 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:55 : [Log-in]: attempting get information of user 'MilenaSO6'.
+02/12/2024-05:09:55 : [User information]: information of user 'MilenaSO6' returned.
+02/12/2024-05:09:55 : [User information]: 'username01' got information of user 'MilenaSO6'.
+02/12/2024-05:09:55 : Connection closed: 127.0.0.1
+02/12/2024-05:09:55 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:55 : [Log-in]: attempting get information of user 'MilenaSO6'.
+02/12/2024-05:09:55 : [User information]: information of user 'MilenaSO6' returned.
+02/12/2024-05:09:55 : [User information]: 'username01' got information of user 'MilenaSO6'.
+02/12/2024-05:09:55 : Connection closed: 127.0.0.1
+02/12/2024-05:09:56 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:56 : [Log-in]: attempting get information of user 'AshleyAG3'.
+02/12/2024-05:09:56 : [User information]: information of user 'AshleyAG3' returned.
+02/12/2024-05:09:56 : [User information]: 'username01' got information of user 'AshleyAG3'.
+02/12/2024-05:09:56 : Connection closed: 127.0.0.1
+02/12/2024-05:09:56 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:56 : [Log-in]: attempting get information of user 'AshleyAG3'.
+02/12/2024-05:09:56 : [User information]: information of user 'AshleyAG3' returned.
+02/12/2024-05:09:56 : [User information]: 'username01' got information of user 'AshleyAG3'.
+02/12/2024-05:09:56 : Connection closed: 127.0.0.1
+02/12/2024-05:09:56 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:56 : [Log-in]: attempting get information of user 'BrayanST3'.
+02/12/2024-05:09:56 : [User information]: information of user 'BrayanST3' returned.
+02/12/2024-05:09:56 : [User information]: 'username01' got information of user 'BrayanST3'.
+02/12/2024-05:09:56 : Connection closed: 127.0.0.1
+02/12/2024-05:09:56 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:56 : [Log-in]: attempting get information of user 'BrayanST3'.
+02/12/2024-05:09:56 : [User information]: information of user 'BrayanST3' returned.
+02/12/2024-05:09:56 : [User information]: 'username01' got information of user 'BrayanST3'.
+02/12/2024-05:09:56 : Connection closed: 127.0.0.1
+02/12/2024-05:09:56 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:56 : [Log-in]: attempting get information of user 'MartaES2'.
+02/12/2024-05:09:56 : [User information]: information of user 'MartaES2' returned.
+02/12/2024-05:09:56 : [User information]: 'username01' got information of user 'MartaES2'.
+02/12/2024-05:09:56 : Connection closed: 127.0.0.1
+02/12/2024-05:09:56 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:56 : [Log-in]: attempting get information of user 'MartaES2'.
+02/12/2024-05:09:56 : [User information]: information of user 'MartaES2' returned.
+02/12/2024-05:09:56 : [User information]: 'username01' got information of user 'MartaES2'.
+02/12/2024-05:09:56 : Connection closed: 127.0.0.1
+02/12/2024-05:09:57 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:57 : [Log-in]: attempting get information of user 'PedroRM1'.
+02/12/2024-05:09:57 : [User information]: information of user 'PedroRM1' returned.
+02/12/2024-05:09:57 : [User information]: 'username01' got information of user 'PedroRM1'.
+02/12/2024-05:09:57 : Connection closed: 127.0.0.1
+02/12/2024-05:09:57 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:09:57 : [Log-in]: attempting get information of user 'PedroRM1'.
+02/12/2024-05:09:57 : [User information]: information of user 'PedroRM1' returned.
+02/12/2024-05:09:57 : [User information]: 'username01' got information of user 'PedroRM1'.
+02/12/2024-05:09:57 : Connection closed: 127.0.0.1
+02/12/2024-05:12:28 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:12:28 : [Log-in]: attempting to authenticate 'username01'.
+02/12/2024-05:12:28 : [Log-in]: user 'username01' validated.
+02/12/2024-05:12:28 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-05:12:28 : [User information]: information of user 'username01' returned.
+02/12/2024-05:12:28 : Connection closed: 127.0.0.1
+02/12/2024-05:12:28 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:12:28 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-05:12:28 : [User information]: information of user 'username01' returned.
+02/12/2024-05:12:28 : [User information]: 'username01' got information of user 'username01'.
+02/12/2024-05:12:28 : Connection closed: 127.0.0.1
+02/12/2024-05:12:31 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:12:31 : [User information]: attempting get user list.
+02/12/2024-05:12:31 : [User information]: user list returned.
+02/12/2024-05:12:31 : Connection closed: 127.0.0.1
+02/12/2024-05:12:38 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:12:38 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:12:38 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:12:38 : [User information]: 'username01' got information of user 'quiann'.
+02/12/2024-05:12:38 : Connection closed: 127.0.0.1
+02/12/2024-05:12:38 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:12:38 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:12:38 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:12:38 : Connection closed: 127.0.0.1
+02/12/2024-05:13:02 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:02 : [User information]: attempting get user list.
+02/12/2024-05:13:02 : [User information]: user list returned.
+02/12/2024-05:13:02 : Connection closed: 127.0.0.1
+02/12/2024-05:13:05 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:05 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:13:05 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:13:05 : [User information]: 'username01' got information of user 'quiann'.
+02/12/2024-05:13:05 : Connection closed: 127.0.0.1
+02/12/2024-05:13:05 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:05 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:13:05 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:13:05 : [User information]: 'username01' got information of user 'quiann'.
+02/12/2024-05:13:05 : Connection closed: 127.0.0.1
+02/12/2024-05:13:20 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:20 : [Log-in]: attempting get information of user 're'.
+02/12/2024-05:13:20 : [User information]: information of user 're' returned.
+02/12/2024-05:13:20 : [User information]: 'username01' got information of user 're'.
+02/12/2024-05:13:20 : Connection closed: 127.0.0.1
+02/12/2024-05:13:20 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:20 : [Log-in]: attempting get information of user 're'.
+02/12/2024-05:13:20 : [User information]: information of user 're' returned.
+02/12/2024-05:13:20 : [User information]: 'username01' got information of user 're'.
+02/12/2024-05:13:20 : Connection closed: 127.0.0.1
+02/12/2024-05:13:21 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:21 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:13:21 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:13:21 : [User information]: 'username01' got information of user 'quiann'.
+02/12/2024-05:13:21 : Connection closed: 127.0.0.1
+02/12/2024-05:13:21 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:21 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:13:21 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:13:21 : [User information]: 'username01' got information of user 'quiann'.
+02/12/2024-05:13:21 : Connection closed: 127.0.0.1
+02/12/2024-05:13:22 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:22 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:13:22 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:13:22 : [User information]: 'username01' got information of user 'quiann'.
+02/12/2024-05:13:22 : Connection closed: 127.0.0.1
+02/12/2024-05:13:22 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:22 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:13:22 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:13:22 : [User information]: 'username01' got information of user 'quiann'.
+02/12/2024-05:13:22 : Connection closed: 127.0.0.1
+02/12/2024-05:13:29 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:29 : [User information]: attempting get user list.
+02/12/2024-05:13:29 : [User information]: user list returned.
+02/12/2024-05:13:29 : Connection closed: 127.0.0.1
+02/12/2024-05:13:31 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:31 : [Log-in]: attempting get information of user 'Pablix'.
+02/12/2024-05:13:31 : [User information]: information of user 'Pablix' returned.
+02/12/2024-05:13:31 : [User information]: 'username01' got information of user 'Pablix'.
+02/12/2024-05:13:31 : Connection closed: 127.0.0.1
+02/12/2024-05:13:31 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:31 : [Log-in]: attempting get information of user 'Pablix'.
+02/12/2024-05:13:31 : [User information]: information of user 'Pablix' returned.
+02/12/2024-05:13:31 : Connection closed: 127.0.0.1
+02/12/2024-05:13:33 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:33 : [User information]: attempting get user list.
+02/12/2024-05:13:33 : [User information]: user list returned.
+02/12/2024-05:13:33 : Connection closed: 127.0.0.1
+02/12/2024-05:13:35 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:35 : [Log-in]: attempting get information of user 'Ximena1'.
+02/12/2024-05:13:35 : [User information]: information of user 'Ximena1' returned.
+02/12/2024-05:13:35 : [User information]: 'username01' got information of user 'Ximena1'.
+02/12/2024-05:13:35 : Connection closed: 127.0.0.1
+02/12/2024-05:13:35 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:35 : [Log-in]: attempting get information of user 'Ximena1'.
+02/12/2024-05:13:35 : [User information]: information of user 'Ximena1' returned.
+02/12/2024-05:13:35 : Connection closed: 127.0.0.1
+02/12/2024-05:13:36 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:36 : [User information]: attempting get user list.
+02/12/2024-05:13:36 : [User information]: user list returned.
+02/12/2024-05:13:36 : Connection closed: 127.0.0.1
+02/12/2024-05:13:37 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:37 : [Log-in]: attempting get information of user 'Ximena1'.
+02/12/2024-05:13:37 : [User information]: information of user 'Ximena1' returned.
+02/12/2024-05:13:37 : [User information]: 'username01' got information of user 'Ximena1'.
+02/12/2024-05:13:37 : Connection closed: 127.0.0.1
+02/12/2024-05:13:37 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:37 : [Log-in]: attempting get information of user 'Ximena1'.
+02/12/2024-05:13:37 : [User information]: information of user 'Ximena1' returned.
+02/12/2024-05:13:37 : [User information]: 'username01' got information of user 'Ximena1'.
+02/12/2024-05:13:37 : Connection closed: 127.0.0.1
+02/12/2024-05:13:38 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:38 : [Log-in]: attempting get information of user 'Pablix'.
+02/12/2024-05:13:38 : [User information]: information of user 'Pablix' returned.
+02/12/2024-05:13:38 : [User information]: 'username01' got information of user 'Pablix'.
+02/12/2024-05:13:38 : Connection closed: 127.0.0.1
+02/12/2024-05:13:38 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:38 : [Log-in]: attempting get information of user 'Pablix'.
+02/12/2024-05:13:38 : [User information]: information of user 'Pablix' returned.
+02/12/2024-05:13:38 : [User information]: 'username01' got information of user 'Pablix'.
+02/12/2024-05:13:38 : Connection closed: 127.0.0.1
+02/12/2024-05:13:39 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:39 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:13:39 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:13:39 : [User information]: 'username01' got information of user 'quiann'.
+02/12/2024-05:13:39 : Connection closed: 127.0.0.1
+02/12/2024-05:13:39 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:39 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:13:39 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:13:39 : [User information]: 'username01' got information of user 'quiann'.
+02/12/2024-05:13:39 : Connection closed: 127.0.0.1
+02/12/2024-05:13:39 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:39 : [Log-in]: attempting get information of user 're'.
+02/12/2024-05:13:39 : [User information]: information of user 're' returned.
+02/12/2024-05:13:39 : [User information]: 'username01' got information of user 're'.
+02/12/2024-05:13:39 : Connection closed: 127.0.0.1
+02/12/2024-05:13:39 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:39 : [Log-in]: attempting get information of user 're'.
+02/12/2024-05:13:39 : [User information]: information of user 're' returned.
+02/12/2024-05:13:39 : [User information]: 'username01' got information of user 're'.
+02/12/2024-05:13:39 : Connection closed: 127.0.0.1
+02/12/2024-05:13:53 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:53 : [Log-in]: attempting to authenticate 'username01'.
+02/12/2024-05:13:53 : [Log-in]: user 'username01' validated.
+02/12/2024-05:13:53 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-05:13:53 : [User information]: information of user 'username01' returned.
+02/12/2024-05:13:53 : Connection closed: 127.0.0.1
+02/12/2024-05:13:53 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:53 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-05:13:53 : [User information]: information of user 'username01' returned.
+02/12/2024-05:13:53 : [User information]: 'username01' got information of user 'username01'.
+02/12/2024-05:13:53 : Connection closed: 127.0.0.1
+02/12/2024-05:13:54 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:54 : [User information]: attempting get user list.
+02/12/2024-05:13:54 : [User information]: user list returned.
+02/12/2024-05:13:54 : Connection closed: 127.0.0.1
+02/12/2024-05:13:56 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:56 : [Log-in]: attempting get information of user 'Pablix'.
+02/12/2024-05:13:56 : [User information]: information of user 'Pablix' returned.
+02/12/2024-05:13:56 : [User information]: 'username01' got information of user 'Pablix'.
+02/12/2024-05:13:56 : Connection closed: 127.0.0.1
+02/12/2024-05:13:56 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:56 : [Log-in]: attempting get information of user 'Pablix'.
+02/12/2024-05:13:56 : [User information]: information of user 'Pablix' returned.
+02/12/2024-05:13:56 : [User information]: 'username01' got information of user 'Pablix'.
+02/12/2024-05:13:56 : Connection closed: 127.0.0.1
+02/12/2024-05:13:57 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:57 : [Log-in]: attempting get information of user 'Ximena1'.
+02/12/2024-05:13:57 : [User information]: information of user 'Ximena1' returned.
+02/12/2024-05:13:57 : [User information]: 'username01' got information of user 'Ximena1'.
+02/12/2024-05:13:57 : Connection closed: 127.0.0.1
+02/12/2024-05:13:57 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:57 : [Log-in]: attempting get information of user 'Ximena1'.
+02/12/2024-05:13:57 : [User information]: information of user 'Ximena1' returned.
+02/12/2024-05:13:57 : [User information]: 'username01' got information of user 'Ximena1'.
+02/12/2024-05:13:57 : Connection closed: 127.0.0.1
+02/12/2024-05:13:57 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:57 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:13:57 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:13:57 : [User information]: 'username01' got information of user 'quiann'.
+02/12/2024-05:13:57 : Connection closed: 127.0.0.1
+02/12/2024-05:13:57 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:57 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:13:57 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:13:57 : [User information]: 'username01' got information of user 'quiann'.
+02/12/2024-05:13:57 : Connection closed: 127.0.0.1
+02/12/2024-05:13:58 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:58 : [Log-in]: attempting get information of user 'Pablix'.
+02/12/2024-05:13:58 : [User information]: information of user 'Pablix' returned.
+02/12/2024-05:13:58 : [User information]: 'username01' got information of user 'Pablix'.
+02/12/2024-05:13:58 : Connection closed: 127.0.0.1
+02/12/2024-05:13:58 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:58 : [Log-in]: attempting get information of user 'Pablix'.
+02/12/2024-05:13:58 : [User information]: information of user 'Pablix' returned.
+02/12/2024-05:13:58 : [User information]: 'username01' got information of user 'Pablix'.
+02/12/2024-05:13:58 : Connection closed: 127.0.0.1
+02/12/2024-05:13:58 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:58 : [Log-in]: attempting get information of user 'Ximena1'.
+02/12/2024-05:13:58 : [User information]: information of user 'Ximena1' returned.
+02/12/2024-05:13:58 : [User information]: 'username01' got information of user 'Ximena1'.
+02/12/2024-05:13:58 : Connection closed: 127.0.0.1
+02/12/2024-05:13:58 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:58 : [Log-in]: attempting get information of user 'Ximena1'.
+02/12/2024-05:13:58 : [User information]: information of user 'Ximena1' returned.
+02/12/2024-05:13:58 : [User information]: 'username01' got information of user 'Ximena1'.
+02/12/2024-05:13:58 : Connection closed: 127.0.0.1
+02/12/2024-05:13:59 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:59 : [Log-in]: attempting get information of user 'SebasUlaca7'.
+02/12/2024-05:13:59 : [User information]: information of user 'SebasUlaca7' returned.
+02/12/2024-05:13:59 : [User information]: 'username01' got information of user 'SebasUlaca7'.
+02/12/2024-05:13:59 : Connection closed: 127.0.0.1
+02/12/2024-05:13:59 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:59 : [Log-in]: attempting get information of user 'SebasUlaca7'.
+02/12/2024-05:13:59 : [User information]: information of user 'SebasUlaca7' returned.
+02/12/2024-05:13:59 : [User information]: 'username01' got information of user 'SebasUlaca7'.
+02/12/2024-05:13:59 : Connection closed: 127.0.0.1
+02/12/2024-05:13:59 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:59 : [Log-in]: attempting get information of user 'GabySU9'.
+02/12/2024-05:13:59 : [User information]: information of user 'GabySU9' returned.
+02/12/2024-05:13:59 : [User information]: 'username01' got information of user 'GabySU9'.
+02/12/2024-05:13:59 : Connection closed: 127.0.0.1
+02/12/2024-05:13:59 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:59 : [Log-in]: attempting get information of user 'GabySU9'.
+02/12/2024-05:13:59 : [User information]: information of user 'GabySU9' returned.
+02/12/2024-05:13:59 : [User information]: 'username01' got information of user 'GabySU9'.
+02/12/2024-05:13:59 : Connection closed: 127.0.0.1
+02/12/2024-05:13:59 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:59 : [Log-in]: attempting get information of user 'superuser'.
+02/12/2024-05:13:59 : [User information]: information of user 'superuser' returned.
+02/12/2024-05:13:59 : [User information]: 'username01' got information of user 'superuser'.
+02/12/2024-05:13:59 : Connection closed: 127.0.0.1
+02/12/2024-05:13:59 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:13:59 : [Log-in]: attempting get information of user 'superuser'.
+02/12/2024-05:13:59 : [User information]: information of user 'superuser' returned.
+02/12/2024-05:13:59 : [User information]: 'username01' got information of user 'superuser'.
+02/12/2024-05:13:59 : Connection closed: 127.0.0.1
+02/12/2024-05:14:01 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:14:01 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:14:01 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:14:01 : [User information]: 'username01' got information of user 'quiann'.
+02/12/2024-05:14:01 : Connection closed: 127.0.0.1
+02/12/2024-05:14:01 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:14:01 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:14:01 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:14:01 : [User information]: 'username01' got information of user 'quiann'.
+02/12/2024-05:14:01 : Connection closed: 127.0.0.1
+02/12/2024-05:14:01 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:14:01 : [Log-in]: attempting get information of user 'Pablix'.
+02/12/2024-05:14:01 : [User information]: information of user 'Pablix' returned.
+02/12/2024-05:14:01 : [User information]: 'username01' got information of user 'Pablix'.
+02/12/2024-05:14:01 : Connection closed: 127.0.0.1
+02/12/2024-05:14:01 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:14:01 : [Log-in]: attempting get information of user 'Pablix'.
+02/12/2024-05:14:01 : [User information]: information of user 'Pablix' returned.
+02/12/2024-05:14:01 : [User information]: 'username01' got information of user 'Pablix'.
+02/12/2024-05:14:01 : Connection closed: 127.0.0.1
+02/12/2024-05:14:01 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:14:01 : [Log-in]: attempting get information of user 'Ximena1'.
+02/12/2024-05:14:01 : [User information]: information of user 'Ximena1' returned.
+02/12/2024-05:14:01 : [User information]: 'username01' got information of user 'Ximena1'.
+02/12/2024-05:14:01 : Connection closed: 127.0.0.1
+02/12/2024-05:14:01 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:14:01 : [Log-in]: attempting get information of user 'Ximena1'.
+02/12/2024-05:14:01 : [User information]: information of user 'Ximena1' returned.
+02/12/2024-05:14:01 : [User information]: 'username01' got information of user 'Ximena1'.
+02/12/2024-05:14:01 : Connection closed: 127.0.0.1
+02/12/2024-05:14:01 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:14:01 : [Log-in]: attempting get information of user 'superuser'.
+02/12/2024-05:14:01 : [User information]: information of user 'superuser' returned.
+02/12/2024-05:14:01 : [User information]: 'username01' got information of user 'superuser'.
+02/12/2024-05:14:01 : Connection closed: 127.0.0.1
+02/12/2024-05:14:01 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:14:01 : [Log-in]: attempting get information of user 'superuser'.
+02/12/2024-05:14:01 : [User information]: information of user 'superuser' returned.
+02/12/2024-05:14:01 : [User information]: 'username01' got information of user 'superuser'.
+02/12/2024-05:14:01 : Connection closed: 127.0.0.1
+02/12/2024-05:14:05 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:14:05 : [User information]: attempting get user list.
+02/12/2024-05:14:05 : [User information]: user list returned.
+02/12/2024-05:14:05 : Connection closed: 127.0.0.1
+02/12/2024-05:14:10 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:14:10 : [User information]: attempting get user list.
+02/12/2024-05:14:10 : [User information]: user list returned.
+02/12/2024-05:14:10 : Connection closed: 127.0.0.1
+02/12/2024-05:14:12 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:14:12 : [Log-in]: attempting get information of user 'GabySU9'.
+02/12/2024-05:14:12 : [User information]: information of user 'GabySU9' returned.
+02/12/2024-05:14:12 : [User information]: 'username01' got information of user 'GabySU9'.
+02/12/2024-05:14:12 : Connection closed: 127.0.0.1
+02/12/2024-05:14:12 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:14:12 : [Log-in]: attempting get information of user 'GabySU9'.
+02/12/2024-05:14:12 : [User information]: information of user 'GabySU9' returned.
+02/12/2024-05:14:12 : Connection closed: 127.0.0.1
+02/12/2024-05:16:11 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:16:11 : [Log-in]: attempting to authenticate 'username01'.
+02/12/2024-05:16:11 : [Log-in]: user 'username01' validated.
+02/12/2024-05:16:11 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-05:16:11 : [User information]: information of user 'username01' returned.
+02/12/2024-05:16:11 : Connection closed: 127.0.0.1
+02/12/2024-05:16:11 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:16:11 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-05:16:11 : [User information]: information of user 'username01' returned.
+02/12/2024-05:16:11 : [User information]: 'username01' got information of user 'username01'.
+02/12/2024-05:16:11 : Connection closed: 127.0.0.1
+02/12/2024-05:16:13 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:16:13 : [User information]: attempting get user list.
+02/12/2024-05:16:13 : [User information]: user list returned.
+02/12/2024-05:16:13 : Connection closed: 127.0.0.1
+02/12/2024-05:16:15 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:16:15 : [Log-in]: attempting get information of user 'GabySU9'.
+02/12/2024-05:16:15 : [User information]: information of user 'GabySU9' returned.
+02/12/2024-05:16:15 : [User information]: 'username01' got information of user 'GabySU9'.
+02/12/2024-05:16:15 : Connection closed: 127.0.0.1
+02/12/2024-05:16:15 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:16:15 : [Log-in]: attempting get information of user 'GabySU9'.
+02/12/2024-05:16:15 : [User information]: information of user 'GabySU9' returned.
+02/12/2024-05:16:15 : Connection closed: 127.0.0.1
+02/12/2024-05:16:15 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:16:15 : [Log-in]: attempting get information of user 'GabySU9'.
+02/12/2024-05:16:15 : [User information]: information of user 'GabySU9' returned.
+02/12/2024-05:16:15 : [User information]: 'username01' got information of user 'GabySU9'.
+02/12/2024-05:16:15 : Connection closed: 127.0.0.1
+02/12/2024-05:16:16 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:16:16 : [User information]: attempting get user list.
+02/12/2024-05:16:16 : [User information]: user list returned.
+02/12/2024-05:16:16 : Connection closed: 127.0.0.1
+02/12/2024-05:16:18 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:16:18 : [Log-in]: attempting get information of user 'GabySU9'.
+02/12/2024-05:16:18 : [User information]: information of user 'GabySU9' returned.
+02/12/2024-05:16:18 : [User information]: 'username01' got information of user 'GabySU9'.
+02/12/2024-05:16:18 : Connection closed: 127.0.0.1
+02/12/2024-05:16:18 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:16:18 : [Log-in]: attempting get information of user 'GabySU9'.
+02/12/2024-05:16:18 : [User information]: information of user 'GabySU9' returned.
+02/12/2024-05:16:18 : [User information]: 'username01' got information of user 'GabySU9'.
+02/12/2024-05:16:18 : Connection closed: 127.0.0.1
+02/12/2024-05:16:22 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:16:22 : [User information]: attempting get user list.
+02/12/2024-05:16:22 : [User information]: user list returned.
+02/12/2024-05:16:22 : Connection closed: 127.0.0.1
+02/12/2024-05:16:24 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:16:24 : [Log-in]: attempting get information of user 'GabySU9'.
+02/12/2024-05:16:24 : [User information]: information of user 'GabySU9' returned.
+02/12/2024-05:16:24 : [User information]: 'username01' got information of user 'GabySU9'.
+02/12/2024-05:16:24 : Connection closed: 127.0.0.1
+02/12/2024-05:16:24 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:16:24 : [Log-in]: attempting get information of user 'GabySU9'.
+02/12/2024-05:16:24 : [User information]: information of user 'GabySU9' returned.
+02/12/2024-05:16:24 : Connection closed: 127.0.0.1
+02/12/2024-05:16:24 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:16:24 : [Log-in]: attempting get information of user 'GabySU9'.
+02/12/2024-05:16:24 : [User information]: information of user 'GabySU9' returned.
+02/12/2024-05:16:24 : [User information]: 'username01' got information of user 'GabySU9'.
+02/12/2024-05:16:24 : Connection closed: 127.0.0.1
+02/12/2024-05:17:09 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:17:09 : [Log-in]: attempting to authenticate 'username01'.
+02/12/2024-05:17:09 : [Log-in]: user 'username01' validated.
+02/12/2024-05:17:09 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-05:17:09 : [User information]: information of user 'username01' returned.
+02/12/2024-05:17:09 : Connection closed: 127.0.0.1
+02/12/2024-05:17:09 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:17:09 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-05:17:09 : [User information]: information of user 'username01' returned.
+02/12/2024-05:17:09 : [User information]: 'username01' got information of user 'username01'.
+02/12/2024-05:17:09 : Connection closed: 127.0.0.1
+02/12/2024-05:17:10 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:17:10 : [User information]: attempting get user list.
+02/12/2024-05:17:10 : [User information]: user list returned.
+02/12/2024-05:17:10 : Connection closed: 127.0.0.1
+02/12/2024-05:17:12 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:17:12 : [Log-in]: attempting get information of user 'GabySU9'.
+02/12/2024-05:17:12 : [User information]: information of user 'GabySU9' returned.
+02/12/2024-05:17:12 : [User information]: 'username01' got information of user 'GabySU9'.
+02/12/2024-05:17:12 : Connection closed: 127.0.0.1
+02/12/2024-05:17:12 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:17:12 : [Log-in]: attempting get information of user 'GabySU9'.
+02/12/2024-05:17:12 : [User information]: information of user 'GabySU9' returned.
+02/12/2024-05:17:12 : [User information]: 'username01' got information of user 'GabySU9'.
+02/12/2024-05:17:12 : Connection closed: 127.0.0.1
+02/12/2024-05:17:15 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:17:15 : [User information]: attempting get user list.
+02/12/2024-05:17:15 : [User information]: user list returned.
+02/12/2024-05:17:15 : Connection closed: 127.0.0.1
+02/12/2024-05:17:18 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:17:18 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:17:18 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:17:18 : [User information]: 'username01' got information of user 'quiann'.
+02/12/2024-05:17:18 : Connection closed: 127.0.0.1
+02/12/2024-05:17:18 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:17:18 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:17:18 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:17:18 : Connection closed: 127.0.0.1
+02/12/2024-05:17:18 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:17:18 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:17:18 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:17:18 : [User information]: 'username01' got information of user 'quiann'.
+02/12/2024-05:17:18 : Connection closed: 127.0.0.1
+02/12/2024-05:18:35 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:18:35 : [Log-in]: attempting to authenticate 'username01'.
+02/12/2024-05:18:35 : [Log-in]: user 'username01' validated.
+02/12/2024-05:18:35 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-05:18:35 : [User information]: information of user 'username01' returned.
+02/12/2024-05:18:35 : Connection closed: 127.0.0.1
+02/12/2024-05:18:35 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:18:35 : [Log-in]: attempting get information of user 'username01'.
+02/12/2024-05:18:35 : [User information]: information of user 'username01' returned.
+02/12/2024-05:18:35 : [User information]: 'username01' got information of user 'username01'.
+02/12/2024-05:18:35 : Connection closed: 127.0.0.1
+02/12/2024-05:18:37 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:18:37 : [User information]: attempting get user list.
+02/12/2024-05:18:37 : [User information]: user list returned.
+02/12/2024-05:18:37 : Connection closed: 127.0.0.1
+02/12/2024-05:18:38 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:18:38 : [Log-in]: attempting get information of user 'SebasUlaca7'.
+02/12/2024-05:18:38 : [User information]: information of user 'SebasUlaca7' returned.
+02/12/2024-05:18:38 : [User information]: 'username01' got information of user 'SebasUlaca7'.
+02/12/2024-05:18:38 : Connection closed: 127.0.0.1
+02/12/2024-05:18:38 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:18:38 : [Log-in]: attempting get information of user 'SebasUlaca7'.
+02/12/2024-05:18:38 : [User information]: information of user 'SebasUlaca7' returned.
+02/12/2024-05:18:38 : Connection closed: 127.0.0.1
+02/12/2024-05:18:38 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:18:38 : [Log-in]: attempting get information of user 'SebasUlaca7'.
+02/12/2024-05:18:38 : [User information]: information of user 'SebasUlaca7' returned.
+02/12/2024-05:18:38 : [User information]: 'username01' got information of user 'SebasUlaca7'.
+02/12/2024-05:18:38 : Connection closed: 127.0.0.1
+02/12/2024-05:19:08 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:19:08 : User 'username01' gets access to entire LOG ('log_UserNode.txt').
+02/12/2024-05:19:08 : User 'Backup' gets access to entire LOG ('log_UserNode.txt').
+02/12/2024-05:19:08 : Connection closed: 127.0.0.1
+02/12/2024-05:19:30 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:19:30 : [User information]: attempting get user list.
+02/12/2024-05:19:30 : [User information]: user list returned.
+02/12/2024-05:19:30 : Connection closed: 127.0.0.1
+02/12/2024-05:19:32 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:19:32 : [Log-in]: attempting get information of user 'GabySU9'.
+02/12/2024-05:19:32 : [User information]: information of user 'GabySU9' returned.
+02/12/2024-05:19:32 : [User information]: 'username01' got information of user 'GabySU9'.
+02/12/2024-05:19:32 : Connection closed: 127.0.0.1
+02/12/2024-05:19:32 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:19:32 : [Log-in]: attempting get information of user 'GabySU9'.
+02/12/2024-05:19:32 : [User information]: information of user 'GabySU9' returned.
+02/12/2024-05:19:32 : [User information]: 'username01' got information of user 'GabySU9'.
+02/12/2024-05:19:32 : Connection closed: 127.0.0.1
+02/12/2024-05:19:33 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:19:33 : [Log-in]: attempting get information of user 'WarrenMI8'.
+02/12/2024-05:19:33 : [User information]: information of user 'WarrenMI8' returned.
+02/12/2024-05:19:33 : [User information]: 'username01' got information of user 'WarrenMI8'.
+02/12/2024-05:19:33 : Connection closed: 127.0.0.1
+02/12/2024-05:19:33 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:19:33 : [Log-in]: attempting get information of user 'WarrenMI8'.
+02/12/2024-05:19:33 : [User information]: information of user 'WarrenMI8' returned.
+02/12/2024-05:19:33 : [User information]: 'username01' got information of user 'WarrenMI8'.
+02/12/2024-05:19:33 : Connection closed: 127.0.0.1
+02/12/2024-05:19:33 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:19:33 : [Log-in]: attempting get information of user 'SebasUlaca7'.
+02/12/2024-05:19:33 : [User information]: information of user 'SebasUlaca7' returned.
+02/12/2024-05:19:33 : [User information]: 'username01' got information of user 'SebasUlaca7'.
+02/12/2024-05:19:33 : Connection closed: 127.0.0.1
+02/12/2024-05:19:33 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:19:33 : [Log-in]: attempting get information of user 'SebasUlaca7'.
+02/12/2024-05:19:33 : [User information]: information of user 'SebasUlaca7' returned.
+02/12/2024-05:19:33 : [User information]: 'username01' got information of user 'SebasUlaca7'.
+02/12/2024-05:19:33 : Connection closed: 127.0.0.1
+02/12/2024-05:19:34 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:19:34 : [Log-in]: attempting get information of user 'Ximena1'.
+02/12/2024-05:19:34 : [User information]: information of user 'Ximena1' returned.
+02/12/2024-05:19:34 : [User information]: 'username01' got information of user 'Ximena1'.
+02/12/2024-05:19:34 : Connection closed: 127.0.0.1
+02/12/2024-05:19:34 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:19:34 : [Log-in]: attempting get information of user 'Ximena1'.
+02/12/2024-05:19:34 : [User information]: information of user 'Ximena1' returned.
+02/12/2024-05:19:34 : [User information]: 'username01' got information of user 'Ximena1'.
+02/12/2024-05:19:34 : Connection closed: 127.0.0.1
+02/12/2024-05:19:34 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:19:34 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:19:34 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:19:34 : [User information]: 'username01' got information of user 'quiann'.
+02/12/2024-05:19:34 : Connection closed: 127.0.0.1
+02/12/2024-05:19:34 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:19:34 : [Log-in]: attempting get information of user 'quiann'.
+02/12/2024-05:19:34 : [User information]: information of user 'quiann' returned.
+02/12/2024-05:19:34 : [User information]: 'username01' got information of user 'quiann'.
+02/12/2024-05:19:34 : Connection closed: 127.0.0.1
+02/12/2024-05:19:44 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:19:44 : Connection closed: 127.0.0.1
+02/12/2024-05:19:48 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:19:48 : [User information]: attempting get user list.
+02/12/2024-05:19:48 : [User information]: user list returned.
+02/12/2024-05:19:48 : Connection closed: 127.0.0.1
+02/12/2024-05:19:49 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:19:49 : [User information]: attempting get user list.
+02/12/2024-05:19:49 : [User information]: user list returned.
+02/12/2024-05:19:49 : Connection closed: 127.0.0.1
+02/12/2024-05:19:52 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:19:52 : [User information]: attempting get user list.
+02/12/2024-05:19:52 : [User information]: user list returned.
+02/12/2024-05:19:52 : Connection closed: 127.0.0.1
+02/12/2024-05:24:03 : Users data file closed and saved to file 'usersData.txt'.
+02/12/2024-05:24:03 : Filesystem <FAT> closed and saved to file 'log_UserNode.txt'.

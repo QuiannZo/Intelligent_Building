@@ -2,8 +2,7 @@
 #define MENUWINDOW_H
 
 #include <QMainWindow>
-#include "../UserHandler.hpp"
-#include "../etapa3PI/ClientNode.hpp"
+#include "../etapa4/etapa4PI/UserNode.hpp"
 #include <QCloseEvent>
 #include "mainwindow.h"
 
@@ -16,7 +15,7 @@ class menuwindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit menuwindow(QWidget *parent, UserHandler& userHandler, MainWindow& mainwindow, ClientNode& clientNode);
+    explicit menuwindow(QWidget *parent, UserNode& userHandler, MainWindow& mainwindow, ClientNode& clientNode);
     ~menuwindow();
 
 private slots:
@@ -43,7 +42,7 @@ private slots:
 
 private:
     Ui::menuwindow *ui;
-    UserHandler& userHandler;
+    UserNode& userHandler;
     MainWindow& mainwindow;
     ClientNode& clientNode;
 

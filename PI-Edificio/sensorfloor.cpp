@@ -1,7 +1,7 @@
 #include "sensorfloor.h"
 #include "ui_sensorfloor.h"
 
-SensorFloor::SensorFloor(QWidget *parent, UserHandler& userHandler, menuwindow& menu)
+SensorFloor::SensorFloor(QWidget *parent, UserNode& userHandler, menuwindow& menu)
     : QMainWindow(parent), ui(new Ui::SensorFloor), userHandler(userHandler), menu(menu)
 {
     ui->setupUi(this);

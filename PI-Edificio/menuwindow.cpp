@@ -12,7 +12,7 @@
 #include "sensorbuilding.h"
 #include "viewbackup.h"
 
-menuwindow::menuwindow(QWidget *parent, UserHandler& userHandler, MainWindow& mainwindow, ClientNode& clientNode)
+menuwindow::menuwindow(QWidget *parent, UserNode& userHandler, MainWindow& mainwindow, ClientNode& clientNode)
     : QMainWindow(parent), userHandler(userHandler), mainwindow(mainwindow), clientNode(clientNode)
     , ui(new Ui::menuwindow)
 {
@@ -267,7 +267,7 @@ void menuwindow::on_pushButton9_clicked()
 
 void menuwindow::on_pushButton10_clicked()
 {
-    ViewBackup *viewBackup = new ViewBackup(this, this->userHandler, *this); // Crear la nueva ventana
+    ViewBackup *viewBackup = new ViewBackup(this, this->userHandler, *this, clientNode); // Crear la nueva ventana
     viewBackup->show();                            // Mostrar la nueva ventana
     hide();
 }

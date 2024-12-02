@@ -3,7 +3,7 @@
 #include "ui_createuser.h"
 #include "menuwindow.h"
 
-createuser::createuser(QWidget *parent, UserHandler& userHandler, menuwindow& menu, ClientNode& clientNode)
+createuser::createuser(QWidget *parent, UserNode& userHandler, menuwindow& menu, ClientNode& clientNode)
     : QMainWindow(parent)
     , ui(new Ui::createuser), userHandler(userHandler), menu(menu), clientNode(clientNode)
 {

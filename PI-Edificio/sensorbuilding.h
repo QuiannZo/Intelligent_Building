@@ -2,7 +2,7 @@
 #define SENSORBUILDING_H
 
 #include <QMainWindow>
-#include "../UserHandler.hpp"
+#include "../etapa4/etapa4PI/UserNode.hpp"
 #include "menuwindow.h"
 
 namespace Ui {
@@ -14,7 +14,7 @@ class sensorBuilding : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit sensorBuilding(QWidget *parent, UserHandler& userHandler, menuwindow& menu);
+    explicit sensorBuilding(QWidget *parent, UserNode& userHandler, menuwindow& menu);
     ~sensorBuilding();
 
 private slots:
@@ -22,7 +22,7 @@ private slots:
 
 private:
     Ui::sensorBuilding *ui;
-    UserHandler& userHandler;
+    UserNode& userHandler;
     menuwindow& menu;
 };
 

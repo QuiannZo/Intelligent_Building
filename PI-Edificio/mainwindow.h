@@ -2,8 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "../UserHandler.hpp"
-#include "../etapa3PI/ClientNode.hpp"
+#include "../etapa4/etapa4PI/UserNode.hpp"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -16,7 +15,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent, UserHandler& userHandler, ClientNode& clientNode);
+    MainWindow(QWidget *parent, UserNode& userHandler, ClientNode& clientNode);
     ~MainWindow();
 
 private slots:
@@ -25,7 +24,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     // El `userHandler` se va a guardar como referencia
-    UserHandler& userHandler;
+    UserNode& userHandler;
     ClientNode& clientNode;
 };
 #endif // MAINWINDOW_H

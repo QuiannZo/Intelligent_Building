@@ -2,7 +2,7 @@
 #define REMOVEUSER_H
 
 #include <QMainWindow>
-#include "../UserHandler.hpp"
+#include "../etapa4/etapa4PI/UserNode.hpp"
 #include "menuwindow.h"
 #include "qlistwidget.h"
 #include <qfile.h>
@@ -17,7 +17,7 @@ class RemoveUser : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit RemoveUser(QWidget *parent, UserHandler& userHandler, menuwindow& menu);
+    explicit RemoveUser(QWidget *parent, UserNode& userHandler, menuwindow& menu);
     ~RemoveUser();
 
 private slots:
@@ -31,7 +31,7 @@ private slots:
 
 private:
     Ui::RemoveUser *ui;
-    UserHandler& userHandler;
+    UserNode& userHandler;
     menuwindow& menu;
     QString selectedUser;
 };

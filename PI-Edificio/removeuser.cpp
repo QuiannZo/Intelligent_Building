@@ -1,7 +1,7 @@
 #include "removeuser.h"
 #include "ui_removeuser.h"
 
-RemoveUser::RemoveUser(QWidget *parent, UserHandler& userHandler, menuwindow& menu)
+RemoveUser::RemoveUser(QWidget *parent, UserNode& userHandler, menuwindow& menu)
     : QMainWindow(parent)
     , ui(new Ui::RemoveUser), userHandler(userHandler), menu(menu)
 {

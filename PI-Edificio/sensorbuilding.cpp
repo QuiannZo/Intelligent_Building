@@ -1,7 +1,7 @@
 #include "sensorbuilding.h"
 #include "ui_sensorbuilding.h"
 
-sensorBuilding::sensorBuilding(QWidget *parent, UserHandler& userHandler, menuwindow& menu)
+sensorBuilding::sensorBuilding(QWidget *parent, UserNode& userHandler, menuwindow& menu)
     : QMainWindow(parent), ui(new Ui::sensorBuilding), userHandler(userHandler), menu(menu)
 {
     ui->setupUi(this);

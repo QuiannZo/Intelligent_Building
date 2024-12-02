@@ -1,0 +1,124 @@
+03/11/2024-19:04:56 : File 'log_DataNode.txt' <Type:Log> loaded into filesystem.
+03/11/2024-19:04:56 : File 'sensors_log_file' <Type:File-sensor-data> loaded into filesystem.
+03/11/2024-19:04:56 : Sensor data file closed and saved to file ''.
+03/11/2024-19:04:56 : Filesystem <FAT> closed and saved to file 'log_DataNode.txt'.
+05/11/2024-15:06:49 : File 'log_DataNode.txt' <Type:Log> loaded into filesystem.
+05/11/2024-15:06:49 : File 'sensors_log_file' <Type:File-sensor-data> loaded into filesystem.
+05/11/2024-15:07:02 : User 'username01' gets access to entire LOG ('log_DataNode.txt').
+
+07/11/2024-00:41:31 : File 'log_DataNode.txt' <Type:Log> loaded into filesystem.
+07/11/2024-00:41:31 : File 'sensorsData.txt' <Type:File-sensor-data> loaded into filesystem.
+07/11/2024-00:41:31 : Connected to node at port 3002
+07/11/2024-00:41:39 : Connection from Remote IP: 127.0.0.1
+07/11/2024-00:41:39 : User 'y' gets access to entire LOG ('log_DataNode.txt').
+07/11/2024-00:41:39 : User 'y' gets access to complete sensor information in 'sensorsData.txt' file.
+07/11/2024-00:41:39 : Connection closed: 127.0.0.1
+07/11/2024-02:00:09 : File 'log_DataNode.txt' <Type:Log> loaded into filesystem.
+07/11/2024-02:00:09 : File 'sensorsData.txt' <Type:File-sensor-data> loaded into filesystem.
+07/11/2024-02:00:09 : Connected to node at port 3002
+07/11/2024-02:13:18 : Sensor data file closed and saved to file 'sensorsData.txt'.
+07/11/2024-02:13:18 : Filesystem <FAT> closed and saved to file 'log_DataNode.txt'.
+07/11/2024-02:14:43 : File 'log_DataNode.txt' <Type:Log> loaded into filesystem.
+07/11/2024-02:14:43 : File 'sensorsData.txt' <Type:File-sensor-data> loaded into filesystem.28/11/2024-11:34:20 : File 'log_DataNode.txt' <Type:Log> loaded into filesystem.
+28/11/2024-11:34:20 : File 'sensorsData.txt' <Type:File-sensor-data> loaded into filesystem.
+28/11/2024-11:34:20 : Connected to node at port 3002
+28/11/2024-11:34:25 : Connection from Remote IP: 127.0.0.1
+28/11/2024-11:34:25 : Connection closed: 127.0.0.1
+28/11/2024-11:35:32 : Connection from Remote IP: 127.0.0.1
+28/11/2024-11:35:32 : Connection closed: 127.0.0.1
+28/11/2024-11:35:39 : Connection from Remote IP: 127.0.0.1
+28/11/2024-11:35:39 : Connection closed: 127.0.0.1
+28/11/2024-11:37:11 : Connection from Remote IP: 127.0.0.1
+28/11/2024-11:37:11 : Connection closed: 127.0.0.1
+28/11/2024-11:37:48 : Connection from Remote IP: 127.0.0.1
+28/11/2024-11:37:48 : Connection closed: 127.0.0.1
+28/11/2024-11:40:07 : Sensor data file closed and saved to file 'sensorsData.txt'.
+28/11/2024-11:40:07 : Filesystem <FAT> closed and saved to file 'log_DataNode.txt'.
+30/11/2024-15:22:54 : File 'log_DataNode.txt' <Type:Log> loaded into filesystem.
+30/11/2024-15:22:54 : File 'sensorsData.txt' <Type:File-sensor-data> loaded into filesystem.
+30/11/2024-15:22:54 : Connected to node at port 3002
+30/11/2024-15:23:01 : Connection from Remote IP: 127.0.0.1
+30/11/2024-15:23:01 : Connection closed: 127.0.0.1
+30/11/2024-15:26:15 : Sensor data file closed and saved to file 'sensorsData.txt'.
+30/11/2024-15:26:15 : Filesystem <FAT> closed and saved to file 'log_DataNode.txt'.
+30/11/2024-15:26:57 : File 'log_DataNode.txt' <Type:Log> loaded into filesystem.
+30/11/2024-15:26:57 : File 'sensorsData.txt' <Type:File-sensor-data> loaded into filesystem.
+30/11/2024-15:26:57 : Connected to node at port 3002
+30/11/2024-15:27:00 : Connection from Remote IP: 127.0.0.1
+30/11/2024-15:27:00 : Connection closed: 127.0.0.1
+30/11/2024-15:27:04 : Sensor data file closed and saved to file 'sensorsData.txt'.
+30/11/2024-15:27:04 : Filesystem <FAT> closed and saved to file 'log_DataNode.txt'.
+30/11/2024-15:28:09 : File 'log_DataNode.txt' <Type:Log> loaded into filesystem.
+30/11/2024-15:28:09 : File 'sensorsData.txt' <Type:File-sensor-data> loaded into filesystem.
+30/11/2024-15:28:09 : Connected to node at port 3002
+30/11/2024-15:28:12 : Connection from Remote IP: 127.0.0.1
+30/11/2024-15:28:12 : Connection closed: 127.0.0.1
+30/11/2024-15:28:28 : Sensor data file closed and saved to file 'sensorsData.txt'.
+30/11/2024-15:28:28 : Filesystem <FAT> closed and saved to file 'log_DataNode.txt'.
+30/11/2024-15:44:30 : File 'log_DataNode.txt' <Type:Log> loaded into filesystem.
+30/11/2024-15:44:30 : File 'sensorsData.txt' <Type:File-sensor-data> loaded into filesystem.
+30/11/2024-15:44:30 : Connected to node at port 3002
+30/11/2024-15:44:34 : Connection from Remote IP: 127.0.0.1
+30/11/2024-15:44:34 : Connection closed: 127.0.0.1
+30/11/2024-15:44:55 : Sensor data file closed and saved to file 'sensorsData.txt'.
+30/11/2024-15:44:55 : Filesystem <FAT> closed and saved to file 'log_DataNode.txt'.
+30/11/2024-15:45:41 : File 'log_DataNode.txt' <Type:Log> loaded into filesystem.
+30/11/2024-15:45:41 : File 'sensorsData.txt' <Type:File-sensor-data> loaded into filesystem.
+30/11/2024-15:45:41 : Connected to node at port 3002
+30/11/2024-15:45:45 : Connection from Remote IP: 127.0.0.1
+30/11/2024-15:45:45 : Connection closed: 127.0.0.1
+30/11/2024-15:45:56 : Sensor data file closed and saved to file 'sensorsData.txt'.
+30/11/2024-15:45:56 : Filesystem <FAT> closed and saved to file 'log_DataNode.txt'.
+30/11/2024-15:48:12 : File 'log_DataNode.txt' <Type:Log> loaded into filesystem.
+30/11/2024-15:48:12 : File 'sensorsData.txt' <Type:File-sensor-data> loaded into filesystem.
+30/11/2024-15:48:12 : Connected to node at port 3002
+30/11/2024-15:48:16 : Connection from Remote IP: 127.0.0.1
+30/11/2024-15:48:16 : Connection closed: 127.0.0.1
+30/11/2024-15:48:35 : Sensor data file closed and saved to file 'sensorsData.txt'.
+30/11/2024-15:48:35 : Filesystem <FAT> closed and saved to file 'log_DataNode.txt'.
+30/11/2024-16:34:29 : File 'log_DataNode.txt' <Type:Log> loaded into filesystem.
+30/11/2024-16:34:29 : File 'sensorsData.txt' <Type:File-sensor-data> loaded into filesystem.
+30/11/2024-16:34:29 : Connected to node at port 3002
+30/11/2024-16:34:33 : Connection from Remote IP: 127.0.0.1
+30/11/2024-16:34:33 : User 'Backup' gets access to entire LOG ('log_DataNode.txt').
+30/11/2024-16:34:33 : Connection closed: 127.0.0.1
+30/11/2024-16:36:02 : Sensor data file closed and saved to file 'sensorsData.txt'.
+30/11/2024-16:36:02 : Filesystem <FAT> closed and saved to file 'log_DataNode.txt'.
+02/12/2024-02:39:55 : File 'log_DataNode.txt' <Type:Log> loaded into filesystem.
+02/12/2024-02:39:55 : File 'sensorsData.txt' <Type:File-sensor-data> loaded into filesystem.
+02/12/2024-02:39:55 : Connected to node at port 3002
+02/12/2024-02:40:00 : Connection from Remote IP: 127.0.0.1
+02/12/2024-02:40:00 : User 'Backup_node' gets access to entire LOG ('log_DataNode.txt').
+02/12/2024-02:40:00 : Log send to backup node.
+02/12/2024-02:40:00 : Connection closed: 127.0.0.1
+02/12/2024-02:40:00 : Connection from Remote IP: 127.0.0.1
+02/12/2024-02:40:00 : User 'Backup data' gets access to complete sensor information in 'sensorsData.txt' file.
+02/12/2024-02:40:00 : Sensors data send to backup node.
+02/12/2024-02:40:00 : Connection closed: 127.0.0.1
+02/12/2024-02:42:33 : Sensor data file closed and saved to file 'sensorsData.txt'.
+02/12/2024-02:42:33 : Filesystem <FAT> closed and saved to file 'log_DataNode.txt'.
+02/12/2024-02:43:09 : File 'log_DataNode.txt' <Type:Log> loaded into filesystem.
+02/12/2024-02:43:09 : File 'sensorsData.txt' <Type:File-sensor-data> loaded into filesystem.
+02/12/2024-02:43:09 : Connected to node at port 3002
+02/12/2024-02:43:10 : Connection from Remote IP: 127.0.0.1
+02/12/2024-02:43:10 : User 'Backup_node' gets access to entire LOG ('log_DataNode.txt').
+02/12/2024-02:43:10 : Log send to backup node.
+02/12/2024-02:43:10 : Connection closed: 127.0.0.1
+02/12/2024-02:43:10 : Connection from Remote IP: 127.0.0.1
+02/12/2024-02:43:10 : User 'Backup data' gets access to complete sensor information in 'sensorsData.txt' file.
+02/12/2024-02:43:10 : Sensors data send to backup node.
+02/12/2024-02:43:10 : Connection closed: 127.0.0.1
+02/12/2024-02:44:19 : Connection from Remote IP: 127.0.0.1
+02/12/2024-02:44:19 : User 'username01' gets access to entire LOG ('log_DataNode.txt').
+02/12/2024-02:44:19 : User 'username01' gets access to complete sensor information in 'sensorsData.txt' file.
+02/12/2024-02:44:19 : Connection closed: 127.0.0.1
+02/12/2024-02:45:38 : Connection from Remote IP: 127.0.0.1
+02/12/2024-02:45:38 : User 'username01' gets access to entire LOG ('log_DataNode.txt').
+02/12/2024-02:45:38 : User 'username01' gets access to complete sensor information in 'sensorsData.txt' file.
+02/12/2024-02:45:38 : Connection closed: 127.0.0.1
+02/12/2024-02:48:37 : Sensor data file closed and saved to file 'sensorsData.txt'.
+02/12/2024-02:48:37 : Filesystem <FAT> closed and saved to file 'log_DataNode.txt'.
+02/12/2024-02:51:47 : File 'log_DataNode.txt' <Type:Log> loaded into filesystem.
+02/12/2024-02:51:47 : File 'sensorsData.txt' <Type:File-sensor-data> loaded into filesystem.
+02/12/2024-02:51:47 : Connected to node at port 3002
+02/12/2024-02:51:48 : Connection from Remote IP: 127.0.0.1

@@ -1,7 +1,7 @@
 #include "viewuser.h"
 #include "ui_viewuser.h"
 
-ViewUser::ViewUser(QWidget *parent, UserHandler& userHandler, menuwindow& menu, ClientNode& clientNode)
+ViewUser::ViewUser(QWidget *parent, UserNode& userHandler, menuwindow& menu, ClientNode& clientNode)
     : QMainWindow(parent)
     , ui(new Ui::ViewUser), userHandler(userHandler), menu(menu), clientNode(clientNode)
 {

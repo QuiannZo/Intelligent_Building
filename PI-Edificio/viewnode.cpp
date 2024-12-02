@@ -1,7 +1,7 @@
 #include "viewnode.h"
 #include "ui_viewnode.h"
 
-ViewNode::ViewNode(QWidget *parent, UserHandler& userHandler, menuwindow& menu)
+ViewNode::ViewNode(QWidget *parent, UserNode& userHandler, menuwindow& menu)
     : QMainWindow(parent), ui(new Ui::ViewNode), userHandler(userHandler), menu(menu)
 {
     ui->setupUi(this);

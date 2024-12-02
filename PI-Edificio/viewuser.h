@@ -4,8 +4,7 @@
 #include <QMainWindow>
 #include <QFile>
 #include <qstring.h>
-#include "../UserHandler.hpp"
-#include "../etapa3PI/ClientNode.hpp"
+#include "../etapa4/etapa4PI/UserNode.hpp"
 #include "menuwindow.h"
 #include "qlistwidget.h"
 
@@ -18,7 +17,7 @@ class ViewUser : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit ViewUser(QWidget *parent, UserHandler& userHandler, menuwindow& menu, ClientNode& clientNode);
+    explicit ViewUser(QWidget *parent, UserNode& userHandler, menuwindow& menu, ClientNode& clientNode);
     ~ViewUser();
 
 private slots:
@@ -32,7 +31,7 @@ private slots:
 
 private:
     Ui::ViewUser *ui;
-    UserHandler& userHandler;
+    UserNode& userHandler;
     ClientNode& clientNode;
     menuwindow& menu;
 };

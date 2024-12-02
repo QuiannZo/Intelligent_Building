@@ -4,7 +4,7 @@
 #include <QMessageBox>
 #include <vector>
 
-MainWindow::MainWindow(QWidget *parent, UserHandler &userHandler, ClientNode& clientNode)
+MainWindow::MainWindow(QWidget *parent, UserNode &userHandler, ClientNode& clientNode)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow),
     userHandler(userHandler),

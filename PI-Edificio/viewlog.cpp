@@ -1,7 +1,7 @@
 #include "viewlog.h"
 #include "ui_viewlog.h"
 
-viewLog::viewLog(QWidget *parent, UserHandler& userHandler, menuwindow& menu, ClientNode& clientNode)
+viewLog::viewLog(QWidget *parent, UserNode& userHandler, menuwindow& menu, ClientNode& clientNode)
     : QMainWindow(parent)
     , ui(new Ui::viewLog), userHandler(userHandler), menu(menu), clientNode(clientNode)
 {

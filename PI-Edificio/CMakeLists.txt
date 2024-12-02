@@ -25,29 +25,34 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
-        ../UserHandler.cpp  # Agrega este archivo
-        ../UserHandler.hpp
-        ../Log.cpp
-        ../Log.hpp
-        ../HashHandler.cpp
-        ../HashHandler.hpp
-        ../Usuario.cpp
-        ../Usuario.hpp
+        #../UserHandler.cpp  # Agrega este archivo
+        #../UserHandler.hpp
+        #../Log.cpp
+        #../Log.hpp
+        #../HashHandler.cpp
+        #../HashHandler.hpp
+        #../Usuario.cpp
+        #../Usuario.hpp
         #../UserTest.cpp
         #../main.cpp
-        ../Intento.ino
-        ../etapa3PI/FAT.cpp
-        ../etapa3PI/FAT.hpp
-        ../DataCollector.cpp
-        ../DataCollector.hpp
-        ../Authenticator.cpp
-        ../Authenticator.hpp
-        ../usersData.txt
-        ../etapa3PI/ClientNode.hpp
-        ../etapa3PI/ClientNode.cpp
-        ../etapa3PI/Client.hpp
-        ../etapa3PI/Client.cpp
-        ../etapa3PI/socketList.hpp
+        #../Intento.ino
+        #../etapa3PI/FAT.cpp
+        #../etapa3PI/FAT.hpp
+        #../DataCollector.cpp
+        #../DataCollector.hpp
+        #../Authenticator.cpp
+        #../Authenticator.hpp
+        #../usersData.txt
+        #../etapa3PI/ClientNode.hpp
+        #../etapa3PI/ClientNode.cpp
+        #../etapa3PI/Client.hpp
+        #../etapa3PI/Client.cpp
+        #../etapa3PI/socketList.hpp
+        ../etapa4/etapa4PI/UserNode.hpp
+        ../etapa4/etapa4PI/UserNode.cpp
+        ../etapa4/etapa4PI/Client.hpp
+        ../etapa4/etapa4PI/Client.cpp
+        ../etapa4/etapa4PI/socketList.hpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

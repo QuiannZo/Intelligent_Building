@@ -3,8 +3,7 @@
 
 #include <QMainWindow>
 #include <QFile>
-#include "../UserHandler.hpp"
-#include "../etapa3PI/ClientNode.hpp"
+#include "../etapa4/etapa4PI/UserNode.hpp"
 #include "menuwindow.h"
 
 namespace Ui {
@@ -16,7 +15,7 @@ class viewdatabasewindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit viewdatabasewindow(QWidget *parent, UserHandler& userHandler, menuwindow& menu, ClientNode& clientNode);
+    explicit viewdatabasewindow(QWidget *parent, UserNode& userHandler, menuwindow& menu, ClientNode& clientNode);
     ~viewdatabasewindow();
 
 private slots:
@@ -26,7 +25,7 @@ private slots:
 
 private:
     Ui::viewdatabasewindow *ui;
-    UserHandler& userHandler;
+    UserNode& userHandler;
     menuwindow& menu;
     ClientNode& clientNode;
 };

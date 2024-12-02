@@ -3,8 +3,7 @@
 
 #include <QMainWindow>
 #include <QListWidgetItem>
-#include "../UserHandler.hpp"
-#include "../etapa3PI/ClientNode.hpp"
+#include "../etapa4/etapa4PI/UserNode.hpp"
 #include "menuwindow.h"
 
 namespace Ui {
@@ -16,7 +15,7 @@ class ModifyUser : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit ModifyUser(QWidget *parent, UserHandler& userHandler, menuwindow& menu, ClientNode& clientNode);
+    explicit ModifyUser(QWidget *parent, UserNode& userHandler, menuwindow& menu, ClientNode& clientNode);
     ~ModifyUser();
 
 private slots:
@@ -32,7 +31,7 @@ private slots:
 
 private:
     Ui::ModifyUser *ui;
-    UserHandler& userHandler;
+    UserNode& userHandler;
     menuwindow& menu;
     ClientNode& clientNode;
     std::string selectedUsername;

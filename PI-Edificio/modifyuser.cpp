@@ -2,7 +2,7 @@
 #include "ui_modifyuser.h"
 #include "menuwindow.h"
 
-ModifyUser::ModifyUser(QWidget *parent, UserHandler& userHandler, menuwindow& menu, ClientNode& clientNode)
+ModifyUser::ModifyUser(QWidget *parent, UserNode& userHandler, menuwindow& menu, ClientNode& clientNode)
     : QMainWindow(parent)
     , ui(new Ui::ModifyUser), userHandler(userHandler), menu(menu), clientNode(clientNode)
 {

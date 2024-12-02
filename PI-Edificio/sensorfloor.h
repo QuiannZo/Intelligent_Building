@@ -2,7 +2,7 @@
 #define SENSORFLOOR_H
 
 #include <QMainWindow>
-#include "../UserHandler.hpp"
+#include "../etapa4/etapa4PI/UserNode.hpp"
 #include "menuwindow.h"
 
 namespace Ui {
@@ -14,7 +14,7 @@ class SensorFloor : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit SensorFloor(QWidget *parent, UserHandler& userHandler, menuwindow& menu);
+    explicit SensorFloor(QWidget *parent, UserNode& userHandler, menuwindow& menu);
     ~SensorFloor();
 
 private slots:
@@ -22,7 +22,7 @@ private slots:
 
 private:
     Ui::SensorFloor *ui;
-    UserHandler& userHandler;
+    UserNode& userHandler;
     menuwindow& menu;
 };
 

@@ -1,0 +1,57 @@
+02/11/2024-19:39:13 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
+02/11/2024-19:39:13 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
+06/11/2024-22:20:41 : Connected to node at port 3000
+06/11/2024-22:21:42 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
+06/11/2024-22:32:39 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
+06/11/2024-22:32:39 : Connected to node at port 3000
+06/11/2024-22:35:11 : Connection from Remote IP: 127.0.0.1
+06/11/2024-22:35:44 : Connection closed: 127.0.0.1
+06/11/2024-22:35:55 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
+07/11/2024-00:16:22 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
+07/11/2024-00:40:04 : User 'y' gets access to entire LOG ('log_intermediary.txt').
+07/11/2024-01:14:02 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
+07/11/2024-01:34:24 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
+07/11/2024-01:57:56 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
+07/11/2024-02:00:02 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
+07/11/2024-02:00:02 : Connected to node at port 3000
+07/11/2024-02:00:16 : Connection from Remote IP: 127.0.0.1
+07/11/2024-02:00:16 : Connected to node at 127.0.0.1:3001
+07/11/2024-02:00:16 : 	Datagram sent to node.
+07/11/2024-02:00:16 : Connection closed successfully.
+07/11/2024-02:22:39 : Connected to node at 127.0.0.1:3001
+07/11/2024-02:22:39 : 	Datagram sent to node.
+07/11/2024-02:22:39 : Connection closed successfully.
+07/11/2024-02:22:39 : Connection closed: 127.0.0.1
+07/11/2024-02:22:44 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
+28/11/2024-11:33:58 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
+28/11/2024-11:33:58 : Connected to node at port 3000
+28/11/2024-11:34:05 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
+30/11/2024-15:22:36 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
+30/11/2024-15:22:36 : Connected to node at port 3000
+30/11/2024-15:22:40 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
+30/11/2024-15:52:37 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
+30/11/2024-15:52:37 : Connected to node at port 3000
+30/11/2024-15:53:28 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
+30/11/2024-15:54:02 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
+30/11/2024-15:54:02 : Connected to node at port 3000
+30/11/2024-15:54:40 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
+30/11/2024-15:54:58 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
+30/11/2024-15:54:58 : Connected to node at port 3000
+30/11/2024-16:01:55 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
+30/11/2024-16:38:41 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
+30/11/2024-16:38:41 : Connected to node at port 3000
+30/11/2024-16:39:00 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
+02/12/2024-02:39:40 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
+02/12/2024-02:39:40 : Connected to node at port 3000
+02/12/2024-02:40:00 : Connection from Remote IP: 127.0.0.1
+02/12/2024-02:40:00 : User 'Backup_node' gets access to entire LOG ('log_intermediary.txt').
+02/12/2024-02:40:00 : Connection closed: 127.0.0.1
+02/12/2024-02:42:23 : Connection from Remote IP: 127.0.0.1
+02/12/2024-02:42:23 : Connected to node at 127.0.0.1:3001
+02/12/2024-02:42:23 : 	Datagram sent to node.
+02/12/2024-02:42:23 : Connection closed successfully.
+02/12/2024-02:42:23 : Connection closed: 127.0.0.1
+02/12/2024-02:42:32 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
+02/12/2024-02:43:08 : File 'log_intermediary.txt' <Type:Log> loaded into filesystem.
+02/12/2024-02:43:08 : Connected to node at port 3000
+02/12/2024-02:43:10 : Connection from Remote IP: 127.0.0.1

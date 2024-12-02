@@ -2,7 +2,7 @@
 #define VIEWBACKUP_H
 
 #include <QMainWindow>
-#include "../UserHandler.hpp"
+#include "../etapa4/etapa4PI/UserNode.hpp"
 #include "menuwindow.h"
 
 namespace Ui {
@@ -14,16 +14,19 @@ class ViewBackup : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit ViewBackup(QWidget *parent, UserHandler& userHandler, menuwindow& menu);
+    explicit ViewBackup(QWidget *parent, UserNode& userHandler, menuwindow& menu, ClientNode& clientNode);
     ~ViewBackup();
 
 private slots:
     void on_pushButton1_2_clicked();
 
+    void on_backupbtn_clicked();
+
 private:
     Ui::ViewBackup *ui;
-    UserHandler& userHandler;
+    UserNode& userHandler;
     menuwindow& menu;
+    ClientNode& clientNode;
 };
 
 #endif // VIEWBACKUP_H

@@ -2,7 +2,7 @@
 #define VIEWNODE_H
 
 #include <QMainWindow>
-#include "../UserHandler.hpp"
+#include "../etapa4/etapa4PI/UserNode.hpp"
 #include "menuwindow.h"
 
 namespace Ui {
@@ -14,7 +14,7 @@ class ViewNode : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit ViewNode(QWidget *parent, UserHandler& userHandler, menuwindow& menu);
+    explicit ViewNode(QWidget *parent, UserNode& userHandler, menuwindow& menu);
     ~ViewNode();
 
 private slots:
@@ -22,7 +22,7 @@ private slots:
 
 private:
     Ui::ViewNode *ui;
-    UserHandler& userHandler;
+    UserNode& userHandler;
     menuwindow& menu;
 };
 
