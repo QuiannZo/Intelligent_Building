@@ -1,9 +1,13 @@
 #include "removeuser.h"
 #include "ui_removeuser.h"
 
+<<<<<<< HEAD
+RemoveUser::RemoveUser(QWidget *parent, UserNode& userHandler, menuwindow& menu, ClientNode& clientNode)
+=======
 RemoveUser::RemoveUser(QWidget *parent, UserNode& userHandler, menuwindow& menu)
+>>>>>>> refs/remotes/origin/main
     : QMainWindow(parent)
-    , ui(new Ui::RemoveUser), userHandler(userHandler), menu(menu)
+    , ui(new Ui::RemoveUser), userHandler(userHandler), menu(menu), clientNode(clientNode)
 {
     ui->setupUi(this);
 
@@ -39,22 +43,13 @@ RemoveUser::RemoveUser(QWidget *parent, UserNode& userHandler, menuwindow& menu)
 }
 
 void RemoveUser::loadUserList() {
-    // Abrir el archivo CSV y cargar los usernames en QListWidget
-    std::string filep = userHandler.getUsersFile();
-    QFile file = (QString::fromStdString(filep));  // Cambia a la ruta de tu archivo
-    if (file.open(QIODevice::ReadOnly)) {
-        QTextStream in(&file);
-        in.readLine(); // Ignora la primera línea de cabecera
-
-        while (!in.atEnd()) {
-            QString line = in.readLine();
-            QStringList userInfo = line.split(',');
-            if (userInfo.size() >= 1) {
-                ui->listWidget->addItem(userInfo[0]); // Añade solo el username
-            }
+    std::vector<std::string> list;
+    bool error = clientNode.getUserList(this->clientNode.username, list);
+    if(error){
+        for(int i = 0; i < list.size(); ++i){
+            ui->listWidget->addItem(QString::fromStdString(list[i]));
         }
     }
-    file.close();
 }
 
 RemoveUser::~RemoveUser()
@@ -78,21 +73,25 @@ void RemoveUser::on_listWidget_itemClicked(QListWidgetItem *item)
 
 void RemoveUser::on_pushButton1_clicked()
 {
-    // Verifica que hay un usuario seleccionado
-    if (selectedUser.isEmpty()) {
-        qDebug() << "No se ha seleccionado ningún usuario para eliminar.";
-            return;
-    }
-
-    // Llama a la función para eliminar el usuario utilizando UserHandler
-    if (userHandler.deleteUser("admin", selectedUser.toStdString())) {
-        qDebug() << "Usuario eliminado con éxito.";
-
-                    // Actualiza la lista de usuarios en la interfaz
-                    ui->listWidget->clear();
-        loadUserList();  // Vuelve a cargar la lista de usuarios
+    std::string username = selectedUser.toStdString();
+    std::vector<std::string> userInfo;
+    bool error = clientNode.getUserInformation(this->clientNode.username, username, userInfo);
+    std::string isActive = userInfo[4];
+    bool active;
+    if(isActive == "Active"){
+        active = true;
     } else {
-        qDebug() << "Error al eliminar el usuario.";
+        active = false;
     }
+    std::string response;
+
+    std::cout << "Is active: " << isActive;
+
+    // Delete.
+    clientNode.activeDeactivateUser(this->clientNode.username, username, active, response);
+
+    this->menu.show();
+    this->hide();
+    this->deleteLater();
 }
 

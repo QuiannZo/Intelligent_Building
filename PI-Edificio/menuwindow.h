@@ -3,6 +3,10 @@
 
 #include <QMainWindow>
 #include "../etapa4/etapa4PI/UserNode.hpp"
+<<<<<<< HEAD
+#include "../etapa4/etapa4PI/ClientNode.hpp"
+=======
+>>>>>>> refs/remotes/origin/main
 #include <QCloseEvent>
 #include "mainwindow.h"
 

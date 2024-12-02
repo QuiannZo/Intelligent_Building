@@ -375,3 +375,46 @@
 02/12/2024-05:24:03 : Connection closed successfully.
 02/12/2024-05:24:03 : The security copy of 'log_intermediary_node' was made.
 02/12/2024-05:24:03 : Filesystem <FAT> closed and saved to file 'log_BackupNode.txt'.
+02/12/2024-05:26:41 : File 'log_BackupNode.txt' <Type:Log> loaded into filesystem.
+02/12/2024-05:26:41 : Error connecting to node at 127.0.0.1:3001
+02/12/2024-05:26:41 : The security copy of 'log_user_node' was made.
+02/12/2024-05:26:41 : Error connecting to node at 127.0.0.1:3001
+02/12/2024-05:26:41 : The security copy of 'log_user_node' was made.
+02/12/2024-05:26:41 : Connected to node at 127.0.0.1:3002
+02/12/2024-05:26:41 : 	Datagram sent to node.
+02/12/2024-05:26:41 : 	Complete data received from node.
+02/12/2024-05:26:41 : Connection closed successfully.
+02/12/2024-05:26:41 : The security copy of 'log_data_node' was made.
+02/12/2024-05:26:41 : Connected to node at 127.0.0.1:3002
+02/12/2024-05:26:41 : 	Datagram sent to node.
+02/12/2024-05:26:41 : 	Complete data received from node.
+02/12/2024-05:26:41 : Connection closed successfully.
+02/12/2024-05:26:41 : The security copy of 'log_user_node' was made.
+02/12/2024-05:26:41 : Error connecting to node at 127.0.0.1:3000
+02/12/2024-05:26:41 : The security copy of 'log_intermediary_node' was made.
+02/12/2024-05:26:41 : Connected to node at port 3003
+02/12/2024-05:27:18 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:27:18 : Connection closed: 127.0.0.1
+02/12/2024-05:27:29 : Connection from Remote IP: 127.0.0.1
+02/12/2024-05:27:29 : Status of backups returned to the user username01
+02/12/2024-05:27:29 : Connection closed: 127.0.0.1
+02/12/2024-05:33:00 : Connected to node at 127.0.0.1:3001
+02/12/2024-05:33:00 : 	Datagram sent to node.
+02/12/2024-05:33:00 : 	Complete data received from node.
+02/12/2024-05:33:00 : Connection closed successfully.
+02/12/2024-05:33:00 : The security copy of 'log_user_node' was made.
+02/12/2024-05:33:00 : Connected to node at 127.0.0.1:3001
+02/12/2024-05:33:00 : 	Datagram sent to node.
+02/12/2024-05:33:00 : 	Complete data received from node.
+02/12/2024-05:33:00 : Connection closed successfully.
+02/12/2024-05:33:00 : The security copy of 'log_user_node' was made.
+02/12/2024-05:33:00 : Error connecting to node at 127.0.0.1:3002
+02/12/2024-05:33:00 : The security copy of 'log_data_node' was made.
+02/12/2024-05:33:00 : Error connecting to node at 127.0.0.1:3002
+02/12/2024-05:33:00 : The security copy of 'log_user_node' was made.
+02/12/2024-05:33:00 : Connected to node at 127.0.0.1:3000
+02/12/2024-05:33:00 : 	Datagram sent to node.
+02/12/2024-05:33:00 : 	Complete data received from node.
+02/12/2024-05:33:00 : Connection closed successfully.
+02/12/2024-05:33:00 : The security copy of 'log_intermediary_node' was made.
+02/12/2024-05:33:00 : Filesystem <FAT> closed and saved to file 'log_BackupNode.txt'.

@@ -224,7 +224,7 @@ void menuwindow::on_pushButton6_clicked()
 
 void menuwindow::on_pushButton7_clicked()
 {
-    RemoveUser *removeuser = new RemoveUser(this, this->userHandler, *this);  // Crear la nueva ventana
+    RemoveUser *removeuser = new RemoveUser(this, this->userHandler, *this, clientNode);  // Crear la nueva ventana
     removeuser->show();  // Mostrar la nueva ventana
     hide();
 }
@@ -260,7 +260,7 @@ void menuwindow::on_pushButton8_clicked()
 
 void menuwindow::on_pushButton9_clicked()
 {
-    ViewNode *viewNode = new ViewNode(this, this->userHandler, *this); // Crear la nueva ventana
+    ViewNode *viewNode = new ViewNode(this, this->userHandler, *this, clientNode); // Crear la nueva ventana
     viewNode->show();                        // Mostrar la nueva ventana
     hide();
 }

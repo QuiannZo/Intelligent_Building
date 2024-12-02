@@ -36,13 +36,33 @@ set(PROJECT_SOURCES
         #../UserTest.cpp
         #../main.cpp
         #../Intento.ino
+<<<<<<< HEAD
+        ../etapa4/etapa4PI/FAT.cpp
+        ../etapa4/etapa4PI/FAT.hpp
+=======
         #../etapa3PI/FAT.cpp
         #../etapa3PI/FAT.hpp
+>>>>>>> refs/remotes/origin/main
         #../DataCollector.cpp
         #../DataCollector.hpp
         #../Authenticator.cpp
         #../Authenticator.hpp
         #../usersData.txt
+<<<<<<< HEAD
+        ../etapa4/etapa4PI/ClientNode.hpp
+        ../etapa4/etapa4PI/ClientNode.cpp
+        ../etapa4/etapa4PI/Client.hpp
+        ../etapa4/etapa4PI/Client.cpp
+        ../etapa4/etapa4PI/UserNode.hpp
+        ../etapa4/etapa4PI/UserNode.cpp
+        ../etapa4/etapa4PI/socketList.hpp
+        #../etapa4/etapa4PI/networkConfig.hpp
+        #../etapa4/etapa4PI/utilities.hpp
+        ../etapa4/etapa4PI/Log.cpp
+        ../etapa4/etapa4PI/Node.cpp
+        ../etapa4/etapa4PI/HashHandler.cpp
+
+=======
         #../etapa3PI/ClientNode.hpp
         #../etapa3PI/ClientNode.cpp
         #../etapa3PI/Client.hpp
@@ -53,6 +73,7 @@ set(PROJECT_SOURCES
         ../etapa4/etapa4PI/Client.hpp
         ../etapa4/etapa4PI/Client.cpp
         ../etapa4/etapa4PI/socketList.hpp
+>>>>>>> refs/remotes/origin/main
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

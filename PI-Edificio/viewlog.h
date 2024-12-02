@@ -4,6 +4,10 @@
 #include <QMainWindow>
 #include <QString>
 #include "../etapa4/etapa4PI/UserNode.hpp"
+<<<<<<< HEAD
+#include "../etapa4/etapa4PI/ClientNode.hpp"
+=======
+>>>>>>> refs/remotes/origin/main
 #include "menuwindow.h"
 
 namespace Ui {

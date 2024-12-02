@@ -5,6 +5,10 @@
 #include <QFile>
 #include <qstring.h>
 #include "../etapa4/etapa4PI/UserNode.hpp"
+<<<<<<< HEAD
+#include "../etapa4/etapa4PI/ClientNode.hpp"
+=======
+>>>>>>> refs/remotes/origin/main
 #include "menuwindow.h"
 #include "qlistwidget.h"
 

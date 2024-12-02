@@ -17,7 +17,11 @@ class RemoveUser : public QMainWindow
     Q_OBJECT
 
 public:
+<<<<<<< HEAD
+    explicit RemoveUser(QWidget *parent, UserNode& userHandler, menuwindow& menu, ClientNode& clientNode);
+=======
     explicit RemoveUser(QWidget *parent, UserNode& userHandler, menuwindow& menu);
+>>>>>>> refs/remotes/origin/main
     ~RemoveUser();
 
 private slots:
@@ -34,6 +38,7 @@ private:
     UserNode& userHandler;
     menuwindow& menu;
     QString selectedUser;
+    ClientNode& clientNode;
 };
 
 #endif // REMOVEUSER_H

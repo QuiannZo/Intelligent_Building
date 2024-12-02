@@ -1283,10 +1283,3 @@
 02/12/2024-05:27:26 : [User information]: user list returned.
 02/12/2024-05:27:26 : Connection closed: 127.0.0.1
 02/12/2024-05:33:00 : Connection from Remote IP: 127.0.0.1
-02/12/2024-05:33:00 : User 'Backup' gets access to entire LOG ('log_UserNode.txt').
-02/12/2024-05:33:00 : Connection closed: 127.0.0.1
-02/12/2024-05:33:00 : Connection from Remote IP: 127.0.0.1
-02/12/2024-05:33:00 : Sensors data send to backup node.
-02/12/2024-05:33:00 : Connection closed: 127.0.0.1
-02/12/2024-05:33:00 : Users data file closed and saved to file 'usersData.txt'.
-02/12/2024-05:33:00 : Filesystem <FAT> closed and saved to file 'log_UserNode.txt'.

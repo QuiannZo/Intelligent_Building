@@ -1301,6 +1301,3 @@
 02/12/2024-05:27:29 : Connection closed successfully.
 02/12/2024-05:27:29 : Connection closed: 127.0.0.1
 02/12/2024-05:33:00 : Connection from Remote IP: 127.0.0.1
-02/12/2024-05:33:00 : User 'Backup_node' gets access to entire LOG ('log_intermediary.txt').
-02/12/2024-05:33:00 : Connection closed: 127.0.0.1
-02/12/2024-05:33:01 : Filesystem <FAT> closed and saved to file 'log_intermediary.txt'.
