@@ -33,5 +33,3 @@ g++ main.cpp FAT.cpp Usuario.cpp Authenticator.cpp HashHandler.cpp -o main -lssl
 3. Ultrasonic: The HC-SR04 is composed of two ultrasonic transducers. One which outputs ultrasonic sound pulses and the other is receiver (listens for reflected waves)
 
 4. Photoresistor: It is a light-controlled variable resistor, it decreases with the increasing incident. In the Intel Galileo, we used for base the next model in the tool Tinkercad.
-
-![tinkercad](./img/photoresistor.png)
